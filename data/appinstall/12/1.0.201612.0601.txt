@@ -1,0 +1,3 @@
+plugins/photo/classes/controller/pc/photo.php
+plugins/photo/classes/taglib/photo.php
+plugins/photo/views/default/photo/show.php

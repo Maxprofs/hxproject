@@ -1,0 +1,4 @@
+plugins/notes/classes/controller/pc/notes.php
+plugins/notes/classes/model/notes.php
+plugins/notes/classes/taglib/notes.php
+plugins/notes/views/default/notes/show.php

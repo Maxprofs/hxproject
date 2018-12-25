@@ -1,0 +1,1 @@
+plugins/supplier/application/classes/stourweb/view.php

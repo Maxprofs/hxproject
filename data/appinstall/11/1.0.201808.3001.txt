@@ -1,0 +1,5 @@
+plugins/customize/public/css/customize.css
+plugins/customize/public/mobile/css/customize.css
+plugins/customize/views/admin/customize/plan/edit.php
+plugins/customize/views/default/customize/index.php
+plugins/customize/views/default/customize/plan.php

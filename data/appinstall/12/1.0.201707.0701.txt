@@ -1,0 +1,3 @@
+plugins/photo/classes/controller/mobile/photo.php
+plugins/photo/classes/model/photo.php
+plugins/photo/views/admin/photo/edit.php

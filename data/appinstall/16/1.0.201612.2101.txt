@@ -1,0 +1,1 @@
+plugins/supplier_hotel/application/classes/model/model.php

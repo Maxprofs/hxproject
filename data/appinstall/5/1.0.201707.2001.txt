@@ -1,0 +1,2 @@
+plugins/hotel/views/admin/hotel/edit.php
+plugins/hotel/views/admin/hotel/attrid/config.php

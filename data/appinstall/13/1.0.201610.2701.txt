@@ -1,0 +1,4 @@
+plugins/coupon/classes/controller/admin/coupon.php
+plugins/coupon/classes/controller/pc/coupon.php
+plugins/coupon/classes/model/coupon.php
+plugins/coupon/views/default/coupon/index.php

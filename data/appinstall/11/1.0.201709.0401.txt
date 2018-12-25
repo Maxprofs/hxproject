@@ -1,0 +1,14 @@
+plugins/customize/m_init.php
+plugins/customize/classes/controller/mobile/customize.php
+plugins/customize/public/mobile/css/customize.css
+plugins/customize/public/mobile/css/icons_mobiscroll.eot
+plugins/customize/public/mobile/css/icons_mobiscroll.svg
+plugins/customize/public/mobile/css/icons_mobiscroll.ttf
+plugins/customize/public/mobile/css/icons_mobiscroll.woff
+plugins/customize/public/mobile/css/mobiscroll.min.css
+plugins/customize/public/mobile/images/error-msg.png
+plugins/customize/public/mobile/images/pointer.png
+plugins/customize/public/mobile/js/datetime.js
+plugins/customize/public/mobile/js/mobiscroll.min.js
+plugins/customize/views/mobile/customize/index.php
+plugins/customize/views/mobile/customize/plan.php

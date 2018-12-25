@@ -1,0 +1,3 @@
+plugins/hotel/classes/controller/admin/hotel.php
+plugins/hotel/views/admin/hotel/list.php
+plugins/hotel/views/admin/hotel/room_edit.php

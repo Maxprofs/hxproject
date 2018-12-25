@@ -1,0 +1,3 @@
+plugins/car/classes/controller/admin/car.php
+plugins/car/views/admin/car/list.php
+plugins/car/views/admin/car/suit_edit.php

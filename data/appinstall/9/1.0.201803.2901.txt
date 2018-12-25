@@ -1,0 +1,3 @@
+plugins/car/classes/controller/admin/car/order.php
+plugins/car/views/admin/car/list.php
+plugins/car/views/default/car/index.php

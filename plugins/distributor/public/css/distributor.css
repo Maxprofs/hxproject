@@ -1,0 +1,11 @@
+.searchkey {
+    float: left;
+    width: 400px;
+    height: 28px;
+    vertical-align: top;
+    padding: 0px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(222, 223, 227);
+    border-image: initial;
+}

@@ -1,0 +1,3 @@
+plugins/api/classes/controller/pc/api/standard/hotel.php
+plugins/api/classes/controller/pc/api/standard/line.php
+plugins/api/classes/controller/pc/api/standard/spot.php

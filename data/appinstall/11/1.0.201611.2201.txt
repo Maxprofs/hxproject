@@ -1,0 +1,4 @@
+plugins/customize/classes/controller/pc/customize.php
+plugins/customize/classes/controller/pc/customize/member.php
+plugins/customize/views/default/customize/index.php
+plugins/customize/views/default/customize/member/orderview.php

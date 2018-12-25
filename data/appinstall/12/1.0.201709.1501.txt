@@ -1,0 +1,1 @@
+plugins/photo/views/mobile/photo/searchnav.php

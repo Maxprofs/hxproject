@@ -1,0 +1,9 @@
+plugins/visa/classes/controller/admin/visa.php
+plugins/visa/views/admin/visa/area_list.php
+plugins/visa/views/admin/visa/city_list.php
+plugins/visa/views/admin/visa/content.php
+plugins/visa/views/admin/visa/edit.php
+plugins/visa/views/admin/visa/list.php
+plugins/visa/views/admin/visa/type_list.php
+plugins/visa/views/admin/visa/attrid/extendfield.php
+plugins/visa/views/admin/visa/order/list.php

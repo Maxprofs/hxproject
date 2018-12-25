@@ -1,0 +1,1 @@
+plugins/spot/classes/controller/mobile/spot.php

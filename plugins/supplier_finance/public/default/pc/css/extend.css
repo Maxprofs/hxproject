@@ -1,0 +1,83 @@
+/*--遮罩--*/
+.fade{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.3;
+    filter:alpha(opacity=30);
+    -webkit-opacity:0.3;
+    display:none;
+    position:fixed
+}
+.error-border{
+    border:1px solid red !important;
+}
+.hide{
+    display: none;
+}
+
+/*结算明细*/
+#count-msg-container{
+    /*display: block;*/
+}
+
+#count-msg-container .item-nr{
+    padding-left: 70px;
+}
+
+#count-msg-container .item-nr li{
+    display: inline-block;
+    width: 135px;
+    height: 16px;
+    line-height: 16px;
+    margin: 24px 10px 0 0;
+    border-right: 2px #4cc34f solid;
+}
+#count-msg-container .item-nr .count-item{
+    margin-left: 30px;
+}
+#count-msg-container .item-nr .count-item-last{
+    border-right: 0px;
+}
+/*导出报表*/
+.finance-content .item-nr .create-table{
+    margin-right: 60px;
+}
+/*标题宽度*/
+#order_list span {
+    width: 180px;
+    height: 19px;
+    line-height: 19px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+/*交易记录搜索条件*/
+.census-item-float-left>ul>li {
+    float: left;
+    text-align: left;
+}
+.census-item-float-left .choose-btn{
+    margin-top: 0px;
+}
+.pm-btm-box .create-table {
+    color: #fff;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #4cc34f;
+}
+/*结算明细-列表*/
+.view-block-table{
+    margin-top:0;
+}

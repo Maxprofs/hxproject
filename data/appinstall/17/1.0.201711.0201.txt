@@ -1,0 +1,6 @@
+plugins/supplier_spot/application/classes/controller/index.php
+plugins/supplier_spot/application/classes/model/spot.php
+plugins/supplier_spot/application/views/default/suit_edit.php
+plugins/supplier_spot/application/views/default/suit_list.php
+plugins/supplier_spot/public/css/jquery.datetimepicker.css
+plugins/supplier_spot/public/js/jquery.datetimepicker.full.js

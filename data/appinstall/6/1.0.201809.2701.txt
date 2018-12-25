@@ -1,0 +1,2 @@
+plugins/spot/classes/taglib/spot.php
+plugins/spot/views/admin/spot/edit.php

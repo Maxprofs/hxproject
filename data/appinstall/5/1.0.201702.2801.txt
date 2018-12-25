@@ -1,0 +1,3 @@
+plugins/hotel/classes/controller/admin/hotel.php
+plugins/hotel/classes/controller/admin/hotel/attrid.php
+plugins/hotel/classes/model/hotel/content.php

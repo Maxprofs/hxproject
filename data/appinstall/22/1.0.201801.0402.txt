@@ -1,0 +1,3 @@
+plugins/supplier/application/classes/controller/attrid.php
+plugins/supplier/application/views/default/pc/set_footer.php
+plugins/supplier/application/views/default/pc/set_logo.php

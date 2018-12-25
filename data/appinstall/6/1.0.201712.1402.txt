@@ -1,0 +1,2 @@
+plugins/spot/public/mobile/css/spot.css
+plugins/spot/views/mobile/spot/show.php

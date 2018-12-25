@@ -1,0 +1,1 @@
+plugins/ship/public/mobile/js/mobilebone.js

@@ -1,0 +1,3 @@
+plugins/notes/classes/controller/mobile/notes.php
+plugins/notes/views/mobile/member/mynotes.php
+plugins/notes/views/mobile/notes/show.php

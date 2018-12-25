@@ -1,0 +1,1 @@
+plugins/hotel/views/mobile/hotel/show.php

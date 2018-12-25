@@ -1,0 +1,2 @@
+plugins/customize/views/admin/customize/email.php
+plugins/customize/views/admin/customize/sms.php

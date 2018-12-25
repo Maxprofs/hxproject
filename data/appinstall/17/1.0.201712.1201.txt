@@ -1,0 +1,1 @@
+plugins/supplier_spot/public/css/style_hotel.css

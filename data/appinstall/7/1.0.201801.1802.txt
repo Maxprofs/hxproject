@@ -1,0 +1,2 @@
+plugins/article/public/css/gonglue.css
+plugins/article/views/default/article/list.php

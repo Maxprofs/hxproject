@@ -1,0 +1,2 @@
+plugins/photo/classes/controller/pc/photo.php
+plugins/photo/views/default/photo/list.php

@@ -1,0 +1,4 @@
+plugins/spot/public/css/scenic.css
+plugins/spot/public/images/addr-ico.png
+plugins/spot/public/mobile/css/spot.css
+plugins/spot/views/mobile/spot/show.php

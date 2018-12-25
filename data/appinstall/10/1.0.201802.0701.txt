@@ -1,0 +1,3 @@
+plugins/visa/views/mobile/visa/book.php
+plugins/visa/views/mobile/visa/list.php
+plugins/visa/views/mobile/visa/show.php

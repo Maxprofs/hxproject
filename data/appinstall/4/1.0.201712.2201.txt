@@ -1,0 +1,2 @@
+plugins/line/public/css/lines.css
+plugins/line/views/default/line/index.php

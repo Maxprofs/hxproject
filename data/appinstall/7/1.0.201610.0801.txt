@@ -1,0 +1,2 @@
+plugins/article/classes/controller/mobile/article.php
+plugins/article/views/mobile/article/list.php

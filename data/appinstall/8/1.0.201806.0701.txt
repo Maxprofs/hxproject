@@ -1,0 +1,2 @@
+plugins/notes/views/default/notes/show.php
+plugins/notes/views/mobile/notes/show.php

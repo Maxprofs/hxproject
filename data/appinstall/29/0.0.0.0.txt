@@ -1,0 +1,13 @@
+installer.ini
+sql.php
+unsql.php
+plugins/share_wx_client/admin_init.php
+plugins/share_wx_client/init.php
+plugins/share_wx_client/m_init.php
+plugins/share_wx_client/pc_init.php
+plugins/share_wx_client/classes/controller/admin/share/wxclient.php
+plugins/share_wx_client/classes/controller/mobile/share/wxclient.php
+plugins/share_wx_client/classes/model/share/weixin.php
+plugins/share_wx_client/config/share_wx_client.php
+plugins/share_wx_client/data/version.php
+plugins/share_wx_client/views/admin/share/wxclient/conf.php

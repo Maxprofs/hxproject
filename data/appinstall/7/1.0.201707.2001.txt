@@ -1,0 +1,2 @@
+plugins/article/views/admin/article/edit.php
+plugins/article/views/admin/article/attrid/config.php

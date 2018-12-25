@@ -1,0 +1,2 @@
+plugins/supplier_brokerage/views/default/pc/brokerage/approval_apply.php
+plugins/supplier_brokerage/views/default/pc/brokerage/stat.php

@@ -1,0 +1,1 @@
+plugins/supplier_spot/application/classes/stourweb/view.php

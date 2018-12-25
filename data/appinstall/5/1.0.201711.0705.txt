@@ -1,0 +1,6 @@
+plugins/hotel/classes/controller/admin/hotel/attrid.php
+plugins/hotel/views/admin/hotel/content.php
+plugins/hotel/views/admin/hotel/price.php
+plugins/hotel/views/admin/hotel/rank.php
+plugins/hotel/views/admin/hotel/room_edit.php
+plugins/hotel/views/admin/hotel/attrid/list.php

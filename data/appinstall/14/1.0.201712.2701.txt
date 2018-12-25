@@ -1,0 +1,2 @@
+plugins/ship/public/css/ship.css
+plugins/ship/public/mobile/css/m_ship.css

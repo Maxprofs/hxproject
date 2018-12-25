@@ -1,0 +1,2 @@
+plugins/spot/views/admin/spot/email.php
+plugins/spot/views/admin/spot/sms.php

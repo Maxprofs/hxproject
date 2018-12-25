@@ -1,0 +1,3 @@
+plugins/wxpay/classes/controller/mobile/wxpay.php
+plugins/wxpay/vendor/mobile/wxpay/jsapi/index.php
+plugins/wxpay/vendor/mobile/wxpay/lib/WxPay.Api.php

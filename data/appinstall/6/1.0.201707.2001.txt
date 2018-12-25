@@ -1,0 +1,2 @@
+plugins/spot/views/admin/spot/edit.php
+plugins/spot/views/admin/spot/attrid/config.php

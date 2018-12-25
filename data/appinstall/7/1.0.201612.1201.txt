@@ -1,0 +1,3 @@
+plugins/article/classes/controller/admin/article.php
+plugins/article/views/admin/article/edit.php
+plugins/article/views/default/article/show.php

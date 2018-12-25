@@ -1,0 +1,5 @@
+plugins/supplier_line/application/classes/common.php
+plugins/supplier_line/application/classes/controller/index.php
+plugins/supplier_line/application/views/default/edit.php
+plugins/supplier_line/application/views/default/list.php
+plugins/supplier_line/application/views/default/suit.php

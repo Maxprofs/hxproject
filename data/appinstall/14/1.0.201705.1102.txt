@@ -1,0 +1,3 @@
+plugins/ship/public/mobile/css/m_ship.css
+plugins/ship/views/mobile/ship/cruise.php
+plugins/ship/views/mobile/ship/show.php

@@ -1,0 +1,3 @@
+plugins/line/public/images/picSlideLeft.gif
+plugins/line/public/images/picSlideRight.gif
+plugins/line/public/images/play-icon.png

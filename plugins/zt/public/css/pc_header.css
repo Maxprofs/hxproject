@@ -1,0 +1,151 @@
+@charset "utf-8";
+.web-top{
+    width:100%;
+    min-width:1200px;
+    height:35px;
+    border-bottom:1px solid #ededed;
+    background:#f9f7f6}
+.web-top .wm-1200{
+    height:35px;}
+.notice-txt{
+    float: left;
+    color: #666;
+    width: 450px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.scroll-order{
+    float:right;
+    width:300px;
+    height:35px;
+    overflow:hidden;
+    margin:0 70px 0 10px}
+.scroll-order ul{
+    float:left;}
+.scroll-order ul li{
+    float:left;
+    color:#f39700;
+    width:300px;
+    height:35px;
+    line-height:35px;
+    overflow: hidden;
+}
+
+.top-login{
+    float:right;
+    max-width:580px}
+.top-login a,
+.top-login dl.dh dt{
+    float:left;
+    color:#333;
+    height:35px;
+    line-height:35px;
+    padding:0 10px;
+    cursor:pointer}
+.top-login a:hover,
+.top-login dl.dh dt:hover{
+    color: #f80;
+}
+.top-login a.dd i,
+.top-login dl.dh dt i,
+.top-login a.lx_us i{
+    float: left;
+    height: 36px;
+    line-height: 36px;
+}
+.top-login a.dd i:before,
+.top-login dl.dh dt i:before,
+.top-login a.lx_us i:before{
+    display: inline-block;
+    vertical-align: middle;
+    font-family:"st-iconfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.top-login a.dd i:before{
+    content: "\e63b";
+    font-size:20px;
+    margin: -3px 0 0;
+}
+.top-login dl.dh dt i:before{
+    content: "\e61a";
+    font-size:20px;
+    margin: -3px 0 0;
+}
+.top-login a.lx_us i:before{
+    content: "\e614";
+    font-size:20px;
+    margin: -4px 0 0;
+}
+.top-login dl.dh{
+    float:left;
+    position:relative;
+    z-index:99999;
+    border-left:1px solid #f9f7f6;
+    border-right:1px solid #f9f7f6;
+}
+.top-login dl.dh dd{
+    display:none;
+    position:absolute;
+    z-index:9999;
+    right:-1px;
+    top:35px;
+    width:140px;
+    padding:0 10px;
+    border:1px solid #eee;
+    border-top:0;
+    background:#fff}
+.top-login dl.dh dd a{
+    width:70px;
+    padding:0;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis}
+/* logo */
+.st-logo{
+    float: left;
+    width: 220px;
+    height: 60px;
+    overflow: hidden;
+}
+.st-logo > a{
+    display: table-cell;
+    width: 220px;
+    height: 60px;
+    vertical-align: middle;
+    text-align: center;
+}
+.st-logo > a > img{
+    max-width: 220px;
+    max-height: 60px;
+    vertical-align: middle;
+}
+/* 主导航 */
+.st-nav-zt{
+    float: left;
+    width: 980px;
+}
+.st-nav-zt .nav-list{
+
+}
+.st-nav-zt .nav-list li{
+    float: left;
+}
+.st-nav-zt .nav-list li a{
+    display: block;
+    color: #666;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 25px;
+    font-size: 14px;
+}
+.st-nav-zt .nav-list li a:hover{
+    color: #00b7ee;
+    font-weight: bold;
+}

@@ -1,0 +1,550 @@
+/*订单*/
+.user-order-box{
+    float:right;
+    width:992px}
+.user-order-box .tabnav{
+    float:left;
+    width:992px;
+    border-bottom:2px solid #00b7ee}
+.user-order-box .tabnav span{
+    float:left;
+    color:#333;
+    height:30px;
+    line-height:30px;
+    padding:0 30px;
+    font-size:14px;
+    margin-right:-1px;
+    cursor:pointer;
+    border:1px solid #dcdcdc;
+    border-bottom:0}
+.user-order-box .tabnav span.on{
+    color:#fff;
+    border:1px solid #00b7ee;
+    border-bottom:0;
+    background:#00b7ee}
+.user-order-box .tabnav .user-usable-js{
+    color:#333;
+    float:left;
+    height:31px;
+    line-height:31px;
+    padding:0 30px;
+    font-size:14px}
+.user-order-box .tabnav .user-usable-js b{
+    color:#ff9b3a;
+    font-size:18px;
+    font-weight:500}
+.user-order-box .tabcon{
+    float:left;
+    width:970px;
+    padding:10px;
+    border:1px solid #dcdcdc;
+    border-top:0}
+.table-list th{
+    text-align:center;
+    font-size:14px;
+    background:#e8faff}
+.table-list td{
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #dcdcdc}
+.table-list .sign01{
+    color:#e60012}
+.table-list .sign02{
+    color:#ff9b3a}
+.table-list .sign03{
+    color:#c9c9c9}
+.table-list .sign04{
+    color:#00b7ee}
+.table-list .sign05{
+    color:#a0a0a0}
+.table-list .now-fk{
+    color:#e60012}
+.table-list .now-dp{
+    color:#ff9b3a}
+.table-list .cp-tit{
+    color:#0082dd}
+.operate a{
+    padding:0 5px}
+/*用户中心首页*/
+.user-home-box{
+	float:left;
+	width:992px}
+.user-home-box .user-home-msg{
+	float:left;
+	width:992px;
+	padding:35px 0}
+.user-home-box .user-msg-con{
+	float:left;
+	width:385px;
+	padding-left:35px;
+	overflow:hidden;
+	border-right:1px dotted #d8d8d8}
+.user-home-box .user-msg-con .user-pic,
+.user-home-box .user-msg-con .user-pic img{
+	float:left;
+	width:90px;
+	height:90px;
+	border-radius:10px;
+	overflow:hidden}
+.user-home-box .user-msg-con .user-txt{
+	float:left;
+	width:260px;
+	padding-left:35px}
+.user-home-box .user-msg-con .user-txt .name{
+	color:#333;
+	padding-bottom: 5px;
+	font-size:24px}
+.user-home-box .user-msg-con .user-txt .name .level{
+	color: #fff;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding:0 7px;
+	vertical-align: middle;
+	margin: -3px 0 0 10px;
+	font-size: 12px;
+	background: #4cb786;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;;
+}
+.user-home-box .user-msg-con .user-txt .mail-box,
+.user-home-box .user-msg-con .user-txt .phone-num{
+	color:#333;
+	height:20px;
+	line-height:20px;
+	overflow:hidden}
+.user-home-box .user-msg-con .user-txt .mail-box a,
+.user-home-box .user-msg-con .user-txt .phone-num a{
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	color:#fff;
+	height:18px;
+	line-height:18px;
+	padding:0 5px;
+	margin:-3px 0 0 10px;
+	vertical-align:middle;
+	font-size:12px;
+	border:1px solid #faa119;
+	border-radius:3px;
+	background:#ffbd13}
+.user-home-box .user-msg-tj,
+.user-home-box .user-msg-tj ul{
+	float:left;
+	width:570px}
+.user-home-box .user-msg-tj ul li{
+	float:left;
+	width:142px;
+	cursor:pointer;
+	text-align:center}
+.user-home-box .user-msg-tj ul li em{
+	display:block;
+	width:50px;
+	height:50px;
+	margin:0 auto 5px;
+	background:url(../images/user-home-ico.png) no-repeat}
+.user-home-box .user-msg-tj ul li.my-jf em{
+	background-position:0 0}
+.user-home-box .user-msg-tj ul li.un-fk em{
+	background-position:0 -100px}
+.user-home-box .user-msg-tj ul li.un-dp em{
+	background-position:0 -200px}
+.user-home-box .user-msg-tj ul li.my-zx em{
+	background-position:0 -300px}
+.user-home-box .user-msg-tj ul li.my-jf:hover em{
+	background-position:-80px 0}
+.user-home-box .user-msg-tj ul li.un-fk:hover em{
+	background-position:-80px -100px}
+.user-home-box .user-msg-tj ul li.un-dp:hover em{
+	background-position:-80px -200px}
+.user-home-box .user-msg-tj ul li.my-zx:hover em{
+	background-position:-80px -300px}
+.user-home-box .user-msg-tj ul li span{
+	color:#333;
+	display:block;
+	font-size:14px}
+.user-home-box .user-msg-tj ul li strong{
+	color:#fc6000;
+	display:block;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif}
+.user-home-box .user-home-order{
+	float:left;
+	width:954px;
+	padding:0 18px;
+	border:1px solid #dcdcdc}
+.user-home-box .user-home-order .order-tit{
+	float:left;
+	color:#333;
+	width:924px;
+	height:50px;
+	line-height:50px;
+	padding-left:30px;
+	margin-top:10px;
+	font-size:18px;
+	border-bottom:2px solid #f4f4f4;
+	background:url(../images/user-home-ico.png) no-repeat -155px -130px}
+.user-home-box .user-home-order .order-tit a.more{
+	float:right;
+	color:#333;
+	font-size:14px;}
+.user-home-box .user-home-order .order-tit a:hover.more{
+	color:#0082dd}
+.user-home-box .user-home-order .order-list{
+	float:left;
+	width:954px;
+	margin-top:18px}
+.user-order-box .order-no-have,
+.user-order-box .jf-no-have,
+.user-order-box .zx-no-have{
+	float:left;
+	width:954px;
+	padding:50px 0}
+.user-order-box .order-no-have span{
+	display:block;
+	width:73px;
+	height:74px;
+	margin:0 auto;
+	background:url(../images/user-home-ico.png) no-repeat -160px -216px}
+.user-order-box .jf-no-have span{
+	display:block;
+	width:129px;
+	height:131px;
+	margin:0 auto;
+	background:url(../images/no-jf-ico.png) left no-repeat}
+.user-order-box .zx-no-have span{
+	display:block;
+	width:110px;
+	height:108px;
+	margin:0 auto;
+	background:url(../images/no-zixun-ico.png) left no-repeat}
+.user-order-box .order-no-have p,
+.user-order-box .jf-no-have p,
+.user-order-box .zx-no-have p{
+	color:#333;
+	margin-top:20px;
+	font-size:14px;
+	text-align:center}
+.user-order-box .order-no-have p a,
+.user-order-box .jf-no-have p a,
+.user-order-box .zx-no-have p a{
+	color:#0088d0;
+	font-size:14px}
+.user-order-box .order-no-have p a:hover,
+.user-order-box .jf-no-have p a:hover,
+.user-order-box .zx-no-have p a:hover{
+	color:#fc6000;
+	text-decoration:underline}
+.user-home-box .user-home-order .order-list table th{
+	color:#7c7c7c;
+	font-size:14px;
+	text-align:center}
+.user-home-box .user-home-order .order-list table td{
+	border-top:1px solid #dcdcdc}
+.user-home-box .user-home-order .order-list .con,
+.user-home-box .user-home-order .order-list .con dl{
+	float:left}
+.user-home-box .user-home-order .order-list .con dl dt{
+	float:left;
+	width:110px;
+	height:80px;
+    font-size:12px;
+	overflow:hidden}
+.user-home-box .user-home-order .order-list .con dl dt a{
+	display: table-cell;
+	width: 110px;
+	height: 80px;
+	vertical-align: middle;
+	text-align: center;
+}
+.user-home-box .user-home-order .order-list .con dl dt a img{
+	vertical-align: middle;
+}
+.user-home-box .user-home-order .order-list .con dl dd{
+	float:left;
+	width:250px;
+	padding-left:20px;
+font-size:12px}
+.user-home-box .user-home-order .order-list .con dl dd .tit{
+	color:#0082dd;
+	display:block;
+	font-size:14px;
+	max-height:40px;
+	line-height:20px;
+	margin-bottom:5px;
+	overflow:hidden}
+.user-home-box .user-home-order .order-list .con dl dd .tit:hover{
+	color:#f60}
+.user-home-box .user-home-order .order-list .con dl dd p{
+	color:#7c7c7c;
+	height:18px;
+	line-height:18px}
+.user-home-box .user-home-order .order-list .price{
+	color:#fc6000;
+	font-size:14px;
+	font-weight:bold}
+.user-home-box .user-home-order .order-list .rq{
+	color:#333;
+	display:block;
+	line-height:30px;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .now-fk,
+.user-home-box .user-home-order .order-list .now-dp{
+	color:#fff;
+	display:inline-block;
+	width:75px;
+	height:26px;
+	line-height:26px;
+	margin-bottom:5px;
+	font-size:14px;
+	border-radius:3px;
+	background:#fb4734}
+.user-home-box .user-home-order .order-list .now-dp{
+	background:#ff9b3c}
+.user-home-box .user-home-order .order-list .order-ck{
+	color:#333;
+	display:block;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .order-ck:hover{
+	color:#f60}
+.user-home-box .user-home-order .order-list .attr{
+	color:#7c7c7c;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .dfk{
+	color:#e60012;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .dcl{
+	color:#fb4734;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .yqx{
+	color:#c9c9c9;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .wdp{
+	color:#ff9b3a;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .ywc{
+	color:#00b7ee;
+	font-size:14px}
+.user-home-box .user-home-order .order-list .revise-yj,
+.user-home-box .user-home-order .order-list .delete-yj{
+	color:#333;
+	height:20px;
+	line-height:20px;
+	margin:0 10px;
+	font-size:14px;
+	display:inline-block;}
+.user-home-box .user-home-order .order-list .revise-yj:before,
+.user-home-box .user-home-order .order-list .delete-yj:before{
+	content:' ';
+	display:inline-block;
+	width:14px;
+	height:14px;
+	vertical-align:middle;
+	margin:-3px 5px 0 0;
+	background:url(../images/user-yj-ico.png) no-repeat}
+.user-home-box .user-home-order .order-list .revise-yj:before{
+	background-position:0 0}
+.user-home-box .user-home-order .order-list .delete-yj:before{
+	background-position:0 bottom}
+.user-home-box .user-home-order .order-list .dest{
+    font-size: 14px;
+}
+.user-home-box .user-home-order .order-list .date{
+    font-size: 14px;
+}
+.user-home-box .user-home-order .order-list .sign-btn,
+.user-home-box .user-home-order .order-list .close-btn{
+    display: block;
+    color: #fff;
+    width: 75px;
+    height: 26px;
+    line-height: 26px;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.user-home-box .user-home-order .order-list .sign-btn{
+    background: #00b7ee;
+}
+.user-home-box .user-home-order .order-list .close-btn{
+    background: #ff9b3a;
+}
+.user-home-box .user-home-order .order-list .over{
+    font-size: 14px;
+}
+
+
+.user-order-show{
+    float:left;
+    width:870px}
+.user-order-show .flow-path{
+    float:left;
+    width:870px;
+    height:44px;
+    margin-bottom:20px;
+    background:url(../images/order-manage-bg.png) no-repeat}
+.user-order-show .flow-path.first{
+    background-position:0 0}
+.user-order-show .flow-path.second{
+    background-position:0 -44px}
+.user-order-show .flow-path.third{
+    background-position:0 -88px}
+.user-order-show .flow-path.fourth{
+    background-position:0 -132px}
+.user-order-show .flow-path.fifth{
+    background-position:0 -176px}
+.user-order-show .product-msg{
+    float:left;
+    width:870px;
+    margin-bottom:40px}
+.user-order-show .product-msg .pm-tit{
+    float:left;
+    color:#0088d0;
+    width:870px;
+    height:34px;
+    line-height:34px;
+    margin-bottom:10px;
+    font-size:16px;
+    border-bottom:1px solid #dcdcdc}
+.user-order-show .product-msg .pm-tit strong{
+    float:left;
+    color: #333;
+    padding-left:25px;
+    background:url(../images/order-show-ico.png) no-repeat}
+.user-order-show .product-msg .pm-tit strong.ico01{
+    background-position:0 7px}
+.user-order-show .product-msg .pm-tit strong.ico02{
+    background-position:0 -44px}
+.user-order-show .product-msg .pm-tit strong.ico03{
+    background-position:0 -95px}
+.user-order-show .product-msg .pm-tit strong.ico04{
+    background-position:0 -376px}
+.user-order-show .product-msg .pm-list{
+    float:left;
+    width:870px}
+.user-order-show .product-msg .pm-list dt{
+    float:left;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    text-align:right;
+    font-size:14px}
+.user-order-show .product-msg .pm-list dd{
+    float:left;
+    width:770px;
+    min-height:30px;
+    line-height:30px;
+    font-size:14px}
+.user-order-show .product-msg .pm-list dd .zt-dcl{
+    display:block;
+    color:#fb4734}
+.user-order-show .product-msg .pm-list dd .zt-nfk{
+    display:block;
+    color:#e60012}
+.user-order-show .product-msg .pm-list dd .zt-dp{
+    display:block;
+    color:#ff9b3a}
+.user-order-show .product-msg .pm-list dd .zt-end{
+    display:block;
+    color:#00b7ee}
+.user-order-show .product-msg .table-msg{
+    float:left;
+    width:870px;
+    margin-top:10px}
+.user-order-show .product-msg .table-msg table{
+    border:1px solid #d8d8d8;
+    border-top:0}
+.user-order-show .product-msg .table-msg th{
+    text-align:center;
+    border-top:1px solid #d8d8d8;
+    background:#f2f2f2}
+.user-order-show .product-msg .table-msg td{
+    text-align:center;
+    border-top:1px solid #d8d8d8}
+.user-order-show .product-msg .table-msg .l-con{
+    float:left;
+    padding-left:20px}
+.user-order-show .product-msg .jf{
+    float:left;
+    width:870px;
+    margin:10px 0 20px}
+.user-order-show .product-msg .jf span{
+    float:left;
+    height:26px;
+    line-height:26px;
+    margin-right:20px;
+    border:1px solid #00b7ee;
+    border-radius:3px;
+    overflow:hidden}
+.user-order-show .product-msg .jf span em{
+    float:left;
+    color:#fff;
+    width:70px;
+    text-align:center;
+    background:#00b7ee}
+.user-order-show .product-msg .jf span b{
+    float:left;
+    color:#00b7ee;
+    height:26px;
+    padding:0 8px;
+    background:#fff}
+.user-order-show .product-msg .pm-list dd .zj{
+    float:left;
+    color:#c00;
+    font-size:24px;
+    font-weight:bold}
+.user-order-show .product-msg .pm-list dd .hq{
+    float:left;
+    color:#7d7d7d;
+    margin-left:25px}
+.user-order-show .product-msg .pm-list dd .nj{
+    float:left;
+    margin-right:25px}
+.user-order-show .product-msg .pm-list dd .pj{
+    float:left;
+    color:#cc0000}
+.user-order-show .order-settle{
+    float:left;
+    width:870px;
+    height:34px;
+    padding:18px 0;
+    background:#fff0d9}
+.user-order-show .order-settle span{
+    float:right;
+    height:34px;
+    line-height:34px;
+    margin-right:25px;
+    font-size:14px}
+.user-order-show .order-settle span strong{
+    color:#fb4734;
+    font-size:25px;
+    font-weight:bold}
+.user-order-show .order-settle input{
+    float:right;
+    color:#fff;
+    width:120px;
+    height:34px;
+    line-height:34px;
+    margin-right:25px;
+    text-align:center;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:3px}
+.user-order-show .order-settle input.load-btn{
+    background:#bfbfbf}
+.user-order-show .order-settle input.now-fk-btn{
+    background:#fb4734}
+.user-order-show .order-settle input.now-dp-btn{
+    background:#ff9b3a}
+.user-order-show .order-settle input.cancel-dd-btn{
+    background:#898989}
+.user-cont-box{
+    float:right;
+    width:870px;
+    padding:20px 60px;
+    margin-bottom:20px;
+    border:1px solid #dcdcdc}

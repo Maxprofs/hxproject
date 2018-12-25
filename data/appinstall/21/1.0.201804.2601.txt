@@ -1,0 +1,2 @@
+plugins/zt/views/default/zt/show.php
+plugins/zt/views/mobile/zt/show.php

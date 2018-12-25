@@ -1,0 +1,1 @@
+plugins/login_wx_client/application/views/default/mobile_5.0.php

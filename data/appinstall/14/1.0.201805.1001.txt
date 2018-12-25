@@ -1,0 +1,5 @@
+plugins/ship/classes/model/ship/line.php
+plugins/ship/views/admin/ship/edit.php
+plugins/ship/views/admin/shipline/email.php
+plugins/ship/views/admin/shipline/sms.php
+plugins/ship/views/default/ship/cruise.php

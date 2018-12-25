@@ -1,0 +1,474 @@
+.slide-img-block{
+    width: 10rem;
+    height: 3.706667rem;
+}
+.slide-img-block .pic{
+    display: block;
+    width: 10rem;
+    height: 3.706667rem;
+    overflow: hidden;
+}
+.slide-img-block .pic img{
+    max-width: 100%;
+    height: 100%;
+}
+.jf-box{
+	height: 1.32rem;
+	background: #fff;
+	border-top: 1px solid #e6e6e6;
+}
+.jf-box>ul{
+	display: -webkit-box;
+	display: -moz-box;
+}
+.jf-box>ul>li.li-1{
+	width: 6rem;
+}
+.jf-box>ul>li.li-2{
+	width: 4rem;
+}
+.jf-box>ul>li>a{
+	display: block;
+	text-align: center;
+	height: 1.32rem;
+	line-height: 1.32rem;
+	color: #323232;
+	font-size: 0.373334rem;
+}
+.jf-box>ul>li.li-1>a{
+	border-right: 1px solid #e6e6e6;
+}
+.jf-box>ul>li>a>i{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.12rem;
+	margin-top: -0.03rem;
+}
+.jf-box>ul>li.li-1>a>i{
+	width: 0.373334rem;
+	height: 0.426667rem;
+	background: url(../images/mem-ico1.png) no-repeat;
+	background-size: contain;
+}
+.jf-box>ul>li.li-2>a>i{
+	width: 0.426667rem;
+	height: 0.413334rem;
+	background: url(../images/mem-ico5.png) no-repeat;
+	background-size: contain;
+}
+.hot-tj{
+	margin-top: 0.28rem;
+	background: #fff;
+}
+.hot-tj>.hd{
+	height: 0.96rem;
+	line-height: 0.96rem;
+	padding: 0 0.4rem;
+}
+.hot-tj>.hd>h3{
+	float: left;
+	font-size: 0.426667rem;
+}
+.hot-tj>.hd>.more{
+	float: right;
+	color: #969696;
+	font-size: 0.373334rem;
+}
+.hot-tj>.hd>.more>i{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.08rem;
+	margin-top: -0.03rem;
+	width: 0.173334rem;
+	height: 0.306667rem;
+	background: url(../images/shop-arrrow-right-ico.png) no-repeat;
+	background-size: contain;
+}
+.hot-tj>.bd{
+	padding-left: 0.4rem;
+	padding-bottom: 0.4rem;
+}
+.hot-tj>.bd>ul>li{
+	float: left;
+	width: 2.4rem;
+	margin-right: 0.28rem;
+	overflow: hidden;
+}
+.hot-tj>.bd>ul>li>a{
+	display: block;
+}
+.hot-tj>.bd>ul>li>a>.pic{
+	width: 2.4rem;
+	height: 2.4rem;
+	overflow: hidden;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+}
+.hot-tj>.bd>ul>li>a>.pic>img{
+	width: 100%;
+	height: 100%;
+}
+.hot-tj>.bd>ul>li>a>.txt{
+	padding-top: 0.16rem;
+}
+.hot-tj>.bd>ul>li>a>.txt>p{
+	font-size: 0.32rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.hot-tj>.bd>ul>li>a>.txt>p.num{
+	color: #ff6600;
+}
+.shop-list{
+	margin-top: 0.28rem;
+	background: #fff;
+}
+.shop-list>.hd{
+	padding: 0.28rem 0;
+	border-bottom: 1px solid #e6e6e6;
+}
+.shop-list>.hd>ul>li{
+	float: left;
+	margin-left: 0.4rem;
+	width: auto;
+}
+.shop-list>.hd>ul>li>a{
+	display: inline-block;
+	height: 0.56rem;
+	line-height: 0.56rem;
+	border: 1px solid #f5f5f5;
+	padding: 0 0.32rem;
+	font-size: 0.32rem;
+	background: #f5f5f5;
+	border-radius: 20px;
+}
+.shop-list>.hd>ul>li.on>a{
+	background: #fff;
+	border: 1px solid #00b7ee;
+	color: #00b7ee;
+}
+.shop-list>.bd{
+	width: 9.44rem;
+	margin: 0.14rem auto;
+}
+.shop-list>.bd>ul>li{
+	float: left;
+	width: 4.48rem;
+	margin: 0.14rem 0.12rem;
+}
+.shop-list>.bd>ul>li>a{
+	display: block;
+}
+.shop-list>.bd>ul>li>a>.pic{
+	width: 4.48rem;
+	height: 3.04rem;
+	overflow: hidden;
+}
+.shop-list>.bd>ul>li>a>.pic>img{
+	border: 1px solid #e6e6e6;
+	width: 100%;
+	height: 100%;
+}
+.shop-list>.bd>ul>li>a>.txt{
+	padding-top: 0.16rem;
+}
+.shop-list>.bd>ul>li>a>.txt>p{
+	font-size: 0.32rem;
+	line-height: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.shop-list>.bd>ul>li>a>.txt>p.num{
+	color: #ff6600;
+}
+.shop-list>.see-more{
+	text-align: center;
+	padding: 0.32rem 0;
+}
+.shop-list>.see-more>a{
+	display: inline-block;
+	width: 2.24rem;
+	height: 0.64rem;
+	border: 1px solid #e6e6e6;
+	color: #969696;
+	line-height: 0.64rem;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 0.32rem;
+}
+.shop-list>.no-more{
+	text-align: center;
+	padding: 0.4rem 0;
+	color: #dcdcdc;
+	font-size: 0.32rem;
+}
+
+/*订单详情*/
+.order-top{
+	background: #fff;
+	padding: 0.2rem 0.4rem;
+	position: relative;
+	margin-bottom: 0.28rem;
+}
+.order-top>p{
+	font-size: 0.373334rem;
+	line-height: 0.6rem;
+}
+.order-top>p>span{
+	color: #646464;
+}
+.order-top>strong{
+	position: absolute;
+	right: 0.4rem;
+	top: 50%;
+	margin-top: -0.28rem;
+	color: #dd2726;
+	line-height: 0.56rem;
+	font-size: 0.426667rem;
+}
+.order-info{
+	background: #fff;
+	padding: 0 0.4rem;
+}
+.order-info>div{
+	padding: 0.24rem 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+.order-info>div:last-child{
+	border-bottom: none;
+}
+.order-info>.pic-txt{
+	display: -webkit-box;
+    display: -moz-box;
+    display: box;	
+}
+.order-info>.pic-txt>.pic{
+	width: 2.786667rem;
+	height: 1.76rem;
+	overflow: hidden;
+	margin-right: 0.32rem;
+}
+.order-info>.pic-txt>.pic img{
+	width: 100%;
+}
+.order-info>.pic-txt>.txt{
+	-webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+.order-info>.pic-txt>.txt>.tit{
+	color: #0d97db;
+	font-size: 0.373334rem;
+	line-height: 0.52rem;
+	height: 1.04rem;
+	overflow: hidden;
+}
+.order-info>.pic-txt>.txt>.des{
+	padding-top: 0.2rem;
+	font-size: 0.32rem;
+}
+.order-info>div{
+	font-size: 0.373334rem;
+}
+.order-info>div.total{
+	color: #ff6b1a;
+}
+.item-info{
+	margin-top: 0.28rem;
+	background: #fff;
+	padding: 0.2rem 0.4rem;
+	line-height: 0.64rem;
+	font-size: 0.373334rem;
+}
+.item-info>div>label{
+	float: left;
+	width: 2rem;
+}
+.item-info>div>p{
+	float: left;
+	width: 7.2rem;
+	color: #646464;
+}
+.remarks-info{
+	background: #fff;
+	margin-top: 0.28rem;
+	padding: 0.2rem 0.4rem;
+}
+.remarks-info>h3{
+	font-size: 0.373334rem;
+	line-height: 0.48rem;
+	padding-bottom: 0.15rem;
+}
+.remarks-info>p{
+	font-size: 0.32rem;
+	color: #646464;
+	line-height: 0.453334rem;
+}
+.address-info{
+	background: #fff;
+	margin-top: 0.28rem;
+	padding: 0.2rem 0.4rem;
+	font-size: 0.373334rem;
+}
+.address-info>.tit{
+	padding: 0.16rem 0;
+	border-bottom: 1px dashed #ebebeb;
+}
+.address-info>.txt{
+	padding-top: 0.2rem;	
+}
+/*商品详情*/
+.show-img-block{
+    width: 10rem;
+    height: 5.2rem;
+}
+.show-img-block .pic{
+    display: block;
+    width: 10rem;
+    height: 5.2rem;
+    overflow: hidden;
+}
+.show-img-block .pic img{
+    max-width: 100%;
+    height: 100%;
+}
+.show-img-block .swiper-pagination{
+    left: 0;
+    bottom: 0.2rem;
+    text-align: center;
+    height: 0.346667rem;
+    padding: 0 0.4rem;
+    border-radius:25px;
+    line-height: 0.3rem;
+}
+.show-img-block .swiper-pagination-bullet{
+    width: 0.16rem !important;
+    height: 0.16rem !important;
+    margin: 0 0.05rem !important;
+    opacity: 1 !important;
+    background: #fff !important;
+}
+.show-img-block .swiper-pagination-bullet-active{
+    background: #cccccc !important;
+}
+.show-txt-block{
+	padding: 0.2rem 0.4rem 0.8rem 0.4rem;
+	background: #fff;
+}
+.show-txt-block>.tit{
+	font-size: 0.373334rem;
+	line-height: 0.426667rem;
+	padding-bottom: 0.2rem;
+}
+.show-txt-block>.option>span{
+	color: #969696;
+	font-size: 0.26667rem;
+}
+.show-txt-block>.option>strong{
+	color: #ff6600;
+	font-size: 0.373334rem;
+}
+.show-des-block{
+	background: #fff;
+}
+.show-des-block>h3{
+	padding: 0.2rem 0.4rem;
+	border-bottom: 1px solid #e6e6e6;
+	font-size: 0.373334rem;
+}
+.show-des-block>.txt{
+	padding: 0.4rem;
+}
+.show-des-block>.txt>p{
+	padding:0.02rem 0;
+	line-height: 0.48rem;
+	color: #646464;
+	font-size: 0.32rem;
+}
+.show-des-block>.txt>p>img{
+	width: 100%;
+}
+.page-content-bottom{
+	bottom: 1.32rem;
+}
+.footer{
+	height: 1.32rem;
+	line-height: 1.32rem;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+}
+.footer>div{
+	width: 50%;
+	float: left;
+	text-align: center;
+	font-size: 0.48rem;
+	color: #ff6600;
+}
+.footer>div.link{
+	background: #fe7e13;
+}
+.footer>div.link>a{
+	color: #fff;
+}
+/*订单填写*/
+.made-receipt strong, .write-address strong{
+	color: #333;
+}
+.bom-fixed-block .total .jg{
+	color: #333;
+}
+.bom-fixed-block .total .jg>i{
+	color: #ff6600;
+}
+/*兑换成功*/
+.exchange-box{
+	background: #fff;
+	padding: 1rem 0.4rem;
+	text-align: center;
+}
+.exchange-box>.ico{
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+}
+.exchange-box-success>.ico{
+	background: url(../images/shop-success-ico.png) no-repeat;
+	background-size: contain;
+}
+.exchange-box-fail>.ico{
+	background: url(../images/shop-fail-ico.png) no-repeat;
+	background-size: contain;
+}
+.exchange-box>strong{
+	display: block;
+	font-size: 0.48rem;
+	line-height: 0.92rem;
+}
+.exchange-box>.option{
+	padding-top: 0.4rem;
+}
+.exchange-box>.option>a{
+	display: inline-block;
+	width: 3.44rem;
+	height: 0.92rem;
+	line-height: 0.92rem;
+	border: 1px solid #22a4e0;
+	border-radius: 10px;
+	margin: 0 0.3rem;
+	color: #22a4e0;
+	font-size: 0.373334rem;
+}
+.exchange-box>.option>a.order{
+	border: 1px solid #ff931b;
+	color: #ff931b;
+}
+.ecchange-other{
+	padding: 0.4rem;
+}
+.ecchange-other>p{
+	font-size: 0.373334rem;
+	line-height: 0.64rem;
+}

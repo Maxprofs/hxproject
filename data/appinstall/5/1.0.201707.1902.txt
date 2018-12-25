@@ -1,0 +1,2 @@
+plugins/hotel/classes/controller/mobile/hotel.php
+plugins/hotel/views/mobile/hotel/list.php

@@ -1,0 +1,197 @@
+.s-main{
+}
+.s-main .s-search{
+    background: #DCE4EA;
+    padding: 3px;
+    height:30px;
+    line-height: 30px;
+}
+.s-main .s-search .txt-wp{
+    margin-top:1px;
+}
+.s-main .s-search .txt-wp .s-txt{
+     border:1px solid #DCDCDC;
+     line-height:25px;
+     height: 25px;
+     width: 250px;
+     float:left;
+ }
+.s-main .s-search .txt-wp .s-sel{
+    border:1px solid #DCDCDC;
+    line-height:25px;
+    height: 25px;
+    float:left;
+}
+
+.s-search .txt-wp .s-btn{
+    float:left;
+    height: 20px;
+    width: 20px;
+    line-height: 25px;
+    margin-top:5px;
+    margin-left:-25px;
+    background: url(../images/dest_btns.png) no-repeat -20px 0px;
+}
+.s-search .txt-wp .s-btn:hover{
+    background: url(../images/dest_btns.png) no-repeat -20px 0px;
+}
+.s-search .txt-wp .s-btn:active{
+    background: url(../images/dest_btns.png) no-repeat -40px 0px;
+}
+.s-main .save-con{
+    padding: 5px 0px;
+    text-align: center;
+}
+.confirm-btn{
+    background: #43AEE4;
+    -moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+    line-height: 25px;
+    height: 25px;
+    padding: 0px 15px;
+    display: inline-block;
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.confirm-btn:hover{
+    background:#008ED8;
+}
+.confirm-btn:active{
+    background: #F6B74D;
+}
+.page-info{
+    padding: 5px;
+    height:35px;
+}
+.dlg-list{
+    width:100%;
+}
+.dlg-list .dlg-hd{
+}
+.dlg-list .dlg-hd th{
+    background: #efefef;
+    color:#333;
+    font-weight: 300;
+    padding: 7px 10px 7px 10px;
+    margin-right: 1px;
+    border-right: 1px solid #eee;
+}
+.dlg-list .tb-item td{
+    height:30px;
+    vertical-align: middle;
+    padding:2px 10px 2px 10px;
+    border-bottom:1px solid #e2eff8;
+}
+.dlg-list .dlg-hd th.hd-last{
+    border-right: 0px;
+}
+
+
+.pageContainer .pagePart .floor{
+    float:left;
+    padding: 0px 8px;
+    height:24px;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 5px;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+}
+.pageContainer .pagePart .more{
+    width: 24px;
+}
+.pageContainer .pagePart .short{
+    float:left;
+    height:24px;
+    width:16px;
+}
+
+.pageContainer .pagePart .pageable{
+    background: #fff;
+    color:#333;
+    border:1px solid  #546478;
+}
+.pageContainer .pagePart .pageable:hover{
+    background: #546478;
+    color:white;
+    border:1px solid  #546478;
+}
+
+.pageContainer .pageHint{
+    margin-left:8px;
+}
+.pageContainer .pageHint .totalPage{
+    color:red;
+    padding: 0px 2px;
+}
+.pageContainer .pageHint .totalCount{
+    color:red;
+    padding: 0px 2px;
+}
+.pageContainer .pagePart .more.floor{
+    width:25px;
+    line-height:18px;
+    font-weight: 600;
+}
+.pageContainer .pagePart .prevPage{
+    margin-right: 2px;
+}
+.pageContainer .pagePart span.prevPage{
+    background:url(../images/column-btns.png) -5px -296px no-repeat;
+}
+.pageContainer .pagePart a.prevPage{
+    background:url(../images/column-btns.png) -5px -188px no-repeat;
+}
+.pageContainer .pagePart a.prevPage:hover{
+    background:url(../images/column-btns.png) -5px -81px no-repeat;
+}
+
+.pageContainer .pagePart span.firstPage{
+    background:url(../images/column-btns.png) -5px -350px no-repeat;
+}
+.pageContainer .pagePart a.firstPage{
+    background:url(../images/column-btns.png) -5px -242px no-repeat;
+}
+.pageContainer .pagePart a.firstPage:hover{
+    background:url(../images/column-btns.png) -5px -135px no-repeat;
+}
+
+.pageContainer .pagePart span.nextPage{
+    background:url(../images/column-btns.png) -5px -323px no-repeat;
+}
+.pageContainer .pagePart a.nextPage
+{
+    background:url(../images/column-btns.png) -5px -215px no-repeat;
+}
+.pageContainer .pagePart a.nextPage:hover
+{
+    background:url(../images/column-btns.png) -5px -108px no-repeat;
+}
+.pageContainer .pagePart span.lastPage{
+    background:url(../images/column-btns.png) -5px -378px no-repeat;
+}
+.pageContainer .pagePart a.lastPage
+{
+    background:url(../images/column-btns.png) -5px -269px no-repeat;
+}
+.pageContainer .pagePart a.lastPage:hover
+{
+    background:url(../images/column-btns.png) -5px -161px no-repeat;
+}
+
+.pageContainer .pagePart .current{
+    background: #F7B84F;
+    color:#fff;
+    border:1px solid  #F7B84F;
+
+}
+.pageContainer .pageHint{
+    line-height: 25px;
+}
+.pageContainer{
+    float:right;
+}

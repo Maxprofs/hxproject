@@ -1,0 +1,547 @@
+@charset "utf-8";
+/*公用样式*/
+.btn-wrap{
+    position: absolute;
+    bottom:0;
+    width: 10rem;
+    height: 1.2rem;
+}
+.invo-btn{
+    display: inline-block;
+    width: 100%;
+    height:1.2rem;
+    text-align: center;
+    line-height: 1.2rem;
+    background-color: #ff8a00;
+    color: #fff;
+    font-size: 0.37334rem;
+}
+
+/*常用信息*/
+.commsg-list-group{
+    padding: 0 0.4rem;
+    background-color: #fff;
+}
+.commsg-list-group li{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.commsg-list-group > li:last-child {
+    border-bottom: 0;
+}
+.commsg-list-group > li a {
+    display: block;
+    width: 9.2rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+.commsg-list-group li .hd {
+    display: inline-block;
+    width: 100%;
+    height: 1.2rem;
+    font-size: 0.37334rem;
+    color: #323232;
+}
+.commsg-list-group li .arrow-rig-icon {
+    display: inline-block;
+    width: 0.17334rem;
+    height: 0.29334rem;
+    position: absolute;
+    top: 50%;
+    right:0;
+    background: url(../images/arr-more-ico.png) center no-repeat;
+    background-size: contain;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*常用发票信息列表*/
+.invoice-list-content{
+    bottom: 1.2rem;
+}
+.invoice-list-block .item{
+    margin-bottom: 0.266667rem;
+    background: #fff
+}
+.invoice-list-block .box{
+    padding: 0.22667rem 0.49334rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+.invoice-list-block .box:last-child{
+    border-bottom: 0
+}
+.invoice-list-block .box .bd-info .bt{
+    font-size: 0.373333rem;
+    line-height: 0.56rem;
+}
+.invoice-list-block .box .bd-info .tc{
+    height: 0.56rem;
+    font-size: 0;
+}
+.invoice-list-block .box .bd-info .tc>span{
+    display: inline-block;
+    height: 0.56rem;
+    margin-right: 0.8rem;
+    color: #999;
+    line-height: 0.56rem;
+    font-size: 0.32rem
+}
+.invoice-list-block .bar{
+    height: 1.0667rem;
+    padding: 0 0.28rem;
+    text-align: right;
+}
+.invoice-list-block .bar>a{
+    display: inline-block;
+    height: 1.0667rem;
+    line-height: 1.0667rem;
+    margin-left: 0.4667rem;
+    font-size: 0.32rem;
+    cursor: pointer;
+}
+.invoice-list-block .bar .icon{
+    display: inline-block;
+    width: 0.4rem;
+    margin: -0.08rem 0.08rem 0 0;
+    vertical-align: middle;
+}
+.invoice-list-block .bar .edit-btn .icon{
+    height: 0.37334rem;
+    background: url("../images/edit-ico.png") center no-repeat;
+    background-size: contain;
+}
+.invoice-list-block .bar .del-btn .icon{
+    height: 0.4rem;
+    background: url("../images/delete-addrss-icon.png") center no-repeat;
+    background-size: contain;
+}
+
+/*新增或编辑常用发票信息*/
+.invoice-tabs-con dl{
+    display: none;
+}
+.invoice-tabs-con dl.on{
+    display: block;
+}
+.edit-invoice-con{
+    background-color: #fff;
+    padding: 0 0.4rem;
+}
+.edit-invoice-con dd{
+    padding: 0.32rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.edit-invoice-con dd:last-child{
+    border-bottom: 0;
+}
+.edit-invoice-con dd .hd{
+    float: left;
+    width: 2.98rem;
+    line-height: 0.5334rem;
+    font-size: 0.3734rem;
+}
+.edit-invoice-con dd .bd{
+    padding-left: 2.98rem;
+    line-height: 0.5334rem;
+    position: relative;
+}
+.edit-invoice-con dd .bd label{
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 0.37334rem;
+}
+.edit-invoice-con dd .bd label .sel-ico{
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url("../images/invoice-sel-ico.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: -0.05rem 0.1rem 0 0;
+}
+.edit-invoice-con dd .bd label.on .sel-ico{
+    background: url("../images/invoice-sel-ico-on.png") no-repeat;
+    background-size: contain;
+}
+.edit-invoice-con dd .bd>a{
+    display: block;
+}
+.edit-invoice-con dd .bd .txt{
+    display: block;
+    width: 94%;
+    min-height:0.5334rem;
+    line-height: 0.5334rem;
+    color: #333;
+    font-size: 0.37334rem;
+}
+.edit-invoice-con dd .bd span.txt{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.edit-invoice-con dd .bd .tags{
+    position: absolute;
+    right:0;
+    top:0;
+    width: 0.97rem;
+    line-height: 0.53334rem;
+    text-align: right;
+    font-size: 0.37334rem;
+    color: #c8c8c8;
+}
+
+
+/*弹框*/
+.lay-wrap{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.del-wrap{
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color: #fbfbfb;
+    width: 6.5334rem;
+    height: 2.5334rem;
+    -webkit-border-radius: 0.334rem;
+    -moz-border-radius: 0.334rem;
+    border-radius: 0.334rem;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+.del-wrap p{
+    width: 100%;
+    height: 1.44rem;
+    line-height: 1.44rem;
+    font-size: 0.37334rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+.del-wrap .lay-btn-wrap{
+    display: -webkit-box;
+}
+.del-wrap .lay-btn-wrap a{
+    color: #1886fe;
+    display: block;
+    height: 1.0667rem;
+    width: 50%;
+    -webkit-box-flex: 1;
+    text-align: center;
+    font-size: 0.37334rem;
+    line-height: 1.0667rem;
+    border-right: 1px solid #f0f0f0;
+}
+.del-wrap .lay-btn-wrap a:last-child{
+    border-right: 0;
+}
+.del-wrap .lay-btn-wrap a:active{
+    background-color: #ebebeb;
+}
+
+
+/* 暂无发票信息 */
+.no-invoice-page{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.no-invoice-icon{
+    width: 1.56rem;
+    height: 1.37334rem;
+    margin: 0 auto;
+    background: url("../images/no-invoice-ico.png") center no-repeat;
+    background-size: contain;
+}
+.no-invoice-txt{
+    color: #c8c8c8;
+    padding-top: 0.266667rem;
+    text-align: center;
+    font-size: 0.32rem
+}
+
+/*已有邮寄地址*/
+.invoice-info-list{
+    background-color: #fff;
+}
+.invoice-info-list li{
+    padding: 0.1834rem 0.36rem 0.2834rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.invoice-info-list li:last-child{
+    border-bottom: 0;
+}
+.invoice-info-list li .info{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    height: 0.73334rem;
+    overflow: hidden;
+}
+.invoice-info-list li .info span{
+    -webkit-box-flex: 1;
+    font-size: 0.32rem;
+    line-height: 0.73334rem;
+}
+.invoice-info-list li .info span.name{
+    width: 6.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.invoice-info-list li .addr{
+    margin-top: 0.1rem;
+    font-size: 0.32rem;
+    line-height: 0.42664rem;
+}
+.invoice-info-list li .addr .tips{
+    color: #ff5500;
+    padding-right: 0.1334rem;
+}
+
+/*新增或编辑发票邮寄地址*/
+.mail-invoice-con{
+    background-color: #fff;
+    margin-bottom: 0.2667rem;
+}
+.mail-invoice-con dd{
+    padding: 0.32rem 0.4rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.mail-invoice-con dd:last-child{
+    border-bottom: 0;
+}
+.mail-invoice-con dd .hd{
+    float: left;
+    width: 2rem;
+    line-height: 0.5334rem;
+    font-size: 0.3734rem;
+}
+.mail-invoice-con dd .bd{
+    padding-left: 2rem;
+    line-height: 0.5334rem;
+    position: relative;
+}
+.edit-invoice-con dd .bd label{
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 0.37334rem;
+}
+.mail-invoice-con dd .bd label .sel-ico{
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url("../images/invoice-sel-ico.png") no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: -0.05rem 0.1rem 0 0;
+}
+.mail-invoice-con dd .bd label.on .sel-ico{
+    background: url("../images/invoice-sel-ico-on.png") no-repeat;
+    background-size: contain;
+}
+.mail-invoice-con dd .bd .txt{
+    display: block;
+    width: 6.8rem;
+    height:0.5334rem;
+    line-height: 0.5334rem;
+    color: #333;
+    font-size: 0.37334rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mail-invoice-con dd .bd .arr-more-icon{
+    position: absolute;
+    right:0;
+    top:50%;
+    width: 0.22667rem;
+    height: 0.38667rem;
+    background: url("../images/addr-arr-r.png") no-repeat;
+    background-size: contain;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.mail-invoice-con dd textarea{
+    border: 0;
+    padding: 0;
+    resize: none;
+    width: 9.2rem;
+    line-height: 0.4rem;
+    font-size: 0.32rem;
+    min-height: 1.6rem;
+}
+.check-box{
+    height:0.5334rem;
+    text-align: right;
+    position: relative;
+}
+.check-box .check-ico{
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+    width: 0.37334rem;
+    height: 0.37334rem;
+    background: url("../images/check-label-icon-un.png") no-repeat;
+    background-size: contain;
+}
+.check-box.on .check-ico{
+    background: url("../images/check-label-icon-on.png") no-repeat;
+    background-size: contain;
+}
+
+/*发票信息*/
+.invoice-tabs{
+    padding: 0.32rem 0.4rem;
+    background-color: #fff;
+    margin-bottom: 0.2667rem;
+}
+.invoice-tabs span{
+    float: left;
+    background-color: #f7f7f7;
+    width: 2.667rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.37334rem;
+    color: #666;
+    border-radius: 0.13rem;
+    margin-right: 0.2667rem;
+}
+.invoice-tabs span.on{
+    color: #27a9e3;
+    background-color: #e2f4ff;
+}
+.edit-invoice-con dd .bd .arr-more-icon{
+    position: absolute;
+    right:0;
+    top:50%;
+    width: 0.17334rem;
+    height: 0.29334rem;
+    background: url("../images/arrow-more-ico.png") no-repeat;
+    background-size: contain;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.tip-words{
+    padding: 0 0.4rem;
+    margin-top: 0.29334rem;
+    font-size: 0.32rem;
+    color: #666;
+    line-height: 0.48rem;
+}
+
+.invoice-tit-sel{
+    padding: 0 0.50667rem;
+    background-color: #fff;
+}
+.invoice-tit-sel li{
+    padding: 0.4rem 0;
+}
+.invoice-tit-sel li label{
+    display: block;
+}
+.invoice-tit-sel li label .tit-name{
+    display: inline-block;
+    width: 8.02rem;
+    min-height: 0.57334rem;
+    line-height: 0.57334rem;
+    font-size: 0.37334rem;
+    color: #323232;
+    vertical-align: middle;
+}
+.invoice-tit-sel li label .sel-ico {
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url(../images/invoice-sel-ico.png) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin: -0.04rem 0.50667rem 0 0;
+}
+.invoice-tit-sel li label.on .sel-ico {
+    background: url(../images/invoice-sel-ico-on.png) no-repeat;
+    background-size: contain;
+}
+
+/*预订页发票*/
+.invoice-block{
+
+}
+.invoice-block > ul > li{
+    padding: 0 0.27rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+.invoice-block > ul li:last-child{
+    border-bottom: 0;
+}
+.invoice-block > ul > li>.all {
+    display: -webkit-box;
+    display: -moz-box;
+    width: 100%;
+}
+.invoice-block > ul > li>.all span {
+    display: block;
+    line-height: 1.28rem;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    font-size: 0.373334rem;
+    position: relative;
+}
+.invoice-block .item{
+    width: 2.2rem;
+}
+.invoice-block .item strong {
+    font-size: 0.37rem;
+    font-weight: normal!important;
+}
+.invoice-block > ul > li>.all span .txt{
+    display: inline-block;
+    width: 6.72rem;
+    font-style: normal!important;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+}
+.invoice-block .more-type .more-ico {
+    position: absolute;
+    right:0;
+    top:50%;
+    width: 0.2rem;
+    height: 0.33rem;
+    vertical-align: middle;
+    background: url(../images/arrow-more-ico.png) no-repeat;
+    background-size: cover;
+    transform: translateY(-50%);
+}
+.invoice-content{
+    bottom: 0rem;
+}

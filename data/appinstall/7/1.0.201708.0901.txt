@@ -1,0 +1,2 @@
+plugins/article/classes/controller/pc/article.php
+plugins/article/classes/model/article.php

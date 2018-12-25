@@ -1,0 +1,180 @@
+@charset "utf-8";
+body{
+    background: #f6f6f6;
+}
+.big{
+    margin-top: 40px;
+}
+
+/*发票列表*/
+.user-invoice-wrap{
+    width: 942px;
+    min-height: 700px;
+    padding: 0 25px;
+    background-color: #fff;
+}
+.invoice-tit-box{
+    padding: 19px 0 16px;
+}
+.invoice-tit-box h3{
+    font-size: 18px;
+    color: #333;
+    line-height: 30px;
+}
+.invoice-tit-box .add-invo-btn{
+    background-color:#FF931A;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+.invoice-con-box{
+    width: 100%;
+}
+.invoice-con-box table{
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+}
+.invoice-con-box table th{
+    padding: 8px 0;
+}
+.invoice-con-box table th>div{
+    height: 45px;
+    line-height: 45px;
+    background-color: #fafafc;
+}
+.invoice-con-box table .invo-name{
+    padding-left: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.invoice-con-box table td .invo-name{
+   width:394px;
+}
+.invoice-con-box table .invo-btn-box{
+    padding-left: 210px;
+}
+.invoice-con-box table .invo-type,
+.invoice-con-box table .invo-btn-box{
+    text-align: center;
+}
+.invoice-con-box table tbody tr{
+    border: 1px solid #f6f6f6;
+    height:40px;
+    line-height: 40px;
+}
+.invoice-con-box table tbody tr:hover{
+    background-color: #fafafc;
+}
+.invoice-con-box table .invo-btn-box>a{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/*新增或编辑发票信息*/
+.invoice-info{
+
+}
+.invoice-info .title{
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 19px 0 16px;
+}
+.invoice-item li{
+    margin-top: 10px;
+}
+.invoice-item > li:after{
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.invoice-item .item-bt{
+    float: left;
+    width: 130px;
+    height: 32px;
+    line-height: 32px;
+    text-align: right;
+    font-size: 14px;
+    color: #999;
+}
+.invoice-item .item-bt i{
+    color: #fc6210;
+    vertical-align: middle;
+    padding-left: 3px;
+    font-style: normal;
+}
+.invoice-item .item-nr{
+    min-height: 32px;
+    padding-left: 130px;
+}
+.invoice-item .item-nr label{
+    display: inline-block;
+    width: 135px;
+    font-size: 14px;
+    color: #333;
+    line-height: 32px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.invoice-item .item-nr label input{
+    vertical-align: middle;
+    margin:-2px 5px 0 0;
+}
+.invoice-item .item-nr .input-text{
+    width: 406px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 5px;
+    font-size: 12px;
+    border: 1px solid #dcdcdc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.invoice-info .btn-wrap{
+    padding-left: 130px;
+    margin-top: 45px;
+}
+.invoice-info .btn-wrap>a{
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #dedede;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.invoice-info .btn-wrap>a.cancel-btn{
+    border: 1px solid #dedede;
+    background-color: #f1f1f1;
+    margin-right: 12px;
+}
+.invoice-info .btn-wrap>a.confirm-btn{
+    border: 1px solid #2e8ded;
+    background-color: #2e8ded;
+    color: #fff;
+}
+
+#del-invoice p{
+    padding: 15px 0;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+/*验证错误*/
+.invoice-item .item-nr label.error{
+    color:red;
+    width:300px;
+    margin-left:5px;
+}

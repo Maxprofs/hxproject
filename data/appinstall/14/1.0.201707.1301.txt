@@ -1,0 +1,2 @@
+plugins/ship/public/images/ls-icobg.png
+plugins/ship/views/default/ship/show.php

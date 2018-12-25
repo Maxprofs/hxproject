@@ -1,0 +1,5 @@
+plugins/line/views/admin/line/list.php
+plugins/line/views/admin/line/attrid/list.php
+plugins/line/views/admin/line/destination/destination.php
+plugins/line/views/default/line/book.php
+plugins/line/views/mobile/line/book.php

@@ -1,0 +1,3 @@
+plugins/zt/classes/model/zt/channel/product.php
+plugins/zt/views/default/index.php
+plugins/zt/views/mobile/index.php

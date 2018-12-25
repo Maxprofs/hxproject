@@ -1,0 +1,4 @@
+plugins/spot/public/css/scenic.css
+plugins/spot/public/images/car-show-type-tit-ico.png
+plugins/spot/public/images/xl-ico.png
+plugins/spot/views/default/spot/show.php

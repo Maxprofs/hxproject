@@ -1,0 +1,1 @@
+plugins/photo/public/mobile/css/photo.css

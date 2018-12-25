@@ -1,0 +1,3 @@
+plugins/car/public/css/car.css
+plugins/car/public/images/ls-icobg.png
+plugins/car/views/default/car/show.php

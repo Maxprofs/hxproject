@@ -1,0 +1,4 @@
+plugins/alipay/classes/controller/admin/alipay.php
+plugins/alipay/classes/controller/mobile/alipay.php
+plugins/alipay/classes/controller/pc/alipaycash.php
+plugins/alipay/views/admin/alipay/index.php

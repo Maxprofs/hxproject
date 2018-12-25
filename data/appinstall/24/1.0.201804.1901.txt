@@ -1,0 +1,4 @@
+plugins/platform_income/classes/controller/admin/platform/income.php
+plugins/platform_income/classes/model/platform/income.php
+plugins/platform_income/views/admin/platform_income/excel.php
+plugins/platform_income/views/admin/platform_income/list.php

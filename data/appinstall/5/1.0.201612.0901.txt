@@ -1,0 +1,13 @@
+sql.php
+unsql.php
+plugins/hotel/classes/controller/admin/hotel.php
+plugins/hotel/classes/controller/mobile/hotel.php
+plugins/hotel/classes/controller/pc/hotel.php
+plugins/hotel/public/css/hotel.css
+plugins/hotel/views/admin/hotel/edit.php
+plugins/hotel/views/admin/hotel/list.php
+plugins/hotel/views/admin/hotel/room_edit.php
+plugins/hotel/views/default/hotel/book.php
+plugins/hotel/views/default/hotel/list.php
+plugins/hotel/views/default/hotel/show.php
+plugins/hotel/views/mobile/hotel/book.php

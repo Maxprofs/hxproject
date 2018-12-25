@@ -1,0 +1,1 @@
+plugins/supplier_hotel/application/classes/stourweb/view.php
