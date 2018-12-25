@@ -1,4 +1,0 @@
-plugins/hotel/views/admin/hotel/list.php
-plugins/hotel/views/admin/hotel/attrid/list.php
-plugins/hotel/views/admin/hotel/destination/destination.php
-plugins/hotel/views/default/hotel/book.php

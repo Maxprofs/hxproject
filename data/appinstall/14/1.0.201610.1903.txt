@@ -1,4 +1,0 @@
-plugins/ship/public/js/jmonthcalendar.js
-plugins/ship/views/default/ship/index.php
-plugins/ship/views/default/ship/list.php
-plugins/ship/views/default/ship/show.php

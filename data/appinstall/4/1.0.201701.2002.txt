@@ -1,3 +1,0 @@
-plugins/line/public/css/lines.css
-plugins/line/public/images/ls-icobg.png
-plugins/line/views/default/line/show.php

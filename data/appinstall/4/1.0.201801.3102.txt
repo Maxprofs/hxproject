@@ -1,7 +1,0 @@
-plugins/line/classes/controller/admin/line/destination.php
-plugins/line/views/admin/line/order/list.php
-plugins/line/views/admin/line/order/view.php
-plugins/line/views/admin/line/order/status/box-order-refund.php
-plugins/line/views/default/line/book/index.php
-plugins/line/views/mobile/line/discount.php
-plugins/line/views/mobile/line/over_book.php

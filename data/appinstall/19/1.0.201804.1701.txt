@@ -1,1 +1,0 @@
-plugins/login_weixin/application/classes/controller/index.php

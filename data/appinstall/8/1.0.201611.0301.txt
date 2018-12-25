@@ -1,1 +1,0 @@
-plugins/notes/views/mobile/notes/index.php

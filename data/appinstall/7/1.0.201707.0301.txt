@@ -1,2 +1,0 @@
-plugins/article/views/admin/article/edit.php
-plugins/article/views/default/article/show.php

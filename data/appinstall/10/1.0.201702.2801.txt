@@ -1,3 +1,0 @@
-plugins/visa/classes/controller/admin/visa.php
-plugins/visa/classes/controller/admin/visa/attrid.php
-plugins/visa/classes/model/visa/content.php

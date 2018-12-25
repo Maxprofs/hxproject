@@ -1,3 +1,0 @@
-plugins/spot/classes/controller/admin/spot/destination.php
-plugins/spot/public/css/scenic.css
-plugins/spot/views/default/spot/show.php

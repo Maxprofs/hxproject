@@ -1,2 +1,0 @@
-plugins/alipay/classes/controller/admin/alipay.php
-plugins/alipay/views/admin/alipay/index.php

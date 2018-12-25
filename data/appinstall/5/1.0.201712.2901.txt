@@ -1,9 +1,0 @@
-sql.php
-unsql.php
-plugins/hotel/classes/controller/pc/hotel.php
-plugins/hotel/classes/taglib/hotel.php
-plugins/hotel/views/default/hotel/list.php
-plugins/hotel/views/default/hotel/block/destrelatedhotel.php
-plugins/hotel/views/default/hotel/block/hothotel.php
-plugins/hotel/views/default/hotel/block/newesthotel.php
-plugins/hotel/views/default/hotel/block/tagwordrelatedhotel.php

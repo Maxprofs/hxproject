@@ -1,2 +1,0 @@
-plugins/line/classes/controller/admin/line.php
-plugins/line/views/admin/line/calendar/dialog_add_price.php

@@ -1,3 +1,0 @@
-plugins/supplier_line/application/classes/model/member/order.php
-plugins/supplier_line/application/views/default/order/all.php
-plugins/supplier_line/application/views/default/order/show.php

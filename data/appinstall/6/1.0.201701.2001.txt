@@ -1,4 +1,0 @@
-plugins/spot/views/admin/spot/list.php
-plugins/spot/views/admin/spot/attrid/list.php
-plugins/spot/views/admin/spot/destination/destination.php
-plugins/spot/views/default/spot/book.php

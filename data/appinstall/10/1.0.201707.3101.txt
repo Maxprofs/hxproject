@@ -1,2 +1,0 @@
-plugins/visa/classes/controller/admin/visa.php
-plugins/visa/views/admin/visa/area_config.php

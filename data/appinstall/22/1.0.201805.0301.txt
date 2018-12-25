@@ -1,6 +1,0 @@
-plugins/supplier/public/css/hdate.css
-plugins/supplier/public/css/order.css
-plugins/supplier/public/images/dc-arrow-right-ico.png
-plugins/supplier/public/js/jquery.min.js
-plugins/supplier/public/js/hdate/hdate.css
-plugins/supplier/public/js/hdate/hdate.js

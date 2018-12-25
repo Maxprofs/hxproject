@@ -1,3 +1,0 @@
-plugins/supplier/public/default/mobile/css/style.css
-plugins/supplier/public/default/mobile/images/wxf-ico.png
-plugins/supplier/public/default/mobile/images/yxf-ico.png

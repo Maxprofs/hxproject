@@ -1,3 +1,0 @@
-plugins/ship/views/admin/ship/destination/destination.php
-plugins/ship/views/admin/ship/order/list.php
-plugins/ship/views/admin/shipline/index.php

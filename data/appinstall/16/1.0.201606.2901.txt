@@ -1,3 +1,0 @@
-﻿plugins/supplier_hotel/application/classes/controller/order.php
-plugins/supplier_hotel/application/classes/model/member/order.php
-plugins/supplier_hotel/application/views/default/order/all.php

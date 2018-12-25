@@ -1,2 +1,0 @@
-plugins/car/classes/controller/pc/car.php
-plugins/car/views/default/car/list.php

@@ -1,2 +1,0 @@
-plugins/line/public/css/lines.css
-plugins/line/public/mobile/css/line.css

@@ -1,4 +1,0 @@
-plugins/zt/classes/model/zt.php
-plugins/zt/classes/model/zt/channel.php
-plugins/zt/classes/model/zt/channel/coupon.php
-plugins/zt/classes/model/zt/channel/product.php

@@ -1,6 +1,0 @@
-plugins/line/views/admin/line/edit.php
-plugins/line/views/admin/line/list.php
-plugins/line/views/admin/line/suit_edit.php
-plugins/line/views/admin/line/attrid/config.php
-plugins/line/views/admin/line/attrid/list.php
-plugins/line/views/admin/line/order/list.php

@@ -1,3 +1,0 @@
-plugins/article/views/admin/article/edit.php
-plugins/article/views/mobile/article/show.php
-plugins/article/views/substation/article/show.php

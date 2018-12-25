@@ -1,3 +1,0 @@
-plugins/article/classes/controller/admin/article/destination.php
-plugins/article/classes/model/article.php
-plugins/article/views/mobile/article/show.php

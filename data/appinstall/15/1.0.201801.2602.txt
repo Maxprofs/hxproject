@@ -1,2 +1,0 @@
-plugins/supplier_line/application/classes/model/sysconfig.php
-plugins/supplier_line/application/classes/model/line/suit/price.php

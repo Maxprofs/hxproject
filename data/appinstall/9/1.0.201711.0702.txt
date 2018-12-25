@@ -1,2 +1,0 @@
-plugins/car/views/default/car/list.php
-plugins/car/views/default/car/show.php

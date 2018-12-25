@@ -1,3 +1,0 @@
-plugins/line/classes/controller/admin/line.php
-plugins/line/classes/model/line.php
-plugins/line/classes/taglib/line.php

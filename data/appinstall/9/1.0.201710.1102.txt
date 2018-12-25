@@ -1,8 +1,0 @@
-plugins/car/classes/controller/mobile/car/member.php
-plugins/car/classes/controller/pc/car/member.php
-plugins/car/public/mobile/css/refund.css
-plugins/car/public/mobile/images/check-label-icon-un-02.png
-plugins/car/views/admin/car/order/view.php
-plugins/car/views/default/car/member/orderview.php
-plugins/car/views/mobile/car/member/orderview.php
-plugins/car/views/mobile/car/member/refund.php

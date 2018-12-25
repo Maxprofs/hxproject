@@ -1,9 +1,0 @@
-plugins/supplier_line/application/classes/controller/calendar.php
-plugins/supplier_line/application/classes/controller/index.php
-plugins/supplier_line/application/classes/controller/uploader.php
-plugins/supplier_line/application/views/default/edit.php
-plugins/supplier_line/application/views/default/list.php
-plugins/supplier_line/application/views/default/suit_edit.php
-plugins/supplier_line/application/views/default/calendar/dialog_add_price.php
-plugins/supplier_line/application/views/default/destination/dialog_setdest.php
-plugins/supplier_line/public/js/common.js

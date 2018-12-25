@@ -1,1 +1,0 @@
-plugins/productmap/application/bootstrap.php

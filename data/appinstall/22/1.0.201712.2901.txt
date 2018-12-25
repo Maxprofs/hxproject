@@ -1,1 +1,0 @@
-plugins/supplier/public/default/pc/js/jquery.validate.min.js

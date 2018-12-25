@@ -1,3 +1,0 @@
-plugins/finance/init.php
-plugins/finance/classes/controller/admin/financeextend.php
-plugins/finance/classes/model/member/order/extend.php

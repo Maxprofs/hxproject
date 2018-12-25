@@ -1,3 +1,0 @@
-﻿plugins/supplier_car/application/classes/controller/index.php
-plugins/supplier_car/application/views/default/list.php
-plugins/supplier_car/application/views/default/suit_list.php

@@ -1,2 +1,0 @@
-plugins/hotel/classes/controller/pc/hotel.php
-plugins/hotel/classes/model/hotel/kindlist.php

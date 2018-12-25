@@ -1,6 +1,0 @@
-plugins/coupon/classes/controller/admin/coupon.php
-plugins/coupon/classes/model/coupon.php
-plugins/coupon/public/css/coupon.css
-plugins/coupon/views/admin/edit.php
-plugins/coupon/views/default/coupon/f_get_box.php
-plugins/coupon/views/default/coupon/index.php

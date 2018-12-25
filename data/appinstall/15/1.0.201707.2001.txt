@@ -1,3 +1,0 @@
-plugins/supplier_line/application/bootstrap.php
-plugins/supplier_line/application/classes/common.php
-plugins/supplier_line/application/classes/model/member/order.php

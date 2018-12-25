@@ -1,3 +1,0 @@
-plugins/customize/classes/controller/mobile/customize.php
-plugins/customize/classes/controller/pc/customize.php
-plugins/customize/views/mobile/customize/index.php

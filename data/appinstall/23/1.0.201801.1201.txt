@@ -1,4 +1,0 @@
-plugins/api/views/admin/api/interop_log.php
-plugins/api/views/admin/api/interop_log_detail.php
-plugins/api/views/admin/api/list.php
-plugins/api/views/admin/api/update_client.php

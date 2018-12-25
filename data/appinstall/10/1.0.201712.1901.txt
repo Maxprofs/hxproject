@@ -1,2 +1,0 @@
-plugins/visa/views/admin/visa/list.php
-plugins/visa/views/admin/visa/order/list.php

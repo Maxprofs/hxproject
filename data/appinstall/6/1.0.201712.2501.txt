@@ -1,1 +1,0 @@
-plugins/spot/public/mobile/css/spot.css

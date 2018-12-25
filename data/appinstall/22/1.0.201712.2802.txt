@@ -1,2 +1,0 @@
-plugins/supplier/public/default/pc/css/login.css
-plugins/supplier/public/default/pc/css/style.css

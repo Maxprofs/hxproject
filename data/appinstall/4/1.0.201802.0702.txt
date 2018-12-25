@@ -1,3 +1,0 @@
-plugins/line/views/admin/line/calendar/dialog_add_price.php
-plugins/line/views/admin/line/order/add.php
-plugins/line/views/default/line/show.php

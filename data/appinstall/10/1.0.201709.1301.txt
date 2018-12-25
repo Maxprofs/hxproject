@@ -1,4 +1,0 @@
-plugins/visa/public/mobile/css/order.css
-plugins/visa/public/mobile/css/visa.css
-plugins/visa/views/mobile/visa/list.php
-plugins/visa/views/mobile/visa/member/orderview.php

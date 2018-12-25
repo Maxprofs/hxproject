@@ -1,3 +1,0 @@
-plugins/article/classes/controller/admin/article/destination.php
-plugins/article/views/admin/article/destination/destination.php
-plugins/article/views/admin/article/destination/dialog_productinfo.php

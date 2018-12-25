@@ -1,8 +1,0 @@
-sql.php
-unsql.php
-plugins/line/classes/controller/pc/line.php
-plugins/line/classes/taglib/line.php
-plugins/line/views/default/line/block/destrelatedline.php
-plugins/line/views/default/line/block/hotline.php
-plugins/line/views/default/line/block/newestline.php
-plugins/line/views/default/line/block/tagwordrelatedline.php

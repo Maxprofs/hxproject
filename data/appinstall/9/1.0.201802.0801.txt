@@ -1,2 +1,0 @@
-plugins/car/views/mobile/car/discount.php
-plugins/car/views/mobile/car/list.php

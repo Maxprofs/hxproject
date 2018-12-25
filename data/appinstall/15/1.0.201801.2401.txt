@@ -1,4 +1,0 @@
-plugins/supplier_line/application/classes/controller/index.php
-plugins/supplier_line/application/views/default/list.php
-plugins/supplier_line/public/css/style.css
-plugins/supplier_line/public/images/status-icon.png

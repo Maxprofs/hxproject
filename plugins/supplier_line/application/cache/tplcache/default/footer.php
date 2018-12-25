@@ -1,1 +1,0 @@
-<div class="st-record">Copyright@2016笛卡CMS</div>

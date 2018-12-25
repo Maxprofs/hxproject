@@ -1,2 +1,0 @@
-plugins/coupon/classes/controller/mobile/coupon.php
-plugins/coupon/views/mobile/coupon/index.php

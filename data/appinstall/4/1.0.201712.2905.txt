@@ -1,2 +1,0 @@
-plugins/line/views/default/line/book.php
-plugins/line/views/mobile/line/show.php

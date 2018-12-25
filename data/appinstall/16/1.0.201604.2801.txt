@@ -1,2 +1,0 @@
-﻿plugins/supplier_hotel/application/classes/controller/pub.php
-plugins/supplier_hotel/application/views/default/pub/footer.php

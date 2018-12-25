@@ -1,6 +1,0 @@
-sql.php
-unsql.php
-plugins/line/classes/controller/admin/line.php
-plugins/line/classes/controller/mobile/line.php
-plugins/line/classes/controller/pc/line.php
-plugins/line/views/admin/line/suit_edit.php

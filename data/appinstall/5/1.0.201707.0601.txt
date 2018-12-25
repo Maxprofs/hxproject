@@ -1,4 +1,0 @@
-plugins/hotel/public/css/hotel.css
-plugins/hotel/public/images/car-show-type-tit-ico.png
-plugins/hotel/public/images/xl-ico.png
-plugins/hotel/views/default/hotel/show.php

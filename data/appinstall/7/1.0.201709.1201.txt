@@ -1,3 +1,0 @@
-plugins/article/classes/controller/mobile/article.php
-plugins/article/public/mobile/css/article.css
-plugins/article/views/mobile/article/index.php

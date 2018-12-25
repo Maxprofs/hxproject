@@ -1,2 +1,0 @@
-plugins/spot/public/css/scenic.css
-plugins/spot/public/mobile/css/spot.css

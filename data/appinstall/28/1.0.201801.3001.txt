@@ -1,1 +1,0 @@
-plugins/wxpay/views/admin/wxpay/index.php

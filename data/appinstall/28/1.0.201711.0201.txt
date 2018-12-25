@@ -1,5 +1,0 @@
-plugins/wxpay/classes/controller/mobile/wxpay.php
-plugins/wxpay/classes/controller/pc/wxpay.php
-plugins/wxpay/classes/model/wxpay.php
-plugins/wxpay/vendor/mobile/wxpay/jsapi/notify.php
-plugins/wxpay/vendor/pc/wxpay/native/notify.php

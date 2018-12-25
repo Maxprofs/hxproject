@@ -1,5 +1,0 @@
-sql.php
-unsql.php
-plugins/line/classes/controller/admin/line.php
-plugins/line/views/admin/line/edit.php
-plugins/line/views/admin/line/destination/destination.php

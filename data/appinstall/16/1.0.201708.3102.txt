@@ -1,3 +1,0 @@
-plugins/supplier_hotel/application/bootstrap.php
-plugins/supplier_hotel/application/classes/model/member/order.php
-plugins/supplier_hotel/public/images/not-img.jpg

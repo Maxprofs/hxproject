@@ -1,4 +1,0 @@
-sql.php
-unsql.php
-plugins/alipay/classes/controller/mobile/alipay.php
-plugins/alipay/views/mobile/alipay_wxclient.php

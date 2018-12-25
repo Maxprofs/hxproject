@@ -1,2 +1,0 @@
-plugins/hotel/views/admin/hotel/order/list.php
-plugins/hotel/views/mobile/hotel/searchnav.php

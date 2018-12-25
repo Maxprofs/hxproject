@@ -1,5 +1,0 @@
-plugins/ship/public/mobile/css/m_ship.css
-plugins/ship/public/mobile/css/order.css
-plugins/ship/views/mobile/ship/index.php
-plugins/ship/views/mobile/ship/list.php
-plugins/ship/views/mobile/ship/member/orderview.php

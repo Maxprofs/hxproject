@@ -1,2 +1,0 @@
-plugins/visa/views/mobile/visa/index.php
-plugins/visa/views/mobile/visa/member/refund.php

@@ -1,1 +1,0 @@
-plugins/coupon/classes/model/coupon.php

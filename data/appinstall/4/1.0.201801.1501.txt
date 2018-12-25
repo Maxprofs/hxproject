@@ -1,2 +1,0 @@
-plugins/line/views/default/line/print.php
-plugins/line/views/default/line/show.php

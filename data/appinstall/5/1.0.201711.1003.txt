@@ -1,4 +1,0 @@
-plugins/hotel/classes/controller/admin/hotel/order.php
-plugins/hotel/classes/controller/pc/hotel/member.php
-plugins/hotel/views/admin/hotel/order/view.php
-plugins/hotel/views/default/hotel/member/orderview.php

@@ -1,7 +1,0 @@
-plugins/article/classes/controller/admin/article/attrid.php
-plugins/article/views/admin/article/edit.php
-plugins/article/views/admin/article/list.php
-plugins/article/views/admin/article/params.php
-plugins/article/views/admin/article/attrid/extendfield.php
-plugins/article/views/admin/article/attrid/list.php
-plugins/article/views/admin/article/destination/destination.php

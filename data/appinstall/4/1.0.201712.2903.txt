@@ -1,5 +1,0 @@
-plugins/line/classes/controller/admin/line/destination.php
-plugins/line/views/admin/line/edit.php
-plugins/line/views/admin/line/suit_edit.php
-plugins/line/views/admin/line/attrid/num_config.php
-plugins/line/views/default/line/show.php

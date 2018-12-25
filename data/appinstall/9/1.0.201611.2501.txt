@@ -1,1 +1,0 @@
-plugins/car/public/css/car.css

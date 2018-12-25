@@ -1,3 +1,0 @@
-plugins/spot/classes/controller/admin/spot/destination.php
-plugins/spot/views/mobile/spot/book.php
-plugins/spot/views/mobile/spot/discount.php

@@ -1,2 +1,0 @@
-plugins/api/classes/controller/pc/api/standard/system.php
-plugins/api/classes/model/api/standard/line.php

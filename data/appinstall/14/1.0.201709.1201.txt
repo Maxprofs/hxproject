@@ -1,5 +1,0 @@
-plugins/ship/classes/controller/mobile/ship.php
-plugins/ship/public/mobile/css/m_ship.css
-plugins/ship/views/mobile/ship/cruise.php
-plugins/ship/views/mobile/ship/index.php
-plugins/ship/views/mobile/ship/show.php

@@ -1,2 +1,0 @@
-plugins/visa/classes/controller/pc/visa/member.php
-plugins/visa/views/default/visa/member/orderview.php

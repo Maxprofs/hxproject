@@ -1,1 +1,0 @@
-plugins/login_wx_client/application/classes/controller/index.php

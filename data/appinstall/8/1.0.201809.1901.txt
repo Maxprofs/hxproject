@@ -1,7 +1,0 @@
-sql.php
-unsql.php
-plugins/notes/classes/controller/admin/notes.php
-plugins/notes/classes/controller/mobile/notes.php
-plugins/notes/classes/controller/pc/notes.php
-plugins/notes/views/admin/notes/view.php
-plugins/notes/views/default/notes/show.php

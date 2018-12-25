@@ -1,4 +1,0 @@
-plugins/notes/classes/controller/admin/notes.php
-plugins/notes/classes/controller/admin/notes/comment.php
-plugins/notes/classes/controller/mobile/notes.php
-plugins/notes/classes/controller/pc/notes.php

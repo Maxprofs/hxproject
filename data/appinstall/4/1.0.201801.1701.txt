@@ -1,2 +1,0 @@
-plugins/line/public/mobile/css/line.css
-plugins/line/views/admin/line/list.php

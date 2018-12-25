@@ -1,2 +1,0 @@
-plugins/supplier_finance/application/classes/controller/pc/financeextend.php
-plugins/supplier_finance/application/classes/model/member/order/extend.php

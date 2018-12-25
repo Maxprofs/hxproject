@@ -1,3 +1,0 @@
-plugins/ship/classes/ship.php
-plugins/ship/classes/model/ship/line.php
-plugins/ship/views/mobile/ship/show.php

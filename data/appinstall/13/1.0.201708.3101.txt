@@ -1,1 +1,0 @@
-plugins/coupon/views/mobile/coupon/f_get_box.php

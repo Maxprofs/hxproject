@@ -1,2 +1,0 @@
-plugins/supplier_line/application/views/default/index.php
-plugins/supplier_line/application/views/default/order/all.php

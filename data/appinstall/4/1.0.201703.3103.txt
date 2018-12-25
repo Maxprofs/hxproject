@@ -1,7 +1,0 @@
-sql.php
-unsql.php
-plugins/line/classes/controller/admin/line/order.php
-plugins/line/classes/controller/pc/line/member.php
-plugins/line/classes/model/line.php
-plugins/line/views/admin/line/order/view.php
-plugins/line/views/default/line/member/orderview.php

@@ -1,1 +1,0 @@
-plugins/hotel/classes/taglib/hotel.php

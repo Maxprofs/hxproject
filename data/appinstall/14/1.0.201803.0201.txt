@@ -1,2 +1,0 @@
-plugins/ship/classes/controller/admin/shipline.php
-plugins/ship/classes/model/ship.php

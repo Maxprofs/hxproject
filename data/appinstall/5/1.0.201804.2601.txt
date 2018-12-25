@@ -1,3 +1,0 @@
-plugins/hotel/classes/controller/mobile/hotel.php
-plugins/hotel/views/mobile/hotel/book.php
-plugins/hotel/views/mobile/hotel/discount.php

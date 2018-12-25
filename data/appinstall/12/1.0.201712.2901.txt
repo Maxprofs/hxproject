@@ -1,8 +1,0 @@
-sql.php
-unsql.php
-plugins/photo/classes/controller/pc/photo.php
-plugins/photo/classes/taglib/photo.php
-plugins/photo/views/default/photo/block/destrelatedphoto.php
-plugins/photo/views/default/photo/block/hotphoto.php
-plugins/photo/views/default/photo/block/newestphoto.php
-plugins/photo/views/default/photo/block/tagwordrelatedphoto.php

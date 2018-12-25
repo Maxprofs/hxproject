@@ -1,9 +1,0 @@
-.control-switch{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background: url("../images/show-ico.png") center no-repeat;
-}
-.control-switch.switch-hide{
-    background: url("../images/close-s.png") center no-repeat;
-}

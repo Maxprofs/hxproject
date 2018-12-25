@@ -1,2 +1,0 @@
-plugins/login_wx_client/application/classes/common.php
-plugins/login_wx_client/application/views/default/stourtravel/conf.php

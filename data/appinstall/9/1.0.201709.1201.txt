@@ -1,4 +1,0 @@
-plugins/car/classes/model/car.php
-plugins/car/public/mobile/css/car.css
-plugins/car/views/mobile/car/index.php
-plugins/car/views/mobile/car/list.php

@@ -1,3 +1,0 @@
-plugins/notes/views/admin/notes/list.php
-plugins/notes/views/admin/notes/view.php
-plugins/notes/views/admin/notes/comment/list.php

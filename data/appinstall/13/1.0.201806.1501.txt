@@ -1,1 +1,0 @@
-plugins/coupon/views/default/coupon/integral/show.php

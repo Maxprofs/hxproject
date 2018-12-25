@@ -1,3 +1,0 @@
-plugins/finance/classes/controller/admin/financeextend.php
-plugins/finance/views/admin/finance/commission_product.php
-plugins/finance/views/admin/finance/commission_product_line.php

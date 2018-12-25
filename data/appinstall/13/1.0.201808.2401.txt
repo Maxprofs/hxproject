@@ -1,3 +1,0 @@
-plugins/coupon/classes/controller/mobile/coupon.php
-plugins/coupon/classes/controller/pc/coupon.php
-plugins/coupon/classes/model/coupon.php

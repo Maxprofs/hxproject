@@ -1,4 +1,0 @@
-plugins/spot/public/mobile/css/order.css
-plugins/spot/public/mobile/css/spot.css
-plugins/spot/views/mobile/spot/list.php
-plugins/spot/views/mobile/spot/member/orderview.php

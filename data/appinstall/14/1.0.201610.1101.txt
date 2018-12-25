@@ -1,5 +1,0 @@
-plugins/ship/classes/model/ship.php
-plugins/ship/classes/model/ship/line/attr.php
-plugins/ship/views/admin/shipline/edit.php
-plugins/ship/views/default/ship/index.php
-plugins/ship/views/default/ship/show.php

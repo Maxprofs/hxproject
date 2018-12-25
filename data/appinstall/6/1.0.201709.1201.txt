@@ -1,4 +1,0 @@
-plugins/spot/classes/model/spot.php
-plugins/spot/public/mobile/css/spot.css
-plugins/spot/views/mobile/spot/index.php
-plugins/spot/views/mobile/spot/list.php

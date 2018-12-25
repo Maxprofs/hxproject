@@ -1,2 +1,0 @@
-﻿plugins/productmap/application/views/default/hotel/mapnear.php
-plugins/productmap/application/views/default/spot/mapnear.php

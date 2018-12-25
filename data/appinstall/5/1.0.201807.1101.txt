@@ -1,2 +1,0 @@
-plugins/hotel/classes/taglib/hotel.php
-plugins/hotel/views/default/hotel/member/orderview.php

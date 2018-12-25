@@ -1,1 +1,0 @@
-plugins/car/public/mobile/css/car.css

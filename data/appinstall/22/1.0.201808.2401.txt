@@ -1,4 +1,0 @@
-plugins/supplier/application/classes/controller/index.php
-plugins/supplier/application/views/default/pc/dialog_setstartplace.php
-plugins/supplier/public/default/pc/css/header.css
-plugins/supplier/public/default/pc/js/product.js

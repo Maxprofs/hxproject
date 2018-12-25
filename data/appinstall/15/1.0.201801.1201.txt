@@ -1,2 +1,0 @@
-plugins/supplier_line/application/views/default/calendar.php
-plugins/supplier_line/application/views/default/calendar/index.php

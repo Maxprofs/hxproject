@@ -1,1 +1,0 @@
-plugins/hotel/classes/controller/admin/hotel/destination.php

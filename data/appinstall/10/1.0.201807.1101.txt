@@ -1,3 +1,0 @@
-plugins/visa/public/mobile/css/visa.css
-plugins/visa/views/default/visa/member/orderview.php
-plugins/visa/views/mobile/visa/index.php

@@ -1,2 +1,0 @@
-plugins/supplier_spot/application/classes/model/member/order.php
-plugins/supplier_spot/application/views/default/order/show.php

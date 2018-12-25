@@ -1,4 +1,0 @@
-sql.php
-unsql.php
-plugins/login_weixin/application/classes/controller/index.php
-plugins/login_wx_client/application/classes/controller/index.php

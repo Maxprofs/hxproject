@@ -1,9 +1,0 @@
-plugins/line/classes/model/line.php
-plugins/line/public/css/lines.css
-plugins/line/public/images/pos-ico.png
-plugins/line/public/images/switch-ico.png
-plugins/line/views/admin/line/edit.php
-plugins/line/views/admin/line/order/view.php
-plugins/line/views/default/line/list.php
-plugins/line/views/default/line/print.php
-plugins/line/views/default/line/show.php

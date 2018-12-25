@@ -1,3 +1,0 @@
-plugins/hotel/views/default/hotel/book.php
-plugins/hotel/views/default/hotel/list.php
-plugins/hotel/views/default/hotel/show.php

@@ -1,5 +1,0 @@
-plugins/coupon/classes/model/coupon.php
-plugins/coupon/views/mobile/coupon/f_get_box.php
-plugins/coupon/views/mobile/coupon/index.php
-plugins/coupon/views/mobile/coupon/book/box.php
-plugins/coupon/views/mobile/coupon/member/index.php

@@ -1,2 +1,0 @@
-plugins/productmap/application/bootstrap.php
-plugins/productmap/application/classes/stourweb/view.php

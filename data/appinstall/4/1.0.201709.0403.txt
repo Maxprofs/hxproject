@@ -1,9 +1,0 @@
-plugins/line/m_init.php
-plugins/line/classes/controller/mobile/line/member.php
-plugins/line/public/mobile/css/line.css
-plugins/line/public/mobile/css/order.css
-plugins/line/public/mobile/images/arrow_r.png
-plugins/line/public/mobile/images/error-icon.png
-plugins/line/public/mobile/images/pass-icon.png
-plugins/line/public/mobile/images/point-out-icon.png
-plugins/line/views/mobile/line/member/orderview.php

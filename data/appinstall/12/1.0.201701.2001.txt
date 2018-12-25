@@ -1,3 +1,0 @@
-plugins/photo/views/admin/photo/list.php
-plugins/photo/views/admin/photo/attrid/list.php
-plugins/photo/views/admin/photo/destination/destination.php

@@ -1,3 +1,0 @@
-plugins/ship/classes/model/ship/line.php
-plugins/ship/classes/model/ship/line/attr.php
-plugins/ship/views/admin/ship/attrid/list.php

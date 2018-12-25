@@ -1,4 +1,0 @@
-plugins/supplier_finance/application/classes/model/member/order/extend.php
-plugins/supplier_finance/application/views/default/pc/finance/ordercount.php
-plugins/supplier_finance/application/views/default/pc/finance/overview.php
-plugins/supplier_finance/public/default/pc/js/finance_ordercount.js

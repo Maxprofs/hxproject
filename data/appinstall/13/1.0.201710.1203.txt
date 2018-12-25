@@ -1,3 +1,0 @@
-plugins/coupon/public/css/coupon.css
-plugins/coupon/views/admin/edit.php
-plugins/coupon/views/mobile/coupon/cloudsearch.php

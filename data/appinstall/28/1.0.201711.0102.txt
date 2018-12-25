@@ -1,2 +1,0 @@
-plugins/wxpay/vendor/mobile/wxpay/jsapi/notify.php
-plugins/wxpay/vendor/pc/wxpay/native/notify.php

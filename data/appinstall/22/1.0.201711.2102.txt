@@ -1,4 +1,0 @@
-plugins/supplier/application/classes/controller/pc/pub.php
-plugins/supplier/application/views/default/pc/login/findpass.php
-plugins/supplier/application/views/default/pc/login/register.php
-plugins/supplier/application/views/default/pc/user/modify_phone.php

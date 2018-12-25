@@ -1,1 +1,0 @@
-plugins/article/public/mobile/css/article.css

@@ -1,2 +1,0 @@
-plugins/spot/public/css/scenic.css
-plugins/spot/views/default/spot/list.php

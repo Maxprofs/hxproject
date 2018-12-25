@@ -1,1 +1,0 @@
-plugins/hotel/views/admin/hotel/attrid/config.php

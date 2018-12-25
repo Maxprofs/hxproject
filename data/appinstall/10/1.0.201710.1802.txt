@@ -1,7 +1,0 @@
-plugins/visa/plugins/visa/classes/controller/admin/visa/order.php
-plugins/visa/plugins/visa/views/admin/visa/list.php
-plugins/visa/plugins/visa/views/admin/visa/order/list.php
-plugins/visa/plugins/visa/views/admin/visa/order/view.php
-plugins/visa/plugins/visa/views/default/visa/member/orderview.php
-plugins/visa/plugins/visa/views/mobile/visa/member/refund.php
-plugins/visa/views/default/visa/member/orderview.php

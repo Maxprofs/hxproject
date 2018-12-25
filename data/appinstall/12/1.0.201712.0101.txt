@@ -1,6 +1,0 @@
-plugins/photo/classes/controller/admin/photo/attrid.php
-plugins/photo/views/admin/photo/edit.php
-plugins/photo/views/admin/photo/list.php
-plugins/photo/views/admin/photo/attrid/extendfield.php
-plugins/photo/views/admin/photo/attrid/list.php
-plugins/photo/views/admin/photo/destination/destination.php

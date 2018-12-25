@@ -1,8 +1,0 @@
-plugins/line/classes/controller/admin/line/order.php
-plugins/line/classes/controller/pc/line.php
-plugins/line/public/images/stop-icon.png
-plugins/line/views/admin/line/email.php
-plugins/line/views/admin/line/sms.php
-plugins/line/views/admin/line/order/list.php
-plugins/line/views/default/line/book/tourer.php
-plugins/line/views/default/line/member/orderview.php

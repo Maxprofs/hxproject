@@ -1,2 +1,0 @@
-plugins/article/views/default/article/show.php
-plugins/article/views/substation/article/show.php

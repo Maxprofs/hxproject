@@ -1,3 +1,0 @@
-plugins/supplier/application/views/default/pc/pub/header.php
-plugins/supplier/application/views/default/pc/pub/login_header.php
-plugins/supplier/public/default/pc/css/login.css

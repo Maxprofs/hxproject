@@ -1,1 +1,0 @@
-plugins/car/views/default/car/list.php

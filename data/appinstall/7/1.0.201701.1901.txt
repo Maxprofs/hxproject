@@ -1,3 +1,0 @@
-plugins/article/classes/controller/admin/config.php
-plugins/article/classes/controller/pc/article.php
-plugins/article/views/admin/article/params.php

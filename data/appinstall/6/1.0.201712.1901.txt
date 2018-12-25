@@ -1,3 +1,0 @@
-plugins/spot/views/admin/spot/list.php
-plugins/spot/views/admin/spot/destination/destination.php
-plugins/spot/views/admin/spot/order/list.php

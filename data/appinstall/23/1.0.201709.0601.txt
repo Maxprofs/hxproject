@@ -1,2 +1,0 @@
-plugins/api/views/admin/api/interop_log.php
-plugins/api/views/admin/api/list.php

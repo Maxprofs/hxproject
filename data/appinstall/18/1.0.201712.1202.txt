@@ -1,1 +1,0 @@
-plugins/supplier_car/public/css/style_hotel.css

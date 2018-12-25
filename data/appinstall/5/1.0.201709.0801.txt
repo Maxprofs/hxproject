@@ -1,9 +1,0 @@
-sql.php
-unsql.php
-plugins/hotel/classes/controller/admin/hotel/order.php
-plugins/hotel/classes/controller/mobile/hotel/member.php
-plugins/hotel/classes/controller/pc/hotel/member.php
-plugins/hotel/public/mobile/css/order.css
-plugins/hotel/views/admin/hotel/order/view.php
-plugins/hotel/views/default/hotel/member/orderview.php
-plugins/hotel/views/mobile/hotel/member/orderview.php

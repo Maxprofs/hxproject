@@ -1,4 +1,0 @@
-plugins/photo/public/mobile/css/photo.css
-plugins/photo/public/mobile/images/info-ico.png
-plugins/photo/public/mobile/images/read-ico.png
-plugins/photo/views/mobile/photo/list.php

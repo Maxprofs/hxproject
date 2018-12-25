@@ -1,6 +1,0 @@
-plugins/hotel/public/mobile/css/hotel.css
-plugins/hotel/views/mobile/hotel/book.php
-plugins/hotel/views/mobile/hotel/discount.php
-plugins/hotel/views/mobile/hotel/index.php
-plugins/hotel/views/mobile/hotel/list.php
-plugins/hotel/views/mobile/hotel/show.php

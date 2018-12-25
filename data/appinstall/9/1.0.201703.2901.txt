@@ -1,5 +1,0 @@
-plugins/car/classes/controller/pc/car.php
-plugins/car/classes/model/car.php
-plugins/car/views/default/car/index.php
-plugins/car/views/default/car/list.php
-plugins/car/views/default/car/show.php

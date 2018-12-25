@@ -1,1 +1,0 @@
-plugins/photo/views/default/photo/show.php

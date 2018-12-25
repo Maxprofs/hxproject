@@ -1,3 +1,0 @@
-plugins/ship/views/mobile/ship/book.php
-plugins/ship/views/mobile/ship/order_show.php
-plugins/ship/views/mobile/ship/show.php

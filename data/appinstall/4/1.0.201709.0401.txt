@@ -1,5 +1,0 @@
-sql.php
-unsql.php
-plugins/line/admin_init.php
-plugins/line/classes/controller/admin/line/config.php
-plugins/line/views/admin/line/config/params.php

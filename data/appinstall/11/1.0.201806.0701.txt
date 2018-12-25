@@ -1,3 +1,0 @@
-sql.php
-unsql.php
-plugins/customize/views/mobile/customize/index.php

@@ -1,5 +1,0 @@
-plugins/ship/classes/controller/mobile/ship.php
-plugins/ship/classes/controller/mobile/ship/member.php
-plugins/ship/public/css/jmonthcalendar.css
-plugins/ship/public/css/ship.css
-plugins/ship/views/default/ship/ask.php

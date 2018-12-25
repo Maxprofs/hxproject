@@ -1,2 +1,0 @@
-plugins/hotel/classes/model/hotel.php
-plugins/hotel/views/mobile/hotel/book.php

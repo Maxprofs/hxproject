@@ -1,5 +1,0 @@
-plugins/line/public/mobile/css/line.css
-plugins/line/public/mobile/css/order.css
-plugins/line/views/mobile/line/list.php
-plugins/line/views/mobile/line/show.php
-plugins/line/views/mobile/line/member/orderview.php

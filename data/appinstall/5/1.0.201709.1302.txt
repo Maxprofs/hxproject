@@ -1,4 +1,0 @@
-plugins/hotel/public/mobile/css/hotel.css
-plugins/hotel/public/mobile/css/order.css
-plugins/hotel/views/mobile/hotel/list.php
-plugins/hotel/views/mobile/hotel/member/orderview.php

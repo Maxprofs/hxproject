@@ -1,2 +1,0 @@
-plugins/spot/views/default/spot/book.php
-plugins/spot/views/mobile/spot/book.php

@@ -1,1 +1,0 @@
-plugins/photo/classes/model/photo/picture.php

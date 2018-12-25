@@ -1,6 +1,0 @@
-plugins/alipay/pc_init.php
-plugins/alipay/classes/controller/mobile/alipay.php
-plugins/alipay/classes/controller/pc/alipaybank.php
-plugins/alipay/classes/controller/pc/alipaycash.php
-plugins/alipay/classes/controller/pc/alipaydanbao.php
-plugins/alipay/classes/controller/pc/alipaydouble.php

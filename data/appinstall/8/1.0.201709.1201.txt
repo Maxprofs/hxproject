@@ -1,3 +1,0 @@
-plugins/notes/classes/controller/mobile/notes.php
-plugins/notes/classes/model/notes.php
-plugins/notes/public/mobile/css/note.css

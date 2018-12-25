@@ -1,1 +1,0 @@
-plugins/ship/views/default/ship/show.php

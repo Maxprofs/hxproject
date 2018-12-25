@@ -1,3 +1,0 @@
-plugins/ship/classes/controller/pc/ship.php
-plugins/ship/views/default/ship/print.php
-plugins/ship/views/default/ship/show.php

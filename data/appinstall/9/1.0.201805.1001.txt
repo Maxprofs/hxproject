@@ -1,2 +1,0 @@
-plugins/car/views/admin/car/email.php
-plugins/car/views/admin/car/sms.php

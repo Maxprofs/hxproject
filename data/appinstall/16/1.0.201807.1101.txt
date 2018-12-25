@@ -1,7 +1,0 @@
-plugins/supplier_hotel/application/classes/common.php
-plugins/supplier_hotel/application/classes/controller/index.php
-plugins/supplier_hotel/application/classes/model/hotel.php
-plugins/supplier_hotel/application/classes/model/member/order.php
-plugins/supplier_hotel/application/views/default/suit_edit.php
-plugins/supplier_hotel/application/views/default/suit_list.php
-plugins/supplier_hotel/application/views/default/order/all.php

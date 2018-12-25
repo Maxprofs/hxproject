@@ -1,1 +1,0 @@
-plugins/weixin_pay_h5/vendor/weixin/lib/WxPay.Api.php

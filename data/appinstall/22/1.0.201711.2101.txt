@@ -1,3 +1,0 @@
-FileManifest.txt
-plugins/supplier/application/classes/controller/pc/register.php
-plugins/supplier/public/default/pc/js/jquery.validate.min.js

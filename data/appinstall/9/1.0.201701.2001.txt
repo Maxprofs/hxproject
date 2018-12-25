@@ -1,4 +1,0 @@
-plugins/car/views/admin/car/list.php
-plugins/car/views/admin/car/attrid/list.php
-plugins/car/views/admin/car/destination/destination.php
-plugins/car/views/default/car/book.php

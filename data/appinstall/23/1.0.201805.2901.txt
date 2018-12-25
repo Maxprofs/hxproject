@@ -1,9 +1,0 @@
-plugins/api/classes/controller/pc/api/standard/hotel.php
-plugins/api/classes/controller/pc/api/standard/line.php
-plugins/api/classes/controller/pc/api/standard/login.php
-plugins/api/classes/controller/pc/api/standard/order.php
-plugins/api/classes/controller/pc/api/standard/spot.php
-plugins/api/classes/model/api/standard/order.php
-plugins/api/classes/model/api/standard/system.php
-plugins/api/vendor/xcx/errorCode.php
-plugins/api/vendor/xcx/wxBizDataCrypt.php

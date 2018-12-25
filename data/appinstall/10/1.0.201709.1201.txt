@@ -1,3 +1,0 @@
-plugins/visa/classes/controller/mobile/visa.php
-plugins/visa/public/mobile/css/visa.css
-plugins/visa/views/mobile/visa/index.php

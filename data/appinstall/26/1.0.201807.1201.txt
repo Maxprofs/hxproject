@@ -1,2 +1,0 @@
-plugins/supplier_brokerage/classes/controller/pc/brokerage.php
-plugins/supplier_brokerage/views/default/pc/brokerage/index.php

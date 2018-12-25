@@ -1,2 +1,0 @@
-﻿plugins/supplier_car/application/classes/controller/pub.php
-plugins/supplier_car/application/views/default/pub/footer.php

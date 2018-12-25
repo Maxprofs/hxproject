@@ -1,3 +1,0 @@
-plugins/share_wx_client/classes/controller/mobile/share/wxclient.php
-plugins/share_wx_client/classes/model/share/weixin.php
-plugins/share_wx_client/views/admin/share/wxclient/conf.php

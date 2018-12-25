@@ -1,7 +1,0 @@
-User-agent: *
-Allow:/
-Sitemap:/Sitemap.xml
-Disallow:/*help* 
-Disallow:/*servers*
-Disallow:/*all*
-Disallow:/*all*

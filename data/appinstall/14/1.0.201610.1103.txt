@@ -1,2 +1,0 @@
-plugins/ship/views/admin/shipline/edit.php
-plugins/ship/views/default/ship/show.php

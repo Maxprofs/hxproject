@@ -1,2 +1,0 @@
-plugins/spot/classes/controller/pc/spot.php
-plugins/spot/classes/model/spot/kindlist.php

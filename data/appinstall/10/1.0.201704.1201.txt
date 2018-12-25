@@ -1,4 +1,0 @@
-plugins/visa/classes/controller/mobile/visa.php
-plugins/visa/classes/controller/pc/visa.php
-plugins/visa/classes/model/visa.php
-plugins/visa/views/mobile/visa/book.php

@@ -1,2 +1,0 @@
-plugins/notes/classes/controller/admin/notes.php
-plugins/notes/views/admin/notes/view.php

@@ -1,2 +1,0 @@
-plugins/car/classes/controller/mobile/car.php
-plugins/car/views/mobile/car/book.php

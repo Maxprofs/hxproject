@@ -1,5 +1,0 @@
-plugins/notes/classes/controller/mobile/notes.php
-plugins/notes/classes/controller/mobile/notes/member.php
-plugins/notes/classes/controller/pc/notes.php
-plugins/notes/classes/model/notes.php
-plugins/notes/views/default/notes/show.php

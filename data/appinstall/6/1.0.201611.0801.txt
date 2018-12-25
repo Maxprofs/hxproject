@@ -1,3 +1,0 @@
-plugins/spot/classes/controller/admin/spot/order.php
-plugins/spot/views/admin/spot/order/list.php
-plugins/spot/views/admin/spot/order/view.php

@@ -1,1 +1,0 @@
-plugins/hotel/classes/controller/pc/hotel.php

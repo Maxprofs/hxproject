@@ -1,7 +1,0 @@
-sql.php
-unsql.php
-plugins/spot/classes/controller/admin/spot.php
-plugins/spot/classes/controller/mobile/spot.php
-plugins/spot/classes/controller/pc/spot.php
-plugins/spot/classes/taglib/spot.php
-plugins/spot/views/admin/spot/ticket_edit.php

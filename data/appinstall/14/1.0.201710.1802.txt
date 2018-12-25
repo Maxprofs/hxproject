@@ -1,6 +1,0 @@
-plugins/ship/plugins/ship/classes/controller/admin/ship/order.php
-plugins/ship/plugins/ship/views/admin/ship/order/list.php
-plugins/ship/plugins/ship/views/admin/ship/order/view.php
-plugins/ship/plugins/ship/views/default/ship/member/orderview.php
-plugins/ship/plugins/ship/views/mobile/ship/member/refund.php
-plugins/ship/views/default/ship/member/orderview.php

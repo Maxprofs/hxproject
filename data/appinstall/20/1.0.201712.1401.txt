@@ -1,2 +1,0 @@
-plugins/productmap/application/classes/controller/spot.php
-plugins/productmap/application/views/default/spot/mapnear.php

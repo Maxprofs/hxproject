@@ -1,3 +1,0 @@
-plugins/spot/views/default/spot/index.php
-plugins/spot/views/mobile/spot/index.php
-plugins/spot/views/mobile/spot/member/refund.php

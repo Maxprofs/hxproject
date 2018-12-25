@@ -1,3 +1,0 @@
-plugins/productmap/application/views/default/hotel/map.php
-plugins/productmap/application/views/default/spot/map.php
-plugins/productmap/public/css/map.css

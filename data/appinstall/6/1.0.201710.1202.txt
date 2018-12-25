@@ -1,9 +1,0 @@
-plugins/spot/classes/controller/admin/spot/order.php
-plugins/spot/classes/controller/mobile/spot/member.php
-plugins/spot/classes/controller/pc/spot/member.php
-plugins/spot/public/mobile/css/refund.css
-plugins/spot/public/mobile/images/check-label-icon-un-02.png
-plugins/spot/views/admin/spot/order/view.php
-plugins/spot/views/default/spot/member/orderview.php
-plugins/spot/views/mobile/spot/member/orderview.php
-plugins/spot/views/mobile/spot/member/refund.php

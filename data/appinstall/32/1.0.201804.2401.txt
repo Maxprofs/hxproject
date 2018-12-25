@@ -1,5 +1,0 @@
-sql.php
-unsql.php
-plugins/red_envelope/classes/model/order/envelope.php
-plugins/red_envelope/views/admin/envelope/list.php
-plugins/red_envelope/views/mobile/envelope/order_view.php

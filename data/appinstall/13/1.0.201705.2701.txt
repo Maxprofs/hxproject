@@ -1,3 +1,0 @@
-plugins/coupon/views/default/coupon/integral/home.php
-plugins/coupon/views/default/coupon/integral/list.php
-plugins/coupon/views/default/coupon/integral/show.php

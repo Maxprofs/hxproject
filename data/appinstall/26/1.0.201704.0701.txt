@@ -1,1 +1,0 @@
-plugins/supplier_finance/application/views/default/pc/drawcash/detail.php

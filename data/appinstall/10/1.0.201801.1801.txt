@@ -1,2 +1,0 @@
-plugins/visa/public/css/visa.css
-plugins/visa/views/default/visa/show.php

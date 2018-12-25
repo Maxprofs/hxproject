@@ -1,5 +1,0 @@
-plugins/zt/public/css/pc_theme.css
-plugins/zt/public/images/theme-bd-bg.png
-plugins/zt/public/mobile/css/m_theme.css
-plugins/zt/public/mobile/images/tehui-bottom-bg.png
-plugins/zt/public/mobile/images/tehui-top-bg.png

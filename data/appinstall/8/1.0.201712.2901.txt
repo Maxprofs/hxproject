@@ -1,6 +1,0 @@
-sql.php
-unsql.php
-plugins/notes/classes/taglib/notes.php
-plugins/notes/views/default/notes/block/destrelatednotes.php
-plugins/notes/views/default/notes/block/hotnotes.php
-plugins/notes/views/default/notes/block/newesnotes.php

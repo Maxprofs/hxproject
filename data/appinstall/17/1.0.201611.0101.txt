@@ -1,1 +1,0 @@
-plugins/supplier_spot/application/classes/controller/index.php

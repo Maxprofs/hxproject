@@ -1,4 +1,0 @@
-sql.php
-unsql.php
-plugins/supplier_finance/application/classes/controller/pc/drawcash.php
-plugins/supplier_finance/application/views/default/pc/drawcash/apply.php

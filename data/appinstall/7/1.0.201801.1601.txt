@@ -1,1 +1,0 @@
-plugins/article/views/admin/article/destination/dialog_productinfo.php

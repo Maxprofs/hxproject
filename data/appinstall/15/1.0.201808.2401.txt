@@ -1,5 +1,0 @@
-plugins/supplier_line/application/classes/controller/index.php
-plugins/supplier_line/application/views/default/dialog_setstartplace.php
-plugins/supplier_line/application/views/default/edit.php
-plugins/supplier_line/application/views/default/destination/dialog_setdest.php
-plugins/supplier_line/public/js/product.js

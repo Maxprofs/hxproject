@@ -1,4 +1,0 @@
-plugins/spot/public/css/scenic.css
-plugins/spot/public/mobile/css/spot.css
-plugins/spot/views/admin/spot/ticket_edit.php
-plugins/spot/views/default/spot/show.php

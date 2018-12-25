@@ -1,3 +1,0 @@
-plugins/hotel/classes/controller/pc/hotel.php
-plugins/hotel/classes/model/hotel.php
-plugins/hotel/views/default/hotel/list.php

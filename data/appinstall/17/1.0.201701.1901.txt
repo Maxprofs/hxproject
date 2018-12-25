@@ -1,2 +1,0 @@
-plugins/supplier_spot/application/classes/model/spot.php
-plugins/supplier_spot/application/views/default/suit_edit.php

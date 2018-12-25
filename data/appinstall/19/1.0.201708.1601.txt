@@ -1,2 +1,0 @@
-plugins/login_wx_client/application/bootstrap.php
-plugins/login_wx_client/application/classes/stourweb/view.php

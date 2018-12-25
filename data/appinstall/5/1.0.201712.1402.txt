@@ -1,2 +1,0 @@
-plugins/hotel/public/mobile/css/hotel.css
-plugins/hotel/views/mobile/hotel/book.php

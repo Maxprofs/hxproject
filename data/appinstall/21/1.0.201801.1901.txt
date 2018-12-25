@@ -1,4 +1,0 @@
-plugins/zt/public/js/zt.js
-plugins/zt/views/admin/zt/channel.php
-plugins/zt/views/admin/zt/edit.php
-plugins/zt/views/admin/zt/list.php
