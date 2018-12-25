@@ -1,0 +1,4 @@
+plugins/ship/views/admin/ship/index.php
+plugins/ship/views/admin/ship/attrid/list.php
+plugins/ship/views/admin/ship/destination/destination.php
+plugins/ship/views/admin/shipline/index.php

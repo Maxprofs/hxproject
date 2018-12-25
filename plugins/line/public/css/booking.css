@@ -1,0 +1,849 @@
+/* 产品预订页面 */
+.booking-l-container{
+    float: left;
+    width: 865px;
+}
+
+.booking-info-block{
+    padding: 20px 30px 20px;
+    margin-bottom: 15px;
+    background: #fff;
+}
+.booking-info-block .bib-hd-bar{
+    padding: 10px 0;
+
+}
+.booking-info-block .bib-hd-bar .hb-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+.booking-info-block .bib-hd-bar .hb-number{
+    color: #ccc;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.booking-info-block .bib-hd-bar .col-title{
+    display: inline-block;
+    font-size: 16px;
+}
+
+#invoice_block .bib-bd-wrap{
+    border-top: 1px solid #e6e6e6;
+}
+
+/* 产品信息 */
+.booking-price-table{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+}
+.booking-price-table th{
+    color: #999;
+    height: 30px;
+    text-align: center;
+}
+.booking-price-table td{
+    height: 40px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+}
+.booking-price-table .o-price{
+    color: #f60;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, "宋体", "Microsoft YaHei", Helvetica, sans-serif;
+}
+
+.booking-amount-control{
+
+}
+.booking-amount-control{
+    width:80px;
+    height:24px;
+    line-height:24px;
+    margin:0 auto;
+    text-align:center
+}
+.booking-amount-control .add-btn,
+.booking-amount-control .sub-btn{
+    float:left;
+    width:22px;
+    height:22px;
+    line-height:22px;
+    margin-right:-1px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    border:1px solid #d8d8d8
+}
+.booking-amount-control .add-btn:hover,
+.booking-amount-control .sub-btn:hover{
+    color:#f60
+}
+.booking-amount-control .number-text{
+    float:left;
+    width:30px;
+    height:22px;
+    line-height:22px;
+    margin-right:-1px;
+    text-align:center;
+    font-size:14px;
+    border:1px solid #d8d8d8
+}
+
+/* 旅客信息 */
+.bib-select-linkman{
+    margin-top: 20px;
+}
+.bib-select-bar{
+    color: #666;
+    line-height: 20px;
+    padding-left: 6px;
+    border-left: 4px solid #00b7ee;
+    font-size: 14px;
+}
+.bib-select-bd{
+    padding: 10px 60px 10px 10px;
+    position: relative;
+}
+.bib-select-box{
+    height: 24px;
+    overflow: hidden;
+    font-size: 0;
+}
+.bib-select-box .check-item{
+    color: #999;
+    display: inline-block;
+    width: 20%;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.bib-select-box .check-item .check-icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin: -2px 6px 0 0;
+    background: url("../images/booking-select-icon.png") no-repeat -15px 0;
+}
+.bib-select-box .check-item.check-active-item{
+    color: #f80;
+}
+.bib-select-box .check-item.check-active-item .check-icon{
+    background: url("../images/booking-select-icon.png") no-repeat 0 0;
+}
+.bib-check-more{
+    color: #999;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 14px;
+}
+.bib-check-more:after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin: -3px 0 0 5px;
+    border-bottom: 4px solid #999;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.bib-check-more.down:after{
+    border-bottom: 0;
+    border-top: 4px solid #999;
+}
+
+.bib-linkman-block{
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #f5f7f7;
+    background: #fcfcfc;
+}
+.bib-linkman-block:last-child{
+    margin-bottom: 0;
+}
+.bib-linkman-block .hd-box{
+    float: left;
+    color: #999;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    background: #f5f5f5;
+}
+.bib-linkman-block .bd-box{
+    float: right;
+    width: 700px;
+}
+.bib-linkman-block .booking-item-block{
+    padding: 0;
+}
+
+.bib-radio-box{
+    display: inline-block;
+}
+.bib-radio-label{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 40px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.bib-radio-label .radio-icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin: -2px 5px 0 0;
+    background: url("../images/booking-select-icon.png") no-repeat -45px 0;
+}
+.bib-radio-label.active{
+    color: #f60;
+}
+.bib-radio-label.active .radio-icon{
+    background: url("../images/booking-select-icon.png") no-repeat -30px 0;
+}
+.common-use-label{
+    color: #999;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.common-use-label .icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin: -2px 5px 0 0;
+    background: url("../images/booking-select-icon.png") no-repeat -15px 0;
+}
+.common-use-label.active{
+    color: #f80;
+}
+.common-use-label.active .icon{
+    background: url("../images/booking-select-icon.png") no-repeat 0 0;
+}
+/* 优惠信息 */
+.bib-yh-block{
+    margin-top: 20px;
+}
+.bib-yh-block .booking-item-block{
+    padding: 0;
+}
+/* 支付信息 */
+.pay-info-bar{
+    padding-top: 10px;
+}
+.pay-info-bar .item{
+    color: #999;
+    display: inline-block;
+    font-size: 14px;
+}
+.pay-info-bar .item .pri{
+    color: #f60;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, "宋体", "Microsoft YaHei", Helvetica, sans-serif;
+}
+
+/* 保险 */
+.bib-other-wrapper{
+    padding-top: 20px;
+}
+.bib-other-bar{
+    color: #666;
+    line-height: 20px;
+    padding-left: 6px;
+    margin-bottom: 10px;
+    border-left: 4px solid #00b7ee;
+    font-size: 14px;
+}
+.booking-ins-table{
+    width: 100%;
+}
+.booking-ins-table th{
+    color: #999;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.booking-ins-table td{
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.booking-ins-table .price{
+    color: #f60;
+    font-weight: bold;
+}
+.booking-ins-table .thead-th-name{
+    padding-left: 10px;
+    text-align: left;
+}
+.booking-ins-table .select{
+    width: 60px !important;;
+    height: 26px;
+}
+
+
+
+.booking-item-block{
+    padding: 10px 0;
+}
+.booking-item-block>li{
+    padding: 5px 0;
+}
+.booking-item-block>li:before,
+.booking-item-block>li:after,
+.booking-item-block>li>.item-bd:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden
+}
+.booking-item-block>li>.item-hd{
+    float: left;
+    color: #999;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+.booking-item-block>li>.item-bd{
+    min-height: 30px;
+    padding-left: 105px;
+}
+.b-item-text{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.input-text{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.select{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.text-area{
+    width: 100%;
+    height: 100px;
+    line-height: 20px;
+    padding: 5px;
+    resize: none;
+    vertical-align: top;
+    border: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.input-text.error{
+    border-color: #f00;
+}
+
+
+.booking-agreement-block .link{
+    color: #f60;
+    font-size: 14px;
+}
+.booking-agreement-block .common-use-label{
+    color: #333;
+}
+.booking-submit-block .yzm-txt{
+    font-size: 14px;
+}
+.booking-submit-btn{
+    color: #fff;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background .3s;
+    -moz-transition: background .3s;
+    -ms-transition: background .3s;
+    -o-transition: background .3s;
+    transition: background .3s;
+    background: #ff8a00;
+}
+.booking-submit-btn:hover{
+    background: #f60;
+}
+.booking-submit-btn.disabled{
+    background: #ccc;
+}
+
+.booking-submit-block .yzm-label{
+    margin-top: -3px;
+    vertical-align: middle;
+}
+
+
+/* 预定协议 */
+.bk-document-box{
+    line-height: 24px;
+    padding: 40px;
+}
+
+
+.layui-layer-btn{
+    border-top: 1px solid #e5e5e5;
+}
+.layui-layer-btn a{
+    padding: 0 30px !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+}
+.layui-layer-btn .layui-layer-btn0{
+    color: #fff !important;
+    border-color: #00b7ee !important;
+    background-color: #00b7ee !important;
+}
+
+
+
+/* 右侧清单 */
+.booking-r-container{
+    float: right;
+    width: 320px;
+}
+.side-total-bar{
+    text-align: center;
+    position: relative;
+}
+.side-total-bar:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 9;
+    border-top: 1px solid #e5e5e5;
+}
+.side-total-bar .tit{
+    color: #999;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    position: relative;
+    z-index: 10;
+    font-size: 16px;
+    background: #fff;
+}
+.booking-side-total{
+    padding: 10px 20px 20px;
+    border-top: 3px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: #fff;
+}
+.booking-side-fixed{
+    width: 280px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.booking-side-fixed::-webkit-scrollbar{
+    width:5px;
+    height:5px
+}
+.booking-side-fixed::-webkit-scrollbar-button{
+    height:0;
+    background:#fff
+}
+.booking-side-fixed::-webkit-scrollbar-track{
+    height:0;
+    background:#fff
+}
+.booking-side-fixed::-webkit-scrollbar-thumb{
+    background:#ccc
+}
+
+.side-total-block{
+    padding: 10px 0;
+    border-bottom: 1px dotted #e5e5e5;
+}
+.side-total-tit{
+    padding: 0 10px;
+    font-size: 14px;
+}
+.side-total-list{
+    padding-top: 5px;
+}
+.side-total-list>li{
+    padding: 0 10px;
+}
+.side-total-list>li:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+.side-total-list .hd{
+    float: left;
+}
+.side-total-list .bd{
+    float: right;
+    text-align: right;
+}
+.side-total-list .hd,
+.side-total-list .bd{
+    color: #999;
+    display: inline-block;
+    width: 50%;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.side-amount-bar{
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.side-amount-bar .c-f60{
+    color: #f60;
+}
+.side-amount-bar .all-li{
+    padding: 15px 10px;
+    margin-top: 10px;
+    background: #fffced;
+}
+.side-amount-bar .all-item{
+    color: #666;
+    font-size: 14px;
+}
+.side-amount-bar .all-pri{
+    color: #f60;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.booking-r-container{
+    float: right;
+}
+
+
+
+/*发票信息*/
+.invoice-tips{
+    padding:8px 12px;
+    background-color: #fffae0;
+    line-height: 18px;
+    color: #f80;
+    margin-top: 6px;
+}
+.invoice-name-box{
+    display: inline-block;
+    position: relative;
+}
+.invoice-name-box .input-down{
+    position: absolute;
+    top:30px;
+    left:5px;
+    z-index: 2;
+    width: 298px;
+    border: 1px solid #7b9dd4;
+    background-color: #fff;
+}
+.invoice-name-box .input-down>li{
+    padding: 0 5px;
+    height:20px;
+    line-height:20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    cursor: pointer;
+}
+.invoice-name-box .input-down>li.on,
+.invoice-name-box .input-down>li:hover{
+    background-color: #1e90ff;
+    color: #fff;
+}
+/*用户未登录时显示此信息*/
+.login-invoice-info{
+    margin-top: 15px;
+    border-top:1px dashed #ccc;
+}
+.province-sel,.city-sel{
+    width: 145px;
+}
+
+/*用户登录后显示此信息*/
+.login-after-invoice-info{
+
+}
+dl.addr-list{
+    height:117px;
+    overflow: hidden;
+}
+dl.addr-list dd{
+    float: left;
+    border: 1px solid #ddd;
+    background-color: #fcfcfc;
+    width: 255px;
+    height: 99px;
+    margin:16px 17px 0 0;
+    cursor: pointer;
+    position: relative;
+}
+dl.addr-list dd.det-addr:hover,
+dl.addr-list dd.det-addr.on,
+dl.addr-list dd.det-addr:hover .addr-item,
+dl.addr-list dd.det-addr.on .addr-item{
+    border: 1px solid #f80;
+}
+dl.addr-list dd.mr_0{
+    margin-right: 0;
+}
+dl.addr-list dd .selected-ico{
+    position: absolute;
+    right:0;
+    bottom: 0;
+    width: 15px;
+    height:15px;
+    background: url("../images/lin-type-ico.png") no-repeat;
+    display: none;
+}
+dl.addr-list dd.on .selected-ico{
+    display: block;
+}
+dl.addr-list dd .addr-item{
+    height:97px;
+    padding:0 17px;
+    border: 1px solid transparent;
+}
+dl.addr-list dd .person-info{
+    line-height: 32px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+dl.addr-list dd .person-info span{
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+dl.addr-list dd .person-info span.phone{
+    text-align: right;
+}
+dl.addr-list dd .addr-info{
+    padding-top: 12px;
+    color: #666;
+    font-size: 12px;
+    height:36px;
+    line-height: 18px;
+    overflow: hidden;
+}
+dl.addr-list a.add-addr-btn{
+    display: block;
+    line-height: 99px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+.addr-btn-box{
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+.addr-btn-box a{
+    color: #999;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    margin-top: 10px;
+    position: relative;
+}
+.addr-btn-box a:after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin: -3px 0 0 5px;
+    border-bottom: 4px solid #999;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.addr-btn-box a.down:after{
+    border-bottom: 0;
+    border-top: 4px solid #999;
+}
+
+.layui-layer-page .layui-layer-content {
+    height: auto !important;
+}
+
+#addAddressBox{
+    padding: 30px;
+}
+#addAddressBox .layui-layer-btn{
+    border: 0;
+}
+.set-default{
+    height: 18px;
+    padding-left: 110px;
+    color: #666;
+    line-height: 18px;
+}
+.set-default input{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#addAddressBox .btn-wrap{
+    margin-top: 10px;
+    text-align: center;
+}
+#addAddressBox .btn-wrap>a{
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #dedede;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+#addAddressBox .btn-wrap>a.cancel-btn{
+    border: 1px solid #dedede;
+    background-color: #f1f1f1;
+    margin-right: 12px;
+}
+#addAddressBox .btn-wrap>a.confirm-btn{
+    border: 1px solid #2e8ded;
+    background-color: #2e8ded;
+    color: #fff;
+}
+#invoice_block ul li .item-hd{
+    width: 120px;
+}
+#invoice_block .type_sel{
+    margin-right: 5px;
+}
+.bib-radio-box {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

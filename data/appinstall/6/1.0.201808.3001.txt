@@ -1,0 +1,9 @@
+plugins/spot/classes/controller/admin/spot.php
+plugins/spot/classes/controller/mobile/spot.php
+plugins/spot/classes/controller/pc/spot.php
+plugins/spot/public/mobile/css/spot.css
+plugins/spot/views/admin/spot/ticket_edit.php
+plugins/spot/views/default/spot/list.php
+plugins/spot/views/mobile/spot/index.php
+plugins/spot/views/mobile/spot/list.php
+plugins/spot/views/mobile/spot/show.php

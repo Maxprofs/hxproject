@@ -1,0 +1,2 @@
+plugins/photo/views/admin/photo/edit.php
+plugins/photo/views/admin/photo/attrid/config.php

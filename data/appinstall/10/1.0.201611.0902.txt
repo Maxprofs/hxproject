@@ -1,0 +1,3 @@
+plugins/visa/classes/controller/admin/visa.php
+plugins/visa/classes/model/visa.php
+plugins/visa/views/mobile/visa/list.php

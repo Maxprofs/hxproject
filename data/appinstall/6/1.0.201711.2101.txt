@@ -1,0 +1,3 @@
+plugins/spot/public/mobile/css/spot.css
+plugins/spot/public/mobile/images/mdd-icon.png
+plugins/spot/views/mobile/spot/show.php

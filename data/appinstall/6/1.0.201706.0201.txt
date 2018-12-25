@@ -1,0 +1,10 @@
+sql.php
+unsql.php
+plugins/spot/admin_init.php
+plugins/spot/classes/controller/admin/spot/config.php
+plugins/spot/classes/controller/mobile/spot.php
+plugins/spot/classes/controller/pc/spot.php
+plugins/spot/views/admin/spot/config/index.php
+plugins/spot/views/default/spot/book.php
+plugins/spot/views/default/spot/member/orderview.php
+plugins/spot/views/mobile/spot/book.php

@@ -1,0 +1,2 @@
+plugins/wxpay/classes/controller/mobile/wxpay.php
+plugins/wxpay/vendor/mobile/wxpay/jsapi/notify.php

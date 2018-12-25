@@ -1,0 +1,3 @@
+plugins/ship/classes/controller/admin/ship.php
+plugins/ship/classes/controller/admin/shipline.php
+plugins/ship/views/admin/ship/edit.php

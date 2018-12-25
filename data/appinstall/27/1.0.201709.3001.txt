@@ -1,0 +1,1 @@
+plugins/alipay/views/mobile/alipay_wxclient.php

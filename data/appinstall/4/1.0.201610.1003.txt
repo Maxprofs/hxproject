@@ -1,0 +1,2 @@
+plugins/line/views/admin/line/edit.php
+plugins/line/views/default/line/index.php

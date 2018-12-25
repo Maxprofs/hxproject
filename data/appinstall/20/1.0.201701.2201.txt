@@ -1,0 +1,1 @@
+plugins/productmap/application/classes/model/spot.php

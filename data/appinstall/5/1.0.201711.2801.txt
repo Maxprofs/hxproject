@@ -1,0 +1,1 @@
+plugins/hotel/public/css/hotel.css

@@ -1,0 +1,2 @@
+plugins/photo/classes/controller/mobile/photo.php
+plugins/photo/views/mobile/photo/show.php

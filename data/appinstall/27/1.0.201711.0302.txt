@@ -1,0 +1,1 @@
+plugins/alipay/views/admin/alipay/index.php

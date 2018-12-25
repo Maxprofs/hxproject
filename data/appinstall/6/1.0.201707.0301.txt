@@ -1,0 +1,2 @@
+plugins/spot/classes/controller/admin/spot.php
+plugins/spot/views/admin/spot/edit.php

@@ -1,0 +1,3 @@
+plugins/line/classes/controller/mobile/line.php
+plugins/line/views/mobile/line/book.php
+plugins/line/views/mobile/line/show.php

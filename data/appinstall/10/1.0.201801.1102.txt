@@ -1,0 +1,2 @@
+plugins/visa/views/admin/visa/material.php
+plugins/visa/views/default/visa/show.php

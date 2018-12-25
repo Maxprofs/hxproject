@@ -1,0 +1,3 @@
+plugins/spot/classes/controller/mobile/spot.php
+plugins/spot/views/mobile/spot/book.php
+plugins/spot/views/mobile/spot/show.php

@@ -1,0 +1,1 @@
+plugins/hotel/views/default/hotel/list.php

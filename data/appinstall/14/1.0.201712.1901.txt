@@ -1,0 +1,3 @@
+plugins/ship/public/css/ship.css
+plugins/ship/views/admin/ship/roomedit.php
+plugins/ship/views/default/ship/show.php

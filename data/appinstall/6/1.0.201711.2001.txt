@@ -1,0 +1,2 @@
+plugins/spot/views/default/spot/list.php
+plugins/spot/views/default/spot/show.php

@@ -1,0 +1,2 @@
+plugins/customize/public/css/customize.css
+plugins/customize/views/default/customize/index.php

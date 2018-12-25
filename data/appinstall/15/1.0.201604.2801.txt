@@ -1,0 +1,2 @@
+﻿plugins/supplier_line/application/classes/stourweb/controller.php
+plugins/supplier_line/application/views/default/footer.php

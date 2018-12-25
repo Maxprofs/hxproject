@@ -1,0 +1,9 @@
+sql.php
+unsql.php
+plugins/spot/classes/controller/pc/spot.php
+plugins/spot/classes/taglib/spot.php
+plugins/spot/views/default/spot/block/destrelatedticket.php
+plugins/spot/views/default/spot/block/hotspot.php
+plugins/spot/views/default/spot/block/hotticket.php
+plugins/spot/views/default/spot/block/newestticket.php
+plugins/spot/views/default/spot/block/tagwordrelatedticket.php

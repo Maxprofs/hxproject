@@ -1,0 +1,7 @@
+plugins/spot/classes/controller/admin/spot.php
+plugins/spot/classes/model/spot.php
+plugins/spot/classes/taglib/spot.php
+plugins/spot/views/admin/spot/edit.php
+plugins/spot/views/admin/spot/config/index.php
+plugins/spot/views/default/spot/list.php
+plugins/spot/views/default/spot/show.php

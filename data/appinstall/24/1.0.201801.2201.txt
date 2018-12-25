@@ -1,0 +1,3 @@
+plugins/platform_income/classes/controller/pc/platform/income.php
+plugins/platform_income/classes/model/platform/income.php
+plugins/platform_income/views/admin/platform_income/view.php

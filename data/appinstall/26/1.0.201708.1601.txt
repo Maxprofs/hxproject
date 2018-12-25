@@ -1,0 +1,1 @@
+plugins/supplier_finance/application/classes/stourweb/view.php

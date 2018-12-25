@@ -1,0 +1,1 @@
+plugins/photo/views/default/photo/list.php

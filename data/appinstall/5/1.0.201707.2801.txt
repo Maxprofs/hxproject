@@ -1,0 +1,7 @@
+plugins/hotel/classes/controller/mobile/hotel.php
+plugins/hotel/classes/controller/pc/hotel.php
+plugins/hotel/classes/controller/pc/hotel/member.php
+plugins/hotel/views/admin/hotel/config/index.php
+plugins/hotel/views/default/hotel/book.php
+plugins/hotel/views/default/hotel/member/orderview.php
+plugins/hotel/views/mobile/hotel/book.php

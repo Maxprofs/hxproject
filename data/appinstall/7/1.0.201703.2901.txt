@@ -1,0 +1,5 @@
+plugins/article/classes/controller/pc/article.php
+plugins/article/classes/model/article.php
+plugins/article/views/default/article/index.php
+plugins/article/views/default/article/list.php
+plugins/article/views/default/article/show.php

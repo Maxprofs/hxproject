@@ -1,0 +1,2 @@
+plugins/spot/views/admin/spot/ticket_edit.php
+plugins/spot/views/default/spot/book.php

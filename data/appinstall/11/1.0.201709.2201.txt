@@ -1,0 +1,3 @@
+plugins/customize/classes/controller/pc/customize.php
+plugins/customize/public/css/customize.css
+plugins/customize/views/default/customize/index.php

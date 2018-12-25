@@ -1,0 +1,1 @@
+plugins/article/classes/controller/admin/article/destination.php

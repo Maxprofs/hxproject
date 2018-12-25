@@ -1,0 +1,2 @@
+plugins/hotel/public/css/hotel.css
+plugins/hotel/views/default/hotel/show.php

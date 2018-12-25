@@ -1,0 +1,2 @@
+plugins/red_envelope/classes/controller/mobile/envelope.php
+plugins/red_envelope/classes/controller/mobile/envelope/member.php

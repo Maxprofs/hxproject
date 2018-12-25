@@ -1,0 +1,4 @@
+plugins/notes/public/css/youji.css
+plugins/notes/public/images/gl_youji_ico.png
+plugins/notes/public/images/user_youji_bg.png
+plugins/notes/views/default/notes/index.php

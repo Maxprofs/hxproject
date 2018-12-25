@@ -1,0 +1,2 @@
+plugins/article/views/mobile/article/index.php
+plugins/article/views/mobile/article/list.php

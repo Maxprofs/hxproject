@@ -1,0 +1,6 @@
+plugins/ship/classes/controller/admin/ship.php
+plugins/ship/classes/controller/mobile/ship.php
+plugins/ship/classes/controller/pc/ship.php
+plugins/ship/views/admin/ship/edit.php
+plugins/ship/views/default/ship/show.php
+plugins/ship/views/mobile/ship/show.php

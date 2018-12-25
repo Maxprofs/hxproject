@@ -1,0 +1,6 @@
+plugins/spot/classes/controller/mobile/spot.php
+plugins/spot/classes/controller/pc/spot.php
+plugins/spot/classes/model/spot/ticket/type.php
+plugins/spot/classes/taglib/spot.php
+plugins/spot/views/admin/spot/order/view.php
+plugins/spot/views/default/spot/book.php

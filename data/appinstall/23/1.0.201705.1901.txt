@@ -1,0 +1,11 @@
+plugins/api/classes/controller/pc/api/standard/comment.php
+plugins/api/classes/controller/pc/api/standard/line.php
+plugins/api/classes/controller/pc/api/standard/login.php
+plugins/api/classes/controller/pc/api/standard/member.php
+plugins/api/classes/controller/pc/api/standard/msg.php
+plugins/api/classes/controller/pc/api/standard/order.php
+plugins/api/classes/controller/pc/api/standard/system.php
+plugins/api/classes/model/api/standard/ad.php
+plugins/api/classes/model/api/standard/comment.php
+plugins/api/classes/model/api/standard/line.php
+plugins/api/classes/model/api/standard/order.php

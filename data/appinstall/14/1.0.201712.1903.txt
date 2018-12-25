@@ -1,0 +1,10 @@
+plugins/ship/classes/controller/admin/ship.php
+plugins/ship/views/admin/ship/edit.php
+plugins/ship/views/admin/ship/facilityedit.php
+plugins/ship/views/admin/ship/facilitykind.php
+plugins/ship/views/admin/ship/flooredit.php
+plugins/ship/views/admin/ship/index.php
+plugins/ship/views/admin/ship/roomedit.php
+plugins/ship/views/admin/ship/roomkind.php
+plugins/ship/views/admin/ship/scheduleedit.php
+plugins/ship/views/admin/shipline/edit.php

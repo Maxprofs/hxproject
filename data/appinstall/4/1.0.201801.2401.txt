@@ -1,0 +1,3 @@
+plugins/line/public/css/lines.css
+plugins/line/public/images/arrow-right-ico2.png
+plugins/line/views/default/line/index.php

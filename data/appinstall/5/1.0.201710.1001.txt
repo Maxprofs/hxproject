@@ -1,0 +1,3 @@
+plugins/hotel/public/mobile/css/hotel.css
+plugins/hotel/public/mobile/images/mdd-icon.png
+plugins/hotel/views/mobile/hotel/show.php

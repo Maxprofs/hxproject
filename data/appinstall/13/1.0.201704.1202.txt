@@ -1,0 +1,1 @@
+plugins/coupon/views/mobile/coupon/member/index.php

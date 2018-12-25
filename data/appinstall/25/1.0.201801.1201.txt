@@ -1,0 +1,4 @@
+plugins/finance/views/admin/finance/commission_type.php
+plugins/finance/views/admin/finance/ordercount.php
+plugins/finance/views/admin/finance/orderrecord.php
+plugins/finance/views/admin/finance/overview.php

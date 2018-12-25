@@ -1,0 +1,5 @@
+plugins/coupon/views/admin/edit.php
+plugins/coupon/views/admin/index.php
+plugins/coupon/views/admin/stat.php
+plugins/coupon/views/admin/coupon/give_add.php
+plugins/coupon/views/admin/coupon/give_list.php

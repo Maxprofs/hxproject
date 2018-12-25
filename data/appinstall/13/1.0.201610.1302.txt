@@ -1,0 +1,2 @@
+plugins/coupon/classes/model/coupon.php
+plugins/coupon/views/mobile/coupon/member/index.php

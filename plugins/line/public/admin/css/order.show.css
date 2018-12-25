@@ -1,0 +1,16 @@
+.order-show-block .info-item-block>li{
+    padding: 0;
+}
+.order-show-bar{
+    border-bottom: 1px solid #e5e5e5;
+}
+.order-bar-tit{
+    display: inline-block;
+    padding: 8px 5px;
+}
+.table-order thead th{
+    background: #f8f8f8;
+}
+.total-block-bar{
+    background: #f8f8f8;
+}

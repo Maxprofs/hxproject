@@ -1,0 +1,5 @@
+plugins/ship/views/mobile/ship/book.php
+plugins/ship/views/mobile/ship/cruise.php
+plugins/ship/views/mobile/ship/index.php
+plugins/ship/views/mobile/ship/list.php
+plugins/ship/views/mobile/ship/show.php

@@ -1,0 +1,3 @@
+
+<?php require_once ("E:/wamp64/www/taglib/flink.php");$flink_tag = new Taglib_Flink();if (method_exists($flink_tag, 'query')) {$data = $flink_tag->query(array('action'=>'query',));}?> <?php if(!empty($data) && $isindex==1) { ?> <div class="st-link"> <div class="wm-1200"> <div class="st-link-list"> <dl> <dt><?php echo __('友情链接');?>：</dt> <dd> <?php $n=1; if(is_array($data)) { foreach($data as $row) { ?> <a href="<?php echo $row['url'];?>" <?php if($row['is_follow']==0) { ?>rel="nofollow"<?php } ?>
+ target="_blank"><?php echo $row['title'];?></a> <?php $n++;}unset($n); } ?> </dd> </dl> </div> </div> </div> <?php } ?>

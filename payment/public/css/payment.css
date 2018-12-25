@@ -1,0 +1,158 @@
+/*订单信息*/
+.payment-order{
+	border: 1px solid #ffd899;
+}
+.payment-order-tit{
+	height: 78px;
+	line-height: 78px;
+	overflow: hidden;
+	background: #fffdee;
+	padding: 0 68px 0 72px;
+}
+.payment-order-tit .msg{
+	float: left;
+	font-size: 16px;
+	color: #666666;	
+	padding-left: 50px;
+	background: url(../images/order-line-success-ico.png) no-repeat left center;
+}
+.payment-order-tit .price{
+	float: right;
+	font-size: 14px;
+	color: #666666;
+}
+.payment-order-tit .price em{
+	font-size: 24px;
+	color: #ff3600;
+	font-weight: bold;
+}
+.payment-order-list > ul{
+	border-top: 1px solid #ffd899;
+	padding: 14px 0;
+}
+.payment-order-list li{
+	line-height: 22px;
+}
+.payment-order-list .hd{
+	float: left;
+	width: 106px;
+	text-align: right;
+}
+.payment-order-list .bd{
+	float: left;
+	margin-left: 10px;
+	width: 1014px;
+}
+.payment-order-list .bd i.des{
+	color: #999;
+}
+.payment-order-list .bd > a:hover{
+	color: #ff6000;
+	text-decoration: underline;
+}
+.payment-order-list .bd > em{
+	color: #ff3600;
+	font-weight: bold;
+}
+.st-payment-way .payment-con-box{
+	border: 1px solid #d8d8d8;
+	margin-top: 15px;
+}
+.payment-con-box .payment-tit{
+	height: 53px;
+	line-height: 53px;
+	background: #f9f8f8;
+	padding: 0 47px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.st-payment-way .payment-con-box .payment-con{
+	border: none;
+	margin: 0;
+	padding: 10px 47px 35px 47px;
+}
+.st-payment-way .payment-con-box .payment-con .payment-line dl dt{
+	padding: 14px 0;
+	border-bottom: 1px solid #e5e5e5;
+	font-size: 16px;
+	color: #333;
+	font-weight: normal;
+}
+.st-payment-way .payment-con-box .payment-con .payment-line dl dd{
+	margin-top: 15px;
+}
+.st-payment-way .payment-con-box .payment-con .free-txt{
+	padding: 20px 0;
+	font-size: 16px;
+}
+.pay-info{
+	padding: 15px 0;
+}
+.pay-info .list{
+	padding-bottom: 15px;
+	position: relative;
+}
+.pay-info .list .ico,.pay-info .list label{
+	position: absolute;
+	left: 0;
+	width: 27px;
+	text-align: right;
+}
+.pay-info .list .txt{
+	padding-left: 36px;
+	font-size: 14px;
+	line-height: 20px;
+}
+.pay-info .list label{
+	color: #fc6000;
+	line-height: 20px;
+}
+.pay-info .list .notes{
+	font-size: 12px;
+	color: #7d7d7d;
+}
+.st-payment-way .payment-con .payment-tj-btn,.st-payment-way .payment-con .payment-dd-btn{
+	margin-top: 20px;
+}
+.st-payment-way .payment-con .payment-tj-btn a,.st-payment-way .payment-con .payment-dd-btn a{
+	display: inline-block;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 3px;
+    background: #00b7ee;
+}
+
+.user-home-box .user-home-order .order-list .yd-type{
+	display: block;
+	color: #666;
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+.st-payment-way .payment-con .payment-line dl dd ul li{
+	width: 155px;
+    height: 55px;
+    margin: 0 70px 20px 0;
+    border: none;
+}
+.st-payment-way .payment-con .payment-line dl dd ul li.active, .st-payment-way .payment-con .payment-line dl dd ul li:hover{
+	border: none;
+}
+.st-payment-way .payment-con .payment-line dl dd ul li span{
+	width: 155px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+}
+.st-payment-way .payment-con .payment-line dl dd ul li span img{
+	width: 155px;
+    height: 55px;
+}
+.st-payment-way .payment-con .payment-line li span:hover, .st-payment-way .payment-con .payment-line  li.active span{
+	border: 2px solid #f52;
+}

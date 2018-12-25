@@ -1,0 +1,2 @@
+plugins/car/views/admin/car/list.php
+plugins/car/views/admin/car/order/list.php

@@ -1,0 +1,71 @@
+#choose-product
+{
+    display: none
+}
+
+.census-item .cp-title
+{
+    display: none;
+}
+
+.finance-content .census-item li{
+    float: left;
+}
+
+.finance-content .census-item .no-float
+{
+    float: none;
+    clear: both;
+}
+
+
+.finance-block table th{
+    color: #728597;
+    background: #f1f9ff;
+    border-right: 1px solid #f1f9ff;
+}
+#count-msg-container{
+    /*display: block;*/
+}
+
+#count-msg-container .item-nr{
+    padding-left: 70px;
+}
+
+#count-msg-container .item-nr li{
+    display: inline-block;
+    width: 135px;
+    height: 16px;
+    line-height: 16px;
+    margin: 24px 10px 0 0;
+    border-right: 2px #43aee4 solid;
+}
+#count-msg-container .item-nr .count-item{
+    margin-left: 30px;
+}
+#count-msg-container .item-nr .count-item-last{
+    border-right: 0px;
+}
+
+.finance-content .item-nr .create-table{
+    margin-right: 60px;
+}
+
+
+.list-head-tb .head-td-rt a.keywords-description{
+    display: inline-block;
+    width: 76px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    margin: 0px 3px 0 0;
+    background: url("../images/help-ico.png") no-repeat 5px 7px;
+    padding-right: 18px;
+    padding-left: 20px;
+}
+.finance-block{
+    margin-top: 0px;
+}
+.explain-txt{
+    padding: 0;
+}

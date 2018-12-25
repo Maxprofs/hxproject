@@ -1,0 +1,1 @@
+plugins/notes/views/default/notes/member/mynotes.php

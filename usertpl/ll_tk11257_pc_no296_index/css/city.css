@@ -1,0 +1,225 @@
+/*城市站点*/
+.st-local-city{
+    position: absolute;
+    left: 298px;
+    max-width: 120px;
+    top: 50%;
+    margin-top: -8px;
+}
+.head_start_city{
+    position: relative;
+}
+.head_start_city .sc_name {
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    left: 1px;
+}
+
+.head_start_city.change_tab .sc_name {
+    position: relative;
+    top: -5px;
+    left: -15px;
+    padding: 4px 5px 2px 15px;
+    height: 18px;
+    border: 1px solid #dedede;
+    border-bottom-color: #fff;
+    z-index: 10;
+    background: #fff;
+}
+
+.head_start_city .sc_name span {
+    margin-right: 5px;
+    padding-right: 10px;
+    position: relative;
+    line-height: 1;
+    display: inline-block;
+    font-size: 14px;
+
+}
+.head_start_city .sc_name span em{
+    max-width: 84px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+.head_start_city.change_tab .sc_name span {
+    color: #f80
+}
+.head_start_city .sc_name span .icon_arrow {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-top: 3px solid #5d5d5d;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+.head_start_city.change_tab .sc_name span .icon_arrow {
+    border-top: none;
+    border-bottom: 3px solid #5d5d5d;
+}
+.head_start_city .show_city {
+    display: none;
+    float: left;
+    position: absolute;
+    width: 500px;
+    height: auto;
+    left: -15px;
+    top: 20px;
+    z-index: 9;
+    background: #fff;
+    padding-bottom: 15px;
+    border: 1px solid #dedede;
+}
+.head_start_city.change_tab .show_city {
+    display: block;
+}
+.head_start_city #con {
+    width: 470px;
+    margin: 0 auto;
+    height: auto;
+}
+.station_search {
+    margin-top: 15px;
+}
+.station_search_box{
+    border: 1px solid #dedede;
+    height: 30px;
+    position: relative;
+    z-index: 3;
+}
+.station_search_box .header_icon{
+    width: 14px;
+    height: 14px;
+    background: url(../images/header-city-ico.png) no-repeat;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+.station_search_box .txt {
+    background-color: transparent;
+    height: 22px;
+    line-height: 22px;
+    margin: 4px 30px 1px;
+    outline: medium none;
+    width: 400px;
+    color: #666;
+}
+.station_search_result {
+    padding: 5px 0 0 5px;
+    padding-left: 32px
+}
+.station_search_result a {
+    color: #f80;
+    display: inline-block;
+    line-height: 22px;
+    margin-right: 15px;
+    max-width: 72px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.station_search_result a:hover {
+    text-decoration: underline;
+}
+.station_search_result .no_result{
+    display: inline-block;
+    line-height: 22px;
+}
+.station_hot {
+    margin-top: 10px;
+}
+.station_hot h4 {
+    margin-bottom: 5px;
+    color: #999;
+}
+.station_hot p a {
+    display: inline-block;
+    margin-right: 20px;
+    line-height: 20px;
+    color: #666;
+    max-width:72px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.station_hot p a:hover {
+    color: #f80;
+    text-decoration: underline;
+}
+#tags {
+    height: 15px;
+    padding-bottom: 5px;
+    background: #fff;
+    width: 470px;
+    padding-top: 10px;
+}
+#tags li {
+    background: #fff;
+    float: left;
+    height: 15px;
+    padding: 4px 10px 4px 10px;
+    border-bottom: 1px solid #fff;
+}
+#tags li a {
+    float: left;
+    color: #666;
+    height: 15px;
+    text-decoration: none;
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+    line-height: 15px;
+    background: none;
+}
+#tags li.selectTag{
+    margin-bottom: -1px;
+    position: relative;
+    height: 15px;
+    border: 1px solid #dedede;
+    border-top: 2px solid #f80;
+    border-bottom: 1px solid #fff;
+    z-index: 10;
+}
+.tagContent {
+    height: auto;
+    position: relative;
+    top: 4px;
+    border-top: 1px solid #dedede;
+}
+.tagContent .line {
+    padding-bottom: 7px;
+    clear: both;
+    padding-top: 7px;
+}
+.tagContent .line .line_left {
+    width: 25px;
+    float: left;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+    padding-top: 2px;
+    padding-left: 8px;
+}
+.tagContent .line .line_right {
+    width: 437px;
+    float: left;
+}
+.tagContent .line a {
+    margin-right: 20px;
+    color: #666;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+    line-height: 23px;
+    max-width: 72px;
+}
+.tagContent .line a:hover{
+    color: #f80;
+    text-decoration: underline;
+}

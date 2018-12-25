@@ -1,0 +1,2 @@
+plugins/photo/views/default/photo/show.php
+plugins/photo/views/mobile/photo/show.php

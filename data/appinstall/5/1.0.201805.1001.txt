@@ -1,0 +1,2 @@
+plugins/hotel/views/admin/hotel/email.php
+plugins/hotel/views/admin/hotel/sms.php

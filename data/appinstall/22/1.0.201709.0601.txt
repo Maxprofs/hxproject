@@ -1,0 +1,3 @@
+plugins/supplier/application/views/default/pc/leftnav.php
+plugins/supplier/application/views/default/pc/set_footer.php
+plugins/supplier/application/views/default/pc/set_logo.php

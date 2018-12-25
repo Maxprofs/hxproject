@@ -1,0 +1,3 @@
+plugins/coupon/pc_init.php
+plugins/coupon/classes/controller/pc/coupon.php
+plugins/coupon/views/default/coupon/f_get_box.php

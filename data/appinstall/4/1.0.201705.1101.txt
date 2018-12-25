@@ -1,0 +1,3 @@
+plugins/line/classes/controller/pc/line/member.php
+plugins/line/views/default/line/show.php
+plugins/line/views/mobile/line/book.php

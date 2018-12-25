@@ -1,0 +1,2 @@
+plugins/supplier_line/application/views/default/suit.php
+plugins/supplier_line/application/views/default/suit_edit.php

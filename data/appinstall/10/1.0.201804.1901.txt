@@ -1,0 +1,4 @@
+plugins/visa/pc_init.php
+plugins/visa/classes/controller/admin/visa.php
+plugins/visa/classes/taglib/visa.php
+plugins/visa/views/admin/visa/area_list.php

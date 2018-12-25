@@ -1,0 +1,1 @@
+[{"system_part_code":"","name":"\u7cbe\u7f8e\u7efc\u5408\u7248\u95e8\u6237\u9996\u9875\u6a21\u677f","upgrade_code":"stourwebcms_templet_pc_no296","app_number":"ccb48a7c-7af3-4e90-ba9f-3fce5f75b8d0","system_part_type":"3"}]

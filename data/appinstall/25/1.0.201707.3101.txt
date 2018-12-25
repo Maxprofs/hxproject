@@ -1,0 +1,5 @@
+plugins/finance/classes/controller/admin/financeextend.php
+plugins/finance/classes/model/member/order/extend.php
+plugins/finance/public/images/loading.gif
+plugins/finance/public/js/common.js
+plugins/finance/views/admin/finance/overview.php

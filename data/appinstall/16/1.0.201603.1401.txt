@@ -1,0 +1,4 @@
+﻿plugins/supplier_hotel/application/classes/controller/index.php
+plugins/supplier_hotel/application/views/default/edit.php
+plugins/supplier_hotel/application/views/default/list.php
+plugins/supplier_hotel/application/views/default/suit_list.php

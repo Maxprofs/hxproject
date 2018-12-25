@@ -1,0 +1,2 @@
+plugins/photo/public/css/photo.css
+plugins/photo/views/default/photo/list.php

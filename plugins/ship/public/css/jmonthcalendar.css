@@ -1,0 +1,174 @@
+﻿#jMonthCalendar {
+    padding-right: 90px;
+    position: relative;
+}
+.MonthlyCalendar .MonthNavigation {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+}
+.MonthlyCalendar .MonthNavPrev, .MonthlyCalendar .MonthNavNext, .MonthlyCalendar .TodayLink {
+    float: left;
+    width: 90px;
+    height: 90px;
+    font-size: 0;
+}
+.MonthlyCalendar .YearNavNext, .MonthlyCalendar .YearNavPrev {
+}
+.MonthlyCalendar .MonthNavPrev a, .MonthlyCalendar .MonthNavNext a {
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+.MonthlyCalendar .MonthName {
+    width: 90px;
+    line-height: 30px;
+    padding: 135px 0;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    font-size: 18px;
+}
+.MonthlyCalendar .MonthNavNext {
+    background: url("../images/ship-alendar-arrow-after.png") center no-repeat;
+}
+.MonthlyCalendar .MonthNavPrev {
+    background: url("../images/ship-alendar-arrow-before.png") center no-repeat;
+}
+.MonthlyCalendar {
+    height: 100%;
+    width: 100%;
+    border: solid 1px #eee;
+    border-collapse: collapse;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.MonthlyCalendar #CalendarHead {
+    width: 100%;
+    background: #F7F7F7 none repeat scroll 0 0;
+}
+.MonthlyCalendar #CalendarHead .DateHeader {
+    width: 14%;
+    color: #666;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    border-right: 1px solid #eee;
+}
+.normal {
+    color: #494949;
+}
+.week {
+    color: #494949;
+}
+.noweek {
+    color: #494949;
+    border: none;
+}
+#jMonthCalendar .mouseover {
+    background: #fff8ec;
+    vertical-align: top;
+    border: solid 1px #eee;
+}
+#jMonthCalendar .mouseout {
+    background: #fff;
+    vertical-align: top;
+    border: solid 1px #eee;
+}
+.MonthlyCalendar #CalendarBody {
+}
+.DateBox {
+    height: 92px;
+    vertical-align: top;
+    border: solid 1px #eee;
+}
+.DateLabel {
+    width: 100%;
+    text-align: left;
+}
+.DateLabel a {
+    color: #777;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding: 8px 10px 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+#CalendarBody .Inactive {
+    background: #fafafa none repeat scroll 0 0;
+}
+#CalendarBody .Weekend {
+    background: #ddffff none repeat scroll 0 0;
+}
+.Today {
+    background: #fff8ec;
+    none repeat scroll 0 0;
+}
+#jMonthCalendar .Event {
+    font-size: 12px;
+    padding: 0 10px;
+    width: 137px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+}
+.Event a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    font-family: "微软雅黑", Gadget, sans-serif
+}
+.Event a:hover {
+    text-decoration: underline;
+}
+.name a {
+    color: #333;
+    font-size: 14px;
+}
+.name a:hover {
+    text-decoration: none
+}
+.Event .more{
+    color: #0088d0;
+    float: left;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    overflow:visible;
+}
+.Event .more:after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin: -2px 0 0 3px;
+    border-top: 4px solid #ccc;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.Event .price{
+    float: right;
+    color: #999;
+}
+.Event .price em{
+    color: #f60;
+}
+.Event .price em b{
+    font-size: 16px;
+    font-weight:500;
+}
+#CalendarBody .Inactive a {
+    color: #ccc
+}

@@ -1,0 +1,2 @@
+plugins/ship/public/css/ship.css
+plugins/ship/views/default/ship/list.php

@@ -1,0 +1,2 @@
+plugins/ship/views/mobile/ship/list.php
+plugins/ship/views/mobile/ship/show.php

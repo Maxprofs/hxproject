@@ -1,0 +1,2 @@
+plugins/supplier_line/application/views/default/calendar/dialog_add_price.php
+plugins/supplier_line/application/views/default/calendar/dialog_edit_price.php

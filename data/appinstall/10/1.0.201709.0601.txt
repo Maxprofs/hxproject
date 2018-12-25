@@ -1,0 +1,2 @@
+plugins/visa/public/images/ls-icobg.png
+plugins/visa/views/default/visa/show.php

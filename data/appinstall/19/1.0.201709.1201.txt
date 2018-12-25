@@ -1,0 +1,2 @@
+plugins/login_wx_client/application/classes/controller/index.php
+plugins/login_wx_client/application/views/default/mobile_5.0_both.php

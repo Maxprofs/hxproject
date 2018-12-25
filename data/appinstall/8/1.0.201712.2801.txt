@@ -1,0 +1,2 @@
+plugins/notes/classes/controller/pc/notes.php
+plugins/notes/views/default/notes/write.php

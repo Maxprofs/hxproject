@@ -1,0 +1,7 @@
+plugins/line/classes/taglib/line.php
+plugins/line/views/default/line/index.php
+plugins/line/views/default/line/list.php
+plugins/line/views/default/line/show.php
+plugins/line/views/mobile/line/index.php
+plugins/line/views/mobile/line/list.php
+plugins/line/views/mobile/line/show.php

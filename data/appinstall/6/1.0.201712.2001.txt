@@ -1,0 +1,1 @@
+plugins/spot/views/admin/spot/edit.php

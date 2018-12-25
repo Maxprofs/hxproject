@@ -1,0 +1,3 @@
+plugins/car/classes/controller/admin/car.php
+plugins/car/classes/controller/admin/car/attrid.php
+plugins/car/classes/model/car/content.php

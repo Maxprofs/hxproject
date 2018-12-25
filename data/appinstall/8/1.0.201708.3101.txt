@@ -1,0 +1,6 @@
+plugins/notes/public/mobile/css/note.css
+plugins/notes/public/mobile/images/comment-icon.png
+plugins/notes/public/mobile/images/faq-search-btn-icon.png
+plugins/notes/public/mobile/images/look-icon.png
+plugins/notes/views/mobile/notes/index.php
+plugins/notes/views/mobile/notes/show.php

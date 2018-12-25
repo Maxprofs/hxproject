@@ -1,0 +1,9 @@
+FileManifest.txt
+plugins/coupon/m_init.php
+plugins/coupon/classes/controller/mobile/coupon.php
+plugins/coupon/classes/model/coupon.php
+plugins/coupon/classes/taglib/coupon.php
+plugins/coupon/public/mobile/images/integral.jpg
+plugins/coupon/public/mobile/images/integral_show.jpg
+plugins/coupon/views/mobile/coupon/integral/show.php
+uploads/integral.jpg

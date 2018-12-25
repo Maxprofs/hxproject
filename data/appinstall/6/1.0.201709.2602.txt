@@ -1,0 +1,2 @@
+plugins/spot/classes/model/spot.php
+plugins/spot/classes/taglib/spot.php

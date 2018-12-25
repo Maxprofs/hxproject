@@ -1,0 +1,3 @@
+﻿plugins/supplier_hotel/application/classes/controller/index.php
+plugins/supplier_hotel/application/classes/controller/pub.php
+plugins/supplier_hotel/application/classes/model/model/archive.php

@@ -1,0 +1,2 @@
+plugins/weixin_pay_h5/classes/model/notify.php
+plugins/weixin_pay_h5/classes/model/wxpay.php

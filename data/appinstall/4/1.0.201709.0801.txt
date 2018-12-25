@@ -1,0 +1,2 @@
+plugins/line/classes/controller/admin/line/config.php
+plugins/line/views/admin/line/config/params.php

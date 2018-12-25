@@ -1,0 +1,3 @@
+plugins/article/views/admin/article/list.php
+plugins/article/views/admin/article/attrid/list.php
+plugins/article/views/admin/article/destination/destination.php

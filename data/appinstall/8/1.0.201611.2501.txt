@@ -1,0 +1,2 @@
+plugins/notes/public/css/youji.css
+plugins/notes/views/default/notes/write.php

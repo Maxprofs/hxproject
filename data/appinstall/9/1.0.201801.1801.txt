@@ -1,0 +1,2 @@
+plugins/car/public/css/car.css
+plugins/car/views/default/car/show.php

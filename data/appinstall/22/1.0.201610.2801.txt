@@ -1,0 +1,2 @@
+plugins/supplier/application/views/default/pc/login/register.php
+plugins/supplier/public/default/pc/js/jquery.validate.min.js

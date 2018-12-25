@@ -1,0 +1,2 @@
+plugins/ship/views/mobile/ship/order_show.php
+plugins/ship/views/mobile/ship/member/orderview.php

@@ -1,0 +1,4 @@
+plugins/article/classes/controller/pc/article.php
+plugins/article/classes/model/article.php
+plugins/article/classes/taglib/article.php
+plugins/article/views/default/article/show.php

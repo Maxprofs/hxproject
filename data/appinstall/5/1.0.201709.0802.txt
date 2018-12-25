@@ -1,0 +1,3 @@
+plugins/hotel/public/css/hotel.css
+plugins/hotel/public/images/ls-icobg.png
+plugins/hotel/views/default/hotel/show.php

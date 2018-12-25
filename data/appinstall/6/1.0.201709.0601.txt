@@ -1,0 +1,2 @@
+plugins/spot/public/images/ls-icobg.png
+plugins/spot/views/default/spot/show.php

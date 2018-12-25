@@ -1,0 +1,12 @@
+plugins/hotel/classes/controller/admin/hotel.php
+plugins/hotel/views/admin/hotel/content.php
+plugins/hotel/views/admin/hotel/edit.php
+plugins/hotel/views/admin/hotel/list.php
+plugins/hotel/views/admin/hotel/price.php
+plugins/hotel/views/admin/hotel/rank.php
+plugins/hotel/views/admin/hotel/room_edit.php
+plugins/hotel/views/admin/hotel/attrid/extendfield.php
+plugins/hotel/views/admin/hotel/attrid/list.php
+plugins/hotel/views/admin/hotel/config/index.php
+plugins/hotel/views/admin/hotel/destination/destination.php
+plugins/hotel/views/admin/hotel/order/list.php

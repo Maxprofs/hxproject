@@ -1,0 +1,2 @@
+plugins/wxpay/classes/controller/pc/wxpay.php
+plugins/wxpay/views/default/wxpay/wx_scan.php
