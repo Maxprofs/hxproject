@@ -25,10 +25,7 @@
     }
     function bindbox(){
         var url=SITEURL+"distributor/pc/distributor/bind";
-        var closefn=function () {
-            console.log('11')
-        }
-        floatBox('绑定服务网点',url,'800','500',closefn);
+        floatBox('绑定服务网点',url,'800','500');
     }
     $(function(){
         $("#nav_index").addClass('on');

@@ -26,6 +26,7 @@ class Controller_Pc_Pub extends Stourweb_Controller
         }
 
     }
+
     /**
      * 网站头部
      */

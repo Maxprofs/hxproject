@@ -57,7 +57,6 @@ class Controller_Member_Register extends Stourweb_Controller
         $orgCode = Common::session('crsf_code');
         if($orgCode!=$frmCode)
         {
-
             echo json_encode(array('status'=>0,'msg'=>'安全检验码错误'));
             exit;
         }

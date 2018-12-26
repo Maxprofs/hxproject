@@ -45,6 +45,21 @@
     background:url(../images/gys-dg-ico.png) no-repeat -24px -58px}
 .header .tx .tc:hover:before{
     background:url(../images/gys-dg-ico.png) no-repeat 0 -58px}
+
+.return{
+    color:#fff;
+    margin-left:20px}
+.return:hover{
+    color:#fff100;}
+.return:before{
+    display:inline-block;
+    width:20px;
+    height:15px;
+    vertical-align:middle;
+    margin:-3px 5px 0 0;
+}
+
+
 /*顶部主导航*/
 .header .hd-menu{
     float:left;
@@ -61,3 +76,4 @@
 .header .hd-menu a.cur,
 .header .hd-menu a:hover{
     background:#28b463}
+

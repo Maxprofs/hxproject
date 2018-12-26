@@ -5,30 +5,38 @@ class Controller_Pc_Distributor extends Stourweb_Controller {
 	public function before() {
 		parent::before();
 		$user = Model_Member::check_login();
-		if (!empty($user['mid']) && $user['bflg']==1)
-        {
-            $this->mid = $user['mid'];
-        }
-        else
-        {
-            $this->request->redirect('member/login');
-        }
+		$action = $this->request->action();
 
-        $this->assign('mid', $this->mid);
+		if ($action == 'index') {
+			if (!empty($user['mid']) && $user['bflg'] == 1) {
+				$this->mid = $user['mid'];
+			} else {
+				$this->request->redirect('member/login');
+			}
+		} else {
+			if (!empty($user['mid'])) {
+				$this->mid = $user['mid'];
+			} else {
+				$this->request->redirect('member/login');
+			}
+		}
+
+		$this->assign('mid', $this->mid);
 
 	}
 
-	public function action_index()
-	{
-		$userinfo=Model_Member::get_member_info($this->mid);
-		$this->assign('userinfo',$userinfo);
+	public function action_index() {
+		// $model = new Model_Member_Private_Order();
+		//       $data = $model->get_check_record(10);
+		//       $this->assign('data',$data);
+		$userinfo = Model_Member::get_member_info($this->mid);
+		$this->assign('userinfo', $userinfo);
 		$this->display('pc/index');
 	}
 
-	public function action_serviceinfo()
-	{
+	public function action_serviceinfo() {
 		$params = $this->request->param('params');
-		$info=Model_Distributor::distributor_find_relationship($params,'ctrl');
+		$info = Model_Distributor::distributor_find_relationship($params, 'ctrl');
 		$this->assign('info', $info);
 		$this->display('bind/serviceinfo');
 	}
@@ -40,7 +48,7 @@ class Controller_Pc_Distributor extends Stourweb_Controller {
 	public function action_ajax_bind() {
 		$mid = str_replace('"', '', Arr::get($_GET, 'mid'));
 		$bid = str_replace('"', '', Arr::get($_GET, 'bid'));
-		if ($mid==0 || $bid==0) {
+		if ($mid == 0 || $bid == 0) {
 			echo json_encode(array("status" => false, "msg" => '绑定服务网点失败!'));
 			return;
 		}

@@ -19,7 +19,7 @@
                     {if !empty($userinfo['litpic'])}
                     <img id="face" src="{$userinfo['litpic']}" width="94" height="94"/>
                     {else}
-                    <img id="face" src="{$GLOBALS['cfg_res_url']}/images/default-headimg.jpg" width="94" height="94"/>
+                    <img id="face" src="{$GLOBALS['cfg_plugin_distributor_public_url']}/default/pc/images/default-headimg.jpg" width="94" height="94"/>
                     {/if}
                 </div>
                 <div class="user-msg">
