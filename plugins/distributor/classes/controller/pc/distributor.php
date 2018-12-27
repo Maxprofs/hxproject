@@ -5,20 +5,10 @@ class Controller_Pc_Distributor extends Stourweb_Controller {
 	public function before() {
 		parent::before();
 		$user = Model_Member::check_login();
-		$action = $this->request->action();
-
-		if ($action == 'index') {
-			if (!empty($user['mid']) && $user['bflg'] == 1) {
-				$this->mid = $user['mid'];
-			} else {
-				$this->request->redirect('member/login');
-			}
+		if (!empty($user['mid'])) {
+			$this->mid = $user['mid'];
 		} else {
-			if (!empty($user['mid'])) {
-				$this->mid = $user['mid'];
-			} else {
-				$this->request->redirect('member/login');
-			}
+			$this->request->redirect('member/login');
 		}
 
 		$this->assign('mid', $this->mid);

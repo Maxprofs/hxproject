@@ -5,7 +5,9 @@
     <title color_background=3c5QDl >分销商管理系统-{$webname}</title>
     {Common::css_plugin_distributor('base.css,style.css','distributor')}
     {Common::js_plugin_distributor("jquery.min.js",'distributor')}
-
+    <script type="text/javascript" src="/res/js/artDialog/lib/sea.js"></script>
+    {Common::js("dialog.js")}
+ 
 </head>
 <body>
 
@@ -22,6 +24,7 @@
                     <img id="face" src="{$GLOBALS['cfg_plugin_distributor_public_url']}/default/pc/images/default-headimg.jpg" width="94" height="94"/>
                     {/if}
                 </div>
+
                 <div class="user-msg">
                     <div class="yz">
                         <strong class="name">{if $userinfo['nickname']}{$userinfo['nickname']}{else}分销商{/if}</strong>
@@ -31,6 +34,7 @@
                         <p><span>账户ID：</span>HX{str_pad($userinfo['mid'],6,'0',STR_PAD_LEFT)}</p>
                         <p><span>手机号：</span>{$userinfo['mobile']}</p>
                         <p><span>邮&nbsp&nbsp&nbsp&nbsp箱：</span>{$userinfo['email']}</p>
+                        <p><span>分享二维码：</span><a href="#" onclick="qrbox()">分享</a></p>
                     </div>
                 </div>
             </div>
@@ -98,9 +102,21 @@
 
 </div>
 <script>
+    function qrbox(){
+        var url="/distributor/pc/backpage/checkqrcode";
+        floatBox('我的二维码',url,'200','200');
+        var color=$('.user-msg-box').css('background-color')
+        var border='1px solid '+ color
+        $('.ui-dialog-title').css('background-color',color)
+        $('.ui-dialog-header').css('border',border)
+        $('.ui-dialog-body').css({
+            'padding': '10px'
+        });
+    }
     $(function () {
         $("#nav_index").addClass('on');
     });
 </script>
+
 </body>
 </html>

@@ -135,6 +135,7 @@
                 </li>
                 <input type="hidden" name="frmcode" value="{$frmcode}"/>
                 <input type="hidden" name="regtype" value="email"/>
+                <input type="hidden" id="did" name="did" value="nothing"/>
 
 
           </ul>
@@ -172,7 +173,11 @@
  {Common::js('layer/layer.js')}
  <script>
      $(function(){
-
+        var did=window.location.hash.replace('#','');
+        if (did!='') {
+            $('#did').val(did)
+        }
+        
          //注册
          $('.now-reg-btn').click(function(){
             var regfrm = $("#regfrm").val();
@@ -428,6 +433,7 @@
                  $(element).valid();
              },
              submitHandler: function (form) {
+
                  var frmdata = $("#phonefrm").serialize();
                  $.ajax({
                      type:'POST',

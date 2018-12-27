@@ -3,7 +3,7 @@
    // checkOrder();
    function checkOrder(){
        $.ajax({
-           url: SITEURL + "pc/notice/ajax_checkorder",
+           url: SITEURL + "distributor/pc/notice/ajax_checkorder",
            dataType: 'json',
            success: function (data) {
                if (data.status == 1) {

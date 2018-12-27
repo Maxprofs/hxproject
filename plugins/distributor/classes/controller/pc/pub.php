@@ -16,7 +16,7 @@ class Controller_Pc_Pub extends Stourweb_Controller
         $distributor_id = Cookie::get('st_userid');
         if(empty($distributor_id))
         {
-            //$this->request->redirect($GLOBALS['cfg_basehost'].'/plugins/distributor/pc/login');
+            $this->request->redirect('member/login');
         }
         else
         {
@@ -39,16 +39,15 @@ class Controller_Pc_Pub extends Stourweb_Controller
             $this->_user_info = Model_Distributor::get_distributor_byid($sid);
             $this->assign('userinfo',$this->_user_info);
         }
-        $user_m_kind = ($this->_user_info['verifystatus'] == 3 ? explode(',', $this->_user_info['authorization']) : array());
 
-        $line_product = file_exists(PLUGINPATH.'distributor_line') && in_array(1,$user_m_kind) && St_Functions::is_normal_app_install('distributorlinemanage') ? 1: 0;
-        $hotel_product = file_exists(PLUGINPATH.'distributor_hotel') && in_array(2,$user_m_kind)&& St_Functions::is_normal_app_install('distributorhotelmanage') ? 1 : 0;
-        $car_product = file_exists(PLUGINPATH.'distributor_car') && in_array(3,$user_m_kind)&& St_Functions::is_normal_app_install('distributorcarmanage') ? 1 : 0;
-        $tuan_product = file_exists(PLUGINPATH.'distributor_tuan') && in_array(13,$user_m_kind) && St_Functions::is_normal_app_install('distributortuanmanage')? 1 : 0;
-        $spot_product = file_exists(PLUGINPATH.'distributor_spot') && in_array(5,$user_m_kind) && St_Functions::is_normal_app_install('distributorspotmanage')? 1 : 0;
-        $outdoor_product = file_exists(PLUGINPATH.'distributor_outdoor') && in_array(114,$user_m_kind) && St_Functions::is_normal_app_install('distributoroutdoormanage')? 1 : 0;
-        $tongyong_product = file_exists(PLUGINPATH.'distributor_tongyong') && St_Functions::is_normal_app_install('distributorcommonmanage')? 1 : 0;
-        $check_product = file_exists(PLUGINPATH.'distributor_check') && St_Functions::is_normal_app_install('distributorverifyorder') ? 1 : 0;
+        $line_product = file_exists(PLUGINPATH.'distributor_line');
+        $hotel_product = file_exists(PLUGINPATH.'distributor_hotel');
+        $car_product = file_exists(PLUGINPATH.'distributor_car');
+        $tuan_product = file_exists(PLUGINPATH.'distributor_tuan');
+        $spot_product = file_exists(PLUGINPATH.'distributor_spot');
+        $outdoor_product = file_exists(PLUGINPATH.'distributor_outdoor');
+        $tongyong_product = file_exists(PLUGINPATH.'distributor_tongyong');
+        $check_product = file_exists(PLUGINPATH.'distributor_check');
         if($tongyong_product)
         {
             $ty_list = Model_Model::tongyoug_model();
@@ -62,7 +61,7 @@ class Controller_Pc_Pub extends Stourweb_Controller
             }
             $this->assign('tongyong_list',$tongyong_list);
         }
-        $finance_manage = file_exists(PLUGINPATH.'distributor_finance') && St_Functions::is_normal_app_install('distributorfinancemanage')? 1 : 0;
+        $finance_manage = file_exists(PLUGINPATH.'distributor_finance');
 
         $this->assign('line_product',$line_product);
         $this->assign('hotel_product',$hotel_product);
@@ -81,7 +80,6 @@ class Controller_Pc_Pub extends Stourweb_Controller
      */
     public function action_footer()
     {
-
         $this->display("pc/pub/footer");
     }
 

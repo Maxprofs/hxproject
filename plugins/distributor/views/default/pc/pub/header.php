@@ -5,7 +5,7 @@
     <div class="logo"><a href="{$logourl}" title="{$logotitle}" target="_blank"><img src="{Common::img($GLOBALS['cfg_logo'])}" /></a></div>
 
     <div class="hd-menu">
-        <a href="/plugins/distributor/" id="p_account" class="cur">首页</a>
+        <a href="/distributor/pc/backpage/index" id="p_account" class="cur">首页</a>
         {if !empty($line_product)}
         <a href="/plugins/distributor_line/" id="p_line">线路</a>
         {/if}

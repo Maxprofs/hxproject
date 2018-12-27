@@ -49,7 +49,7 @@ class Controller_Member_Register extends Stourweb_Controller
     public function action_ajax_doreg()
     {
 
-
+        var_dump($_POST);exit;
         $fromUrl = Arr::get($_POST,'fromurl');//来源页面
         $fromurl = empty($fromUrl) ? $GLOBALS['cfg_basehost'].'/member/' : $fromUrl;
         $frmCode = Arr::get($_POST,'frmcode');

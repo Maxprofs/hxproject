@@ -98,7 +98,7 @@
         </li>
         {st:member action="checklogin" return="user"}
             {if $user['bflg']==1}
-                <li><a href="/distributor/pc/distributor/index" ><i class="st-user-icon user-qb-icon"></i>分销商后台</a></li>
+                <li><a href="/distributor/pc/backpage/index" ><i class="st-user-icon user-qb-icon"></i>分销商后台</a></li>
             {/if}
         {/st}
     </ul>

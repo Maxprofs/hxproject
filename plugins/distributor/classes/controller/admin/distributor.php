@@ -16,10 +16,10 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 	}
 	public function action_setadminmember() {
 		$admin = DB::select('mid', 'mobile', 'email')->from('member')->where('isadmin=1')->execute()->as_array();
-		if ($admin[0]['mobile']!='') {
-			$this->assign('account',$admin[0]['mobile']);
-		}else{
-			$this->assign('account',$admin[0]['email']);
+		if ($admin[0]['mobile'] != '') {
+			$this->assign('account', $admin[0]['mobile']);
+		} else {
+			$this->assign('account', $admin[0]['email']);
 		}
 		$this->display('admin/distributor/setadminmember');
 	}
@@ -41,8 +41,8 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 				if (!Model_Distributor::distributor_updata($isadmin[0]['mid'], 'isadmin', 0)) {
 					echo json_encode(array('status' => false, 'msg' => '设置失败！'));
 					return;
-				}else{
-					Model_Distributor::distributor_modify_relationship($isadmin[0]['mid'],$d['mid']);
+				} else {
+					Model_Distributor::distributor_modify_relationship($isadmin[0]['mid'], $d['mid']);
 				}
 			}
 			if (Model_Distributor::distributor_updata($d['mid'], 'isadmin', 1)) {
@@ -97,11 +97,11 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 
 		$rows = Model_Distributor::distributor_del($id);
 		if (!$rows) {
-			echo json_encode(array('status'=>false,'msg'=>'管理员分销商账号不能删除，请更改后删除！'));
-		}else{
-			echo json_encode(array('status'=>true,'msg'=>'删除成功！'));
+			echo json_encode(array('status' => false, 'msg' => '管理员分销商账号不能删除，请更改后删除！'));
+		} else {
+			echo json_encode(array('status' => true, 'msg' => '删除成功！'));
 		}
-		
+
 	}
 	/*
 		     * 保存
@@ -219,6 +219,8 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		}
 		echo json_encode(array('status' => $status, 'productid' => $productid));
 	}
+
+
 	/**
 	 * 修改密码
 	 */
