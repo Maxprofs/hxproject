@@ -4,6 +4,9 @@ class Model_Distributor extends ORM {
 	//对应数据库
 	protected $_table_name = 'member';
 	protected $_primary_key = 'mid';
+	//通过分享二维码使用手机号码注册，需要减掉绑定的分销商的短信数目，并且分销商要能查询到发送的短信信息
+	// 待开发
+	
 	//替换relationship表的绑定关系，
 	// $rid：原绑定分销商账号ID
 	// $cid：现在绑定分销商账号ID

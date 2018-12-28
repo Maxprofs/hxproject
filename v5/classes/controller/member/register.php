@@ -49,7 +49,7 @@ class Controller_Member_Register extends Stourweb_Controller
     public function action_ajax_doreg()
     {
 
-        var_dump($_POST);exit;
+
         $fromUrl = Arr::get($_POST,'fromurl');//来源页面
         $fromurl = empty($fromUrl) ? $GLOBALS['cfg_basehost'].'/member/' : $fromUrl;
         $frmCode = Arr::get($_POST,'frmcode');
@@ -270,7 +270,11 @@ class Controller_Member_Register extends Stourweb_Controller
                     $ucsynlogin = uc_user_synlogin($uid);
                 }
             }
-
+            if (Arr::get($_POST,'did')!='nothing') {
+                Model_Distributor::distributor_bind($m->mid,Arr::get($_POST,'did'));
+                // 待开发
+                // 手机注册减短信条数，并分销商可查询
+            }
             echo json_encode(array('status'=>1,'js'=>$ucsynlogin,'msg'=>'注册成功'));
             exit;
         }
@@ -399,7 +403,6 @@ class Controller_Member_Register extends Stourweb_Controller
 
             $code =  Common::get_rand_code(5);//验证码
             $flag = json_decode(St_SMSService::send_member_msg($mobile,NoticeCommon::MEMBER_REG_CODE_MSGTAG,"","",$code));
-
             if($flag->Success)//发送成功
             {
 

@@ -163,6 +163,7 @@ class NoticeCommon
     *@param string $member_password,会员帐户，在会员注册成功事件中传递.
     *@param string $code,验证码.
     *@return array 例如：array('member'=>array('isopen'=>1,'recipient'=>'13888888888','content'=>'您的验证码为：05841'))
+    NoticeCommon::generate_member_msg_content('reg', 'sms', $phone, "", $member_account, $member_password, $code);
     * */
     public static function generate_member_msg_content($msgtag, $msgtype, $phone, $email, $member_account, $member_password, $code)
     {

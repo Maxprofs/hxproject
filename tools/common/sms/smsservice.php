@@ -41,23 +41,25 @@ class SMSService
         $provider_instance = self::create_provider_instance($provider);
         if (is_object($provider_instance) && method_exists($provider_instance, 'send_msg'))
         {
-            if (strpos($phone, ",") !== false)
-            {
-                $result["Success"] = true;
-                $send_result = json_encode($result);
-                $phone_arr = explode(",", $phone);
-                foreach ($phone_arr as $phone_item)
-                {
-                    if (!empty($phone_item))
-                    {
-                        $send_result = $provider_instance->send_msg($phone_item, $prefix, $content);
-                    }
-                }
-                return $send_result;
-            } else
-            {
-                return $provider_instance->send_msg($phone, $prefix, $content);
-            }
+            $msg=$provider_instance->send_msg($phone, $content);
+
+            // if (strpos($phone, ",") !== false)
+            // {
+            //     $result["Success"] = true;
+            //     $send_result = json_encode($result);
+            //     $phone_arr = explode(",", $phone);
+            //     foreach ($phone_arr as $phone_item)
+            //     {
+            //         if (!empty($phone_item))
+            //         {
+            //             $send_result = $provider_instance->send_msg($phone_item, $prefix, $content);
+            //         }
+            //     }
+            //     return $send_result;
+            // } else
+            // {
+                return json_encode($msg);
+            // }
         } else
         {
             $result['Message'] = '短信发送程序错误';
@@ -74,6 +76,7 @@ class SMSService
      *@param string $member_password,会员帐户，在会员注册成功事件中传递.
      *@param string $code,验证码.
      *@return json 例如：{"Success":false,"Message":"短信帐户余额不足，可用短信0条，需要1条","Data":null}
+     send_member_msg($mobile,'reg',"","",$code)
 	 * */
     public static function send_member_msg($phone, $msgtag, $member_account, $member_password, $code)
     {
