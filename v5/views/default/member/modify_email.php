@@ -181,7 +181,7 @@
                     //layer.alert('邮箱验证码已发送到你的新邮箱,请登陆邮箱查看验证', {icon:5});
                     $(".tsmsg").html('{__("邮箱验证码已发送到你的新邮箱,请登陆邮箱查看验证")}!');
                     $(".tsmsg").show();
-                    code_timeout(60);
+                    code_timeout(120);
                     return false;
                 }
                 else

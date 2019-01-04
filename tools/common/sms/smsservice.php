@@ -41,6 +41,7 @@ class SMSService
         $provider_instance = self::create_provider_instance($provider);
         if (is_object($provider_instance) && method_exists($provider_instance, 'send_msg'))
         {
+
             $msg=$provider_instance->send_msg($phone, $content);
 
             // if (strpos($phone, ",") !== false)

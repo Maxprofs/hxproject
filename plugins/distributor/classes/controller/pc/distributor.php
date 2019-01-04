@@ -5,23 +5,13 @@ class Controller_Pc_Distributor extends Stourweb_Controller {
 	public function before() {
 		parent::before();
 		$user = Model_Member::check_login();
-		if (!empty($user['mid'])) {
-			$this->mid = $user['mid'];
-		} else {
-			$this->request->redirect('member/login');
-		}
+		// if (!empty($user['mid'])) {
+		// 	$this->mid = $user['mid'];
+		// } else {
+		// 	$this->request->redirect('member/login');
+		// }
 
 		$this->assign('mid', $this->mid);
-
-	}
-
-	public function action_index() {
-		// $model = new Model_Member_Private_Order();
-		//       $data = $model->get_check_record(10);
-		//       $this->assign('data',$data);
-		$userinfo = Model_Member::get_member_info($this->mid);
-		$this->assign('userinfo', $userinfo);
-		$this->display('pc/index');
 	}
 
 	public function action_serviceinfo() {
@@ -32,7 +22,6 @@ class Controller_Pc_Distributor extends Stourweb_Controller {
 	}
 	public function action_bind() {
 		$info = Product::get_login_user_info();
-		$this->assign('mid', $info['mid']);
 		$this->display('bind/index');
 	}
 	public function action_ajax_bind() {

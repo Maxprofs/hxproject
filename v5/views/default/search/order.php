@@ -235,7 +235,7 @@
                 t.value='{__("发送验证码")}';
                 if(data.status)
                 {
-                    code_timeout(60);
+                    code_timeout(120);
                     $(".send-txt").show();
                     return false;
                 }

@@ -63,7 +63,7 @@
             {request "member/guide/index/left_menu"}
         {/if}
         <li><a id="nav_myquestion"  href="/member/index/myquestion"><i class="st-user-icon user-zx-icon"></i>{__('我的咨询')}</a></li>
-        <li><a id="nav_myjifen"  href="/member/club/score"><i class="st-user-icon user-jf-icon"></i>{__('我的积分')}</a></li>
+        <!-- <li><a id="nav_myjifen"  href="/member/club/score"><i class="st-user-icon user-jf-icon"></i>{__('我的积分')}</a></li> -->
         <li><a id="nav_money" href="/member/bag/index"><i class="st-user-icon user-qb-icon"></i>我的钱包</a></li>
         <li>
 
@@ -73,7 +73,7 @@
             <div class="son">
                 <a id="nav_userinfo" href="/member/index/userinfo">{__('个人资料')}</a>
                 <a id="nav_safecenter" href="/member/index/safecenter">{__('账号安全')}</a>
-                <a id="nav_userbind" href="/member/index/userbind">{__('账号绑定')}</a>
+                <!-- <a id="nav_userbind" href="/member/index/userbind">{__('账号绑定')}</a> -->
             </div>
         </li>
 

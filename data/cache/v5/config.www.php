@@ -194,4 +194,5 @@ return array (
   'cfg_plugin_hotel_book_sms_verify' => '0',
   'cfg_plugin_hotel_usetourer' => '1',
   'cfg_quick_menu' => '0',
+  'cfg_third_login_bind' => '2',
 );

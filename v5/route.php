@@ -20,12 +20,18 @@ Route::set('member_order', 'member/order(/<action>(-<ordertype>))(-<p>)',
     ));
 
 //会员中心
-Route::set('member', 'member(/<controller>(/<action>(/<query>)))', array('query' => '.*'))
+Route::set('member', 'member(/<controller>(/<action>(/<query>(/<param>))))', array('query' => '.*'))
     ->defaults(array(
         'action' => 'index',
         'controller' => 'index',
         'directory' => 'member'
     ));
+// Route::set('member', 'member(/<controller>(/<action>(/<query>)))', array('query' => '.*'))
+//     ->defaults(array(
+//         'action' => 'index',
+//         'controller' => 'index',
+//         'directory' => 'member'
+//     ));
 
 
 //消息提示

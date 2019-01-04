@@ -5,7 +5,24 @@
 <title>{__('会员注册')}-{$webname}</title>
     {include "pub/varname"}
     {Common::css('user.css,base.css,extend.css')}
+
     {Common::js('jquery.min.js,base.js,common.js,jquery.validate.js,jquery.cookie.js')}
+    <link rel="stylesheet" type="text/css" href="/res/js/artDialog7/css/dialog.css">
+    <script type="text/javascript" src="/res/js/artDialog7/dist/dialog-plus.js"></script>
+
+    <style type="text/css">
+        .reg-cont-box ul{
+            height: 243px;
+        }
+        .ui-dialog-header{
+            background-color: #008ed8;
+        }
+        div.ui-dialog{
+            border-color: #2577e3;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,17 +37,23 @@
         </div>
             <script>
                 $(function(){
+                    var mid="{$mid}";
                     $('.reg-tabnav span').click(function(){
                         $(this).addClass('on').siblings().removeClass('on');
                         var frm = $(this).attr('data-type');
                         $(".reg-cont-box").find('ul').hide();
                         $('#'+frm+'_reg').show();
                         $('#regfrm').val(frm+'frm');
+                        if (mid=='') {
+                            $('#phonedid,#emaildid').val('nothing');
+                            $('.now-reg-next').css('display','inline');
+                            $('.now-reg-btn').css('display','none');
+                        }
                     })
                 })
             </script>
       	<div class="reg-cont-box">
-           <form id="phonefrm" method="post" action="{$cmsurl}member/register/doreg">
+            <form id="phonefrm" method="post" action="{$cmsurl}member/register/doreg">
         	<ul id="phone_reg">
           	<li>
               <span class="bt-sp">{__('登录帐号')}</span>
@@ -81,9 +104,15 @@
             </li>
 
           </ul>
-               <input type="hidden" name="frmcode" value="{$frmcode}"/>
-               <input type="hidden" name="regtype" value="phone"/>
-
+                <input type="hidden" name="frmcode" value="{$frmcode}"/>
+                <input type="hidden" name="regtype" value="phone"/>
+                <?php 
+                    if (isset($mid)) {
+                        echo '<input type="hidden" id="phonedid" name="did" value="'.$mid.'"/>';
+                    }else{
+                        echo '<input type="hidden" id="phonedid" name="did" value="nothing"/>';
+                    }
+                 ?>
              </form>
             <!--邮箱登陆-->
            <form id="emailfrm" method="post" action="{$cmsurl}member/register/doreg">
@@ -135,21 +164,31 @@
                 </li>
                 <input type="hidden" name="frmcode" value="{$frmcode}"/>
                 <input type="hidden" name="regtype" value="email"/>
-                <input type="hidden" id="did" name="did" value="nothing"/>
-
-
+                <?php 
+                    if (isset($mid)) {
+                        echo '<input type="hidden" id="emaildid" name="did" value="'.$mid.'"/>';
+                    }else{
+                        echo '<input type="hidden" id="emaildid" name="did" value="nothing"/>';
+                    }
+                 ?>
           </ul>
 
 
            </form>
 
-
-
-          <div class="now-reg-btn"><a href="javascript:;">立即注册</a></div>
+            <?php 
+                if (isset($mid)) {
+                    echo '<div class="now-reg-btn"><a href="javascript:;">立即注册</a></div>';
+                }else{
+                    echo '<div class="now-reg-next"><button id="next" >下一步</button></div>';
+                    echo '<div class="now-reg-btn" style="display:none"><a href="javascript:;">立即注册</a></div>';
+                }
+            ?>
         </div>
+
         <div class="reg-tig-box">
           <p>已有账号，<a href="/member/login">立即登录</a></p>
-          <dl>
+<!--           <dl>
             <dt>使用其他方式登录</dt>
             <dd>
                 {if (!empty($GLOBALS['cfg_qq_appid']) && !empty($GLOBALS['cfg_qq_appkey']))}
@@ -163,7 +202,7 @@
                 <a class="wb wblogin" href="{$GLOBALS['cfg_basehost']}/plugins/login_weibo/index/index/?refer={urlencode($backurl)}">wb</a>
                 {/if}
             </dd>
-          </dl>
+          </dl> -->
         </div>
       </div>
     </div>
@@ -172,17 +211,84 @@
  <input type="hidden" id="backurl" value="{$backurl}"/>
  {Common::js('layer/layer.js')}
  <script>
-     $(function(){
-        var did=window.location.hash.replace('#','');
-        if (did!='') {
-            $('#did').val(did)
+
+window.d = null;
+
+//弹出框
+/*
+  params为附加参数，可以是与dialog有关的所有参数，也可以是自定义参数
+  其中自定义参数里有
+  loadWindow: 表示回调函数的window
+  loadCallback: 表示回调函数
+  maxHeight:指定最高高度
+
+ */
+function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocument,params) {
+    boxwidth = boxwidth != '' ? boxwidth : 0;
+    boxheight = boxheight != '' ? boxheight : 0;
+    var func = $.isFunction(closefunc) ? closefunc : function () {
+    };
+    fromdocument = fromdocument ? fromdocument : null;//来源document
+
+    var initParams={
+        url: url,
+        title: boxtitle,
+        width: boxwidth,
+        height: boxheight,
+        scroll:0,
+        loadDocument:fromdocument,
+        onclose: function () {
+            func();
         }
-        
+    }
+    initParams= $.extend(initParams,params);
+
+    var dlg = dialog(initParams);
+
+
+    if(typeof(dlg.loadCallback)=='function'&&typeof(dlg.loadWindow)=='object')
+    {
+       dlg.finalResponse=function(arg,bool,isopen){
+            dlg.loadCallback.call(dlg.loadWindow,arg,bool);
+            if(!isopen)
+              this.remove();
+       }
+    }
+
+    window.d=dlg;
+    d.close()
+    if (initParams.width != 0) {
+        d.width(initParams.width);
+    }
+    if (initParams.height!= 0) {
+        d.height(initParams.height);
+    }
+  
+    if (nofade) {
+        d.show()
+    } else {
+        d.showModal();
+    }
+
+}
+    function bindbox(){
+        var url=SITEURL+"distributor/pc/distributor/bind";
+        floatBox('绑定服务网点',url,'590','240');
+        // window.dialog.show()
+    }
+     $(function(){
+        $('.now-reg-next').click(function(event) {
+            /* Act on the event */
+            // phonefrm emailfrm
+            bindbox()
+            // $('.now-reg-next').css('display','none');
+            // $('.now-reg-btn').css('display','inline');
+        });
          //注册
-         $('.now-reg-btn').click(function(){
-            var regfrm = $("#regfrm").val();
-             $('#'+regfrm).submit()
-         })
+        $('.now-reg-btn').click(function(){
+            var name=$('.on').attr('data-type')+'frm';
+            $('#'+name).submit()
+        });
          //验证码刷新
          $('.reg-change').click(function(){
              $(this).parents('li').first().find('img').trigger('click');
@@ -250,7 +356,7 @@
                  t.value="获取验证码";
                  if(data.status)
                  {
-                     code_timeout(60);
+                     code_timeout(120);
                      return false;
                  }
                  else
@@ -302,7 +408,7 @@
                  t.value="获取验证码";
                  if(data.status)
                  {
-                     email_code_timeout(60);
+                     email_code_timeout(120);
                      return false;
                  }
                  else
@@ -312,14 +418,7 @@
                      return false;
                  }
              },'json');
-
-
-
          });
-
-
-
-
 
          /*手机注册验证开始*/
          jQuery.validator.addMethod("mobile",function(value, element){
@@ -400,220 +499,168 @@
                  'agreement':{
                      required:'请先同意网站服务条款'
                  }
-
-
-
              },
-             errorPlacement: function (error, element) {
-
-
-                     $(element).parents('li:first').find('.msg_contain').html(error);
-                     $(element).parents('li:first').find('.msg_contain').addClass('reg-error-txt').removeClass('reg-pass-ico');
-
-             },
-
-             success: function (msg, element) {
-
-
-
-                     $(element).parents('li:first').find('.msg_contain').html('');
-                     $(element).parents('li:first').find('.msg_contain').addClass('reg-pass-ico').removeClass('reg-error-txt');
-                     if($(element).is('#password1'))
-                     {
-                         set_pwd_safe('#phonefrm','#password1');
-                     }
-
-
-
-
-             },
-             onkeyup:function(element,event)
-             {
-                 set_pwd_safe('#phonefrm','#password1');
-                 $(element).valid();
-             },
-             submitHandler: function (form) {
-
-                 var frmdata = $("#phonefrm").serialize();
-                 $.ajax({
-                     type:'POST',
-                     url:SITEURL+'member/register/ajax_doreg',
-                     data:frmdata,
-                     dataType:'json',
-                     success:function(data){
-                         if(data.status){
-                             var url = $("#backurl").val();
-                             $('body').append(data.js);//同步登陆js
-
-                             layer.msg(data.msg, {
-                                 icon: 6,
-                                 time: 1000
-
-                             })
-                             setTimeout(function(){window.open(url,'_self');},500);
-
-                         }else{
-                             layer.msg(data.msg, {
-                                 icon: 5,
-                                 time: 1000
-
-                             })
-                         }
-                     }
-
-                 })
-
-
-             }
-         });
-
-
-         //邮箱注册验证
-         $("#emailfrm").validate({
-
-             rules: {
-                 'email': {
-                     required: true,
-                     email: true,
-                     remote: {
-                         url: SITEURL+'member/register/ajax_check_email',
-                         type: 'post'
-                     }
-                 },
-                 'e_password1': {
-                     required: true,
-                     minlength: 6
-                 },
-                 'e_password2': {
-                     required: true,
-                     equalTo: '#e_password1'
-                 },
-                 'e_checkcode':{
-                     required: true,
-                     remote:{
-                         url: SITEURL+'pub/ajax_check_code',
-                         type:'post',
-                         data:{
-                             checkcode:function(){
-                                 return $("#e_checkcode").val();
-                             }
-                         }
-                     }
-                 },
-                 e_email_code:{
-                     required:true,
-                     remote:{
-                         url: SITEURL+'member/register/ajax_check_email_code',
-                         type: 'post',
-                         data: {
-                             email: function() {
-                                 return $("#email" ).val();
-                             }
-                         }
-                     }
-
-                 },
-                 'e_agreement':{
-                     required:true
-                 }
-             },
-             messages: {
-                 'email':{
-                     required:'邮箱不能为空',
-                     email:'邮箱格式错误',
-                     remote:'该邮箱已经被注册,您可以<a href="/member/login">直接登陆</a>'
-                 },
-                 'e_password1':{
-                     required:'密码不能为空',
-                     minlength:'密码不得小于6位'
-
-                 },
-                 'e_password2':{
-                     required:'密码前后不一致',
-                     equalTo:'密码前后不一致'
-                 },
-
-                 'e_email_code':{
-                     required:'邮箱验证码不能为空',
-                     remote:'验证码错误'
-                 },
-                 'e_checkcode':{
-                     required:'验证码不能为空',
-                     remote:'验证码错误'
-                 },
-                 'e_agreement':{
-                     required:'请先同意网站服务条款'
-                 }
-
-
-             },
-             errorPlacement: function (error, element) {
-
-
-                     $(element).parents('li:first').find('.msg_contain').html(error);
-                     $(element).parents('li:first').find('.msg_contain').addClass('reg-error-txt').removeClass('reg-pass-ico');
-
-
-
-             },
-
-             success: function (msg, element) {
-
-                 $(element).parents('li:first').find('.msg_contain').html('');
-                 $(element).parents('li:first').find('.msg_contain').addClass('reg-pass-ico').removeClass('reg-error-txt');
-                 if($(element).is('#e_password1')){
-
-                     set_pwd_safe('#emailfrm','#e_password1');
-                 }
-
-
-             },
-             onkeyup:function(element,event)
-             {
-                 set_pwd_safe('#emailfrm','#e_password1');
-                 $(element).valid();
-             }
-             ,
-             submitHandler: function (form) {
-                 var frmdata = $("#emailfrm").serialize();
-                 $.ajax({
-                     type:'POST',
-                     url:SITEURL+'member/register/ajax_doreg',
-                     data:frmdata,
-                     dataType:'json',
-                     success:function(data){
-                         if(data.status){
-                             var url = $("#backurl").val();
-                             $('body').append(data.js);//同步登陆js
-                             layer.msg(data.msg, {
-                                 icon: 6,
-                                 time: 1000
-
-                             })
-                             setTimeout(function(){window.open(url,'_self');},500);
-
-                         }else{
-                             layer.msg(data.msg, {
-                                 icon: 5,
-                                 time: 1000
-
-                             })
-                         }
-                     }
-
-                 })
-
-
-             }
-
-
-
-         });
-     })
-
-
-     //密码强度
-     function set_pwd_safe(pselector,selector){
+            errorPlacement: function (error, element) {
+                $(element).parents('li:first').find('.msg_contain').html(error);
+                $(element).parents('li:first').find('.msg_contain').addClass('reg-error-txt').removeClass('reg-pass-ico');
+            },
+            success: function (msg, element) {
+                $(element).parents('li:first').find('.msg_contain').html('');
+                $(element).parents('li:first').find('.msg_contain').addClass('reg-pass-ico').removeClass('reg-error-txt');
+                if($(element).is('#password1'))
+                {
+                    set_pwd_safe('#phonefrm','#password1');
+                }
+            },
+            onkeyup:function(element,event)
+            {
+                set_pwd_safe('#phonefrm','#password1');
+                $(element).valid();
+            },
+            submitHandler: function (form) {
+                var frmdata = $("#phonefrm").serialize();
+                $.ajax({
+                    type:'POST',
+                    url:SITEURL+'member/register/ajax_doreg',
+                    data:frmdata,
+                    dataType:'json',
+                    success:function(data){
+                        if(data.status){
+                            var url = $("#backurl").val();
+                            $('body').append(data.js);//同步登陆js
+                            layer.msg(data.msg, {
+                                icon: 6,
+                                time: 1000
+                            })
+                            setTimeout(function(){window.open(url,'_self');},500);
+                        }else{
+                            layer.msg(data.msg, {
+                                icon: 5,
+                                time: 1000
+                            })
+                        }
+                    }
+                })
+            }
+        });
+        //邮箱注册验证
+        $("#emailfrm").validate({
+            rules: {
+                'email': {
+                    required: true,
+                    email: true,
+                    remote: {
+                        url: SITEURL+'member/register/ajax_check_email',
+                        type: 'post'
+                    }
+                },
+                'e_password1': {
+                    required: true,
+                    minlength: 6
+                },
+                'e_password2': {
+                    required: true,
+                    equalTo: '#e_password1'
+                },
+                'e_checkcode':{
+                    required: true,
+                    remote:{
+                        url: SITEURL+'pub/ajax_check_code',
+                        type:'post',
+                        data:{
+                            checkcode:function(){
+                                return $("#e_checkcode").val();
+                            }
+                        }
+                    }
+                },
+                e_email_code:{
+                    required:true,
+                    remote:{
+                        url: SITEURL+'member/register/ajax_check_email_code',
+                        type: 'post',
+                        data: {
+                            email: function() {
+                                return $("#email" ).val();
+                            }
+                        }
+                    }
+                },
+                'e_agreement':{
+                    required:true
+                }
+            },
+            messages: {
+                'email':{
+                    required:'邮箱不能为空',
+                    email:'邮箱格式错误',
+                    remote:'该邮箱已经被注册,您可以<a href="/member/login">直接登陆</a>'
+                },
+                'e_password1':{
+                    required:'密码不能为空',
+                    minlength:'密码不得小于6位'
+                },
+                'e_password2':{
+                    required:'密码前后不一致',
+                    equalTo:'密码前后不一致'
+                },
+                'e_email_code':{
+                    required:'邮箱验证码不能为空',
+                    remote:'邮箱验证码错误'
+                },
+                'e_checkcode':{
+                    required:'验证码不能为空',
+                    remote:'验证码错误'
+                },
+                'e_agreement':{
+                    required:'请先同意网站服务条款'
+                }
+            },
+            errorPlacement: function (error, element) {
+                $(element).parents('li:first').find('.msg_contain').html(error);
+                $(element).parents('li:first').find('.msg_contain').addClass('reg-error-txt').removeClass('reg-pass-ico');
+            },
+            success: function (msg, element) {
+                $(element).parents('li:first').find('.msg_contain').html('');
+                $(element).parents('li:first').find('.msg_contain').addClass('reg-pass-ico').removeClass('reg-error-txt');
+                if($(element).is('#e_password1')){
+                    set_pwd_safe('#emailfrm','#e_password1');
+                }
+            },
+            onkeyup:function(element,event)
+            {
+                set_pwd_safe('#emailfrm','#e_password1');
+                $(element).valid();
+            },
+            submitHandler: function (form) {
+                var frmdata = $("#emailfrm").serialize();
+                $.ajax({
+                    type:'POST',
+                    url:SITEURL+'member/register/ajax_doreg',
+                    data:frmdata,
+                    dataType:'json',
+                    success:function(data){
+                        if(data.status){
+                            var url = $("#backurl").val();
+                            $('body').append(data.js);//同步登陆js
+                            layer.msg(data.msg, {
+                                icon: 6,
+                                time: 1000
+                            })
+                            setTimeout(function(){window.open(url,'_self');},500);
+                        }else{
+                            layer.msg(data.msg, {
+                                icon: 5,
+                                time: 1000
+                            })
+                        }
+                    }
+                })
+            }
+        });
+    })
+    //密码强度
+    function set_pwd_safe(pselector,selector){
          var pwd=$(pselector+' '+selector).val();
 
          var pattern_1=/^[0-9]*$/i;
@@ -645,7 +692,7 @@
          }
 
 
-     }
+    }
 
      //短信发送倒计时
      function code_timeout(v){

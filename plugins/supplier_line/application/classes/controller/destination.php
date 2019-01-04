@@ -33,11 +33,11 @@ class Controller_Destination extends Stourweb_Controller
     */
     public function action_ajax_getDestsetList()
     {
+
         $pid = Arr::get($_POST, 'pid');
         $keyword = Arr::get($_POST, 'keyword');
         $pid = empty($pid) ? 0 : $pid;
         $kindlist = Arr::get($_POST, 'kindlist');
-
         if ($keyword)
             $sql = "select id,kindname,pinyin from sline_destinations where kindname like '%{$keyword}%' and isopen=1 and find_in_set(1,opentypeids)  order by pinyin asc";
         else

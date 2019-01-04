@@ -24,8 +24,7 @@ class Controller_Pc_Backpage extends Stourweb_Controller {
 		//创建二维码
 	public function action_checkqrcode() {
 		include $root.'/res/vendor/qrcode/phpqrcode.php';
-		$text = $GLOBALS['cfg_basehost'].'/member/register/index/#'.$this->mid; //二维码内容
-		// $outfile='/plugins/distributor/public/images/qrcode/qrcode'.$this->mid.'png';
+		$text = $GLOBALS['cfg_basehost'].'/member/register/index/'.$this->mid; //二维码内容
 		$level=QR_ECLEVEL_L;
 		$size=6;
 		$margin=2;

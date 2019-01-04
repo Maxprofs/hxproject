@@ -75,7 +75,7 @@
                             t.value = "获取验证码";
                             if(data.status)
                             {
-                                code_timeout(60);
+                                code_timeout(120);
                                 return false;
                             }
                             else

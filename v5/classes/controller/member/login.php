@@ -260,8 +260,11 @@ class Controller_Member_Login extends Stourweb_Controller
                 'litpic' => $member['litpic'],
                 'last_logintime' => $member['last_logintime'],
                 'mobile' => $member['mobile'],
-                'has_msg'=> Model_Message::has_msg($member['mid'])
+                'has_msg'=> Model_Message::has_msg($member['mid']),
+                'did'=>Model_Distributor::distributor_find_relationship($member['mid'],'view')
             );
+            // 设置分销商ID
+            $GLOBALS['did']=$minfo['did'];
             if ($data['md5']) {
                 $serectkey = $data['md5'];
             } else {

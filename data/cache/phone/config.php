@@ -55,8 +55,8 @@ return array (
   'cfg_pay_type' => '6',
   'cfg_huicao_account' => '',
   'cfg_huicao_key' => '',
-  'cfg_sms_username' => '180819260',
-  'cfg_sms_password' => 'xiaolong028',
+  'cfg_sms_username' => 'LKSDK0002570',
+  'cfg_sms_password' => '753159',
   'cfg_logotitle' => '笛卡旅游',
   'cfg_yinlian_merid' => '',
   'cfg_yinlian_securitykey' => '',
@@ -194,4 +194,5 @@ return array (
   'cfg_plugin_hotel_book_sms_verify' => '0',
   'cfg_plugin_hotel_usetourer' => '1',
   'cfg_quick_menu' => '0',
+  'cfg_third_login_bind' => '2',
 );

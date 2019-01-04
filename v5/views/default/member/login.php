@@ -7,6 +7,11 @@
     {Common::css('base.css,user.css,extend.css,account.css')}
     {Common::js('jquery.min.js,base.js,common.js,jquery.validate.js,jquery.validate.addcheck.js,jquery.md5.js')}
 </head>
+<style type="text/css">
+    .login-tab-bar .item{
+        width: 100%;
+    }
+</style>
 <body>
 {request "pub/header"}
       
@@ -15,9 +20,9 @@
         <div class="st-login-wrapper">
             <div class="login-tab-bar" id="loginTabBar">
                 <span class="item on" data-type="user_login">{__('账号密码登录')}</span>
-                {if $isopen==1}
-                <span class="item" data-type="sms_fast_login">{__('动态码登录')}</span>
-                {/if}
+                <!-- if $isopen==1 -->
+                <!-- <span class="item" data-type="sms_fast_login">{__('动态码登录')}</span> -->
+                <!-- /if -->
             </div>
             <div class="login-tab-box">
                 <form id="user_login" method="post">
@@ -76,7 +81,7 @@
             </div>
             <div class="other-login-area">
                 <dl>
-                    <dt><span>{__('使用其他方式登录')}</span><em></em></dt>
+                    <!-- <dt><span>{__('使用其他方式登录')}</span><em></em></dt> -->
                     <dd>
                         {if (!empty($GLOBALS['cfg_qq_appid']) && !empty($GLOBALS['cfg_qq_appkey']))}
                         <a class="qq qqlogin"

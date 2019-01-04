@@ -56,7 +56,7 @@
                     <p class="item-bar">服务网点：
                         <?php 
                             if ($info['binddistributor']=='0') {
-                                echo '未绑定 <a class="rz-no" href="#" onclick="bindbox()">绑定网点</a>';
+                                echo '未绑定 <a class="rz-no" href="#">联系管理员</a>';
                             }else{
                                 $dinfo=Model_Distributor::distributor_find_relationship($info['mid'],'view');
                                 echo "<a href='#' style='text-decoration: underline;color:blue;' onclick='serviceinfo()'>服务网点信息</a>";
@@ -100,7 +100,7 @@
                 <ul class="clearfix">
                     <li><em>我的余额：</em><strong>{Currency_Tool::symbol()}{php echo $info['money']-$info['money_frozen']}</strong></li>
 
-                    <li><em>我的积分：</em><strong>{$info['jifen']}</strong></li>
+                    <!-- <li><em>我的积分：</em><strong>{$info['jifen']}</strong></li> -->
 <!--                    <li><em>我的余额：</em><strong>¥6525</strong></li>-->
                     {if isset($info['coupon'])}
                     <li class="last-li"><em>优惠券：</em><strong>{$info['coupon']}张</strong></li>
@@ -212,10 +212,7 @@
         var url=SITEURL+"distributor/pc/distributor/serviceinfo/"+"{$dinfo}";
         floatBox('服务网点信息',url,'500','250');
     }
-    function bindbox(){
-        var url=SITEURL+"distributor/pc/distributor/bind";
-        floatBox('绑定服务网点',url,'800','500');
-    }
+
     $(function(){
 
         $("#nav_index").addClass('on');

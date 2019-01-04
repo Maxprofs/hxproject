@@ -6,7 +6,16 @@
  */
 class Controller_Member_Register extends Stourweb_Controller
 {
-
+    public function before()
+    {
+        parent::before();
+        $action=$this->request->action();
+        $mid='nothing';
+        if ($action=='index') {
+            $mid=$this->request->param()['query'];
+        }
+        $this->assign('mid',$mid);
+    }
     //注册首页
     public function action_index()
     {
@@ -270,6 +279,7 @@ class Controller_Member_Register extends Stourweb_Controller
                     $ucsynlogin = uc_user_synlogin($uid);
                 }
             }
+
             if (Arr::get($_POST,'did')!='nothing') {
                 Model_Distributor::distributor_bind($m->mid,Arr::get($_POST,'did'));
                 // 待开发
@@ -283,15 +293,6 @@ class Controller_Member_Register extends Stourweb_Controller
             echo json_encode(array('status'=>0,'msg'=>'注册失败'));
             exit;
         }
-
-
-
-
-
-
-
-
-
     }
 
     //检测手机是否注册
@@ -389,7 +390,7 @@ class Controller_Member_Register extends Stourweb_Controller
             $sentNum = empty($sentNum) ? 0 : $sentNum;
             $lastSentTime=empty($lastSentTime)?0:$lastSentTime;
 
-            if($sentNum<3&&$sentNum>0&&$lastSentTime>($curtime-60))
+            if($sentNum<3&&$sentNum>0&&$lastSentTime>($curtime-120))
             {
                 echo json_encode(array('status'=>false,'msg'=>'验证码发送过于频繁，请稍后再试'));
                 exit;

@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <title>笛卡CMS{$coreVersion}</title>
     {template 'stourtravel/public/public_min_js'}
+    {php echo Common::getCss('dialog.css','js/artDialog7/css'); }
     {php echo Common::getCss('style.css,base.css,base2.css,base_new.css'); }
     {php echo Common::getScript("jquery.validate.js"); }
     {php echo Common::getScript("uploadify/jquery.uploadify.min.js,choose.js,product_add.js,imageup.js"); }
     {php echo Common::getCss('uploadify.css','js/uploadify/'); }
+    {php echo Common::getScript("artDialog7/dist/dialog-plus.js"); }
+
    <style>
         .error{
             color:red;
@@ -68,6 +71,21 @@
                                     <label class="check-label mr-5"><input type="checkbox" class="right" name="authorization[]" value="{$p['id']}" {if in_array($p['id'],$r_kind)}checked="checked"{/if}>{$p['modulename']}</label>
                                     {/loop}
                                 </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="item-hd">目的地范围：</span>
+                            <div class="item-bd">
+                                    <div id="showdest" style="line-height: 2.5">
+                                        <ul>
+                                            <li style="float: left;">
+                                                九寨沟，都江堰
+                                            </li>
+                                            <li style="float: left;">
+                                                &nbsp&nbsp&nbsp<a href="#" onclick="floatBox('/supplier/select_dest','http://www.deccatech.cn/newtravel/supplier/select_dest','400','400')" style="text-decoration: underline;">请选择</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                             </div>
                         </li>
                         <li>
@@ -365,7 +383,65 @@
 
 
 <script language="JavaScript">
+    window.d=null;
+//弹出框
 
+/*
+  params为附加参数，可以是与dialog有关的所有参数，也可以是自定义参数
+  其中自定义参数里有
+  loadWindow: 表示回调函数的window
+  loadCallback: 表示回调函数
+  maxHeight:指定最高高度
+
+ */
+function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocument,params) {
+    boxwidth = boxwidth != '' ? boxwidth : 0;
+    boxheight = boxheight != '' ? boxheight : 0;
+    var func = $.isFunction(closefunc) ? closefunc : function () {
+    };
+    fromdocument = fromdocument ? fromdocument : null;//来源document
+
+    var initParams={
+        url: url,
+        title: boxtitle,
+        width: boxwidth,
+        height: boxheight,
+        scroll:0,
+        loadDocument:fromdocument,
+        onclose: function () {
+            func();
+        }
+    }
+    initParams= $.extend(initParams,params);
+
+    var dlg = dialog(initParams);
+
+
+    if(typeof(dlg.loadCallback)=='function'&&typeof(dlg.loadWindow)=='object')
+    {
+       dlg.finalResponse=function(arg,bool,isopen){
+            dlg.loadCallback.call(dlg.loadWindow,arg,bool);
+            if(!isopen)
+              this.remove();
+       }
+    }
+
+    window.d=dlg;
+    d.close()
+    if (initParams.width != 0) {
+        d.width(initParams.width);
+    }
+    if (initParams.height!= 0) {
+        d.height(initParams.height);
+    }
+  
+    if (nofade) {
+        d.show()
+    } else {
+        d.showModal();
+    }
+
+}
 
 
     var action='{$action}';

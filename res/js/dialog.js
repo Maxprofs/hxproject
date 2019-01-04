@@ -34,6 +34,7 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
         title: boxtitle,
         width: boxwidth,
         height: boxheight,
+        scroll:0,
         loadDocument:fromdocument,
         onclose: function () {
             func();

@@ -23,7 +23,6 @@ return array (
   'share_wx_client' => '/plugins/share_wx_client',
   'wxh5' => '/plugins/weixin_pay_h5',
   'product_seeding' => '/plugins/product_seeding',
-  'red_envelope' => '/plugins/red_envelope',
   'contract' => '/plugins/contract',
   'supplier_brokerage' => '/plugins/supplier_brokerage',
   'distributor' => '/plugins/distributor',

@@ -66,6 +66,9 @@ class Model_Destinations extends ORM
      */
     public static function set_typeid_open($kindid, $typeid, $isopen)
     {
+        // $h=fopen('f:\1.txt', 'w');
+        // fwrite($h, 'kindid:'.$kindid."\r\n".'typeid:'.$typeid."\r\n".'isopen:'.$isopen."\r\n");
+        // fclose($h);
         $dest = $first_dest = ORM::factory('destinations', $kindid);
         if (!$dest->loaded())
         {

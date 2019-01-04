@@ -268,7 +268,7 @@ class Controller_Member_Findpwd extends Stourweb_Controller
             $sentNum = empty($sentNum) ? 0 : $sentNum;
             $lastSentTime=empty($lastSentTime)?0:$lastSentTime;
 
-            if($sentNum<3&&$sentNum>0&&$lastSentTime>($curtime-60))
+            if($sentNum<3&&$sentNum>0&&$lastSentTime>($curtime-120))
             {
                 return array('status'=>false,'msg'=>'验证码发送过于频繁，请稍后再试');
 

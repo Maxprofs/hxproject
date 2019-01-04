@@ -263,6 +263,36 @@
 	font-size:14px;
 	margin-left:90px;
 	background:#0082dd}
+.reg-cont-box .now-reg-next{
+	float:left;
+	width:580px;
+	height:33px}
+.reg-cont-box .now-reg-next button{
+	cursor: pointer;
+	border: none;
+	float:left;
+	color:#fff;
+	width:235px;
+	height:33px;
+	line-height:33px;
+	text-align:center;
+	font-size:14px;
+	margin-left:90px;
+	background:#0082dd}
+.reg-cont-box .now-reg-prev{
+	float:left;
+	width:205px;
+	height:33px}
+.reg-cont-box .now-reg-prev a{
+	float:left;
+	color:#fff;
+	width:115px;
+	height:33px;
+	line-height:33px;
+	text-align:center;
+	font-size:14px;
+	margin-left:90px;
+	background:#0082dd}
 .success-get-back{
 	float:left;
 	width:500px}

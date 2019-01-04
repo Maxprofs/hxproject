@@ -21,6 +21,7 @@ class Controller_Admin_Line_Destination extends Stourweb_Controller
 
     public function action_destination()
     {
+
         $action = $this->params['action'];
         $model_info = Model_Model::get_module_info($this->_typeid);
         $model_info['path'] = empty($model_info['correct']) ? $model_info['pinyin'] : $model_info['correct'];
@@ -63,6 +64,7 @@ class Controller_Admin_Line_Destination extends Stourweb_Controller
             $field = Arr::get($_POST, 'field');
             $val = Arr::get($_POST, 'val');
             $typeid = Arr::get($_POST, 'typeid');
+
             if ($field == 'displayorder' && $val == '') {
                 $val = 9999;
             }

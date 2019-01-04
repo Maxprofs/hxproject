@@ -18,7 +18,7 @@
 {/if}
 <div class="web-top">
     <div class="wm-1200">
-        <!-- <div class="notice-txt">{$GLOBALS['cfg_gonggao']}</div> -->
+        <div class="notice-txt">{$GLOBALS['cfg_gonggao']}</div>
 
         <div class="top-login">
             <span id="loginstatus">

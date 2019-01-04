@@ -166,7 +166,7 @@
                 t.value='{__("获取短信验证码")}';
                 if(data.status)
                 {
-                    code_timeout(60);
+                    code_timeout(120);
                     $(".tsmsg").show();
                     return false;
                 }

@@ -11,7 +11,6 @@ class Controller_Index extends Stourweb_Controller {
 		$genpage = Common::remove_xss(Arr::get($_GET, 'genpage'));
 
 		if (!empty($html) && empty($genpage)) {
-
 			echo $html;
 			exit;
 		}
@@ -22,6 +21,7 @@ class Controller_Index extends Stourweb_Controller {
 	//首页
 	public function action_index() 
 	{
+
 		$city = St_Functions::st_setStartCity();
 		if ($_COOKIE["cityname"] == '') {
 			setcookie("cityname", $city['name']);
