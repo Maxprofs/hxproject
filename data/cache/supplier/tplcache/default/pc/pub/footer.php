@@ -1,1 +1,0 @@
-<div class="st-record"><?php echo $footer;?></div>

@@ -34,40 +34,75 @@ class Controller_Supplier extends Stourweb_Controller {
 		$this->assign('parentkey', $this->params['parentkey']);
 		$this->assign('itemid', $this->params['itemid']);
 	}
-	public function action_select_dest() {
-        $sql = "select id,kindname,pid,supplierids from sline_destinations where 1";
-        $list = DB::query(Database::SELECT, $sql)->execute()->as_array();
-        $children=$this->bar($list,0);
-        $this->assign('list',$children);
-                $h=fopen('f:\1.txt', 'w');
-        fwrite($h, print_r($children,true));
-        fclose($h);
-        // echo json_encode($children);
-		// DB::query(Database::SELECT, "select count(*) as num from sline_supplier a $w")->execute()->as_array();
-		$this->display('stourtravel/supplier/select_dest');
+	var $html = ''; //供应商设置页面初始化HTML
+	public function action_select_limit() {
+		$params = $this->request->param()['params'];
+		$params = split('/', $params);
+		$params[5] = str_replace(' ', '', $params[5]);
+		//设置已选择节点1
+		$this->assign('setids', $params[5]);
+		$params[5] = split(',', $params[5]);
+
+		if ($params[3] == 'dest') {
+			$sql = "select id,kindname,pid,supplierids from sline_destinations where 1";
+		}
+		if ($params[3] == 'from') {
+			$sql = "select id,cityname,pid,supplierids from sline_startplace where 1";
+		}
+		$list = DB::query(Database::SELECT, $sql)->execute()->as_array();
+		if ($params[3] == 'dest') {
+			$children = $this->bar($list, 0, 'dest', $params[5]);
+		}
+		if ($params[3] == 'from') {
+			$children = $this->bar($list, 0, 'from', $params[5]);
+		}
+		if ($params[5] != '') {
+			split(',', $params);
+		}
+		//设置已选择节点2
+		$this->assign('sethtml', $this->html);
+
+		$this->assign('list', $children);
+		$this->assign('limittype', $params[3]);
+		$this->display('stourtravel/supplier/select');
+	}
+// 生成目的地bootstrap treeview init 数据
+	private function bar($arr, $pid, $action, $ids) {
+		$children = array();
+		foreach ($arr as $k => $v) {
+			if ($v['pid'] == $pid) {
+				if ($action == 'dest') {
+					if (array_search((int) $v['id'], $ids) !== false) {
+						$this->html .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['kindname'] . "<s onclick='removespan(this)'></s></span>";
+						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'pid' => $v['pid'], 'state' => array('checked' => true), 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
+					} else {
+						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'pid' => $v['pid'], 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
+					}
+
+				} else {
+					if (array_search((int) $v['id'], $ids) !== false) {
+						$this->html .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['cityname'] . "<s onclick='removespan(this)'></s></span>";
+						if ($v['pid'] == 0) {
+							$children[] = array('text' => $v['id'] . "  " . $v['cityname'], 'pid' => $v['pid'], 'state' => array('primary' => true, 'checked' => true), 'nodes' => $this->bar($arr, $v['id'], 'from', $ids));
+						} else {
+							$children[] = array('text' => $v['id'] . "  " . $v['cityname'], 'pid' => $v['pid'], 'state' => array('checked' => true), 'nodes' => $this->bar($arr, $v['id'], 'from', $ids));
+						}
+					} else {
+						//供应商设置出发地最顶层项目不能选择，所以这里需要把顶层项目的checkbox关掉
+						// 通过bootstrap-treeview.js中自定义primary节点参数实现主节点checkbox关闭
+						if ($v['pid'] == 0) {
+							$children[] = array('text' => $v['id'] . "  " . $v['cityname'], 'pid' => $v['pid'], 'state' => array('primary' => true), 'nodes' => $this->bar($arr, $v['id'], 'from', $ids));
+						} else {
+							$children[] = array('text' => $v['id'] . "  " . $v['cityname'], 'pid' => $v['pid'], 'nodes' => $this->bar($arr, $v['id'], 'from', $ids));
+						}
+					}
+				}
+
+			}
+		}
+		return $children;
 	}
 
-    private function bar($arr,$pid)
-    {
-        $children=array();
-        foreach ($arr as $k => $v)
-        {
-
-            if($v['pid'] == $pid)
-            {
-                $children[]=array('text'=>$v['id']."<a href='#'>".$v['kindname']."</a>",'icon'=>"glyphicon glyphicon-chevron-right",'backColor'=>'#bbb','color'=>'#000','pid'=>$v['pid'],'nodes'=>$this->bar($arr,$v['id']));
-            }
-        }
-        return $children;
-    }
-    public function action_ajax_select_dest()
-    {
-        $pid = Arr::get($_GET, 'pid');
-        $sql = "select id,kindname,pid from sline_destinations where pid=$pid ";
-        $list = DB::query(Database::SELECT, $sql)->execute()->as_array();
-        // echo json_encode(array('id'=>$id));
-        echo json_encode($list);
-    }
 	public function action_index() {
 		$action = $this->params['action'];
 		if (empty($action)) //显示列表
@@ -209,6 +244,31 @@ class Controller_Supplier extends Stourweb_Controller {
 			$this->assign('apply_product', $apply_product);
 		}
 
+		$sql = "SELECT id,kindname FROM `sline_destinations` WHERE supplierids != '' and find_in_set(" . $id . ",supplierids)";
+		$setdest = DB::query(Database::SELECT, $sql)->execute()->as_array();
+		$sql = "SELECT id,cityname FROM `sline_startplace` WHERE supplierids != '' and find_in_set(" . $id . ",supplierids)";
+		$setfrom = DB::query(Database::SELECT, $sql)->execute()->as_array();
+		foreach ($setdest as $k => $v) {
+			$desthtml .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['kindname'] . "<s onclick='removespan(this)'></s></span>";
+			if ($k == 0) {
+				$destids = $v['id'];
+			} else {
+				$destids .= ',' . $v['id'];
+			}
+		}
+		$desthtml .= "<input type='hidden' id='destids' name='destids' value=" . $destids . ">";
+		foreach ($setfrom as $k => $v) {
+			$fromhtml .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['cityname'] . "<s onclick='removespan(this)'></s></span>";
+			if ($k == 0) {
+				$fromids = $v['id'];
+			} else {
+				$fromids .= ',' . $v['id'];
+			}
+		}
+		$fromhtml .= "<input type='hidden' id='fromids' name='fromids' value=" . $fromids . ">";
+		$this->assign('desthtml', $desthtml);
+		$this->assign('fromhtml', $fromhtml);
+
 		$this->assign('product_list', $product_list);
 		$this->assign('info', $info);
 		$this->assign('qua', $qua);
@@ -242,6 +302,8 @@ class Controller_Supplier extends Stourweb_Controller {
 		     * 保存
 	*/
 	public function action_ajax_save() {
+		$destids = split(',', ARR::get($_POST, 'destids'));
+		$fromids = split(',', ARR::get($_POST, 'fromids'));
 		$action = ARR::get($_POST, 'action'); //当前操作
 		$id = ARR::get($_POST, 'id');
 		$status = false;
@@ -318,14 +380,50 @@ class Controller_Supplier extends Stourweb_Controller {
 		if ($model->saved()) {
 			if ($action == 'add') {
 				$productid = $model->id; //插入的产品id
+				// 分别写入供应商目的地，出发地限制
+				foreach ($destids as $k => $id) {
+					$this->set_spplierids('destinations', $id, $productid);
+				}
+				foreach ($fromids as $k => $id) {
+					$this->set_spplierids('startplace', $id, $productid);
+				}
 			} else {
 				$productid = $model->id;
 			}
+
+// ++++++++++++++++++++++++++
 			$status = true;
 		}
 		echo json_encode(array('status' => $status, 'productid' => $productid));
 	}
-
+	public function action_ajax_set_supplierid() {
+		$tbl = ARR::get($_POST, 'tbl');
+		$isopen = ARR::get($_POST, 'isopen');
+		$placeid = ARR::get($_POST, 'placeid');
+		$supplierid = ARR::get($_POST, 'supplierid');
+		$this->set_spplierids($tbl, $placeid, $supplierid, $isopen);
+	}
+	/*
+		        $tblname:数据库表名
+		        $destid:目的地或出发地ID
+		        $supplierid:供应商ID
+		        $isopen:1为写入新数据，非1为新数据替换老数据
+	*/
+	private function set_spplierids($tblname, $destid, $supplierid, $isopen = 1) {
+		$frist = $row = ORM::factory($tblname, $destid);
+		if (!$row->loaded()) {
+			return false;
+		}
+		$supplierids = $row->supplierids;
+		$supplierArr = empty($supplierids) ? array() : explode(',', $supplierids);
+		if ($isopen) {
+			$supplierArr[] = $supplierid;
+		} else {
+			$supplierArr = array_diff($supplierArr, array($supplierid));
+		}
+		$row->supplierids = implode(',', $supplierArr);
+		return $row->save();
+	}
 	/*
 		      以json方式返回供应商列表
 	*/

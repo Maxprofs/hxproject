@@ -19,7 +19,28 @@
         .hide{
             display: none;
         }
-
+    .finaldest span{
+        color: red;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 28px 0 10px;
+        vertical-align: middle;
+        margin-right: 10px;
+        position: relative;
+        background: #f1f1f1;
+    }
+    .finaldest span s {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        cursor: pointer;
+        opacity: .6;
+        position: absolute;
+        right: 10px;
+        top: 11px;
+        background: url(/newtravel/public/images/tab-bar-closed-icon.png) no-repeat 0 0;
+    }
     </style>
 
 </head>
@@ -39,7 +60,7 @@
                     		<span class="item on" id="basic"><s></s>基础信息</span>
                             <span class="item" data-id="qualify"><s></s>认证材料</span>
 	                        <span class="item" data-id="jieshao"><s></s>联系人</span>
-	                        <span class="item" data-id="extend"><s></s>高级</span>
+	                        <!-- <span class="item" data-id="extend"><s></s>高级</span> -->
 
                     	</div>
 
@@ -78,11 +99,30 @@
                             <div class="item-bd">
                                     <div id="showdest" style="line-height: 2.5">
                                         <ul>
-                                            <li style="float: left;">
-                                                九寨沟，都江堰
+                                            <li style="float: left;" id="dest_li" class="finaldest">
+                                                {if $desthtml!=null}
+                                                    {$desthtml}
+                                                {/if}
                                             </li>
                                             <li style="float: left;">
-                                                &nbsp&nbsp&nbsp<a href="#" onclick="floatBox('/supplier/select_dest','http://www.deccatech.cn/newtravel/supplier/select_dest','400','400')" style="text-decoration: underline;">请选择</a>
+                                                &nbsp&nbsp&nbsp<a href="#" id="limitdest" class="btn btn-primary btn-xs">请选择</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="item-hd">出发地范围：</span>
+                            <div class="item-bd">
+                                    <div id="showfrom" style="line-height: 2.5">
+                                        <ul>
+                                            <li style="float: left;" id="from_li" class="finaldest">
+                                                {if $fromhtml!=''}
+                                                    {$fromhtml}
+                                                {/if}
+                                            </li>
+                                            <li style="float: left;">
+                                                &nbsp&nbsp&nbsp<a href="#" id="limitfrom" class="btn btn-warning btn-xs">请选择</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -370,7 +410,7 @@
                     <dt class="wid_90">&nbsp;</dt>
                     <dd>
                         <input type="hidden" id="id" name="id" value="{$info['id']}">
-                        <input type="hidden" name="action" value="{$action}">
+                        <input type="hidden" id='action' name="action" value="{$action}">
                         <input type="hidden" name="kind_right" id="kind_right" value="{$action}">
                         <input type="hidden" name="litpic" id="litpic" value="{$info['litpic']}">
                     </dd>
@@ -383,7 +423,25 @@
 
 
 <script language="JavaScript">
+
     window.d=null;
+    function removespan(ele) {
+        var tbl = $(ele).parent('span').parent('li').attr('id').substring(0,4);
+        if (tbl=='dest') {
+            tbl='destinations';
+        }else{
+            tbl='startplace';
+        }
+        $.ajax({
+            url: '/newtravel/supplier/ajax_set_supplierid',
+            type: 'post',
+            dataType: 'json',
+            data: {tbl: tbl,isopen:0,placeid:$(ele).parent('span').attr('id'),supplierid:$('#id').val()},
+        })
+        .done(function(msg) {
+            $(ele).parent('span').remove();
+        })
+    }
 //弹出框
 
 /*
@@ -402,12 +460,14 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
     fromdocument = fromdocument ? fromdocument : null;//来源document
 
     var initParams={
+        id:'showdest',
         url: url,
         title: boxtitle,
         width: boxwidth,
         height: boxheight,
         scroll:0,
         loadDocument:fromdocument,
+        cancel:false,
         onclose: function () {
             func();
         }
@@ -560,11 +620,12 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                     if(data.status)
                     {
                         $("#id").val(data.productid);
-                        ST.Util.showMsg('保存成功!','4',2000);
+                        ST.Util.showMsg('保存成功!','4',3000);
+                        window.location.reload()
                     }
                     else
                     {
-                        ST.Util.showMsg(data.msg,'5',2000);
+                        ST.Util.showMsg(data.msg,'5',3000);
                     }
 
 
@@ -578,6 +639,22 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
 
     $(function(){
 
+        $('#limitdest').click(function(event) {
+            /* Act on the event */
+            if ($('#action').val()=='add') {
+                floatBox("设置供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"400","470")
+            }else{
+                floatBox("编辑供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"400","470")
+            }
+        });
+        $('#limitfrom').click(function(event) {
+            /* Act on the event */
+            if ($('#action').val()=='add') {
+                floatBox("设置供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"400","470")
+            }else{
+                floatBox("编辑供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"400","470")
+            }
+        });
         $("#nav").find('span').click(function(){
 
             Product.changeTab(this,'.product-add-div');//导航切换
@@ -657,4 +734,4 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
 </script>
 
 </body>
-</html><script type="text/javascript" src="http://update.souxw.com/service/api_V3.ashx?action=releasefeedback&ProductName=stourwebcms&Version=7.1.201809.1301&DomainName=&ServerIP=unknown&SerialNumber=45422529" ></script>
+</html>

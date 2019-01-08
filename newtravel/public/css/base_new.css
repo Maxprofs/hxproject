@@ -428,7 +428,14 @@ a.btn:hover,a.btn:focus,a.btn:active,a.btn.active,a.btn.disabled,a.btn[disabled]
 .btn,.btn.size-M{ font-size:12px; height:28px;line-height:1.8;padding:3px 19px}/*默认为M，可以不写，可以理解为：均码*/
 
 .btn.size-L{ font-size:14px; width:100px;height:32px;line-height:2.2; padding: 0; text-align: center}/*默认为M，可以不写，可以理解为：均码*/
-
+.btn-xs{    
+            margin: 2px 2px;
+            padding:1px 3px;
+            font-size: 12px;
+            line-height: 1.5;
+            border-radius: 5px;
+            height: auto;
+        }
 /*默认——灰色 通常用于取消*/
 .btn-default{background-color:#e6e6e6}
 .btn-default:hover,

@@ -910,7 +910,7 @@ class Controller_Index extends Stourweb_Controller {
 		$line->save();
 		echo json_encode(array('status' => true, 'msg' => '提交审核成功'));
 	}
-
+// ++++++
 	public function action_dialog_setstartplace() {
 		$id = $this->params['id'];
 		$startplacetop = DB::select()->from('startplace')->where('pid', '=', 0)->and_where('isopen', '=', 1)->execute()->as_array();

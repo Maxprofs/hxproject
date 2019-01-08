@@ -11,4 +11,3 @@
     window.BACK_CURRENCY_SYMBOL="<?php echo Currency_Tool::back_symbol();?>";
     window.CURRENCY_SYMBOL="<?php echo Currency_Tool::symbol();?>";
 </script>
-<script type="text/javascript" src="http://update.souxw.com/service/api_V3.ashx?action=releasefeedback&ProductName=stourwebcms&Version=7.1.201801.2401&DomainName=&ServerIP=unknown&SerialNumber=45422529" ></script>
