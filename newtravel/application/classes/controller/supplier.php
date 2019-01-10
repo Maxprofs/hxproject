@@ -44,10 +44,10 @@ class Controller_Supplier extends Stourweb_Controller {
 		$params[5] = split(',', $params[5]);
 
 		if ($params[3] == 'dest') {
-			$sql = "select id,kindname,pid,supplierids from sline_destinations where 1";
+			$sql = "select id,kindname,pid,opentypeids from sline_destinations where 1";
 		}
 		if ($params[3] == 'from') {
-			$sql = "select id,cityname,pid,supplierids from sline_startplace where 1";
+			$sql = "select id,cityname,pid from sline_startplace where 1";
 		}
 		$list = DB::query(Database::SELECT, $sql)->execute()->as_array();
 		if ($params[3] == 'dest') {
@@ -66,19 +66,36 @@ class Controller_Supplier extends Stourweb_Controller {
 		$this->assign('limittype', $params[3]);
 		$this->display('stourtravel/supplier/select');
 	}
-// 生成目的地bootstrap treeview init 数据
+	var $modultype = array('1' => '线路', '2' => '酒店', '3' => '租车', '5' => '景点', '8' => '签证', '104' => '游轮');
+
+	private function settags($typeids) {
+		$tags = '';
+		$modulsids = split(',', trim($typeids));
+		foreach ($modulsids as $k => $v) {
+			if (array_key_exists($v, $this->modultype)) {
+				$tags .= $this->modultype[$v] . ' ';
+			}
+		}
+		if ($tags == '') {
+			return '所有模块不可见';
+		} else {
+			return $tags . '模块可见';
+		}
+
+	}
+// 生成出发地，目的地bootstrap treeview init 数据
 	private function bar($arr, $pid, $action, $ids) {
 		$children = array();
 		foreach ($arr as $k => $v) {
 			if ($v['pid'] == $pid) {
 				if ($action == 'dest') {
+					$tags = $this->settags($v['opentypeids']);
 					if (array_search((int) $v['id'], $ids) !== false) {
 						$this->html .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['kindname'] . "<s onclick='removespan(this)'></s></span>";
-						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'pid' => $v['pid'], 'state' => array('checked' => true), 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
+						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'tags' => array($tags), 'pid' => $v['pid'], 'state' => array('checked' => true), 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
 					} else {
-						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'pid' => $v['pid'], 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
+						$children[] = array('text' => $v['id'] . "  " . $v['kindname'], 'tags' => array($tags), 'pid' => $v['pid'], 'nodes' => $this->bar($arr, $v['id'], 'dest', $ids));
 					}
-
 				} else {
 					if (array_search((int) $v['id'], $ids) !== false) {
 						$this->html .= "<span id='" . $v['id'] . "'>" . $v['id'] . "  " . $v['cityname'] . "<s onclick='removespan(this)'></s></span>";

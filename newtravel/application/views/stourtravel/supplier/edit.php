@@ -41,6 +41,10 @@
         top: 11px;
         background: url(/newtravel/public/images/tab-bar-closed-icon.png) no-repeat 0 0;
     }
+    .ui-dialog-body{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
     </style>
 
 </head>
@@ -642,17 +646,17 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
         $('#limitdest').click(function(event) {
             /* Act on the event */
             if ($('#action').val()=='add') {
-                floatBox("设置供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"400","470")
+                floatBox("设置供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"500","485")
             }else{
-                floatBox("编辑供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"400","470")
+                floatBox("编辑供应商目的地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/dest/ids/"+$('#destids').val(),"500","485")
             }
         });
         $('#limitfrom').click(function(event) {
             /* Act on the event */
             if ($('#action').val()=='add') {
-                floatBox("设置供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"400","470")
+                floatBox("设置供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"500","485")
             }else{
-                floatBox("编辑供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"400","470")
+                floatBox("编辑供应商出发地","/newtravel/supplier/select_limit/{$info['id']}/"+"{$action}"+"/query/from/ids/"+$('#fromids').val(),"500","485")
             }
         });
         $("#nav").find('span').click(function(){

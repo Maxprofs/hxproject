@@ -33,19 +33,20 @@ class Controller_Destination extends Stourweb_Controller
     */
     public function action_ajax_getDestsetList()
     {
-
+        $st_supplier_id = Cookie::get('st_supplier_id');
+        $userinfo = Model_Supplier::get_supplier_byid($st_supplier_id);
         $pid = Arr::get($_POST, 'pid');
         $keyword = Arr::get($_POST, 'keyword');
         $pid = empty($pid) ? 0 : $pid;
         $kindlist = Arr::get($_POST, 'kindlist');
         if ($keyword)
-            $sql = "select id,kindname,pinyin from sline_destinations where kindname like '%{$keyword}%' and isopen=1 and find_in_set(1,opentypeids)  order by pinyin asc";
+            $sql = "select id,kindname,pinyin from sline_destinations where kindname like '%{$keyword}%' and isopen=1 and find_in_set({$userinfo['id']},supplierids) and find_in_set(1,opentypeids) order by pinyin asc";
         else
-            $sql = "select id,kindname,pinyin from sline_destinations where pid=$pid and isopen=1 and find_in_set(1,opentypeids)  order by pinyin asc";
+            $sql = "select id,kindname,pinyin from sline_destinations where pid=$pid and isopen=1 and find_in_set({$userinfo['id']},supplierids) and find_in_set(1,opentypeids)  order by pinyin asc";
         $destlist = DB::query(Database::SELECT, $sql)->execute()->as_array();
         foreach ($destlist as $key => $row)
         {
-            $sql = "select count(*) as num from sline_destinations where pid='{$row['id']}' and isopen=1 and find_in_set(1,opentypeids)";
+            $sql = "select count(*) as num from sline_destinations where pid='{$row['id']}' and isopen=1  and find_in_set({$userinfo['id']},supplierids) and find_in_set(1,opentypeids)";
             $r = DB::query(1, $sql)->execute()->as_array();
             $destlist[$key]['childnum'] = $r[0]['num'];
         }
@@ -115,6 +116,7 @@ class Controller_Destination extends Stourweb_Controller
 
     public function action_dialog_setdest()
     {
+
         $id = $_GET['id'];
         $kindlist = $_GET['kindlist'];
         $finaldestid = $_GET['finaldestid'];

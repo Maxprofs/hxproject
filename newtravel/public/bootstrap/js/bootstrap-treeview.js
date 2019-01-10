@@ -224,7 +224,7 @@ function(a, b, c, d) {
 			var d = this;
 			a.each(b,
 			function(b, e) {
-
+				console.log(e)
 				for (var f = a(d.template.item).addClass("node-" + d.elementId).addClass(e.state.checked ? "node-checked": "").addClass(e.state.disabled ? "node-disabled": "").addClass(e.state.selected ? "node-selected": "").addClass(e.searchResult ? "search-result": "").attr("data-nodeid", e.nodeId).attr("style", d.buildStyleOverride(e)), g = 0; c - 1 > g; g++) f.append(d.template.indent);
 				var h = [];
 				if (e.nodes ? (h.push("expand-icon"), h.push(e.state.expanded ? d.options.collapseIcon: d.options.expandIcon)) : h.push(d.options.emptyIcon), f.append(a(d.template.icon).addClass(h.join(" "))), d.options.showIcon) {

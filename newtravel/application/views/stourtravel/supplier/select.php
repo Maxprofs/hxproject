@@ -24,12 +24,12 @@
     }
     .tree{
         overflow-y: auto;
-        width: 400px;
+        width: 500px;
         height: 340px;
     }
     .selecteddest{
-        width: 400px;
-        height: 70px;
+        width: 500px;
+        height: 80px;
         overflow-y: auto;
     }
     .selecteddest span{
@@ -53,13 +53,20 @@
         right: 10px;
         top: 11px;
     }
-    .badge{
-        visibility: hidden;
-    }
+
 </style>
 
 <body >
-    <h5 style="float: left;">已选择目的地</h5>
+    <table style="width: 100%;margin-bottom: 3px;">
+        <tbody>
+            <tr style="border-bottom: 1px solid #999;">
+                <td style="vertical-align: middle;">
+                    <span style="float: left;margin: 1px;"><b>已选择目的地：</b></span>{if $limittype=='dest'}<span class="btn-danger btn-xs" style="float: right;line-height: 1.2;margin-bottom: 2px;">目的地可见请在各个模块中配置</span>{/if}
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
     <div id="selecteddest" class="pre-scrollable selecteddest">
         
     </div>
@@ -72,7 +79,7 @@
             <input type="hidden" id="{$limittype}ids" name="{$limittype}ids" value="">
         {/if}
     </div>
-    <div class='setdest' style="text-align: center;">
+    <div class='setdest' style="text-align: center;margin-top: 5px;">
         <buttonc class="btn btn-info btn-bg" onclick="setdest()">关闭</button>
     </div>
     <script>
@@ -155,8 +162,13 @@
                     });
                 },
                 showCheckbox:true,
-                selectedBackColor:'#8888fa',
-                onhoverColor:'#aaa',
+                color: "#777777",
+                backColor: "#eeeeee",
+                onhoverColor: "orange",
+                borderColor: "#999999",
+                highlightSelected: true,
+                selectedColor: "yellow",
+                selectedBackColor: "darkorange",
                 showTags:true
             });
             // 初始化后收起所有节点

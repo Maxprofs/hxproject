@@ -131,7 +131,7 @@ return array (
   'cfg_m_main_url' => 'http://www.deccatech.cn',
   'cfg_m_icp' => '',
   'cfg_m_tongjicode' => '',
-  'cfg_m_img_url' => 'http://www.googlesyndication.com',
+  'cfg_m_img_url' => '',
   'cfg_m_phone' => '',
   'cfg_sys_version' => '5.1',
   'cfg_phoneservice_checkmsg' => '尊敬的客户你好，你的验证码是{#CHECKCODE#} 【{#WEBNAME#}】',
@@ -193,6 +193,6 @@ return array (
   'cfg_plugin_ship_line_usetourer' => '1',
   'cfg_plugin_hotel_book_sms_verify' => '0',
   'cfg_plugin_hotel_usetourer' => '1',
-  'cfg_quick_menu' => '0',
+  'cfg_quick_menu' => '1',
   'cfg_third_login_bind' => '2',
 );

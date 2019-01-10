@@ -328,7 +328,8 @@ class Controller_Index extends Stourweb_Controller {
 		$webid = 0;
 		$this->assign('webid', 0);
 		$columns = ORM::factory('line_content')->where("(webid=" . $webid . " and isopen=1 and isline=0 and columnname!='linespot') or columnname='tupian' ")->order_by('displayorder', 'asc')->get_all();
-		$startplacelist = ORM::factory('startplace')->where("pid!=0")->and_where('isopen', '=', 1)->get_all();
+		$startplacelist = ORM::factory('startplace')->where("pid!=0")->and_where('isopen', '=', 1)->and_where(" and find_in_set(".$supplierid.",supplierids)")->get_all();
+
 		$this->assign('startplacelist', $startplacelist);
 		$this->assign('columns', $columns);
 		$this->assign('usertransport', array());
@@ -910,14 +911,16 @@ class Controller_Index extends Stourweb_Controller {
 		$line->save();
 		echo json_encode(array('status' => true, 'msg' => '提交审核成功'));
 	}
-// ++++++
+
 	public function action_dialog_setstartplace() {
+		$supplierid=$this->_user_info['id'];
 		$id = $this->params['id'];
-		$startplacetop = DB::select()->from('startplace')->where('pid', '=', 0)->and_where('isopen', '=', 1)->execute()->as_array();
-		$startplacelist = DB::select()->from('startplace')->where('pid', '!=', 0)->and_where('isopen', '=', 1)->execute()->as_array();
+		// $startplacetop = DB::select()->from('startplace')->where('pid', '=', 0)->and_where('isopen', '=', 1)->execute()->as_array();
+		$startplacetop = DB::select()->from('startplace')->where(" pid=0 and isopen=1 and id IN (SELECT pid FROM sline_startplace where pid!=0 and isopen=1 AND find_in_set(" . $supplierid . ",supplierids))")->execute()->as_array();
+		$startplacelist = DB::select()->from('startplace')->where('pid', '!=', 0)->and_where('isopen', '=', 1)->and_where(" and find_in_set(".$supplierid.",supplierids)")->execute()->as_array();
 		foreach ($startplacetop as &$item) {
 			$pid = $item['id'];
-			$item['num'] = DB::query(Database::SELECT, "select count(*) as num from sline_startplace where pid='{$pid}' and isopen=1 ")->execute()->get('num');
+			$item['num'] = DB::query(Database::SELECT, "select count(*) as num from sline_startplace where pid='{$pid}' and isopen=1 and find_in_set(".$supplierid.",supplierids)")->execute()->get('num');
 		}
 		$this->assign('startplacetop', $startplacetop);
 		$this->assign('startplacelist', $startplacelist);
@@ -926,10 +929,11 @@ class Controller_Index extends Stourweb_Controller {
 	}
 
 	public function action_ajax_get_start_place() {
+		$uid=$this->_user_info['id'];
 		$id = intval($_REQUEST['pid']);
 		$keyword = trim(Arr::get($_POST, 'keyword'));
 		$sql = "SELECT * FROM sline_startplace";
-		$where = " WHERE isopen=1";
+		$where = " WHERE isopen=1 and find_in_set(".$uid.",supplierids)";
 		if ($id) {
 			$where .= " AND pid={$id}";
 		}

@@ -123,7 +123,6 @@
         });
         getNextDests(0,1);
         organizeSelect(finalDestId);
-
     })
 
     function getNextDests(pid,step,keyword)
