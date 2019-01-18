@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <title>{$seoinfo['seotitle']}-{$webname}</title>
     {if $seoinfo['keyword']}

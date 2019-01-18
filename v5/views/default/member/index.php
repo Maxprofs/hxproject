@@ -7,7 +7,8 @@
     {Common::css('user.css,base.css,extend.css',false)}
 
     <script type="text/javascript" src="/res/js/artDialog/lib/sea.js"></script>
-    {Common::js('jquery.min.js,base.js,common.js,dialog.js')}
+    {Common::js('jquery.min.js,base.js,common.js,jquery.zclip.js,dialog.js')}
+
 </head>
 <body>
 {request "pub/header"}
@@ -45,7 +46,7 @@
                 <div class="user-pic"><div class="level"><a href="/member/club/rank">{Common::member_rank($info['mid'],array('return'=>'current'))}</a></div><a href="/member/index/userinfo"><img src="{$info['litpic']}" width="118" height="118" /></a></div>
                 <div class="user-txt">
                     <p class="name">{$info['nickname']}</p>
-                    <p class="item-bar">{__('会员等级')}：{Common::member_rank($info['mid'],array('return'=>'rankname'))}</p>
+ <!--                    <p class="item-bar">{__('会员等级')}：{Common::member_rank($info['mid'],array('return'=>'rankname'))}</p> -->
                     <p class="item-bar">{__('登录邮箱')}：
                         {if $info['email']}{$info['email']}{else}{__('未绑定')} <a class="rz-no" href="{$cmsurl}member/index/modify_email?change=0">{__('立即绑定')}</a>{/if}</p>
                     <p class="item-bar">{__('手机号码')}：
@@ -56,13 +57,16 @@
                     <p class="item-bar">服务网点：
                         <?php 
                             if ($info['binddistributor']=='0') {
-                                echo '未绑定 <a class="rz-no" href="#">联系管理员</a>';
+                                echo '未绑定 <a class="rz-no" style="margin-left:0px;" href="#">联系管理员</a>';
                             }else{
                                 $dinfo=Model_Distributor::distributor_find_relationship($info['mid'],'view');
-                                echo "<a href='#' style='text-decoration: underline;color:blue;' onclick='serviceinfo()'>服务网点信息</a>";
+                                echo "<a href='#' class='rz-no' style='margin-left:0px;'' onclick='serviceinfo()'>服务网点信息</a>";
                             }
                          ?>
                          </p>
+                    {if $info['bflg']==1}
+                        <p class="item-bar">我的链接：<?php echo '<a href="#" id="copy" style="margin-left:4px;" class="rz-no">复制链接</a>'; ?><a href="#" class="rz-no" onclick="checkqrcode()">二维码</a></p>
+                    {/if}
                 </div>
             </div><!-- 账号信息 -->
             <div class="user-msg-right">
@@ -71,7 +75,6 @@
                     <li class="my-jf" data-url="/member/order/all-unpay">
                         <em></em>
                         <span>{__('未付款')}</span>
-
                     </li>
                     <li class="un-fk" data-url="/member/order/all-uncomment">
                         <em></em>
@@ -98,9 +101,12 @@
             </div><!-- 订单信息 -->
                 <div class="user-info-exchange">
                 <ul class="clearfix">
-                    <li><em>我的余额：</em><strong>{Currency_Tool::symbol()}{php echo $info['money']-$info['money_frozen']}</strong></li>
-
-                    <!-- <li><em>我的积分：</em><strong>{$info['jifen']}</strong></li> -->
+                    
+                    {if $info['bflg']==1}
+                    <li><em>预存款余额：</em><strong>{Currency_Tool::symbol()}{php echo $info['money']-$info['money_frozen']}</strong></li>
+                    <li><em>授信额度：</em><strong>{$info['loc']}</strong></li>
+                    <li><em>短信余额：</em><strong>{$info['sms']}</strong></li>
+                    {/if}
 <!--                    <li><em>我的余额：</em><strong>¥6525</strong></li>-->
                     {if isset($info['coupon'])}
                     <li class="last-li"><em>优惠券：</em><strong>{$info['coupon']}张</strong></li>
@@ -212,9 +218,21 @@
         var url=SITEURL+"distributor/pc/distributor/serviceinfo/"+"{$dinfo}";
         floatBox('服务网点信息',url,'500','250');
     }
+    function checkqrcode() {
+        var url=SITEURL+"member/index/checkqrcode";
+        floatBox("我的二维码",url,'200','200');
+    }
 
     $(function(){
-
+        $('#copy').zclip({
+            path:'{$root}'+'/res/swf/ZeroClipboard.swf',
+            copy:function () {
+                return '{$GLOBALS['cfg_basehost']}'+'/member/register/index/'+'{$info['mid']}';
+            },
+            afterCopy:function() {
+                alert('复制成功')
+            }
+        });
         $("#nav_index").addClass('on');
         if(typeof(on_leftmenu_choosed)=='function')
         {

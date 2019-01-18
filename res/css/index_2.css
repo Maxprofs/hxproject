@@ -186,29 +186,26 @@
 }
 
 .advright {
-    margin-right: 2px;
-}
-
-.useradvbanner {
-    float: left;
+    margin-right: 3px;
 }
 
 .useradvimg1 {
     width: 354px;
-    height: 264px;
+    height: 262px;
     overflow: hidden;
 }
 .useradvimg2{
     width: 433px;
-    height: 264px;
+    height: 262px;
     overflow: hidden;
+}
+.useradvbanner {
+    float: left;
 }
 .useradvimg3{
-    width: 407px;
-    height: 130px;
-    overflow: hidden;
+    margin-bottom: 1px;
 }
-.useradvimg4 {
+.useradvimg3 .useradvimg4 {
     width: 407px;
     height: 130px;
     overflow: hidden;

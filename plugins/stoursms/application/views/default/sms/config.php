@@ -58,18 +58,24 @@
                                     <input class="input-text w300" type="password" name="cfg_sms_password" id="cfg_sms_password" value="{$cfg_sms_password}" />
                                 </div>
                             </li>
+                            <li>
+                                <span class="item-hd">短信价格：</span>
+                                <div class="item-bd">
+                                    <input required="required" class="input-text w100" type="text" name="cfg_sms_price" id="cfg_sms_price" value="{$cfg_sms_price}" maxlength="4" />&nbsp;元/条
+                                </div>
+                            </li>
                         </ul>
                     </form>
                     <div class="clear clearfix">
                         <a href="javascript:;" id="sms_save_btn" class="btn btn-primary radius size-L mt-5 ml-115">保存</a>
                     </div>
-                    <div class="sms-num mt-20">剩余短信：<strong><!-- <iframe src="http://mb345.com:999/ws/SelSum.aspx?CorpID={$cfg_sms_username}&Pwd={$cfg_sms_password}" frameborder="0" style="position: relative; top: +3px; height: 25px;width: 60px;" scrolling="no"></iframe> -->
+                    <div class="sms-num mt-20">剩余短信：<strong>
                     {$count}
                     </strong>条</div>
                     <div class="sms-set">
                         <div class="msg-bar">
                             <span class="">使用记录</span>
-                            <span class="">失败记录</span>
+                            <!-- <span class="">失败记录</span> -->
                         </div>
                         <div class="msg-switcher">
                             <div class="info-one clearfix">
@@ -187,6 +193,7 @@
                 url: url,
                 dataType: 'json',
                 success: function (data) {
+                    // data={'Success':true,'msg':'查询失败','Data':[{'SendTime':'2019-01-15','SendSMSContent':'验证码33333','SendTelNo':'18081926020','SendStatus':'发送成功'}]}
                     ST.Util.hideMsgBox();
                     if (!data.Success) {
                         ST.Util.showMsg(data.msg, 5, 3000);
@@ -202,14 +209,14 @@
                     for (var i in data.Data) {
                         var row = data.Data[i];
                         if (data_type == "uselog") {
-                            html += '<tr class="item"> <td align="center">' + row.SendTime + '</td>' +
-                                '<td class="msg-con">' + row.SendSMSContent + '</td>' +
-                                '<td align="center">' + row.SendTelNo + '</td>' +
-                                '<td align="center">' + row.SendStatus + '</td></tr>';
+                            html += '<tr class="item"> <td align="center">' + formatDate(row.sendtime) + '</td>' +
+                                '<td class="msg-con">' + row.contents + '</td>' +
+                                '<td align="center">' + row.mobile + '</td>' +
+                                '<td align="center">' + row.smstype + '</td></tr>';
                         }
                         if (data_type == "faillog") {
-                            html += '<tr class="item"> <td align="center">' + row.SendTime + '</td>' +
-                                '<td class="msg-con">' + row.SendSMSContent + '</td>' +
+                            html += '<tr class="item"> <td align="center">' + row.sendtime + '</td>' +
+                                '<td class="msg-con">' + row.contents + '</td>' +
                                 '<td class="msg-con">' + row.Memo + '</td>' +
                                 '<td align="center">' + row.SendTelNo + '</td>' +
                                 '<td align="center">' + row.SendStatus + '</td></tr>';
@@ -222,7 +229,28 @@
 
         });
     })
-
+    function formatDate(timestamp) {
+        var date = new Date(parseInt(timestamp)*1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate()<10?'0'+date.getDate():date.getDate();
+        if (date.getHours()<10) {
+            h = '0'+date.getHours() + ':';
+        }else{
+            h = date.getHours() + ':';
+        }
+        if (date.getMinutes()<10) {
+            m='0'+date.getMinutes()+':';
+        }else{
+            m = date.getMinutes() + ':';
+        }
+        if (date.getSeconds()<10) {
+            s='0'+date.getSeconds();
+        }else{
+            s = date.getSeconds();
+        }
+        return Y+M+D+' '+h+m+s;
+     }
 </script>
 </body>
 </html>

@@ -27,6 +27,12 @@
                     <ul>
                         {if $action=="edit"}
                         <li>
+                            <span class="item-hd">服务门市：</span>
+                            <div class="item-bd">
+                                <span class="member-name">{$info['dinfo'][nickname]}</span>
+                            </div>
+                        </li>
+                        <li>
                             <span class="item-hd">会员ID：</span>
                             <div class="item-bd">
                                 <span class="member-name">{$info['mid']}</span>
@@ -154,9 +160,20 @@
                                 <textarea name="signature"  class="default-textarea">{$info['signature']}</textarea>
                             </div>
                         </li>
+                        <li>
+                            <span class="item-hd">会员状态：</span>
+                            <div class="item-bd">
+                                <select class="drop-down wid_100" name="isopen" id="isopen">
+                                    <option value=""></option>
+                                    <option value="1">正常</option>
+                                    <option value="0">冻结</option>
+                                </select>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
+
                 <input type="hidden" value="{$action}" name="action">
                 <input type="hidden" value="{$info['mid']}" name="mid">
             </form>
@@ -166,20 +183,24 @@
             <div class="member-info-container">
                 <div class="st-info-block">
                     <ul>
-                        <li>
+<!--                         <li>
                             <span class="item-hd">会员等级：</span>
                             <div class="item-bd">
                                 <span class="member-level">{$info['grade']}</span>
                             </div>
-                        </li>
-                        <!--
+                        </li> -->
+                        
                         <li>
                             <span class="item-hd">会员状态：</span>
                             <div class="item-bd">
+                                {if $info['isopen']==1}
                                 <span class="msg-item-txt">正常</span>
-                                <a class="hy-default-btn ml-5 mt-3" href="#">冻结</a>
+                                {else}
+                                <span class="msg-item-txt">冻结</span>
+                                {/if}
+                                
                             </div>
-                        </li>-->
+                        </li>
                         <li>
                             <span class="item-hd">实名状态：</span>
                             <div class="item-bd">
@@ -232,7 +253,7 @@
 </html>
 
 <script>
-
+$('#isopen').val("{$info['isopen']}");
     //查看实名信息
     function toShowVerify(id)
     {
@@ -249,7 +270,6 @@
     }
     $(function()
     {
-
         YYYYMMDDstart();
         var year =  '{$info['birth_date'][0]}';
         var month =  '{$info['birth_date'][1]}';

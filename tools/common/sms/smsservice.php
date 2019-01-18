@@ -10,6 +10,26 @@ require_once TOOLS_COMMON . 'sms/noticecommon.php';
 class SMSService
 {
     /*
+        扣减门市短信条数
+    */
+    public static function minussms($did) {
+        $sql="select sms from sline_member where mid=$did";
+        $r = DB::query(Database::SELECT, $sql)->execute()->as_array();
+        if ((int)$r[0]['sms']<1) {
+            echo json_encode(array('status' => false, 'msg' => '服务网点短信数量不足，请联系服务网点！'));
+            exit;
+        }
+        $sql = "update sline_member set sms=sms-1 where mid=$did";
+        $r = DB::query(Database::UPDATE, $sql)->execute();
+    }
+    /*
+        写入短信发送记录
+    */
+    public static function insertlog($fields)
+    {
+        DB::insert('sms_send_log', array_keys($fields))->values(array_values($fields))->execute();
+    }
+    /*
 	 *@function 直接给某个电话发送任意内容短消息
 	 *@param string $phone,接收手机号
 	 *@param string $prefix,短信签名,如"xx旅行网",短信中显示【xx旅行网】
@@ -84,6 +104,8 @@ class SMSService
         $result = array('Success' => false, 'Message' => '', 'Data' => null);
 
         $content = NoticeCommon::generate_member_msg_content($msgtag, NoticeCommon::SMS_MSGTYPE, $phone, "", $member_account, $member_password, $code);
+        
+
         if ($content['member']['isopen'] == 0)
         {
             $result['Message'] = "短信发送开关被关闭";
@@ -101,7 +123,6 @@ class SMSService
         }
 
         return self::send_msg($content['member']['recipient'], "", $content['member']['content']); //发送短信.
-
     }
 
     /*

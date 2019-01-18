@@ -22,6 +22,9 @@
             border-top-left-radius:5px;
             border-top-right-radius:5px;
         }
+        .now-reg-btn{
+            margin-top: 25px;
+        }
     </style>
 </head>
 
@@ -46,8 +49,6 @@
                         $('#regfrm').val(frm+'frm');
                         if (mid=='') {
                             $('#phonedid,#emaildid').val('nothing');
-                            $('.now-reg-next').css('display','inline');
-                            $('.now-reg-btn').css('display','none');
                         }
                     })
                 })
@@ -69,7 +70,12 @@
                   <span class="reg-change"><a href="javascript:;">{__('换一张')}</a></span>
                   <span class="msg_contain"></span>
                 </li>
-
+                <li class="phoneservice">
+                  <span class="bt-sp">{__('服务网点')}</span>
+                  <input type="text" class="reg-text w105" disabled="disabled" id="phonedidname" />
+                    <input type="button" class="reg-get-pw selectservice" value="{__('选择服务网点')}">
+                  <span class="msg_contain"></span>
+                </li>
             {if $msgcode == 'shortmsg'}
                 <li>
                   <span class="bt-sp">{__('动态密码')}</span>
@@ -106,6 +112,7 @@
           </ul>
                 <input type="hidden" name="frmcode" value="{$frmcode}"/>
                 <input type="hidden" name="regtype" value="phone"/>
+                <input type="hidden" name="sendnum" value="" id="sendnum"/>
                 <?php 
                     if (isset($mid)) {
                         echo '<input type="hidden" id="phonedid" name="did" value="'.$mid.'"/>';
@@ -131,7 +138,12 @@
                     <span class="msg_contain"></span>
 
                 </li>
-
+                <li class="emailservice">
+                  <span class="bt-sp">{__('服务网点')}</span>
+                  <input type="text" class="reg-text w105" id="emaildidname" disabled="disabled" />
+                    <input type="button" class="reg-get-pw e_selectservice" value="{__('选择服务网点')}">
+                  <span class="msg_contain"></span>
+                </li>
                 {if $emailcode == 1}
                 <li>
                     <span class="bt-sp">{__('邮箱验证码')}</span>
@@ -175,15 +187,8 @@
 
 
            </form>
+            <div class="now-reg-btn"><a href="javascript:;">立即注册</a></div>
 
-            <?php 
-                if (isset($mid)) {
-                    echo '<div class="now-reg-btn"><a href="javascript:;">立即注册</a></div>';
-                }else{
-                    echo '<div class="now-reg-next"><button id="next" >下一步</button></div>';
-                    echo '<div class="now-reg-btn" style="display:none"><a href="javascript:;">立即注册</a></div>';
-                }
-            ?>
         </div>
 
         <div class="reg-tig-box">
@@ -277,12 +282,16 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
         // window.dialog.show()
     }
      $(function(){
-        $('.now-reg-next').click(function(event) {
-            /* Act on the event */
-            // phonefrm emailfrm
+        if ($('#phonedid').val()!='nothing') {
+            $('.phoneservice').css('display','none')
+            $('.now-reg-btn').css('margin-top', '0');
+        }
+        if ($('#emaildid').val()!='nothing') {
+            $('.emailservice').css('display','none')
+            $('.now-reg-btn').css('margin-top', '0');
+        }
+        $('.e_selectservice,.selectservice').click(function(event) {
             bindbox()
-            // $('.now-reg-next').css('display','none');
-            // $('.now-reg-btn').css('display','inline');
         });
          //注册
         $('.now-reg-btn').click(function(){
@@ -309,7 +318,11 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                  layer.alert('请填写验证码', {icon:5});
                  return false;
              }
-			 
+			 var did = $('#phonedid').val();
+             if (did=='nothing') {
+                layer.alert('请选择服务网点', {icon:5});
+                return false;
+             }
 			 var bool = true;
 			 $.ajax({
                  url: SITEURL + 'member/register/ajax_reg_checkmobile',
@@ -319,7 +332,6 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                  data: {mobile:mobile},
                  dataType: 'text',
                  success:function (msg) {
-					 console.log(msg);
                      if(msg == 'false')
                      {
 						 bool = false;
@@ -348,11 +360,12 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                  $.cookie('sendnum', 1,{ expires: 1/96 });
              }
 
+             $('#sendnum').val($.cookie('sendnum'));
              var token = "{$frmcode}";
              var url = SITEURL+'member/register/ajax_send_msgcode';
              t.disabled=true;
              t.value="发送中...";
-             $.post(url,{mobile:mobile,token:token,pcode:pcode},function(data) {
+             $.post(url,{mobile:mobile,token:token,pcode:pcode,did:did},function(data) {
                  t.value="获取验证码";
                  if(data.status)
                  {
@@ -366,7 +379,6 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                      return false;
                  }
              },'json');
-
 
          })
 
@@ -383,6 +395,11 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
              if(pcode==''){
                  layer.alert('请填写验证码', {icon:5});
                  return false;
+             }
+            var did = $('#emaildid').val();
+             if (did=='nothing') {
+                layer.alert('请选择服务网点', {icon:5});
+                return false;
              }
              var t=this;
 
@@ -633,6 +650,7 @@ function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocu
                 $(element).valid();
             },
             submitHandler: function (form) {
+
                 var frmdata = $("#emailfrm").serialize();
                 $.ajax({
                     type:'POST',

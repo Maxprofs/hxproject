@@ -67,6 +67,7 @@
                         var loginname = $("#loginname").val();
 
                         var t=this;
+                        
                         var token = "{$frmcode}";
                         var url = SITEURL+'member/findpwd/ajax_send_code';
                         t.disabled=true;

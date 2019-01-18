@@ -240,13 +240,7 @@ var frm=$('.on',window.parent.document).attr('data-type');
             });
             $('#confire-btn').click(function(event) {
                 /* Act on the event */
-                $('.now-reg-next',window.parent.document).css('display','none');
-                $('.now-reg-btn',window.parent.document).css('display', 'inline');
                 window.parent.d.close();
-
-            });
-            //保存
-            $("#btn_save").click(function() {
 
             });
         });
@@ -306,6 +300,8 @@ var frm=$('.on',window.parent.document).attr('data-type');
         function radioclick(ele) {
             // body...
             $('#'+frm+'did',window.parent.document).val($(ele).val());
+            var name = $(ele).parent('div').parent('td').next('td').text();
+            $('#'+frm+'didname',window.parent.document).val(name);
             $('#confire-btn').css({
                 'pointer-events':'auto',
                 'background': '#0082dd'

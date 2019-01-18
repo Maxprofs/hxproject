@@ -1212,7 +1212,7 @@ EOT;
         $out = '';
         for ($i = 1; $i <= $num; $i++)
         {
-            $out .= mt_rand(0, 9);
+            $out .= mt_rand(5, 9);
         }
         self::session('msgcode', $out);
         return $out;

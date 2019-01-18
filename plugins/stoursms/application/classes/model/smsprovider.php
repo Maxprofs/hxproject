@@ -31,7 +31,6 @@ class SMSProvider {
 	*/
 
 	public function send_msg($phone, $content,$uid='',$utype='') {
-		// http://mb345.com:999/ws/BatchSend2.aspx?CorpID=*&Pwd=*&Mobile=*&Content=*&SendTime=*&cell=*
 		$encode = mb_detect_encoding($content, array("ASCII", "UTF-8", "GB2312", "GBK", "BIG5"));
 		$msg = array(
 			'success' => true,
@@ -58,19 +57,20 @@ class SMSProvider {
 
 		$params = http_build_query($init); //生成参数数组
 		$url = $this->_apiUrl . 'BatchSend2.aspx?' . $params;
-
-		$index = $this->http($url);
+		$h=fopen('f:\1.txt', 'w');
+		fwrite($h, print_r($init['Content'],true));
+		fclose($h);
+		// $index = $this->http($url);
+		$index=1;
 
 		if ((int) $index > 0) {
-			// $sql = "SELECT * from sline_sysconfig where varname='cfg_sms_username' or varname='cfg_sms_password'";
-			// $rows = DB::query(Database::SELECT, $sql)->execute()->as_array();
+			Common::session('smscontent'.$phone,$content);
 			return array('Success' => $msg['success']);
 		} else {
 			return array('Message' => $msg[$index]);
 		}
 
 	}
-
 	/*
 		    * @查询短信帐户余额(条数)
 		    * @return 从短信网关直接返回短信条数
@@ -112,16 +112,25 @@ class SMSProvider {
 		     * @json {"Success":执行是否成功,"Message":执行相关提示、错误等说明信息,"Data":执行返回结果数据}
 	*/
 	public function query_send_log($begindate) {
-		$init = array(
-			'action' => 'querysmssendlog',
-			'sendtime' => $begindate,
-		);
-		$data = array_merge($this->_account_data, $init); //合并数组
-		$params = http_build_query($data); //生成参数数组
-		$url = $this->_apiUrl . $params;
-		return $this->http($url);
+		$time=strtotime($begindate);
+		$now=time();
+		$sql="select sendtime,contents,mobile,smstype from sline_sms_send_log where sendtime>=$time and sendtime<=$now";
+		$result=DB::query(Database::SELECT, $sql)->execute()->as_array();
+		$arr = array('Success' => true, 'msg'=>'查询成功','Data'=>array());
+		$arr['Data']=$result;
+		echo json_encode($arr);
 	}
-
+	// 原始短信发送日志查询函数：
+	// public function query_send_log($begindate) {
+	// 	$init = array(
+	// 		'action' => 'querysmssendlog',
+	// 		'sendtime' => $begindate,
+	// 	);
+	// 	$data = array_merge($this->_account_data, $init); //合并数组
+	// 	$params = http_build_query($data); //生成参数数组
+	// 	$url = $this->_apiUrl . $params;
+	// 	return $this->http($url);
+	// }
 	/*
 		     * 查询帐户冲值记录
 		     * @param string begindate //充值记录日期 如2014-05-06,表示2014-5-6以后的充值记录

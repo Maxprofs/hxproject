@@ -22,8 +22,10 @@ class Controller_SMS extends Stourweb_Controller {
 
 		$cfg_sms_username = Common::get_sys_para('cfg_sms_username');
 		$cfg_sms_password = Common::get_sys_para('cfg_sms_password');
+		$cfg_sms_price = Common::get_sys_para('cfg_sms_price');
 		$this->assign('cfg_sms_username', $cfg_sms_username);
 		$this->assign('cfg_sms_password', $cfg_sms_password);
+		$this->assign('cfg_sms_price', $cfg_sms_price);
 
 		$this->assign('provider', $this->_provider);
 
@@ -40,12 +42,13 @@ class Controller_SMS extends Stourweb_Controller {
 		$isopen = Common::remove_xss(Arr::get($_POST, 'isopen'));
 		$cfg_sms_username = Common::remove_xss(Arr::get($_POST, 'cfg_sms_username'));
 		$cfg_sms_password = Common::remove_xss(Arr::get($_POST, 'cfg_sms_password'));
-
+		$cfg_sms_price = Common::remove_xss(Arr::get($_POST, 'cfg_sms_price'));
 		$sysconfig_model = new Model_Sysconfig();
 		$sysconfig_model->saveConfig(array(
 			'webid' => 0,
 			'cfg_sms_username' => $cfg_sms_username,
 			'cfg_sms_password' => $cfg_sms_password,
+			'cfg_sms_price' => $cfg_sms_price,
 		));
 
 		if ($isopen == "1") {
@@ -62,7 +65,6 @@ class Controller_SMS extends Stourweb_Controller {
 	*/
 	public function action_ajax_query() {
 		$this->validate_login();
-
 		$querytype = $this->params['querytype'];
 		$querydate = $this->params['querydate'];
 		if ($querytype == 'uselog') {

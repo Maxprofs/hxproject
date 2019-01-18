@@ -42,7 +42,7 @@
                         <select id="virtual" onchange="virtual(this)" class="select">
                             <option value="0">全部会员</option>
                             <option value="1">普通会员</option>
-                            <option value="2">虚拟会员</option>
+<!--                             <option value="2">虚拟会员</option> -->
                         </select>
                     </div>
                     <div class="cfg-header-search">
@@ -61,7 +61,6 @@
             </td>
         </tr>
     </table>
-
 <script>
 
 window.display_mode = 1;	//默认显示模式
@@ -125,7 +124,8 @@ Ext.onReady(
                 'jifen',
                 'logintime',
                 'verifystatus',
-				'virtual'
+				'virtual',
+                'bflg'
             ],
 
             proxy: {
@@ -247,22 +247,6 @@ Ext.onReady(
                     }
 
                 },
-
-                {
-
-                    text: '<span class="grid_column_text">真实姓名</span>',
-                    width: '12%',
-                    dataIndex: 'truename',
-                    align: 'left',
-                    border: 0,
-                    sortable: false,
-					  menuDisabled:true,
-                    renderer: function (value, metadata, record) {
-                        var id=record.get('id');
-                        return  "<input type='text' style='text-align:left;width:65%' value='"+value+"' class='row-edit-txt' onblur=\"updateField(this,'"+id+"','truename',0,'input')\"/>";
-                    }
-
-                },
                 {
 
                     text: '<span class="grid_column_text">手机号码</span>',
@@ -270,7 +254,7 @@ Ext.onReady(
                     dataIndex: 'mobile',
                     align: 'left',
                     border: 0,
-					  menuDisabled:true,
+                      menuDisabled:true,
                     sortable: false,
                     renderer: function (value, metadata, record) {
 
@@ -286,9 +270,44 @@ Ext.onReady(
                     align: 'left',
                     border: 0,
                     sortable: false,
-					  menuDisabled:true,
+                      menuDisabled:true,
                     renderer: function (value, metadata, record) {
                        return value;
+                    }
+
+                },
+                {
+                    text: '<span class="grid_column_text">是否分销商</span>',
+                    width: '8%',
+                    dataIndex: 'bflg',
+                    align: 'left',
+                    border: 0,
+                    sortable: false,
+                      menuDisabled:true,
+                    renderer: function (value, metadata, record) {
+                        console.log(record);
+                        var bflg=record.get('bflg');
+                        if (bflg=='0') {
+                            return  "游客";
+                        }else{
+                            return  "分销商";
+                        }
+                        
+                    }
+
+                },
+                {
+
+                    text: '<span class="grid_column_text">真实姓名</span>',
+                    width: '12%',
+                    dataIndex: 'truename',
+                    align: 'left',
+                    border: 0,
+                    sortable: false,
+					  menuDisabled:true,
+                    renderer: function (value, metadata, record) {
+                        var id=record.get('id');
+                        return  "<input type='text' style='text-align:left;width:65%' value='"+value+"' class='row-edit-txt' onblur=\"updateField(this,'"+id+"','truename',0,'input')\"/>";
                     }
 
                 },
@@ -348,18 +367,18 @@ Ext.onReady(
                         }
                     }
                 },
-                {
-                    text: '积分',
-                    width: '8%',
-                    dataIndex: 'jifen',
-                    align: 'center',
-                    border: 0,
-                    cls:'sort-col',
-                    menuDisabled:true,
-                    renderer: function (value, metadata, record) {
-                        return value;
-                    }
-                },
+                // {
+                //     text: '积分',
+                //     width: '8%',
+                //     dataIndex: 'jifen',
+                //     align: 'center',
+                //     border: 0,
+                //     cls:'sort-col',
+                //     menuDisabled:true,
+                //     renderer: function (value, metadata, record) {
+                //         return value;
+                //     }
+                // },
                 {
                     text: '会员类别',
                     width: '8%',

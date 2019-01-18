@@ -1,7 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 class Taglib_Distributor {
-	public static function getdlist() {
-		$distributor = Model_Distributor::distributor_list();
-		return $distributor;
+	public static function getstoreprice($pid)
+		return Model_Distributor::get_storeprice($pid);
 	}
 }

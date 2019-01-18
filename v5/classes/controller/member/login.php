@@ -105,6 +105,11 @@ class Controller_Member_Login extends Stourweb_Controller
             exit;
         }
         $user = Model_Member::login($loginName, $loginPwd, 1);
+        if ($user['isopen']==0 && $user['bflg']==0) {
+            $message = array('msg' =>'账号已冻结请联系您的服务网点！', 'status' => 0);
+            exit(json_encode($message));
+            exit;
+        }
         $status = !empty($user) ? 1 : 0;
         Common::session('captcha_response', null);
         #api{{

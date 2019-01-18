@@ -28,7 +28,17 @@ class Controller_Member_Index extends Stourweb_Controller
 
         $this->assign('mid', $this->mid);
     }
-
+    //创建二维码
+    public function action_checkqrcode() {
+        
+        include $root.'/res/vendor/qrcode/phpqrcode.php';
+        $text = $GLOBALS['cfg_basehost'].'/member/register/index/'.$this->mid; //二维码内容
+        $level=QR_ECLEVEL_L;
+        $size=6;
+        $margin=2;
+        QRcode::png($text,false,$level,$size,$margin);
+        exit;
+    }
     //会员中心首页
     public function action_index()
     {
@@ -817,11 +827,29 @@ class Controller_Member_Index extends Stourweb_Controller
         }
         else
         {
-
+            // 扣减短信条数
+            $mid=$this->mid;
+            $did=Model_Distributor::distributor_find_relationship($mid,'view');
+            St_SMSService::minussms($did);
             $code = Common::get_rand_code(5);//验证码
             $flag = json_decode(St_SMSService::send_member_msg($mobile,NoticeCommon::MEMBER_REG_CODE_MSGTAG,"","",$code));
             if ($flag->Success)//发送成功
             {
+                //写入短信发送记录
+                $contents = Common::session('smscontent' . $mobile);
+                $encode = mb_detect_encoding($contents, array("ASCII", 'UTF-8', "GB2312", "GBK", 'BIG5'));
+                $contents = mb_convert_encoding($contents, 'UTF-8', $encode);
+                
+                $smsArr = array(
+                    'did' => $did,
+                    'mid' => $mid,
+                    'smstype' => '修改手机号',
+                    'mobile' =>$mobile,
+                    'contents' => $contents,
+                    'sendtime' => time(),
+                    'status' => 1,
+                );
+                St_SMSService::insertlog($smsArr);
                 Common::session('mobilecode_' . $mobile, $code);
                 echo json_encode(array('status' => true, 'msg' => '验证码发送成功'));
             }

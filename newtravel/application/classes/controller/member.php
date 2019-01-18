@@ -88,6 +88,7 @@ class Controller_Member extends Stourweb_Controller{
            {
                $w .= " and a.virtual='$virtual'";
            }
+           $w.=" and a.isopen!=3";
             $sql="select a.*  from sline_member as a $w $order limit $start,$limit";
             //echo $sql;
             $totalcount_arr=DB::query(Database::SELECT,"select count(*) as num from sline_member a " . $w)->execute()->as_array();
@@ -102,7 +103,6 @@ class Controller_Member extends Stourweb_Controller{
             $result['total']=$totalcount_arr[0]['num'];
             $result['lists']=$new_list;
             $result['success']=true;
-
             echo json_encode($result);
         }
         else if($action=='save')   //保存字段
@@ -114,14 +114,19 @@ class Controller_Member extends Stourweb_Controller{
             $rawdata=file_get_contents('php://input');
             $data=json_decode($rawdata);
             $id=$data->id;
-
-            if(is_numeric($id)) //
-            {
-                $model=ORM::factory('member',$id);
-                $model->delete_clear();
-                //会员附件表
-                DB::delete('member_third')->where("mid={$id}")->execute();
+            $rows = Model_Distributor::distributor_del($id);
+            if (!$rows) {
+                echo json_encode(array('status' => false, 'msg' => '管理员分销商账号不能删除，请更改后删除！'));
+            } else {
+                echo json_encode(array('status' => true, 'msg' => '删除成功！'));
             }
+            // if(is_numeric($id)) //
+            // {
+            //     $model=ORM::factory('member',$id);
+            //     $model->delete_clear();
+            //     //会员附件表
+            //     DB::delete('member_third')->where("mid={$id}")->execute();
+            // }
         }
         else if($action=='update')//更新某个字段
         {
@@ -161,6 +166,8 @@ class Controller_Member extends Stourweb_Controller{
     public function action_edit()
     {
         $mid = $this->params['mid'];//会员id.
+        $dinfo=Model_Distributor::distributor_find_relationship($mid,'view');
+        $dinfo=Model_Distributor::distributor_find_relationship($dinfo, 'ctrl');
         $this->assign('action','edit');
         $info = DB::select()->from('member')->where('mid','=',$mid)->execute()->current();
         if(empty($info['litpic']))
@@ -187,6 +194,7 @@ class Controller_Member extends Stourweb_Controller{
                 $info['is_guide'] = 2;//不是导游
             }
         }
+        $info['dinfo']=$dinfo;
         $this->assign('info',$info);
         $this->display('stourtravel/member/edit');
     }
@@ -216,7 +224,7 @@ class Controller_Member extends Stourweb_Controller{
 
             $model->pwd = md5(Arr::get($_POST,'password'));
         }
-
+        $model->isopen=Arr::get($_POST,'isopen');
 		$model->logintime = time();
 		$model->truename =Arr::get($_POST,'truename');
         $model->nickname = Arr::get($_POST,'nickname');

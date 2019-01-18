@@ -7,6 +7,15 @@ class Model_Distributor extends ORM {
 	//通过分享二维码使用手机号码注册，需要减掉绑定的分销商的短信数目，并且分销商要能查询到发送的短信信息
 	// 待开发
 	
+	/*
+		获取产品门市价格
+		$pid：产品ID
+	*/
+	public function get_storeprice($pid)
+	{
+		$price=DB::select('storeprice')->from('line')->where('id','=',$pid)->execute()->as_array();
+		return $price;
+	}
 	//替换relationship表的绑定关系，
 	// $rid：原绑定分销商账号ID
 	// $cid：现在绑定分销商账号ID
@@ -44,17 +53,18 @@ class Model_Distributor extends ORM {
 			break;
 		}
 	}
+
 	/*
-		绑定分销商，并修改member表binddistributor字段
+		注册绑定分销商，并修改member表binddistributor字段
 	*/
-	public static function distributor_bind($mid, $bid) {
-		$count = count(DB::select('rid')->from('relationship')->where('mid', '=', $mid)->and_where('pid', '=', $bid)->execute()->as_array());
+	public static function distributor_bind($mid, $did,$sendnum) {
+		$count = count(DB::select('rid')->from('relationship')->where('mid', '=', $mid)->and_where('pid', '=', $did)->execute()->as_array());
 		if ($count != 0) {
 			return false;
 		} else {
 			$arr['mid'] = $mid;
-			$arr['pid'] = $bid;
-			$arr['rpid'] = $bid;
+			$arr['pid'] = $did;
+			$arr['rpid'] = $did;
 			try {
 				$r = DB::insert('relationship', array_keys($arr))->values(array_values($arr))->execute();
 				DB::update('member')->set(array('binddistributor' => $r[0]))->where('mid', '=', $mid)->execute();
@@ -70,12 +80,12 @@ class Model_Distributor extends ORM {
 	public static function distributor_bindlist($keyword = '', $start = '', $limit = '', $city) {
 		switch ($keyword) {
 		case '':
-			$distributor_total = count(DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->execute()->as_array());
-			$distributor_list = DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->limit($start . "," . $limit)->execute()->as_array();
+			$distributor_total = count(DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->and_where('sms', '>', 0)->execute()->as_array());
+			$distributor_list = DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->and_where('sms', '>', 0)->limit($start . "," . $limit)->execute()->as_array();
 			break;
 		default:
-			$distributor_total = count(DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->or_where_open()->where('nickname', 'like', '%' . $keyword . '%')->or_where('truename', 'like', '%' . $keyword . '%')->or_where('phone', 'like', '%' . $keyword . '%')->or_where('mobile', 'like', '%' . $keyword . '%')->or_where('address', 'like', '%' . $keyword . '%')->or_where_close()->and_where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->execute()->as_array());
-			$distributor_list = DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->or_where_open()->where('nickname', 'like', '%' . $keyword . '%')->or_where('truename', 'like', '%' . $keyword . '%')->or_where('phone', 'like', '%' . $keyword . '%')->or_where('mobile', 'like', '%' . $keyword . '%')->or_where('address', 'like', '%' . $keyword . '%')->or_where_close()->and_where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->execute()->as_array();
+			$distributor_total = count(DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->or_where_open()->where('nickname', 'like', '%' . $keyword . '%')->or_where('truename', 'like', '%' . $keyword . '%')->or_where('phone', 'like', '%' . $keyword . '%')->or_where('mobile', 'like', '%' . $keyword . '%')->or_where('address', 'like', '%' . $keyword . '%')->or_where_close()->and_where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->and_where('sms', '>', 0)->execute()->as_array());
+			$distributor_list = DB::select('mid', 'nickname', 'truename', 'phone', 'mobile', 'address')->from('member')->or_where_open()->where('nickname', 'like', '%' . $keyword . '%')->or_where('truename', 'like', '%' . $keyword . '%')->or_where('phone', 'like', '%' . $keyword . '%')->or_where('mobile', 'like', '%' . $keyword . '%')->or_where('address', 'like', '%' . $keyword . '%')->or_where_close()->and_where('bflg', '=', '1')->and_where('isopen', '=', '1')->and_where('city', '=', $city)->and_where('sms', '>', 0)->execute()->as_array();
 			break;
 		}
 		$distributor['total'] = $distributor_total;
