@@ -27,21 +27,40 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 
 		$this->display('admin/distributor/precash');
 	}
-	public function action_ajax_load_cashlog()
-	{
-		$page=Arr::get($_GET,'page');
-		$limit=Arr::get($_GET,'limit');
-		$start=Arr::get($_GET,'start');
-		$finish=$page*$limit;
-		$sql="select sline_member_cash_log.id,sline_member.nickname,sline_member_cash_log.amount,FROM_UNIXTIME(sline_member_cash_log.addtime,'%Y-%m-%d %H:%i') as addtime,sline_member_cash_log.description,sline_member_cash_log.voucherpath,sline_member_cash_log.savecashstatus from sline_member,sline_member_cash_log where sline_member_cash_log.memberid=sline_member.mid and sline_member_cash_log.type=100 order by sline_member_cash_log.id desc limit $start,$finish";
-		$list=DB::query(Database::SELECT,$sql)->execute()->as_array();
-		$sql="select count(id) as total from sline_member_cash_log where type=100";
-		$total=DB::query(Database::SELECT,$sql)->execute()->as_array();
-		$out['list']=$list;
-		$out['total']=$total[0]['total'];
+	public function action_ajax_load_cashlog() {
+		$page = Arr::get($_GET, 'page');
+		$limit = Arr::get($_GET, 'limit');
+		$start = Arr::get($_GET, 'start');
+		$finish = $page * $limit;
+		$sql = "select sline_member_cash_log.id,sline_member.nickname,sline_member_cash_log.amount,FROM_UNIXTIME(sline_member_cash_log.addtime,'%Y-%m-%d %H:%i') as addtime,sline_member_cash_log.description,sline_member_cash_log.voucherpath,sline_member_cash_log.savecashstatus from sline_member,sline_member_cash_log where sline_member_cash_log.memberid=sline_member.mid and sline_member_cash_log.type=100 order by sline_member_cash_log.id desc limit $start,$finish";
+		$list = DB::query(Database::SELECT, $sql)->execute()->as_array();
+		$sql = "select count(id) as total from sline_member_cash_log where type=100";
+		$total = DB::query(Database::SELECT, $sql)->execute()->as_array();
+		$out['list'] = $list;
+		$out['total'] = $total[0]['total'];
 		echo json_encode($out);
 	}
-	public function action_credit() {
+	public function action_ajax_savecash() {
+		$status = Common::remove_xss(Arr::get($_POST, 'status'));
+		$id = Common::remove_xss(Arr::get($_POST, 'id'));
+		$amount = Common::remove_xss(Arr::get($_POST, 'how'));
+		if ($status) {
+			$sql = "update sline_member_cash_log,sline_member set sline_member_cash_log.savecashstatus=1,sline_member_cash_log.description=CONCAT(replace(sline_member_cash_log.description,'待审核','已充值'),'余额为:',sline_member.money+$amount,'元。'),sline_member.money=sline_member.money+$amount where sline_member_cash_log.id=$id and sline_member.mid=sline_member_cash_log.memberid";
+			DB::query(Database::UPDATE, $sql)->execute();
+			echo json_encode(array('status' => true));
+		} else {
+			$sql = "update sline_member_cash_log set savecashstatus=2,description=replace(sline_member_cash_log.description,'待审核','已退回') where id=$id";
+			DB::query(Database::UPDATE, $sql)->execute();
+			echo json_encode(array('status' => false));
+		}
+	}
+	public function action_creditload() {
+		$params = $this->request->param('params');
+		$a = split('/', $params);
+		$id = $a[0];
+		$_GET[$a[1]] = $a[2];
+		$info = Model_Distributor::distributor_edit($id);
+		$this->assign('info', $info);
 		$this->display('admin/distributor/credit');
 	}
 	//设置管理员业务账号

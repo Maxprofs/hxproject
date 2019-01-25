@@ -204,7 +204,7 @@ Ext.application({
                 { 
                     text: '状态',
                     dataIndex: 'isopen',
-                    width: '10%',
+                    width: '3%',
                     align: 'center',
                     border: 0,
                     sortable: false,
@@ -220,14 +220,15 @@ Ext.application({
                 { 
                     text: '操作',
                     // dataIndex: 'id',
-                    width: '10%',
+                    width: '17%',
                     align: 'center',
                     border: 0,
                     sortable: false,
                     menuDisabled:true,
                     renderer: function (value, metadata, record) {
                         var id = record.get('mid');
-                        var html = "<a href='javascript:void(0);' title='修改' class='btn-link' onclick=\"modify(" + id + ")\">编辑</a>"+
+                        var nickname="'"+record.get('nickname')+"'";
+                        var html = "<a href='javascript:void(0);' title='加盟授信管理' class='btn-link' onclick=\"credit("+ nickname + "," +id + ")\">加盟授信管理</a>"+"&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' title='修改' class='btn-link' onclick=\"modify(" + id + ")\">编辑</a>"+
                                 "&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' title='删除' class='btn-link' onclick=\"del(" + id + ")\">删除</a>";
                         return html;
                     }
@@ -254,6 +255,12 @@ parentkey/product/itemid/1';
         });
     }
 });
+    //加盟授信
+    function credit(nickname,id) {
+        var url=SITEURL + 'distributor/admin/distributor/creditload/' + id +'/<?php if(isset($_GET['menuid'])) { ?>menuid/<?php echo $_GET['menuid'];?>/<?php } ?>
+parentkey/product/itemid/1';
+        parent.window.addTab(nickname+'加盟授信管理', url, 1);
+    }
     //修改
     function modify(id) {
         var url=SITEURL + 'distributor/admin/distributor/edit/' + id +'/<?php if(isset($_GET['menuid'])) { ?>menuid/<?php echo $_GET['menuid'];?>/<?php } ?>

@@ -5336,9 +5336,8 @@
     'child_id' => 
     array (
       0 => '423',
-      1 => '424',
-      2 => '425',
-      3 => '426',
+      1 => '425',
+      2 => '426',
     ),
     'alias_title' => '分销商列表',
   ),
@@ -5358,23 +5357,6 @@
     'extparams' => NULL,
     'extlink' => '0',
     'url' => 'distributor/admin/distributor/distributor/menuid/423',
-  ),
-  424 => 
-  array (
-    'id' => '424',
-    'pid' => '422',
-    'level' => '2',
-    'typeid' => NULL,
-    'title' => '加盟授信管理',
-    'directory' => 'distributor/admin',
-    'controller' => 'distributor',
-    'method' => 'credit',
-    'datainfo' => NULL,
-    'isshow' => '1',
-    'displayorder' => '9999',
-    'extparams' => '',
-    'extlink' => '0',
-    'url' => 'distributor/admin/distributor/credit/menuid/424',
   ),
   425 => 
   array (

@@ -205,7 +205,8 @@ Ext.application({
                         if (value=='') {
                             return '未上传凭证'
                         }else{
-                            return formatDate(value);
+                            value="'"+value+"'";
+                            return '<a class="btn-link" onclick="javascript:window.open('+value+')">查看</a>';
                         }
                         
                     }
@@ -221,12 +222,14 @@ Ext.application({
                     renderer: function (value, metadata, record) {
                         switch(value){
                             case '0':
-                                return "<button class='btn btn-warning radius' onclick='savecash()'>确认</button><button class='btn btn-primary radius ml-10' onclick='cancel()'>退回</button>"
+                                return "<button class='btn-link' onclick='savecash(true,"+record.data.id+","+record.data.amount+")'>确认</button><button class='btn-link ml-10' onclick='savecash(false,"+record.data.id+")'>退回</button>"
                                 break;
-                            case 1:
+                            case '1':
+                                return "充值成功";
                                 break;
-                            case 2:
-                            break;
+                            case '2':
+                                return "已退回";
+                                break;
                         }
                     }
                 }
@@ -246,19 +249,32 @@ Ext.application({
         })
     }
 });
-    $(function() {
-
-        $('#btn-save').click(function(event) {
-            ST.Util.confirmBox('提示',"是否为{$info['nickname']}充值"+$("#cash").val()+元,function () {
-                console.log(data);
-            });
-        });
-    });
-    function finance(id) {
-        // console.log(id);
-        var url=SITEURL + 'distributor/admin/distributor/finance/' + id +'/{if isset($_GET['menuid'])}menuid/{$_GET['menuid']}/{/if}parentkey/product/itemid/1';
-        var title=window.product_store.findRecord('mid',id).get('nickname');
-        parent.window.addTab(title+'备用金充值', url, 1);
+    function checkpic(path) {
+        
+    }
+    function savecash(bool,id,how='') {
+        if (bool) {
+            var status=1;
+        }else{
+            var status=0;
+        }
+        var url=SITEURL + 'distributor/admin/distributor/ajax_savecash';
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: {status: status,id:id,how:how},
+        })
+        .done(function(data) {
+            if (data.status) {
+                ST.Util.showMsg("充值成功。", 4, 1000);
+                window.location.reload();
+            }else{
+                ST.Util.showMsg("已退回", 5, 2000);
+                window.location.reload();
+            }
+        })
+        
     }
     </script>
 </body>

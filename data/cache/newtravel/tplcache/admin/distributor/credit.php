@@ -1,13 +1,12 @@
 <?php defined('SYSPATH') or die();?>
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
-    <title>分销商列表-笛卡CMS{$coreVersion}</title>
-    {template 'stourtravel/public/public_js'}
-    {php echo Common::getCss('style.css,base.css,base_new.css'); }
-    {Common::getScript('datepicker/WdatePicker.js')}
+    <title>分销商列表-笛卡CMS<?php echo $coreVersion;?></title>
+    <?php echo  Stourweb_View::template('stourtravel/public/public_js');  ?>
+    <?php echo Common::getCss('style.css,base.css,base_new.css'); ?>
+    <?php echo Common::getScript('datepicker/WdatePicker.js');?>
     <style>
         .item-name{
             position: relative;
@@ -15,12 +14,11 @@
         }
     </style>
 </head>
-
 <body style="overflow:hidden">
     <table class="content-tab">
         <tr>
             <td width="119px" class="content-lt-td" valign="top">
-                {template 'stourtravel/public/leftnav'}
+                <?php echo  Stourweb_View::template('stourtravel/public/leftnav');  ?>
                 <!--右侧内容区-->
             </td>
             <td valign="top" class="content-rt-td" style="overflow:hidden">
@@ -38,39 +36,34 @@
                             <li class="list_dl">
                                 <span class="item-hd">部门名称：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="nickname">{$info[0]['nickname']}</span>
+                                    <span class="item-name" id="nickname"><?php echo $info['0']['nickname'];?></span>
                                 </div>
                             </li>
                             <li class="list_dl">
                                 <span class="item-hd">授信额度：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="sx">{$info[0]['shouxinedu']}</span>
+                                    <span class="item-name" id="sx"><?php echo $info['0']['shouxinedu'];?></span>
                                 </div>
                             </li>
                             <li class="list_dl">
                                 <span class="item-hd">加盟期限：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="jmqx">{$info[0]['jiamengqixian']}</span>
+                                    <span class="item-name" id="jmqx"><?php echo $info['0']['jiamengqixian'];?></span>
                                 </div>
                             </li>
                             <li class="list_dl">
                                 <span class="item-hd">加盟费：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="jmf">{$info[0]['jiamengfei']}</span>
+                                    <span class="item-name" id="jmf"><?php echo $info['0']['jiamengfei'];?></span>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="clear clearfix">
-                    <a class="btn btn-primary radius size-L ml-115" id="btn_save" href="javascript:;">保存</a>
                 </div>
             </td>
         </tr>
     </table>
 </body>
 <script>
-
 </script>
-
 </html>
