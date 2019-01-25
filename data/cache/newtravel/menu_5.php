@@ -1,13 +1,13 @@
 <?php 
  return array (
-  173 => 
+  9 => 
   array (
     'child_id' => 
     array (
-      0 => '180',
+      0 => '200',
     ),
-    'url' => 'insurance/huizhe/menuid/180',
-    'alias_title' => '保险接口',
+    'url' => '',
+    'alias_title' => '笛卡公告',
   ),
   234 => 
   array (
@@ -17,15 +17,6 @@
     ),
     'url' => 'howtouse/admin/index/index/menuid/235',
     'alias_title' => '新手教程',
-  ),
-  9 => 
-  array (
-    'child_id' => 
-    array (
-      0 => '200',
-    ),
-    'url' => '',
-    'alias_title' => '笛卡公告',
   ),
   144 => 
   array (
@@ -1858,23 +1849,6 @@
       2 => '369',
     ),
     'alias_title' => 'Ucenter',
-  ),
-  180 => 
-  array (
-    'id' => '180',
-    'pid' => '173',
-    'level' => '2',
-    'typeid' => NULL,
-    'title' => '保险接口',
-    'directory' => NULL,
-    'controller' => 'insurance',
-    'method' => 'huizhe',
-    'datainfo' => NULL,
-    'isshow' => '1',
-    'displayorder' => '9999',
-    'extparams' => NULL,
-    'extlink' => '0',
-    'url' => 'insurance/huizhe/menuid/180',
   ),
   181 => 
   array (
@@ -5363,6 +5337,8 @@
     array (
       0 => '423',
       1 => '424',
+      2 => '425',
+      3 => '426',
     ),
     'alias_title' => '分销商列表',
   ),
@@ -5389,6 +5365,40 @@
     'pid' => '422',
     'level' => '2',
     'typeid' => NULL,
+    'title' => '加盟授信管理',
+    'directory' => 'distributor/admin',
+    'controller' => 'distributor',
+    'method' => 'credit',
+    'datainfo' => NULL,
+    'isshow' => '1',
+    'displayorder' => '9999',
+    'extparams' => '',
+    'extlink' => '0',
+    'url' => 'distributor/admin/distributor/credit/menuid/424',
+  ),
+  425 => 
+  array (
+    'id' => '425',
+    'pid' => '422',
+    'level' => '2',
+    'typeid' => NULL,
+    'title' => '预存款管理',
+    'directory' => 'distributor/admin',
+    'controller' => 'distributor',
+    'method' => 'precash',
+    'datainfo' => NULL,
+    'isshow' => '1',
+    'displayorder' => '9999',
+    'extparams' => '',
+    'extlink' => '0',
+    'url' => 'distributor/admin/distributor/precash/menuid/425',
+  ),
+  426 => 
+  array (
+    'id' => '426',
+    'pid' => '422',
+    'level' => '2',
+    'typeid' => NULL,
     'title' => '管理员业务账号',
     'directory' => 'distributor/admin',
     'controller' => 'distributor',
@@ -5398,7 +5408,7 @@
     'displayorder' => '9999',
     'extparams' => '/parentkey/distributor/itemid/3',
     'extlink' => '0',
-    'url' => 'distributor/admin/distributor/setadminmember/parentkey/distributor/itemid/3/menuid/424',
+    'url' => 'distributor/admin/distributor/setadminmember/parentkey/distributor/itemid/3/menuid/426',
   ),
   375 => 
   array (

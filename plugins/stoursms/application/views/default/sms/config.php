@@ -75,7 +75,7 @@
                     <div class="sms-set">
                         <div class="msg-bar">
                             <span class="">使用记录</span>
-                            <!-- <span class="">失败记录</span> -->
+                            <span class="">充值记录</span>
                         </div>
                         <div class="msg-switcher">
                             <div class="info-one clearfix">
@@ -110,7 +110,7 @@
                                     <div class="search-con">
                                         <input type="text" class="input-text w200" name="querydate" onclick="WdatePicker({maxDate:'%y-%M-%d'})" />
                                         <span class="item-text ml-10">至今天</span>
-                                        <a href="javascript:;" data_type="faillog" class="btn btn-primary radius ml-10">查询</a>
+                                        <a href="javascript:;" data_type="cashlog" class="btn btn-primary radius ml-10">查询</a>
                                     </div>
                                     <div class="s-list">
                                         <table class="table table-bordered table-border">
@@ -119,16 +119,13 @@
                                                     时间
                                                 </th>
                                                 <th width="38%" scope="col" align="left">
-                                                    内容
+                                                    充值门市
                                                 </th>
                                                 <th width="22" scope="col">
-                                                    错误原因
+                                                    内容
                                                 </th>
                                                 <th width="10%" scope="col">
-                                                    手机号码
-                                                </th>
-                                                <th width="10%" scope="col">
-                                                    操作状态
+                                                    交易金额
                                                 </th>
                                             </tr>
                                         </table>
@@ -181,7 +178,12 @@
             var querydate = $(this).siblings("input[name='querydate']").val();
             var table_result = $(this).parent().siblings(".s-list").find("table");
             table_result.find(".item").remove();
-            var url = SITEURL + 'sms/ajax_query/querytype/' + data_type + '/querydate/' + querydate + "?provider_id=" + provider_id;
+            if (data_type=='cashlog') {
+                var url = SITEURL + 'sms/ajax_checkcashlog/querytype/' + data_type + '/querydate/' + querydate + "?provider_id=" + provider_id;
+            }else{
+                var url = SITEURL + 'sms/ajax_query/querytype/' + data_type + '/querydate/' + querydate + "?provider_id=" + provider_id;
+            }
+            
 
             if (querydate == "") {
                 ST.Util.showMsg("请选择查询起始日期", 5, 3000);
@@ -193,7 +195,7 @@
                 url: url,
                 dataType: 'json',
                 success: function (data) {
-                    // data={'Success':true,'msg':'查询失败','Data':[{'SendTime':'2019-01-15','SendSMSContent':'验证码33333','SendTelNo':'18081926020','SendStatus':'发送成功'}]}
+
                     ST.Util.hideMsgBox();
                     if (!data.Success) {
                         ST.Util.showMsg(data.msg, 5, 3000);
@@ -204,7 +206,7 @@
                         ST.Util.showMsg("没有查询到记录", 4);
                         return;
                     }
-
+                    console.log(data)
                     var html = '';
                     for (var i in data.Data) {
                         var row = data.Data[i];
@@ -214,12 +216,11 @@
                                 '<td align="center">' + row.mobile + '</td>' +
                                 '<td align="center">' + row.smstype + '</td></tr>';
                         }
-                        if (data_type == "faillog") {
-                            html += '<tr class="item"> <td align="center">' + row.sendtime + '</td>' +
-                                '<td class="msg-con">' + row.contents + '</td>' +
-                                '<td class="msg-con">' + row.Memo + '</td>' +
-                                '<td align="center">' + row.SendTelNo + '</td>' +
-                                '<td align="center">' + row.SendStatus + '</td></tr>';
+                        if (data_type == "cashlog") {
+                            html += '<tr class="item"> <td align="center">' + formatDate(row.addtime) + '</td>' +
+                                '<td class="msg-con">' + row.nickname + '</td>' +
+                                '<td class="msg-con">' + row.description + '</td>' +
+                                '<td align="center">' + row.amount + '</td></tr>';
                         }
                     }
                     table_result.append(html);

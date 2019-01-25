@@ -231,8 +231,7 @@ Ext.application({
                     menuDisabled:true,
                     renderer: function (value, metadata, record) {
                         var id = record.get('mid');
-                        var html = "<a href='javascript:void(0);' title='修改' class='btn-link' onclick=\"finance(" + id + ")\">财务</a>"+
-                                "&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' title='修改' class='btn-link' onclick=\"modify(" + id + ")\">编辑</a>"+
+                        var html = "<a href='javascript:void(0);' title='修改' class='btn-link' onclick=\"modify(" + id + ")\">编辑</a>"+
                                 "&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' title='删除' class='btn-link' onclick=\"del(" + id + ")\">删除</a>";
 
                         return html;
@@ -265,12 +264,7 @@ Ext.application({
         var url=SITEURL + 'distributor/admin/distributor/edit/' + id +'/{if isset($_GET['menuid'])}menuid/{$_GET['menuid']}/{/if}parentkey/product/itemid/1';
         parent.window.addTab('修改分销商信息', url, 1);
     }
-    function finance(id) {
-        // console.log(id);
-        var url=SITEURL + 'distributor/admin/distributor/finance/' + id +'/{if isset($_GET['menuid'])}menuid/{$_GET['menuid']}/{/if}parentkey/product/itemid/1';
-        var title=window.product_store.findRecord('mid',id).get('nickname');
-        parent.window.addTab('修改'+title+'财务信息', url, 1);
-    }
+
     //删除套餐
     function del(id)
     {

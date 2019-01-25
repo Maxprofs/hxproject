@@ -84,7 +84,7 @@
             <div class="son">
                 <a href="/member/index/linkman" id="nav_linkman">{__('常用旅客')}</a>
                 <a href="/member/index/address" id="nav_consignees_address" >{__('常用地址')}</a>
-                <a href="/member/index/invoice" id="nav_invoice" >{__('常用发票')}</a>
+                <!-- <a href="/member/index/invoice" id="nav_invoice" >{__('常用发票')}</a> -->
             </div>
         </li>
 
@@ -98,7 +98,8 @@
         </li>
         {st:member action="checklogin" return="user"}
             {if $user['bflg']==1}
-                <li><a id='nav_smsmanage' href="/distributor/pc/sms/sms" ><i class="st-user-icon user-qb-icon"></i>短信管理</a></li>
+                <li><a id='nav_traveler' href="/distributor/pc/traveler/index" ><i class="st-user-icon user-traveler-icon"></i>游客管理</a></li>
+                <li><a id='nav_smsmanage' href="/distributor/pc/sms/sms" ><i class="st-user-icon user-sms-icon"></i>短信管理</a></li>
             {/if}
         {/st}
     </ul>
@@ -117,9 +118,7 @@
             $(this).parent("li").siblings().children(".side-menu-group").removeClass("up").next(".son").hide()
         })
     })
-function gotodistributor() {
-    
-}
+
     function on_leftmenu_choosed()
     {
         var ele=$(".user-side-menu .son a.on").parents('li:first').find('.side-menu-group:first');

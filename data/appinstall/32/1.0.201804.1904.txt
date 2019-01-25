@@ -1,0 +1,4 @@
+plugins/red_envelope/public/css/envelope.css
+plugins/red_envelope/public/mobile/css/redenvelope.css
+plugins/red_envelope/views/default/envelope/member/list.php
+plugins/red_envelope/views/mobile/envelope/member/list.php

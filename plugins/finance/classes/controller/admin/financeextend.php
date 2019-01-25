@@ -205,7 +205,7 @@ class Controller_Admin_Financeextend extends Stourweb_Controller
         foreach($varname_arr as $varname)
         {
             $value = Arr::get($_POST, $varname);
-            $value = intval($value);
+            // $value = intval($value);
             Model_Supplier_Commission_Config::save_normal_config($varname, $value);
         }
         echo json_encode(array('status' => true));
@@ -285,6 +285,7 @@ class Controller_Admin_Financeextend extends Stourweb_Controller
         }
         elseif($action == 'update')
         {
+
             $id = $_POST['id'];
             $field = $_POST['field'];
             $val = $_POST['val'];

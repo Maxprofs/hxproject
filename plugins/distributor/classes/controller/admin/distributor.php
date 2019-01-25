@@ -23,12 +23,29 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		}
 		$this->display('admin/distributor/setadminmember');
 	}
+	public function action_precash() {
+
+		$this->display('admin/distributor/precash');
+	}
+	public function action_ajax_load_cashlog()
+	{
+		$page=Arr::get($_GET,'page');
+		$limit=Arr::get($_GET,'limit');
+		$start=Arr::get($_GET,'start');
+		$finish=$page*$limit;
+		$sql="select sline_member_cash_log.id,sline_member.nickname,sline_member_cash_log.amount,FROM_UNIXTIME(sline_member_cash_log.addtime,'%Y-%m-%d %H:%i') as addtime,sline_member_cash_log.description,sline_member_cash_log.voucherpath,sline_member_cash_log.savecashstatus from sline_member,sline_member_cash_log where sline_member_cash_log.memberid=sline_member.mid and sline_member_cash_log.type=100 order by sline_member_cash_log.id desc limit $start,$finish";
+		$list=DB::query(Database::SELECT,$sql)->execute()->as_array();
+		$sql="select count(id) as total from sline_member_cash_log where type=100";
+		$total=DB::query(Database::SELECT,$sql)->execute()->as_array();
+		$out['list']=$list;
+		$out['total']=$total[0]['total'];
+		echo json_encode($out);
+	}
+	public function action_credit() {
+		$this->display('admin/distributor/credit');
+	}
 	//设置管理员业务账号
 	public function action_ajax_set() {
-		if (!$this->request->is_ajax()) {
-			echo json_encode(array('status' => 0, 'msg' => '请求异常'));
-			exit;
-		}
 		$account = str_replace('"', '', Arr::get($_GET, 'param'));
 		$d = Model_Distributor::distributor_find($account);
 		$isadmin = DB::select('mid', 'isadmin')->from('member')->where('isadmin=1')->execute()->as_array();
@@ -83,15 +100,7 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		$this->assign('action', 'edit');
 		$this->display('admin/distributor/edit');
 	}
-	public function action_finance() {
-		$params = $this->request->param('params');
-		$a = split('/', $params);
-		$id = $a[0];
-		$_GET[$a[1]] = $a[2];
-		$info = Model_Distributor::distributor_edit($id);
-		$this->assign('info', $info);
-		$this->display('admin/distributor/finance');
-	}
+
 	public function action_del() {
 		$id = $this->request->get('id');
 
@@ -107,10 +116,7 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		     * 保存
 	*/
 	public function action_ajax_save() {
-		if (!$this->request->is_ajax()) {
-			echo json_encode(array('status' => 0, 'msg' => '请求异常'));
-			exit;
-		}
+
 		$regType = Arr::get($_POST, 'regtype');
 		$action = ARR::get($_POST, 'action'); //当前操作
 		$id = ARR::get($_POST, 'id');
@@ -219,7 +225,6 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		}
 		echo json_encode(array('status' => $status, 'productid' => $productid));
 	}
-
 
 	/**
 	 * 修改密码

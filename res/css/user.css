@@ -600,6 +600,12 @@
 .user-message-icon:before{
 	content: "\e6b1";
 }
+.user-traveler-icon:before{
+	content: "\e663";
+}
+.user-sms-icon:before{
+	content: "\e62c";
+}
 .side-menu-group .arrow-icon{
     float: right;
     display: inline-block;
@@ -4622,4 +4628,9 @@
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	background: #ffa313;
+}
+/**/
+.mustfill{
+	color: red;
+	margin-right: 5px;
 }

@@ -269,7 +269,7 @@ class Controller_User extends Stourweb_Controller{
     public function action_dialog_help()
     {
         include(Kohana::find_file('data', 'license'));
-        $url = "http:/www.deccatech.cn/api/cms/cmshelp";
+        $url = "http://www.stourweb.com/api/cms/cmshelp";
         $label = $_GET['label'];
         $post_data = array ('host'=>$_SERVER['HTTP_HOST'],'code' => $SerialNumber,'cmslabel' =>$label);
         $ch = curl_init();

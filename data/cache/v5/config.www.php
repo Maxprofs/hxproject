@@ -196,4 +196,5 @@ return array (
   'cfg_quick_menu' => '0',
   'cfg_third_login_bind' => '2',
   'cfg_sms_price' => '0.08',
+  'cfg_admin_login_time_limit' => '8',
 );

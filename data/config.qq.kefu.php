@@ -2,5 +2,5 @@
 $pos="right";
 $posh="100px";
 $post="20px";
-$display=1;
+$display=0;
 $qqcl="5";

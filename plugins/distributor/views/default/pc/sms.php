@@ -200,7 +200,17 @@
             data: {num: num}
         })
         .done(function(data) {
-            console.log(data);
+            if (data.state) {
+                layer.msg(data.msg, {
+                    icon: 6,
+                    time: 2000
+                })
+            }else{
+                layer.msg(data.msg, {
+                    icon: 5,
+                    time: 2000
+                })
+            }
         })
     }
     function changetab(obj,contentclass){

@@ -61,7 +61,7 @@ class Controller_SMS extends Stourweb_Controller {
 	}
 
 	/*
-		     * 查询
+		* 查询使用记录
 	*/
 	public function action_ajax_query() {
 		$this->validate_login();
@@ -70,9 +70,32 @@ class Controller_SMS extends Stourweb_Controller {
 		if ($querytype == 'uselog') {
 			$out = $this->_provider_instance->query_send_log($querydate);
 		}
-		if ($querytype == 'faillog') {
-			$out = $this->_provider_instance->query_send_fail_Log($querydate);
-		}
 		echo $out;
 	}
+	/*
+		*查询门市充值记录
+	*/
+	public function action_ajax_checkcashlog()
+	{
+		$this->validate_login();
+		$querydate = strtotime($this->params['querydate']);
+		$out = $this->search_result($querydate);
+		echo json_encode($out);
+	}
+    /**
+     * @function 搜索日志
+     * @param $mid
+     * @param $page
+     * @param int $pagesize
+     * @param $params
+     */
+    private function search_result($datestamp)
+    {
+        $sql = "SELECT sline_member_cash_log.addtime,sline_member.nickname,sline_member_cash_log.description,sline_member_cash_log.amount FROM sline_member_cash_log,sline_member WHERE sline_member_cash_log.checktype=1 and sline_member_cash_log.addtime>=$datestamp and sline_member.mid=sline_member_cash_log.memberid order BY sline_member_cash_log.addtime desc";
+        $list = DB::query(Database::SELECT,$sql)->execute()->as_array();
+        // data={'Success':true,'msg':'查询失败','Data':[{'SendTime':'2019-01-15','SendSMSContent':'验证码33333','SendTelNo':'18081926020','SendStatus':'发送成功'}]}
+
+        $result = array('Success'=>true,'msg'=>'查询成功','Data'=>$list);
+        return $result;
+    }
 }

@@ -1,1 +1,0 @@
-<div class="st-record">{Common::get_sys_para('cfg_distributor_footer')}</div>
