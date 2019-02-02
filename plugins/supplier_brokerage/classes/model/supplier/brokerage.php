@@ -177,7 +177,7 @@ class Model_Supplier_Brokerage extends ORM
      */
     public static function get_total_price_info()
     {
-        //总佣金
+        //总交易金额
         $total_price = DB::select(DB::expr('sum(finish_brokerage) as total'))
             ->from('supplier_brokerage')->execute()->get('total');
         //已经完成提现的

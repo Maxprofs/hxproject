@@ -27,7 +27,13 @@
                   <ul class="user-message-block" id="msg_con">
 
                       {loop $list $row}
-                      <li class="item {if $row['status']==0}unread{/if} clearfix" data-id="{$row['id']}">
+                      <li class="item <?php 
+                          if($row['memberid']==$mid && $row['status']==0){
+                            echo 'unread';
+                          }elseif($row['memberid']!=$mid && $row['dstatus']==0){
+                            echo 'unread';
+                          }
+                       ?> clearfix" data-id="{$row['id']}">
                           <span class="msg-icon"></span>
                           <div class="con-txt">
                               {$row['content']}<a href="javascript:;" data-url="{$row['url']}" class="s-link">【点击查看】</a>

@@ -293,7 +293,7 @@
     {st:member action="order_bill" orderid="$info['id']" return="bill"}
     <!-- 游客信息 -->
     {if $info['status']==1}
-    <div class="os-term">
+<!--     <div class="os-term">
         <div class="os-tit">{__('发票信息')}</div>
         <div class="os-block">
             <div class="st-item-block">
@@ -351,7 +351,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     {/if}
     <!-- 发票信息 -->
 
@@ -407,7 +407,7 @@
                 </div>
                 {/if}
                 {if empty($info['usejifen'])}
-                    <div class="item-nr">
+<!--                     <div class="item-nr">
                                         <span class="use-jf">
                                             <label>使用：</label>
                                             <input type="text" name="needjifen" id="jifen_need" class="jf-num"/>
@@ -418,7 +418,7 @@
                         <span class="cur-jf">最多可使用{$customize_info['maxtpricejifen']}积分抵扣{Currency_Tool::symbol()}{$customize_info['maxjifentprice']}，我当前积分：{$user['jifen']}</span>
                         <input type="hidden" id="jifen_exchange" value="{$GLOBALS['cfg_exchange_jifen']}"/>
                         <input type="hidden" id="jifen_maxuse" value="{if $customize_info['maxtpricejifen']>$user['jifen']}{$user['jifen']}{else}{$customize_info['maxtpricejifen']}{/if}"/>
-                    </div>
+                    </div> -->
                 {/if}
             </div>
             {/if}

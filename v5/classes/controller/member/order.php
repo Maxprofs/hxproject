@@ -23,6 +23,7 @@ class Controller_Member_Order extends Stourweb_Controller
         }
         $this->assign('mid',$this->mid);*/
         $user = Model_Member::check_login();
+        $this->user=$user;
         if (!empty($user['mid']))
         {
             $this->mid = $user['mid'];
@@ -333,7 +334,12 @@ class Controller_Member_Order extends Stourweb_Controller
     {
 
         $orderSn = Arr::get($_GET, 'ordersn');
-        $typeid = DB::select('typeid')->from('member_order')->where('ordersn','=',$orderSn)->and_where('memberid','=',$this->mid)->execute()->get('typeid');
+        if ($this->user['bflg']==0) {
+            $typeid = DB::select('typeid')->from('member_order')->where('ordersn','=',$orderSn)->and_where('memberid','=',$this->mid)->execute()->get('typeid');
+        }elseif ($this->user['bflg']==1) {
+            $typeid = DB::select('typeid')->from('member_order')->where('ordersn','=',$orderSn)->and_where('distributor','=',$this->mid)->execute()->get('typeid');
+        }
+
         $model= ORM::factory('model',$typeid);
         if(!$model->loaded())
             exit('paramaters error');
@@ -345,7 +351,6 @@ class Controller_Member_Order extends Stourweb_Controller
 
         if(Model_Model::is_install_model($typeid))
         {
-
             $this->display('member/order/plugin_detail');
         }
         else

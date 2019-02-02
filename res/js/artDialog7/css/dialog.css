@@ -41,7 +41,6 @@
     background: transparent;
 }
 
-.ui-dialog-header,
 .ui-dialog-body,
 .ui-dialog-footer {
     padding: 0;
@@ -51,8 +50,13 @@
 }
 
 .ui-dialog-header {
+    padding: 0;
+    border: 0 none;
+    text-align: left;
+    background-color: #008ed8;
     white-space: nowrap;
     border-bottom: 1px solid #E5E5E5;
+
 }
 
 .ui-dialog-close {
@@ -407,6 +411,7 @@
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -416,6 +421,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

@@ -42,21 +42,21 @@
                                 </div>
                             </li>
                             <li class="list_dl">
-                                <span class="item-hd">授信额度：</span>
+                                <span class="item-hd">授信额度<span style="color: red;">*</span>：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="sx">{$info[0]['shouxinedu']}</span>
+                                    <input type="text" class="input-text w150" id="sx" value="{$info[0]['credit']}" oninput="value=value.replace(/[^\d]/g,'')">&nbsp;&nbsp;&nbsp;&nbsp;元
                                 </div>
                             </li>
                             <li class="list_dl">
-                                <span class="item-hd">加盟期限：</span>
+                                <span class="item-hd">加盟期限<span style="color: red;">*</span>：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="jmqx">{$info[0]['jiamengqixian']}</span>
+                                    <input type="text" class="input-text w150" id="jmqx" value="{$info[0]['jiamengqixian']}" onclick="WdatePicker({minDate:'%y-%M-%d'})">
                                 </div>
                             </li>
                             <li class="list_dl">
-                                <span class="item-hd">加盟费：</span>
+                                <span class="item-hd">加盟费<span style="color: red;">*</span>：</span>
                                 <div class="item-bd">
-                                    <span class="item-name" id="jmf">{$info[0]['jiamengfei']}</span>
+                                    <input type="text" class="input-text w150" id="jmf" value="{$info[0]['jiamengfei']}" oninput="value=value.replace(/[^\d]/g,'')">&nbsp;&nbsp;&nbsp;&nbsp;元/年
                                 </div>
                             </li>
                         </ul>
@@ -70,7 +70,32 @@
     </table>
 </body>
 <script>
+    $(function() {
+        $("#btn_save").click(function(event) {
+            var url=SITEURL+'distributor/admin/distributor/ajax_savecredit'
+            if ($('#sx').val()=='' || $('#jmqx').val()=='' || $('#jmf').val()=='') {
+                ST.Util.showMsg('未填写完成。', 5, 2000);
+                return;
+            }
+            var mid={$info[0]['mid']};
+            $.ajax({
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                data: {mid:mid,sx:$('#sx').val(),jmqx:$('#jmqx').val(),jmf:$('#jmf').val()},
+            })
+            .done(function(data) {
+                if (data.status) {
+                    ST.Util.showMsg(data.msg, 4, 1000);
+                    setTimeout("window.location.reload()",'1000')
+                }else{
+                    ST.Util.showMsg(data.msg, 5, 1000);
+                    setTimeout("window.location.reload()",'1000')
+                }
 
+            })
+        });
+    });
 </script>
 
 </html>

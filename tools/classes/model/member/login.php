@@ -166,6 +166,7 @@ Class Model_Member_Login extends ORM
                 $member['logintime']=$member_info['logintime'];
                 $member['mid']=$member_info['mid'];
                 $member['bflg']=$member_info['bflg'];
+                $member['did']=Model_Distributor::distributor_find_relationship($member_info['mid'],'view');
             }
             return $member;
         }

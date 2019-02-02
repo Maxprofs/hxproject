@@ -100,7 +100,8 @@ class St_Product
                         $arr['status'] = 1;
                     }
                 }
-
+                // 所有订单在下单的时候全部是待确认状态,需分销商确认后在根据供应商是否需要确认修改订单状态
+                $arr['status'] = 0;
                 if (empty($arr['memberid']))
                 {
                     $login_user=Model_Member_Login::check_login_info();
@@ -111,10 +112,16 @@ class St_Product
                 {
                     $arr['typeid'] = 999;
                 }
+                // 添加分销商信息
+                if ($arr['distributor']=='') {
+                    $did=Model_Distributor::distributor_find_relationship($arr['memberid'],'view');
+                    $arr['distributor']=$did;
+                }
                 foreach ($arr as $k => $v)
                 {
                     $model->$k = $v;
                 }
+
                 $model->save();
                 if (!$model->saved())
                 {
@@ -130,6 +137,7 @@ class St_Product
                 Request::$current->redirect('error/tips?msg=' . $e->getMessage());
                 return;
             }
+
             //预订送积分
             $model->jifenbook_id = $arr['jifenbook'];
             $model->jifenbook = self::calculate_jifenbook($arr['jifenbook'], $model->typeid, $model->ordersn);
@@ -144,11 +152,7 @@ class St_Product
                 Model_Member_Jifen::deduct($arr['ordersn']);
             }
 
-
             Model_Message::add_order_msg($model->as_array());
-
-
-
 
             //订单监控
             $detectresult = Model_Member_Order::detect($arr['ordersn']);
@@ -170,7 +174,10 @@ class St_Product
                 St_SMSService::send_product_order_msg(NoticeCommon::PRODUCT_ORDER_PROCESSING_MSGTAG, $arr);
                 St_EmailService::send_product_order_email(NoticeCommon::PRODUCT_ORDER_PROCESSING_MSGTAG, $arr);
             }
+            //更新订单供应商结算金额
+            $suppliertotalprice=Model_Member_Order::order_supplier_total_price($arr['ordersn']);
 
+            DB::update('member_order')->where('ordersn','=',"{$arr['ordersn']}")->set(array('suppliertotalprice'=>$suppliertotalprice))->execute();
             //订单结算信息表数据存储
             Model_Member_Order_Compute::add($arr['ordersn']);
 

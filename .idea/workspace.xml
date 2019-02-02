@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6ebe8fd-ec01-41c6-b87f-d24ec934245b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/data/cache/newtravel/menu_5.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/newtravel/menu_5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/newtravel/tplcache/admin/distributor/credit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/newtravel/tplcache/admin/distributor/precash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/v5/18/18a8b2840f87a39af3024a408a61eb29bb8a58ff.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/v5/18/18a8b2840f87a39af3024a408a61eb29bb8a58ff.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cache/v5/config.www.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/cache/v5/config.www.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/newtravel/2019/01/26.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/token/0911880b5e41.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/token/b285d5d5f929.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/token/c7cda58c9f62.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/token/dd67812b6a6c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tokenlibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/tokenlibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetasklibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/data/upgradetasklibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_flink/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_flink/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/city.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/css/swiper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_footer/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/city.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/css/swiper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/images/contact-bar-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/images/header-city-ico.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/images/home-page-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/js/SuperSlide.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/js/swiper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/js/tab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_header/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_help/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_help/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/city.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/css/swiper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/data/version.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/images/contact-bar-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/images/header-city-ico.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/images/home-page-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/js/SuperSlide.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/js/swiper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/js/tab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/taglib/car.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101/usertpl/ll_tk11257_pc_no296_index/taglib/ship.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1539841101_install/sql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/crossdomain.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/newtravel/application/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/newtravel/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/payment/application/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/payment/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/phone/application/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/phone/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/tools/run.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/tools/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/v5/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/upgradetmp/1546320114/upgradeenvtest/v5/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newtravel/application/views/stourtravel/image/insert_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/newtravel/application/views/stourtravel/image/insert_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newtravel/application/views/stourtravel/member/cashlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/newtravel/application/views/stourtravel/member/cashlog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/car/classes/controller/admin/car/attrid.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/car/classes/controller/admin/car/attrid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/customize/views/default/customize/member/orderview.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/customize/views/default/customize/member/orderview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/controller/admin/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/controller/admin/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/sms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/traveler.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/controller/pc/traveler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/model/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/model/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/classes/taglib/distributor.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/classes/taglib/distributor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/distributor/views/admin/distributor/credit.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/distributor/views/admin/distributor/credit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/line/classes/controller/pc/line/member.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/line/classes/controller/pc/line/member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/line/views/default/line/book/discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/line/views/default/line/book/discount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/line/views/default/line/book/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/line/views/default/line/book/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/line/views/default/line/member/orderview.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/line/views/default/line/member/orderview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier/application/data/order_1.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier/application/data/order_1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_brokerage/classes/model/supplier/brokerage.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_brokerage/classes/model/supplier/brokerage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/classes/controller/calendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/classes/controller/calendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/classes/controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/classes/controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/calendar/dialog_add_price.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/calendar/dialog_add_price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/calendar/dialog_edit_price.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/calendar/dialog_edit_price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/suit.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/suit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/suit_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/supplier_line/application/views/default/suit_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/weixin_pay_h5/config/wxh5.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/weixin_pay_h5/config/wxh5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/wxpay/vendor/pc/wxpay/cert/apiclient_cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/wxpay/vendor/pc/wxpay/cert/apiclient_cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/wxpay/vendor/pc/wxpay/cert/apiclient_key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/wxpay/vendor/pc/wxpay/cert/apiclient_key.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/js/artDialog/src/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/res/js/artDialog/src/dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/js/artDialog7/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/res/js/artDialog7/css/dialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/classes/model/member.php" beforeDir="false" afterPath="$PROJECT_DIR$/tools/classes/model/member.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/classes/model/member/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/tools/classes/model/member/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/classes/model/member/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/tools/classes/model/member/order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/classes/model/member/order/compute.php" beforeDir="false" afterPath="$PROJECT_DIR$/tools/classes/model/member/order/compute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/classes/st/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/tools/classes/st/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/2018/1205/33203363f9280a8550ccf46b5a068c32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/classes/controller/member/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/classes/controller/member/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/classes/controller/member/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/classes/controller/member/order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/views/default/member/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/views/default/member/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/views/default/member/login_fast.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/views/default/member/login_fast.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/views/default/member/order/all.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/views/default/member/order/all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/views/default/member/order/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/views/default/member/order/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v5/views/default/member/userinfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/v5/views/default/member/userinfo.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tools/classes/model/member/order/compute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1060" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6ebe8fd-ec01-41c6-b87f-d24ec934245b" name="Default Changelist" comment="" />
+      <created>1549123687256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549123687256</updated>
+      <workItem from="1549123691480" duration="651000" />
+      <workItem from="1549125178603" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="736000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="-4" width="1928" height="1060" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1799787" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tools/classes/model/member/order/compute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

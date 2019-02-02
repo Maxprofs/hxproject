@@ -34,10 +34,11 @@
               <div class="order-list">
               	<table width="100%" border="0">
                   <tr>
-                    <th width="55%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单信息')}</th>
-                    <th width="15%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单金额')}</th>
-                    <th width="15%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单状态')}</th>
-                    <th width="15%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单操作')}</th>
+                    <th width="51%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单信息')}</th>
+                    <th width="13%" height="38" bgcolor="#fbfbfb" scope="col">{__('会员账号')}</th>
+                    <th width="13%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单金额')}</th>
+                    <th width="13%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单状态')}</th>
+                    <th width="13%" height="38" bgcolor="#fbfbfb" scope="col">{__('订单操作')}</th>
                   </tr>
                   {loop $list $row}
                   <tr>
@@ -53,6 +54,16 @@
                         </dl>
                       </div>
                     </td>
+                    <td align="center">
+                      <?php
+                       $user=Model_Member::get_member_info($row['memberid']);
+                        if ($user['mobile']!='') {
+                          echo $user['mobile'];
+                        }else{
+                          echo $user['email'];
+                        }
+                       ?>
+                    </td>
                     {if $row['typeid']!=107}
                     <td align="center"><span class="price"><i class="currency_sy">{Currency_Tool::symbol()}</i>{$row['totalprice']}</span></td>
                     {else}
@@ -60,19 +71,19 @@
                     {/if}
                     <td align="center"><span class="dfk">{$row['statusname']}</span></td>
                     <td align="center">
+                        
+                          {if $row['status']=='1'&&$row['pid']==0&&$row['memberid']==$mid}
+                          <a class="now-fk" href="{$cmsurl}member/index/pay?ordersn={$row['ordersn']}">{__('立即付款')}</a>
+                          <a class="cancel_order now-dp" style="background:#ccc" href="javascript:;" data-orderid="{$row['id']}">{__('取消')}</a>
 
-                        {if $row['status']=='1'&&$row['pid']==0}
-                        <a class="now-fk" href="{$cmsurl}member/index/pay?ordersn={$row['ordersn']}">{__('立即付款')}</a>
-                        <a class="cancel_order now-dp" style="background:#ccc" href="javascript:;" data-orderid="{$row['id']}">{__('取消')}</a>
+                          {elseif $ordertype=='unpay'&&$row['pid']==0&&$row['memberid']==$mid}
+                          <a class="now-fk" href="{$cmsurl}member/index/pay?ordersn={$row['ordersn']}">{__('立即付款')}</a>
+                          <a class="cancel_order now-dp" style="background:#ccc" href="javascript:;" data-orderid="{$row['id']}">{__('取消')}</a>
 
-                        {elseif $ordertype=='unpay'&&$row['pid']==0}
-                        <a class="now-fk" href="{$cmsurl}member/index/pay?ordersn={$row['ordersn']}">{__('立即付款')}</a>
-                        <a class="cancel_order now-dp" style="background:#ccc" href="javascript:;" data-orderid="{$row['id']}">{__('取消')}</a>
-
-                        {elseif $row['ispinlun']=='0' && $row['status']=='5' && $row['is_commentable']}
-                        <a class="now-dp" href="{$cmsurl}member/order/pinlun?ordersn={$row['ordersn']}">{__('立即点评')}</a>
-                        {/if}
-                        <a class="order-ck" href="{$cmsurl}member/order/view?ordersn={$row['ordersn']}">{__('查看订单')}</a>
+                          {elseif $row['ispinlun']=='0' && $row['status']=='5' && $row['is_commentable']&&$row['memberid']==$mid}
+                          <a class="now-dp" href="{$cmsurl}member/order/pinlun?ordersn={$row['ordersn']}">{__('立即点评')}</a>
+                          {/if}
+                          <a class="order-ck" href="{$cmsurl}member/order/view?ordersn={$row['ordersn']}">{__('查看订单')}</a>
 
                      <!--   {if $ordertype=='all'}
 

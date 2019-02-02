@@ -14,7 +14,6 @@ var Popup = require('./popup');
 var defaults = require('./dialog-config');
 var css = defaults.cssUri;
 
-
 // css loader: RequireJS & SeaJS
 if (css) {
     css = require[require.toUrl ? 'toUrl' : 'resolve'](css);

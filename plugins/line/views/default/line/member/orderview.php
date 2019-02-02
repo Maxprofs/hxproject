@@ -8,6 +8,32 @@
         {Common::css_plugin('update-add.css','line')}
         {Common::load_skin()}
         {Common::js('jquery.min.js,base.js')}
+        <style>
+        	.submit-btn {
+			    background: #fb4734;
+			    color: #fff;
+			    border: 1px solid #fb4734;
+			    float: right;
+			    margin: 7px 0 0 12px;
+			    width: 98px;
+			    height: 34px;
+			    text-align: center;
+			    line-height: 34px;
+			    border-radius: 5px;
+			    font-size: 14px;
+			}
+			.modifyinput{
+				border: 1px solid #000;
+			    float: right;
+			    margin: 7px 0 0 12px;
+			    width: 150px;
+			    height: 34px;
+			    text-align: center;
+			    line-height: 34px;
+			    font-size: 14px;
+			    display: none;
+			}
+        </style>
 	</head>
 
 	<body class="bg-f6f6f6">
@@ -26,37 +52,57 @@
                                         {if $info['subscription_price']>0}
 										<p>应付定金：<em><i class="currency_sy">{Currency_Tool::symbol()}</i>{$info['pay_price']}</em></p>
                                         {/if}
+                                        {if $info['distributor']==$mid}
+										<p>修改订单不得低于：{Currency_Tool::symbol()}<?php 
+												$supplier_total_price=Model_Member_Order::order_supplier_total_price($info['ordersn']);
+												echo $supplier_total_price.'元';
+												$minuscoupon=$supplier_total_price-$info['iscoupon']['cmoney'];
+											 ?>
+										</p>
+										<p style="font-size: 8px;">(结算金额:{Currency_Tool::symbol()}{$minuscoupon}元)</p>
+                                        {/if}
 									</div>
 								</div>
 								<div class="btn clearfix">
-                                    <!--待确认-->
-                                    {if $info['status']==0}
-                                    <a id="cancel-order-Click" class="cancel-btn" href="javascript:void(0)">取消订单</a>
+									{if $info['distributor']!=$mid}
+									<!-- 门市或游客自身订单 -->
+	                                    <!--待确认-->
+	                                    {if $info['status']==0}
+	                                    <a id="cancel-order-Click" class="cancel-btn" href="javascript:void(0)">取消订单</a>
 
-                                    {/if}
-                                    <!--待付款-->
-                                    {if $info['status']==1}
-									 <a id="cancel-order-Click" class="cancel-btn" href="javascript:void(0)">取消订单</a>
-									 <a class="pay-btn" href="javascript:void(0)">立即付款</a>
-                                    {/if}
-                                    <!--待消费-->
-                                    {if $info['status']==2}
-                                      <a id="apply-refund-Click" class="refund-btn" href="javascript:void(0)">申请退款</a>
-                                      <a class="confirm-btn" href="javascript:void(0)">确认消费</a>
-                                    {/if}
-                                    <!--已完成-->
-                                    {if $info['status']==5 && $info['ispinlun']=='0'}
-                                      <a class="comment-btn pl-btn" href="javascript:void(0)">立即点评</a>
-                                    {/if}
-                                    <!--待审核-->
-                                    {if $info['status']==6}
-                                     <a id="cancel-refund-Click" class="cancel-refund-btn" href="javascript:void(0)">取消退款</a>
-                                    {/if}
+	                                    {/if}
+	                                    <!--待付款-->
+	                                    {if $info['status']==1}
+										 <a id="cancel-order-Click" class="cancel-btn" href="javascript:void(0)">取消订单</a>
+										 <a class="pay-btn" href="javascript:void(0)">立即付款</a>
+	                                    {/if}
+	                                    <!--待消费-->
+	                                    {if $info['status']==2}
+	                                      <a id="apply-refund-Click" class="refund-btn" href="javascript:void(0)">申请退款</a>
+	                                      <a class="confirm-btn" href="javascript:void(0)">确认消费</a>
+	                                    {/if}
+	                                    <!--已完成-->
+	                                    {if $info['status']==5 && $info['ispinlun']=='0'}
+	                                      <a class="comment-btn pl-btn" href="javascript:void(0)">立即点评</a>
+	                                    {/if}
+	                                    <!--待审核-->
+	                                    {if $info['status']==6}
+	                                     <a id="cancel-refund-Click" class="cancel-refund-btn" href="javascript:void(0)">取消退款</a>
+	                                    {/if}
+	                                <!-- 门市或游客自身订单 -->
+	                                {else}
+	                                <!-- 下属游客订单 -->
+	                               		<!--待付款-->
+	                                    {if $info['status']==0 && $info['dconfirm']==0}
+		                                	<a id="submitclick" class="submit-btn" href="javascript:void(0)">提交订单</a>
+											<a id="modifyprice" class="comment-btn" href="javascript:void(0)">修改价格</a>
+											<input type="text" id="modify" class="modifyinput" placeholder="不能低于{Currency_Tool::symbol()}{$supplier_total_price}元" oninput = "value=value.replace(/[^\d]/g,'')">
+										{/if}
+									<!-- 下属游客订单结束 -->
+	                                {/if}
 								</div>
 							</div>
 						</div>
-
-
 
 						<div class="info-item">
 							<div class="order-speed-box">
@@ -261,6 +307,34 @@
 							</div>
 						</div>
 						<!--订单信息-->
+						{if $user['bflg']==1}
+						<div class="info-item">
+							<div class="ost-item">
+								<h3 class="tit">下单会员信息</h3>
+								<ul class="ost-content">
+									<li>
+										<div class="contact-list">
+											<p class="ty ty1">
+												<label>会员账号：</label>
+                                                <?php 
+													if ($user['mobile']) {
+														echo $user['mobile'];
+													}else{
+														echo $user['email'];
+													}
+												?>
+											</p>
+											<p class="ty ty2">
+												<label>联系电话：</label>
+												{$user['mobile']}
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						{/if}
+						<!-- 会员信息 -->
                         {if !empty($additional)}
 						<div class="info-item">
 							<div class="ost-item">
@@ -969,10 +1043,52 @@
                           });
                       }, 'json');
                   }
+
               </script>
-       {/if}
-
-
+       	{/if}
+		{if $info['status']==0}
+			<script>
+				$(function() {
+					$('#submitclick').click(function(event) {
+						/* Act on the event */
+					});
+					$('#modifyprice').click(function(event) {
+						if ($(this).text()=='修改价格') {
+							$('.modifyinput').css('display', 'inline-block');
+							$(this).text('确定修改')
+						}else{
+							parent.layer.confirm('确定修改？', {
+							  btn: ['确定','不了'] //按钮
+							}, function(){
+								if ($('.modifyinput').val()=='') {
+									parent.layer.alert('没有输入');
+									return;
+								}
+								ordersn="{$info['ordersn']}";
+							  	$.ajax({
+							  		url: '/distributor/pc/traveler/ajax_modifyorderprice',
+							  		type: 'POST',
+							  		dataType: 'json',
+							  		data: {price: $('.modifyinput').val(),ordersn:ordersn},
+							  	})
+							  	.done(function(data) {
+							  		if (!data.status) {
+							  			parent.layer.alert(data.msg,{icon:2,time:3000});
+							  		}else{
+							  			parent.layer.alert(data.msg,{icon:1,time:2000});
+							  			window.location.reload();
+							  		}
+							  		
+							  	})	
+							}, function(){
+								$('.modifyinput').css('display', 'none');
+								$("#modifyprice").text('修改价格')
+							});
+						}
+					});
+				});
+			</script>
+		{/if}
 	</body>
 
 </html>

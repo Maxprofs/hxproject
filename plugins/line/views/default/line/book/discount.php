@@ -44,7 +44,7 @@
                 </li>
                 {/if}
                 {/if}
-                <li>
+<!--                 <li>
                     <span class="item-hd">积分抵扣：</span>
                     <div class="item-bd">
                         <input type="text" class="input-text w100" id="needjifen"  data-exchange="{$jifentprice_info['cfg_exchange_jifen']}" name="needjifen" value="" placeholder="">
@@ -52,7 +52,7 @@
                         <span class="ml10 c-999">最多可使用{$jifentprice_info['toplimit']}积分抵扣<i class="currency_sy">{Currency_Tool::symbol()}</i>{$jifentprice_info['jifentprice']}，我当前积分：{$userInfo['jifen']}</span>
                         <span class="error-txt ml10 jifen-error" style=" vertical-align: middle"></span>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

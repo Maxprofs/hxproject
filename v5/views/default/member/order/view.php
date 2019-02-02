@@ -199,9 +199,9 @@
                         {if !empty($info['iscoupon'])}
                         <li><em>{__('优惠券')}：</em><i class="currency_sy">{Currency_Tool::symbol()}</i>{$info['iscoupon']['cmoney']}（{$info['iscoupon']['name']}）</li>
                         {/if}
-                        {if $info['usejifen']}
-                        <li><em>{__('积分抵现')}：</em><i class="currency_sy">{Currency_Tool::symbol()}</i>{$info['jifentprice']}</li>
-                        {/if}
+<!--                         if $info['usejifen']
+                        <li><em>__('积分抵现')：</em><i class="currency_sy">Currency_Tool::symbol()</i>$info['jifentprice']</li>
+                        /if -->
                     </ul>
                 </div>
             </div>

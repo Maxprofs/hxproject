@@ -64,22 +64,22 @@
                 <div class="mb-10">
                     <label class="check-label va-m">
                         <input class="reset-box" type="checkbox" name="propgroup[]"  value="2"  {if in_array(2,$info['propgroup'])} checked {/if}  >成人</label>
-                    <span class="item-text ml-10">成本<input name="adultbasicprice" value="{$info['adultbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
-                    <span class="item-text ml-10">利润<input name="adultprofit" value="{$info['adultprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">结算价<input name="adultbasicprice" value="{$info['adultbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">门市利润<input name="adultprofit" value="{$info['adultprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
                     <span class="item-text ml-10">售价 <span id="adultprice" class="pl-5 c-f60 reset-span" >{$info['adultprice']}</span></span>
                 </div>
                 <div class="mb-10">
                     <label class="check-label va-m">
                         <input class="reset-box" type="checkbox" name="propgroup[]"  value="1"  {if in_array(1,$info['propgroup'])} checked {/if}>儿童</label>
-                    <span class="item-text ml-10">成本<input name="childbasicprice" value="{$info['childbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
-                    <span class="item-text ml-10">利润<input name="childprofit" value="{$info['childprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">结算价<input name="childbasicprice" value="{$info['childbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">门市利润<input name="childprofit" value="{$info['childprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
                     <span class="item-text ml-10">售价 <span id="childprice" class="pl-5 c-f60 reset-span" >{$info['childprice']}</span></span>
                 </div>
                 <div class="mb-10">
                     <label class="check-label va-m">
                         <input class="reset-box" type="checkbox" name="propgroup[]"  value="3"  {if in_array(3,$info['propgroup'])} checked {/if}>老人</label>
-                    <span class="item-text ml-10">成本<input name="oldbasicprice" value="{$info['oldbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
-                    <span class="item-text ml-10">利润<input name="oldprofit" value="{$info['oldprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">结算价<input name="oldbasicprice" value="{$info['oldbasicprice']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
+                    <span class="item-text ml-10">门市利润<input name="oldprofit" value="{$info['oldprofit']}" type="text" class="input-text w100 va-t ml-5 reset-input"></span>
                     <span class="item-text ml-10">售价 <span id="oldprice" class="pl-5 c-f60 reset-span" >{$info['oldprice']}</span></span>
                 </div>
             </div>
@@ -228,7 +228,7 @@
 
         //确定
         $('.btn-primary').click(function () {
-           var data = $('#submit_frm').serialize();
+            var data = $('#submit_frm').serialize();
             ST.Util.responseDialog({data:data},true);
         });
         //取消

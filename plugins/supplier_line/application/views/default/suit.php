@@ -32,10 +32,11 @@
                     <table class="pm-table-hd" width="100%" border="0">
                         <tr class="pl-th">
                             <th width="8%" scope="col" height="38">编号</th>
-                            <th width="40%" scope="col">路线名称</th>
+                            <th width="42%" scope="col">路线名称</th>
                             <th width="10%" scope="col">报价有效期</th>
-                            <th width="14%" scope="col">最低价格</th>
-                            <th width="14%" scope="col">最低利润</th>
+                            <th width="10%" scope="col">销售价</th>
+                            <th width="10%" scope="col">门市利润</th>
+                            <th width="10%" scope="col">结算价</th>
                             <th width="10%" scope="col">管理</th>
                         </tr>
                     </table>
@@ -47,12 +48,13 @@
                         {if strpos($row['id'],'suit')===false}
                         <tr class="pl-tr" id="product_{$row['id']}">
                             <td width="8%" align="center"><div class="pm-table-boxs">{$row['lineseries']}</div></td>
-                            <td width="30%"><div class="pm-table-boxs"><a class="pm-table-bt" target="_blank" href="{$row['url']}">{$row['title']}</a></div></td>
+                            <td width="42%"><div class="pm-table-boxs"><a class="pm-table-bt" target="_blank" href="{$row['url']}">{$row['title']}</a></div></td>
                             <td width="10%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['suitday']}</span></div></td>
 
-                            <td width="8%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
-                            <td width="8%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
-                            <td width="8%" align="center">
+                            <td width="10%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
+                            <td width="10%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
+                            <td width="10%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
+                            <td width="10%" align="center">
                                 <div class="pm-table-boxs">
                                     <a href="javascript:void(0)" class="pm-add-tc-btn" onclick="addSuit('{$row['id']}')" title="添加套餐">添加套餐</a>
                                 </div>
@@ -61,10 +63,11 @@
                         {else}
                         <tr class="pl-tr pl-child-tr sub_{$row['lineid']}" id="product_{$row['id']}">
                             <td width="8%" align="center"><div class="pm-table-boxs">&nbsp;</div></td>
-                            <td width="40%"><div class="pm-table-boxs"><a class="pm-table-bt" href="#">{$row['title']}</a></div></td>
+                            <td width="42%"><div class="pm-table-boxs"><a class="pm-table-bt" href="#">{$row['title']}</a></div></td>
                             <td width="10%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['suitday']}</span></div></td>
-                            <td width="14%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['minprice']}</span></div></td>
-                            <td width="14%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['minprofit']}</span></div></td>
+                            <td width="10%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['minprice']}</span></div></td>
+                            <td width="10%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['minprofit']}</span></div></td>
+                            <td width="10%" align="center"><div class="pm-table-boxs"><span class="color-grey">{$row['basicprice']}</span></div></td>
                             <td width="10%" align="center">
                                 <div class="pm-table-boxs">
                                     <a href="javascript:void(0)" class="pm-delete-btn" onclick="goEdit('{$row['id']}')" title="编辑"></a>

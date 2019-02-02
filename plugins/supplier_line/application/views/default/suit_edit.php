@@ -7,6 +7,15 @@
     {Common::js('jquery.min.js,common.js,product.js,choose.js,calendar-price-jquery.js')}
     {include "pub"}
     <script type="text/javascript"src="/tools/js/DatePicker/WdatePicker.js"></script>
+    <style>
+      .capricorncd-calendar-container{
+        width: 1200px;
+      }
+
+      .basic{
+        color: blue;
+      }
+    </style>
 </head>
 
 <body>
@@ -52,6 +61,10 @@
                               <a href="javascript:;" class="btn btn-grey-outline radius size-S mt-3 ml-5" onclick="delall()">清除报价</a>
                               <a class="btn-link" id="more_price"  onclick="showMore()" style="margin-left: 560px;display: none">查看更多报价</a>
                           </div>
+                      </li>
+                      <li>
+                        <span class="item-hd">日历价格说明：</span>
+                        <div class="item-bd" style="position: relative;top: 5px;"><span style="color:#ff6600;">橙色：销售价</span>&nbsp;&nbsp;&nbsp;<span style="color:blue;">蓝色：结算价</span></div>
                       </li>
                       <li>
                           <span class="item-hd"></span>

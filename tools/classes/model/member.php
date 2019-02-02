@@ -16,6 +16,11 @@ class Model_Member extends ORM
     public static function get_member_info($memberid)
     {
         $result = DB::select()->from('member')->where('mid', '=', $memberid)->execute()->current();
+        //检查分销商加盟协议是否已过期，管理员还未修改分销商标志
+        $jmqx=strtotime(str_replace('-', '', $result['jiamengqixian']));
+        if ($jmqx<time()) {
+            $result['bflg']=0;
+        }
         return $result;
     }
 
@@ -224,7 +229,11 @@ class Model_Member extends ORM
             //第三方登陆
             $third = DB::select()->from('member_third')->where("mid={$mid}")->execute()->as_array();
             $memberinfo['third'] = Model_Member_Third::thirdData($third);
-
+            //检查分销商加盟协议是否已过期，管理员还未修改分销商标志
+            $jmqx=strtotime(str_replace('-', '', $memberinfo['jiamengqixian']));
+            if ($jmqx<time()) {
+                $memberinfo['bflg']=0;
+            }
             return $memberinfo;
         }
 

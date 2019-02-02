@@ -43,6 +43,7 @@ var Global={
             success:function(data){
                 if(data.status){
                     //更新存储有效期
+
                     if(!secret)
                     {
                         secret=data.secret;

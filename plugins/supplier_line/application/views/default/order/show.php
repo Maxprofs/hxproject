@@ -33,7 +33,9 @@
                 <li><strong>下单时间：</strong>{date('Y-m-d H:i',$info['addtime'])}</li>
                 <li><strong>收货地址：</strong>{$info['receiver_address']}</li>
                 <li><strong>订单总额：</strong><span class="jg">{Currency_Tool::symbol()}{$info['total_price']}  {if $info['subscription_price']>0}(定金{Currency_Tool::symbol()}{$info['subscription_price']}){/if}</span></li>
-                <li><strong>订单收益：</strong><span class="jg">{Currency_Tool::symbol()}{$info['compute_info']['supplier_income']}</span></li>
+                <li><strong>结算价格：</strong><span class="jg">{Currency_Tool::symbol()}{$info['suppliertotalprice']}</span></li>
+                <li><strong>优惠金额：</strong><span class="jg">{Currency_Tool::symbol()}-{$info['compute_info']['privileg_price']}</span></li>
+                <li><strong>订单收益：</strong><span class="jg">结算{Currency_Tool::symbol()}{$info['suppliertotalprice']}-优惠{Currency_Tool::symbol()}{$info['compute_info']['privileg_price']}-分佣{Currency_Tool::symbol()}{$info['compute_info']['platform_commission']}=收益{Currency_Tool::symbol()}{$info['compute_info']['supplier_income']}</span></li>
                 <li><strong>平台分佣：</strong><span class="jg">{Currency_Tool::symbol()}{$info['compute_info']['platform_commission']}</span></li>
                 <li class="orderstatus"><strong>订单状态：</strong>
                     {if $info['status']==1}

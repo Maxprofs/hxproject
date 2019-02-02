@@ -169,7 +169,7 @@
                 var s_top=$(window).scrollTop()+200;
                 ST.Util.createFade();//创建遮罩
                 var url = SITEURL+"member/index/uploadface";
-                var imgdiv="<div id='upiframe' style='width:700px;height:500px;position:absolute;left:"+s_left+"px;top:"+s_top+"px;z-index:9999'> <iframe src='"+url+"' style='width:100%;height:100%;border:none;'></iframe></div>";
+                var imgdiv="<div id='upiframe' style='width:800px;height:600px;position:absolute;left:"+s_left+"px;top:"+s_top+"px;z-index:9999'> <iframe src='"+url+"' style='width:100%;height:100%;border:none;'></iframe></div>";
                 $("body").append(imgdiv);
                 //fade点击
                 $(".fade").live('click',function(){

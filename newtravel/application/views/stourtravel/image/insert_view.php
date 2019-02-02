@@ -258,13 +258,13 @@
         flash_swf_url: '{$publicPath}js/plupload-2.3.6/js/image/Moxie.swf',
         silverlight_xap_url : '{$publicPath}js/plupload-2.3.6/js/image/Moxie.xap',
         filters: {
-            max_file_size: '5mb',
+            max_file_size: '2mb',
             mime_types: [
                 {title: "Image files", extensions: "jpg,gif,png,jpeg,ico"},
             ]
         },
         resize:{
-            width:1024,
+            // width:1024,
             crop:false,
             preserve_headers:true
         },

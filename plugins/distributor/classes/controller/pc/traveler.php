@@ -19,6 +19,41 @@ class Controller_Pc_Traveler extends Stourweb_Controller {
 
 		$this->display('pc/traveler');
 	}
+
+	public function action_ajax_modifyorderprice() {
+		$now=time();
+		$ordersn = Common::remove_xss(Arr::get($_POST, 'ordersn'));
+		$info = Model_Member_Order::get_order_by_ordersn($ordersn);
+		$sql="select modtime from sline_member_order_compute where order_id={$info['id']}";
+		$r=DB::query(Database::SELECT,$sql)->execute()->current();
+		if ($r['modtime']!=0) {
+			if ($now-$r['modtime']<5) {
+				echo json_encode(array('status' => false, 'msg' => "凡事慢慢来哦！"));
+				return;
+			}
+		}
+		$modprice = Common::remove_xss(Arr::get($_POST, 'price'));
+		$total=Model_Member_Order::order_supplier_total_price($ordersn);
+		if (!$total) {
+			echo json_encode(array('status' => false, 'msg' => "订单编号错误。"));
+			return;
+		}
+		if ($modprice<$total) {
+			echo json_encode(array('status' => false, 'msg' => "不能低于{$total}元。"));
+			return;
+		}
+		if ($info['distributor']==$this->mid) {
+
+			$sql="update sline_member_order_compute set total_price={$modprice},modtime={$now} where order_id={$info['id']}";
+			DB::query(Database::UPDATE,$sql)->execute();
+			Model_Member_Order_Log::add_log($info,'','',"您的服务网点已修改订单金额。");
+			echo json_encode(array('status' => true, 'msg' => "订单修改成功！"));
+			return;
+		}else{
+			echo json_encode(array('status' => false, 'msg' => "你不能修改订单！"));
+			return;
+		}
+	}
 	public function action_ajax_gettravelers() {
 		$start = Arr::get($_GET, 'start');
 		$limit = Arr::get($_GET, 'limit');
@@ -38,7 +73,7 @@ class Controller_Pc_Traveler extends Stourweb_Controller {
 			return;
 		}
 		$endtime = strtotime($endtime);
-		if ($starttime>$endtime) {
+		if ($starttime > $endtime) {
 			echo "<script>if(confirm('开始时间大于结束时间,点击‘确认’退出。')){window.close()}</script>";
 			return;
 		}

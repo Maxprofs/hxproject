@@ -6,9 +6,11 @@
     {include "pub/varname"}
     {Common::css('user.css,base.css,extend.css',false)}
 
-    <script type="text/javascript" src="/res/js/artDialog/lib/sea.js"></script>
-    {Common::js('jquery.min.js,base.js,common.js,jquery.zclip.js,dialog.js')}
-
+    <link rel="stylesheet" type="text/css" href="/res/js/artDialog7/css/dialog.css">
+    
+    {Common::js('jquery.min.js,base.js,common.js,jquery.zclip.js,xdate.js')}
+    <script type="text/javascript" src="/res/js/artDialog7/dist/dialog-plus.js"></script>
+    {Common::js('layer/layer.js')}
 </head>
 <body>
 {request "pub/header"}
@@ -43,7 +45,7 @@
         {/if}
         <div class="user-home-msg">
             <div class="user-msg-con">
-                <div class="user-pic"><div class="level"><a href="/member/club/rank">{Common::member_rank($info['mid'],array('return'=>'current'))}</a></div><a href="/member/index/userinfo"><img src="{$info['litpic']}" width="118" height="118" /></a></div>
+                <div class="user-pic"><!-- <div class="level"><a href="/member/club/rank">Common::member_rank($info['mid'],array('return'=>'current'))</a></div> --><a href="/member/index/userinfo"><img src="{$info['litpic']}" width="118" height="118" /></a></div>
                 <div class="user-txt">
                     <p class="name">{$info['nickname']}</p>
  <!--                    <p class="item-bar">{__('会员等级')}：{Common::member_rank($info['mid'],array('return'=>'rankname'))}</p> -->
@@ -104,7 +106,8 @@
                     
                     {if $info['bflg']==1}
                     <li><em>预存款余额：</em><strong>{Currency_Tool::symbol()}{php echo $info['money']-$info['money_frozen']}</strong></li>
-                    <li><em>授信额度：</em><strong>{$info['loc']}</strong></li>
+                    <li><em>授信额度：</em><strong>{$info['credit']}</strong></li>
+                    <li><em>加盟期限：</em><strong id="jmqx">{$info['jiamengqixian']}</strong></li>
                     <li><em>短信余额：</em><strong>{$info['sms']}</strong></li>
                     {/if}
 <!--                    <li><em>我的余额：</em><strong>¥6525</strong></li>-->
@@ -122,10 +125,11 @@
             <div class="order-list">
                 <table width="100%" border="0">
                     <tr>
-                        <th width="55%" height="38" scope="col">{__('订单信息')}</th>
-                        <th width="15%" height="38" scope="col">{__('订单金额')}</th>
-                        <th width="15%" height="38" scope="col">{__('订单状态')}</th>
-                        <th width="15%" height="38" scope="col">{__('订单操作')}</th>
+                        <th width="51%" height="38" scope="col">{__('订单信息')}</th>
+                        <th width="13%" height="38" scope="col">{__('会员账号')}</th>
+                        <th width="13%" height="38" scope="col">{__('订单金额')}</th>
+                        <th width="13%" height="38" scope="col">{__('订单状态')}</th>
+                        <th width="13%" height="38" scope="col">{__('订单操作')}</th>
                     </tr>
                     {loop $neworder $order}
                     <tr>
@@ -141,6 +145,16 @@
                                 </dl>
                             </div>
                         </td>
+                        <td align="center">
+                            <?php
+                                $user=Model_Member::get_member_info($order['memberid']);
+                                if ($user['mobile']!='') {
+                                     echo $user['mobile'];
+                                }else{
+                                    echo $user['email'];
+                                }
+                            ?>
+                        </td>
                         {if $order['typeid']!=107}
                         <td align="center"><span class="price"><i class="currency_sy">{Currency_Tool::symbol()}</i>{$order['totalprice']}</span></td>
                         {else}
@@ -150,10 +164,10 @@
                         <td align="center">
 
 
-                            {if $order['status']=='1'&&$order['pid']==0}
+                            {if $order['status']=='1'&&$order['pid']==0&&$order['memberid']==$mid}
                             <a class="now-fk" href="{$cmsurl}member/index/pay?ordersn={$order['ordersn']}">{__('立即付款')}</a>
                             <a class="cancel_order now-dp" style="background:#ccc" href="javascript:;" data-orderid="{$order['id']}">{__('取消')}</a>
-                            {elseif $order['status']=='5' && $order['ispinlun']!=1 && $order['is_commentable']}
+                            {elseif $order['status']=='5' && $order['ispinlun']!=1 && $order['is_commentable']&&$order['memberid']==$mid}
                             <a class="now-dp" href="{$cmsurl}member/order/pinlun?ordersn={$order['ordersn']}">{__('立即点评')}</a>
                             {/if}
 
@@ -210,10 +224,67 @@
 
 </div>
 </div>
-
-{Common::js('layer/layer.js')}
 {request "pub/footer"}
 <script>
+    window.d = null;
+
+//弹出框
+/*
+  params为附加参数，可以是与dialog有关的所有参数，也可以是自定义参数
+  其中自定义参数里有
+  loadWindow: 表示回调函数的window
+  loadCallback: 表示回调函数
+  maxHeight:指定最高高度
+
+ */
+function floatBox(boxtitle, url, boxwidth, boxheight, closefunc, nofade,fromdocument,params) {
+    boxwidth = boxwidth != '' ? boxwidth : 0;
+    boxheight = boxheight != '' ? boxheight : 0;
+    var func = $.isFunction(closefunc) ? closefunc : function () {
+    };
+    fromdocument = fromdocument ? fromdocument : null;//来源document
+
+    var initParams={
+        url: url,
+        title: boxtitle,
+        width: boxwidth,
+        height: boxheight,
+        scroll:0,
+        loadDocument:fromdocument,
+        onclose: function () {
+            func();
+        }
+    }
+    initParams= $.extend(initParams,params);
+
+    var dlg = dialog(initParams);
+
+
+    if(typeof(dlg.loadCallback)=='function'&&typeof(dlg.loadWindow)=='object')
+    {
+       dlg.finalResponse=function(arg,bool,isopen){
+            dlg.loadCallback.call(dlg.loadWindow,arg,bool);
+            if(!isopen)
+              this.remove();
+       }
+    }
+
+    window.d=dlg;
+    d.close()
+    if (initParams.width != 0) {
+        d.width(initParams.width);
+    }
+    if (initParams.height!= 0) {
+        d.height(initParams.height);
+    }
+  
+    if (nofade) {
+        d.show()
+    } else {
+        d.showModal();
+    }
+
+}
     function serviceinfo(){
         var url=SITEURL+"distributor/pc/distributor/serviceinfo/"+"{$dinfo}";
         floatBox('服务网点信息',url,'500','250');
@@ -222,15 +293,53 @@
         var url=SITEURL+"member/index/checkqrcode";
         floatBox("我的二维码",url,'200','200');
     }
-
+    function diff(endDate) {
+        var now = new XDate();
+        endDate = new XDate(endDate);
+        var diff = now.diffDays(endDate);
+        return diff;
+    }
     $(function(){
+        if ({$info['bflg']}) {
+            var jmf="'"+{$info['jiamengfei']}+"'";
+            var deposit="'"+{$info['money']}+"'"
+            var diffDay=parseInt(diff($('#jmqx').text()));
+            if (diffDay<30) {
+                //询问框
+                layer.confirm('加盟协议还有'+diffDay+'天到期，续期吗？', {
+                    btn: ['火速续期','算了，还是分了吧！'] //按钮
+                }, function(){
+                    if (deposit<jmf) {
+                        layer.confirm('预存款不足，请充值预存款！',{btn:['前往充值','知道了']},function() {
+                            window.location.href=SITEURL+'member/bag/index?type=100';   
+                        });
+                    }else{
+                        var url=SITEURL+'distributor/pc/distributor/ajax_renewal';
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'json',
+                        })
+                        .done(function(data) {
+                            layer.msg(data.msg,{time:2000,icon:6})
+                        })
+                    }
+                }, function(){
+                    layer.msg('没有你的日子里，我会想念你！', {
+                        time: 20000, //20s后自动关闭
+                        btn: ['谢谢！']
+                    });
+                });
+            }
+        }
+
         $('#copy').zclip({
             path:'{$root}'+'/res/swf/ZeroClipboard.swf',
             copy:function () {
                 return '{$GLOBALS['cfg_basehost']}'+'/member/register/index/'+'{$info['mid']}';
             },
             afterCopy:function() {
-                alert('复制成功')
+                    layer.msg('复制成功！', {time: 1000, icon:6});
             }
         });
         $("#nav_index").addClass('on');

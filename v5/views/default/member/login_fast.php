@@ -3,7 +3,7 @@
         <div class="login-small-con">
             <h3 class="tab-nav-bar">
                 <span class="item on" data-type="user_fast_login">{__('账户密码登录')}</span>
-                <span class="item" data-type="mobile_fast_login">{__('动态码登录')}</span>
+                <!-- <span class="item" data-type="mobile_fast_login">{__('动态码登录')}</span> -->
                 <i class="close-btn"></i>
             </h3>
             <div class="tab-wrapper">
@@ -47,7 +47,7 @@
         </div>
         <div class="other-login">
             <dl>
-                <dt><span>{__('使用其他方式登录')}</span><em></em></dt>
+                <!-- <dt><span>{__('使用其他方式登录')}</span><em></em></dt> -->
                 <dd>
                     {if (!empty($GLOBALS['cfg_qq_appid']) && !empty($GLOBALS['cfg_qq_appkey']))}
                     <a class="qq third-login" href="javascript:" data="{$GLOBALS['cfg_basehost']}/plugins/login_qq/index/index/?refer">QQ</a>

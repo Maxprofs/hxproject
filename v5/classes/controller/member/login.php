@@ -105,7 +105,12 @@ class Controller_Member_Login extends Stourweb_Controller
             exit;
         }
         $user = Model_Member::login($loginName, $loginPwd, 1);
-        if ($user['isopen']==0 && $user['bflg']==0) {
+        if (!$user) {
+            $message = array('msg' =>'账号密码错误！', 'status' => 0);
+            exit(json_encode($message));
+            exit;
+        }
+        if ($user['isopen']==0) {
             $message = array('msg' =>'账号已冻结请联系您的服务网点！', 'status' => 0);
             exit(json_encode($message));
             exit;
@@ -231,7 +236,7 @@ class Controller_Member_Login extends Stourweb_Controller
     }
 
     /**
-     * ajax判断是否登陆
+     * 下单时，ajax判断是否登陆
      */
     public function action_ajax_is_login()
     {

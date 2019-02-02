@@ -536,7 +536,6 @@
                         linkemail:{
                             email:true
                         },
-
                         checkcode: {
                             required: true,
                             minlength:4,
@@ -548,13 +547,8 @@
                                 depends : function(element) {
                                     return element.value.length==4;
                                 },
-
-
-
-
                             }
                         }
-
                     },
                     messages: {
                         linkman: {

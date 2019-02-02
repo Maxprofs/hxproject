@@ -197,8 +197,15 @@ class Model_Message extends ORM
      */
     public static function has_msg($mid)
     {
-        $num = DB::query(Database::SELECT,"select count(*) as num from sline_message where status=0 and memberid='{$mid}'")->execute()->get('num');
-        return empty($num)?0:$num;
+        $user=Model_Member::get_member_info($mid);
+        if ($user['bflg']==0) {
+            $num = DB::query(Database::SELECT,"select count(*) as num from sline_message where status=0 and memberid='{$mid}'")->execute()->get('num');
+            return empty($num)?0:$num;
+        }elseif ($user['bflg']==1) {
+            $num = DB::query(Database::SELECT,"select count(*) as num from sline_message where dstatus=0 and memberid in (select mid from sline_relationship where pid={$mid})")->execute()->get('num');
+            return empty($num)?0:$num;
+        }
+
     }
 
     /**

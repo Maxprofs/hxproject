@@ -92,6 +92,7 @@ class Controller_Admin_Car_Attrid extends Stourweb_Controller
             $id = $data->id;
             if ($field)
             {
+
                 $model = ORM::factory($attrtable, $id);
                 if ($model->id)
                 {

@@ -45,7 +45,7 @@ class Controller_Pc_Sms extends Stourweb_Controller {
 		$balance = $balance - $total;
 		DB::query(Database::UPDATE, "update sline_member set money=$balance,sms=$num+sms where mid=$mid")->execute();
 		$type = 1; //支出
-		$description = "购买" . $num . "条短信成功，消费" . $total . "元，当前余额" . $balance . "元。";
+		$description = "购买" . $num . "条短信成功，扣款：" . $total . "元，当前余额：" . $balance . "元。";
 		$log_result = Model_Member_Cash_Log::add_log($mid, $type, $total, $description,array('checktype'=>1));
 		if (!$log_result) {
 			throw new Exception('保存日志失败');

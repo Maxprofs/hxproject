@@ -172,8 +172,9 @@ class Controller_Index extends Stourweb_Controller {
 				$val['title'] = $val['suitname'];
 				$val['suitday'] = !empty($val['suitday']) ? date('Y-m-d', $val['suitday']) : '';
 				$val['lineseries'] = '';
-				$val['minprice'] = Model_Line_Suit_Price::getMinPrice($val['id']);
-				$val['minprofit'] = Model_Line_Suit_Price::getMinPrice($val['id'], 'adultprofit');
+				$val['minprice'] = Model_Line_Suit_Price::getMinPrice($val['id']);//销售价格
+				$val['minprofit'] = Model_Line_Suit_Price::getMinPrice($val['id'], 'adultprofit');//门市利润
+				$val['basicprice'] = Model_Line_Suit_Price::getMinPrice($val['id'], 'adultbasicprice');//结算价
 				$val['id'] = 'suit_' . $val['id'];
 				if ($key != count($suit) - 1) {
 					$val['tr_class'] = 'suit-tr';
@@ -635,6 +636,7 @@ class Controller_Index extends Stourweb_Controller {
 	 * @function 保存一天的报价
 	 */
 	public function action_ajax_save_day_price() {
+
 		$propgroup = $_POST['propgroup'] ? $_POST['propgroup'] : array();
 
 		if (in_array(2, $propgroup)) {

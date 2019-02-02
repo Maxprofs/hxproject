@@ -1,0 +1,31 @@
+<?php defined('SYSPATH') or die();?> <!doctype html> <html> <head table_border=BQJIAj > <meta charset="utf-8"> <title><?php echo $searchtitle;?>-<?php echo $GLOBALS['cfg_webname'];?></title> <?php if(!empty($country['keyword'])) { ?> <meta name="keywords" content="<?php echo $country['keyword'];?>"/> <?php } ?> <?php if(!empty($country['description'])) { ?> <meta name="description" content="<?php echo $country['description'];?>"/> <?php } ?> <?php echo  Stourweb_View::template("pub/varname");  ?> <?php echo Common::css_plugin('visa.css','visa');?> <?php echo Common::css('base.css,extend.css',false);?> <?php echo Common::js('jquery.min.js,base.js,common.js,SuperSlide.min.js,delayLoading.min.js');?> </head> <body> <?php echo Request::factory("pub/header")->execute()->body(); ?> <div class="big"> <div class="wm-1200"> <div class="st-guide"> <a href="<?php echo $cmsurl;?>"><?php echo $GLOBALS['cfg_indexname'];?></a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="<?php echo $cmsurl;?>visa/"><?php echo $channelname;?></a> </div><!--面包屑--> <div class="st-main-page"> <div class="list_headimg" style="background: url(<?php echo $country['banner'];?>) center no-repeat;"> <div class="gj_txt"> <dl> <dt> <img src="<?php echo Common::img($country['nation_flag'],62,62);?>" alt="<?php echo $country['name'];?>" /> <h3><?php echo $country['name'];?>签证</h3> </dt> <dd> <?php echo $country['jieshao'];?> </dd> </dl> </div> </div> <div class="list_mdd_tj"> <dl> <dt>办理领区：</dt> <dd> <a href="<?php echo Model_Visa::get_search_url(0,'cityid',$param);?>" <?php if(empty($param['cityid'])) { ?>class="on"<?php } ?>
+>不限</a> <?php $visa_tag = new Taglib_Visa();if (method_exists($visa_tag, 'city')) {$citylist = $visa_tag->city(array('action'=>'city','row'=>'30','return'=>'citylist',));}?> <?php $n=1; if(is_array($citylist)) { foreach($citylist as $city) { ?> <a href="<?php echo Model_Visa::get_search_url($city['id'],'cityid',$param);?>" <?php if($city['id']==$param['cityid']) { ?>class="on"<?php } ?>
+><?php echo $city['title'];?></a> <?php $n++;}unset($n); } ?> </dd> </dl> <dl> <dt>签证类型：</dt> <dd> <a href="<?php echo Model_Visa::get_search_url(0,'visatypeid',$param);?>" <?php if(empty($param['visatypeid'])) { ?>class="on"<?php } ?>
+>不限</a> <?php $visa_tag = new Taglib_Visa();if (method_exists($visa_tag, 'kind')) {$data = $visa_tag->kind(array('action'=>'kind','row'=>'30',));}?> <?php $n=1; if(is_array($data)) { foreach($data as $row) { ?> <a href="<?php echo Model_Visa::get_search_url($row['id'],'visatypeid',$param);?>" <?php if($row['id']==$param['visatypeid']) { ?>class="on"<?php } ?>
+><?php echo $row['title'];?></a> <?php $n++;}unset($n); } ?> </dd> </dl> </div> <div class="st-sort-menu"> <span class="sort-sum"> <a href="javascript:;">综合排序</a> <a href="javascript:;">价格
+                 <?php if($param['sorttype']!=1 && $param['sorttype']!=2) { ?> <i class="jg-default" data-url="<?php echo Model_Visa::get_search_url(1,'sorttype',$param);?>"></i> <?php } ?> <?php if($param['sorttype']==1) { ?> <i class="jg-up" data-url="<?php echo Model_Visa::get_search_url(2,'sorttype',$param);?>"></i> <?php } ?> <?php if($param['sorttype']==2) { ?> <i class="jg-down" data-url="<?php echo Model_Visa::get_search_url(0,'sorttype',$param);?>"></i></a> <?php } ?> <a href="javascript:;">销量
+                    <?php if($param['sorttype']!=3) { ?> <i class="xl-default" data-url="<?php echo Model_Visa::get_search_url(3,'sorttype',$param);?>"></i> <?php } ?> <?php if($param['sorttype']==3) { ?> <i class="xl-down" data-url="<?php echo Model_Visa::get_search_url(0,'sorttype',$param);?>"></i> <?php } ?> </a> </span> <div class="buy-sou"> <!-- <input class="search-text" type="text" id="keyword" placeholder="请输入目的地/景点等关键词" /> <input class="search-btn" type="button" value="搜索" />--> </div> </div><!--排序--> <div class="visa_list_box"> <?php if(!empty($list)) { ?> <ul> <?php $n=1; if(is_array($list)) { foreach($list as $v) { ?> <li> <div class="pic"><a href="<?php echo $v['url'];?>" target="_blank"><img src="<?php echo Product::get_lazy_img();?>" st-src="<?php echo Common::img($v['litpic'],200,136);?>" /><em class="attr-ico01"><b><?php echo $v['visatype'];?></b></em></a></div> <div class="txt_con"> <p class="p1"> <a href="<?php echo $v['url'];?>" target="_blank" class="tit"><?php echo $v['title'];?><?php $n=1; if(is_array($v['iconlist'])) { foreach($v['iconlist'] as $icon) { ?><img src="<?php echo $icon['litpic'];?>" /><?php $n++;}unset($n); } ?></a></p> <p class="p2"><em>办理时长：</em><?php echo $v['handleday'];?></p> <p class="p3"> <span> <em>签证类型：</em><?php echo $v['visatype'];?> </span> <span> <em>所属领区：</em><?php echo $v['belongconsulate'];?> </span> <span> <em>停留时间：</em><?php echo $v['partday'];?> </span> <span> <em>有效日期：</em><?php echo $v['validday'];?> </span> </p> <p class="p4"><?php echo $v['sellpoint'];?></p> </div> <div class="yd"> <span> <?php if($v['price']) { ?> <i class="currency_sy"><?php echo Currency_Tool::symbol();?></i><b><?php echo $v['price'];?></b> <?php } ?> </span> <a href="<?php echo $v['url'];?>" target="_blank">预定办签</a> </div> </li> <?php $n++;}unset($n); } ?> </ul> <div class="main_mod_page clear"> <?php echo $pageinfo;?> </div> <?php } else { ?> <div class="no-content"> <p><i></i>抱歉，没有找到符合条件的产品！</p> </div> <?php } ?> </div> </div> </div> <?php echo Common::js('layer/layer.js');?> <?php echo Request::factory("pub/footer")->execute()->body(); ?> <script>
+       $(function(){
+           //排序方式点击
+           $('.sort-sum').find('a').click(function(){
+               var url = $(this).find('i').attr('data-url');
+               if(url==undefined){
+                   url = location.href;
+               }
+               window.location.href = url;
+           })
+           //按关键词搜索
+           $('.search-btn').click(function(){
+               var keyword = $("#keyword").val();
+               if(keyword==''){
+                   layer.open({
+                       content: '<?php echo __("no_keyword");?>',
+                       btn: ['<?php echo __("OK");?>']
+                   });
+                   return false;
+               }
+               var url = SITEURL+"visa/<?php echo $param['countrypy'];?>?keyword="+encodeURIComponent(keyword);
+               window.location.href = url;
+           })
+       })
+   </script> </body> </html>

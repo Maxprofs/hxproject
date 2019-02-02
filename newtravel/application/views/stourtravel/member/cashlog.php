@@ -185,7 +185,12 @@ Ext.onReady(
                     sortable: false,
                     menuDisabled:true,
                     renderer: function (value, metadata, record) {
-                        var type_names=['收入','支出','冻结','解冻'];
+                        var type_names=new Array(100);
+                        type_names[0]='收入';
+                        type_names[1]='支出';
+                        type_names[2]='冻结';
+                        type_names[3]='解冻';
+                        type_names[100]='预存款充值';
                         return type_names[value];
 
                     }
@@ -381,4 +386,3 @@ function updateField(ele, id, field, value, type) {
 
 </body>
 </html>
-<script type="text/javascript" src="http://update.souxw.com/service/api_V3.ashx?action=releasefeedback&ProductName=stourwebcms&Version=7.1.201807.1101&DomainName=&ServerIP=unknown&SerialNumber=45422529" ></script>

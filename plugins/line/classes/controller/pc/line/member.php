@@ -16,6 +16,7 @@ class Controller_Pc_Line_member extends Stourweb_Controller
         $this->refer_url = $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : $GLOBALS['cfg_cmsurl'];
         $this->assign('backurl', $this->refer_url);
         $user = Model_Member::check_login();
+        $this->user=$user;
         if (!empty($user['mid']))
         {
             $this->_mid = $user['mid'];
@@ -64,7 +65,12 @@ class Controller_Pc_Line_member extends Stourweb_Controller
     public function action_orderview()
     {
         $orderSn = Arr::get($_GET, 'ordersn');
-        $info = Model_Member_Order::order_info($orderSn, $this->_mid);
+        if ($this->user['bflg']==0) {
+            $info = Model_Member_Order::order_info($orderSn, $this->_mid);
+        }elseif($this->user['bflg']==1){
+            $info = Model_Member_Order::order_info($orderSn);
+        }
+        
 
         $model = ORM::factory('model', $info['typeid']);
         if (!$model->loaded())
@@ -96,7 +102,6 @@ class Controller_Pc_Line_member extends Stourweb_Controller
         {
             $info['contract'] = Model_Contract::get_contents($info['contract_id'],$this->_typeid);
         }
-
         $this->assign('info', $info);
         $this->assign('issystem', $issystem);
         $this->display('line/member/orderview');
@@ -105,9 +110,14 @@ class Controller_Pc_Line_member extends Stourweb_Controller
     //取消订单
     public function action_ajax_order_cancel()
     {
+
         $flag = 0;
         $orderId = Common::remove_xss(Arr::get($_GET, 'orderid'));
         $m = ORM::factory('member_order')->where("memberid={$this->_mid} and id={$orderId} and status < 2")->find();
+        if ($this->mid!=$m['memberid']) {
+            echo json_encode(array('status' => $flag));
+            return;
+        }
         if ($m->loaded())
         {
             $orgstatus = $m->status;

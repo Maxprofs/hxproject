@@ -63,6 +63,19 @@ class Controller_Admin_Distributor extends Stourweb_Controller {
 		$this->assign('info', $info);
 		$this->display('admin/distributor/credit');
 	}
+	public function action_ajax_savecredit() {
+		$mid = Common::remove_xss(Arr::get($_POST, 'mid'));
+		$jiamengqixian = Common::remove_xss(Arr::get($_POST, 'jmqx'));
+		$jiamengfei = abs(Common::remove_xss(Arr::get($_POST, 'jmf')));
+		$shouxinedu = abs(Common::remove_xss(Arr::get($_POST, 'sx')));
+		if ($jiamengqixian == '' || $jiamengfei == '' || $shouxinedu == '') {
+			echo json_encode(array('status' => false, 'msg' => '未填写完成。'));
+			return;
+		}
+		$sql = "update sline_member set jiamengqixian='$jiamengqixian',jiamengfei=$jiamengfei,credit=$shouxinedu where mid=$mid";
+		DB::query(Database::UPDATE, $sql)->execute();
+		echo json_encode(array('status' => true, 'msg' => '保存成功。'));
+	}
 	//设置管理员业务账号
 	public function action_ajax_set() {
 		$account = str_replace('"', '', Arr::get($_GET, 'param'));

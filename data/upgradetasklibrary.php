@@ -1,1 +1,1 @@
-[{"system_part_code":"","name":"\u62fc\u624b\u6c14\u7ea2\u5305\u5e94\u7528","upgrade_code":"stourwebcms_app_red_envelope","app_number":"8540cd99-bf4f-4a6f-90d1-0f582b49817d","system_part_type":"2"}]
+[{"system_part_code":"9","name":"\u79df\u8f66\u4ea7\u54c1\u5e94\u7528","upgrade_code":"stourwebcms_app_system_car","app_number":"e0260ded-d1ad-4722-9dbc-e1548032809c","system_part_type":"2"}]

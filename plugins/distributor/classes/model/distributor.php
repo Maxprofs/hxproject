@@ -6,16 +6,8 @@ class Model_Distributor extends ORM {
 	protected $_primary_key = 'mid';
 	//通过分享二维码使用手机号码注册，需要减掉绑定的分销商的短信数目，并且分销商要能查询到发送的短信信息
 	// 待开发
-	
-	/*
-		获取产品门市价格
-		$pid：产品ID
-	*/
-	public function get_storeprice($pid)
-	{
-		$price=DB::select('storeprice')->from('line')->where('id','=',$pid)->execute()->as_array();
-		return $price;
-	}
+
+
 	//替换relationship表的绑定关系，
 	// $rid：原绑定分销商账号ID
 	// $cid：现在绑定分销商账号ID
@@ -57,7 +49,7 @@ class Model_Distributor extends ORM {
 	/*
 		注册绑定分销商，并修改member表binddistributor字段
 	*/
-	public static function distributor_bind($mid, $did,$sendnum) {
+	public static function distributor_bind($mid, $did) {
 		$count = count(DB::select('rid')->from('relationship')->where('mid', '=', $mid)->and_where('pid', '=', $did)->execute()->as_array());
 		if ($count != 0) {
 			return false;
