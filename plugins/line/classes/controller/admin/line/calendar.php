@@ -636,6 +636,8 @@ class Controller_Admin_Line_Calendar extends Stourweb_Controller
         $out = $this->get_suitprice_arr($year,$month,$suitid,1);
         $list = array();
         $back_symbol = Currency_Tool::back_symbol();
+                $h="<span class='basic'>";
+        $t="</span>";
         foreach ($out as $o)
         {
             $propgroup = explode(',',$o['propgroup']);
@@ -643,9 +645,12 @@ class Controller_Admin_Line_Calendar extends Stourweb_Controller
             $temp['date'] = $o['date'];
             if($propgroup)
             {
-                $temp['price'] = in_array(2,$propgroup) ?  $back_symbol.$o['price'] : '';
-                $temp['child_price'] = in_array(1,$propgroup) ?  $back_symbol.$o['child_price'] : '';
-                $temp['old_price'] = in_array(3,$propgroup) ? $back_symbol.$o['old_price'] : '';
+                $temp['price'] = in_array(2, $propgroup) ? $back_symbol . $o['price'].'  '.$h.$back_symbol . $o['basicprice'].$t : ''; //售价
+                $temp['child_price'] = in_array(1, $propgroup) ? $back_symbol . $o['child_price'].'  '.$h.$back_symbol . $o['child_basicprice'].$t : ''; //售价
+                $temp['old_price'] = in_array(3, $propgroup) ? $back_symbol . $o['old_price'].'  '.$h.$back_symbol . $o['old_basicprice'].$t : ''; //售价
+                // $temp['price'] = in_array(2,$propgroup) ?  $back_symbol.$o['price'] : '';
+                // $temp['child_price'] = in_array(1,$propgroup) ?  $back_symbol.$o['child_price'] : '';
+                // $temp['old_price'] = in_array(3,$propgroup) ? $back_symbol.$o['old_price'] : '';
                 $temp['roombalance'] = $back_symbol.$o['roombalance'];
                 $o['number']==-1 ? $temp['number'] = '充足' : $temp['number'] = $o['number'];
             }

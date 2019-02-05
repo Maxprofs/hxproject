@@ -65,6 +65,7 @@ class Controller_Member_Order extends Stourweb_Controller
         $list = $out['list'];
         foreach($list as &$v)
         {
+
             $v['is_commentable'] = Model_Model::is_commentable($v['typeid']);
             $v['is_standard_product'] =  Model_Model::is_standard_product($v['typeid']);
             if($v['typeid']==107){

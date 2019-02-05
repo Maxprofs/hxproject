@@ -19,7 +19,29 @@ class Controller_Pc_Traveler extends Stourweb_Controller {
 
 		$this->display('pc/traveler');
 	}
-
+	//门市pc后台向供应商提交订单
+	public function action_ajax_submitorder(){
+		$orderid=Common::remove_xss(Arr::get($_POST,'orderid'));
+		$dpaypic=Common::remove_xss(Arr::get($_POST,'voucherpath'));
+		$m=ORM::factory('member_order')->where('id','=',$orderid)->find();
+		$info = Model_Member_Order::get_order_by_ordersn($m->ordersn);
+		$m->dconfirm=1;
+		//不需要供应商确认,则订单直接转为待付款状态
+		if ($m->need_confirm==0) {
+			$m->status=1;
+			$m->dpaydate=$m->usedate;
+		}
+		if (!empty($dpaypic)) {
+			$m->dpaypic=$dpaypic;
+		}
+		if (!$m->save()) {
+			echo json_encode(array('status'=>false,'msg'=>'订单提交失败'));
+			return;
+		}
+		Model_Member_Order_Log::add_log($info,'','','服务网点已提交至供应商');
+		echo json_encode(array('status'=>true,'msg'=>'订单已提交至供应商'));
+	}
+	//pc后台修改游客订单总价
 	public function action_ajax_modifyorderprice() {
 		$now=time();
 		$ordersn = Common::remove_xss(Arr::get($_POST, 'ordersn'));

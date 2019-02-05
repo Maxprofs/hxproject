@@ -71,6 +71,7 @@ class Controller_Member_Index extends Stourweb_Controller
 
         //最新订单
         $order = Model_Member_Order::order_list(0, $this->mid, 'all', 1, 5);
+
         foreach($order['list'] as &$v)
         {
             $v['is_commentable'] = Model_Model::is_commentable($v['typeid']);

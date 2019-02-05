@@ -1,0 +1,20 @@
+=========================
+ordersn:http://www.deccatech.cn/income/order_listener?ordersn=00119020403300655708 20190204033007
+action:call_order_listener
+result:{"status":1,"msg":"\u975e\u5df2\u652f\u4ed8\u72b6\u6001"}
+=========================
+ordersn:http://www.deccatech.cn/financeextend/order_set_count_info?ordersn=00119020403300655708 20190204033007
+action:call_order_listener
+result:{"status":1,"msg":"","data":"orderid: 62;ordersn: 00119020403300655708"}
+=========================
+ordersn:http://www.deccatech.cn/income/order_listener?ordersn=00119020403300655708 20190204033937
+action:call_order_listener
+result:{"status":1,"msg":"\u975e\u5df2\u652f\u4ed8\u72b6\u6001"}
+=========================
+ordersn:http://www.deccatech.cn/income/order_listener?ordersn=00119020403412759332 20190204034128
+action:call_order_listener
+result:{"status":1,"msg":"\u975e\u5df2\u652f\u4ed8\u72b6\u6001"}
+=========================
+ordersn:http://www.deccatech.cn/financeextend/order_set_count_info?ordersn=00119020403412759332 20190204034128
+action:call_order_listener
+result:{"status":1,"msg":"","data":"orderid: 63;ordersn: 00119020403412759332"}

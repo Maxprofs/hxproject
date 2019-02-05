@@ -53,6 +53,7 @@ class Controller_Pc_Line_member extends Stourweb_Controller
                 'first_page_in_url' => false,
             )
         );
+
         //配置访问地址 当前控制器方法
         $pager->route_params($route_array);
         $this->assign('pageinfo', $pager);
@@ -114,7 +115,7 @@ class Controller_Pc_Line_member extends Stourweb_Controller
         $flag = 0;
         $orderId = Common::remove_xss(Arr::get($_GET, 'orderid'));
         $m = ORM::factory('member_order')->where("memberid={$this->_mid} and id={$orderId} and status < 2")->find();
-        if ($this->mid!=$m['memberid']) {
+        if ($this->_mid!=$m->memberid) {
             echo json_encode(array('status' => $flag));
             return;
         }

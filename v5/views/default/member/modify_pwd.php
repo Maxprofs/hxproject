@@ -6,6 +6,11 @@
     {include "pub/varname"}
     {Common::css('user.css,base.css,extend.css')}
     {Common::js('jquery.min.js,base.js,common.js,jquery.validate.js')}
+    <style>
+      .confirm-btn{
+        background: transparent;;
+      }
+    </style>
 </head>
 
 <body>

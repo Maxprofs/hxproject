@@ -5,7 +5,22 @@
     <title>订单详情-<?php echo $webname;?></title>
     <?php echo Common::css("style.css,base.css");?>
     <?php echo Common::js("jquery.min.js,common.js");?>
+    <script src="/res/js/datepicker/WdatePicker.js"></script>
     <script src="/res/js/layer/layer.js"></script>
+    <style>
+      .order-item .item-con .nr li {
+          width: 25%;
+      }
+      .input-text{
+        border:1px solid #aaa;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        text-align: center;
+      }
+      .resontext{
+        margin-left: 5px;
+      }
+    </style>
 </head>
 <body>
 <?php echo  Stourweb_View::template("pub");  ?>
@@ -117,6 +132,7 @@
                   <div class="item-con">
                       <ul class="nr">
                           <li>购买数量： <?php echo $info['roombalancenum'];?></li>
+                          <li>单价：&yen;<?php echo $info['roombalance'];?></li>
                           <li>支付方式：
                               <?php if($info['roombalance_paytype']==1) { ?>
                               预付
@@ -124,7 +140,7 @@
                               到店付
                               <?php } ?>
 </li>
-                          <li>金额：&yen;<?php echo $info['roombalance'];?></li>
+                          <li>金额：&yen;<?php echo $info['roombalance']*$info['roombalancenum']; ?></li>
                       </ul>
                   </div>
               </div><!-- 单房差 -->
@@ -177,9 +193,25 @@
           </div>
          <!-- <div class="back-prev"><a class="back-btn" href="javascript:;">返回</a></div>-->
         </div><!-- 订单详情 -->
-        <div class='ordertext'style="display: none">
-            <textarea name="orderReason"  cols="30" rows="10"style="width:490px"placeholder="原因说明非必填"></textarea>
-        </div>
+        <script id='ordertext' type="text/html">
+            <?php if($did==0) { ?>
+            <textarea name="orderReason"  cols="30" rows="10"style="width:490px;margin-left: 5px;"placeholder="原因说明非必填"></textarea>
+            <?php } else { ?>
+            <textarea name="orderReason"  cols="30" rows="10"style="width:490px;margin-left: 5px;"placeholder="原因说明非必填"></textarea>
+            <div style="margin-left: 20px;">
+              <table>
+                <tr>
+                  <td><span>分销商现金已付：</span></td>
+                  <td><input type="text" class="input-text" id="payed" placeholder="分销商已付现金" id="payedcash" oninput = "value=value.replace(/[^\d]/g,'')"></td>
+                </tr>
+                <tr>
+                  <td style="text-align: right;"><span>结款时限：</span></td>
+                  <td><input type="text" class="input-text" id="paydate" onclick="WdatePicker({minDate:'%y-%M-%d'})"></td>
+                </tr>
+              </table>
+            </div>
+            <?php } ?>
+        </script>
       </div>
     </div>
    <?php echo  Stourweb_View::template("footer");  ?>
@@ -197,14 +229,21 @@
                 area: ['500px','auto'],
                 btn: ['库存充足,确认订单','库存不足,关闭订单'],
                 btnAlign: 'c',
-                content: "<div id ='order-sure-list'>"+$('.ordertext').html()+ '</div>',
+                content: "<div id ='order-sure-list'>"+$('#ordertext').html()+ '</div>',
                 // 确认订单-1
                 yes: function(index, layero){
                     // var content = $("#order-sure-list textarea[name='orderReason']").val();
+                    var did="<?php echo $did;?>";
+                    if (did) {
+                      if ($('#payed').val()=='' || $('#paydate').val()=='') {
+                        layer.alert('没有设置已付款金额或结款时间',{icon:2,time:4000})
+                        return;
+                      }
+                    }
                     $.ajax({
                         type: 'post',
                         url: SITEURL+'/order/ajax_order_status',
-                        data: {ordersn:ordersn,status:1},
+                        data: {ordersn:ordersn,status:1,did:did,payed:$('#payed').val(),paydate:$('#paydate').val()},
                         dataType: 'json',
                         success: function (msg) {
                             if (msg.status == true) {

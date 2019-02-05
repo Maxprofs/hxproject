@@ -1,1 +1,1 @@
-{"stourwebcms_token":"06483bba56f1"}
+{"stourwebcms_token":"527931d92803"}

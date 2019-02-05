@@ -70,13 +70,14 @@
     <div class="item-con">
         <ul class="nr">
             <li>购买数量： {$info['roombalancenum']}</li>
+            <li>单价：&yen;{$info['roombalance']}</li>
             <li>支付方式：
                 {if $info['roombalance_paytype']==1}
                 预付
                 {else}
                 到店付
                 {/if}</li>
-            <li>金额：&yen;{$info['roombalance']}</li>
+            <li>金额：&yen;<?php echo $info['roombalance']*$info['roombalancenum']; ?></li>
         </ul>
     </div>
 </div><!-- 单房差 -->

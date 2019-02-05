@@ -30,7 +30,7 @@ class Controller_Pc_Notice extends Stourweb_Controller{
         {
             $org_id = file_get_contents($order_log_file);
         }
-        $new_order = ORM::factory('member_order')->where("supplierlist=$this->_id")->order_by('addtime','DESC')->limit(1)->find()->as_array();
+        $new_order = ORM::factory('member_order')->where("supplierlist=$this->_id and dconfirm=1")->order_by('addtime','DESC')->limit(1)->find()->as_array();
         if($new_order['id'] != $org_id)
         {
             file_put_contents($order_log_file,$new_order['id']);

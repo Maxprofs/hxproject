@@ -5,6 +5,20 @@
 <title> {if $ordertype=='all'}{__('全部订单')}{elseif $ordertype=='unpay'}{__('未付款订单')}{else}{__('未点评订单')}{/if}-{$webname}</title>
     {Common::css('user.css,base.css,extend.css')}
     {Common::js('jquery.min.js,base.js,common.js')}
+    <style>
+      .new{
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          position: relative;
+          top: -10px;
+          left: 5px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          background: #f00;
+      }
+    </style>
 </head>
 
 <body>
@@ -83,7 +97,8 @@
                           {elseif $row['ispinlun']=='0' && $row['status']=='5' && $row['is_commentable']&&$row['memberid']==$mid}
                           <a class="now-dp" href="{$cmsurl}member/order/pinlun?ordersn={$row['ordersn']}">{__('立即点评')}</a>
                           {/if}
-                          <a class="order-ck" href="{$cmsurl}member/order/view?ordersn={$row['ordersn']}">{__('查看订单')}</a>
+                          
+                          <a class="order-ck" href="{$cmsurl}member/order/view?ordersn={$row['ordersn']}">{__('查看订单')}{if $row['dconfirm']==0}<s class="new"></s>{/if}</a>
 
                      <!--   {if $ordertype=='all'}
 

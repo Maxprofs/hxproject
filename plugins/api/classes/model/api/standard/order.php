@@ -246,7 +246,8 @@ class Model_Api_Standard_Order
      * @param $product_model
      * @return bool|int
      */
-    public static function add_order($arr,$product_model)
+    //roinheart
+    public static function add_order1($arr,$product_model)
     {
 
         $flag = 0;

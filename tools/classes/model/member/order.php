@@ -74,7 +74,28 @@ Class Model_Member_Order extends ORM {
 			->as_array();
 		return $row;
 	}
-
+    /**
+     * @function 关闭过期订单
+     * @param $orderid
+     * @return bool
+    */
+    public static function close_expire($orderid)
+    {
+        $now=strtotime(date('Y-m-d'));
+        $m=ORM::factory('member_order',$orderid);
+        $usedate=strtotime($m->usedate);
+        if ($now>$usedate && $m->status<2) {
+            $m->status=3;
+            $m->save();
+            $info = self::get_order_by_ordersn($m->ordersn);
+            Model_Member_Order_Log::add_log($info,'','','订单过期已关闭');
+            return true;
+        }
+        if ($m->status==3) {
+            return true;
+        }
+        return false;
+    }
 	/**
 	 * @function 通过Ordersn获取订单信息并计算其总价
 	 * @param $ordersn
@@ -135,7 +156,9 @@ Class Model_Member_Order extends ORM {
 			$rs['payprice'] = $total_info['pay_price'];
 			$rs['pay_price'] = $total_info['pay_price'];
 		}
-
+		if(self::close_expire($rs['id'])){
+			$rs['status']=3;
+		}
 		return $rs;
 	}
 
@@ -488,6 +511,12 @@ Class Model_Member_Order extends ORM {
 			'total' => $totalNum,
 			'list' => $arr,
 		);
+		foreach ($out['list'] as &$v) {
+			if (Model_Member_Order::close_expire($v['id'])) {
+			 	$v['status']=3;
+			 	$v['statusname']='已关闭';
+			 } 
+		}
 		return $out;
 	}
 

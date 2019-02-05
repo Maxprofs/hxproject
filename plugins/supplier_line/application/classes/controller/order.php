@@ -40,9 +40,22 @@ class Controller_Order extends Stourweb_Controller
     {
         $id = intval($_GET['id']);
         $data = $this->_model->get_order_info($id);
+
         if(empty($data))
         {
             $this->request->redirect($this->request->referrer());
+        }
+        $w = "orderid={$data['id']}";
+        $sql = "select * from sline_member_order_extend where $w";
+        $r = DB::query(Database::SELECT, $sql)->execute()->current();
+        $data['price']=$r['basicprice'];
+        $data['childprice']=$r['childbasicprice'];
+        $data['oldprice']=$r['oldbasicprice'];
+        //是否是分销商订单
+        if ($data['distributor']==$data['memberid']) {
+            $this->assign('did',1);
+        }else{
+            $this->assign('did',0);
         }
         $this->assign('statusarr',Model_Member_Order::get_changeable_statusnames());
         $this->assign('info', $data);
@@ -55,16 +68,29 @@ class Controller_Order extends Stourweb_Controller
     public function action_ajax_order_status()
     {
         $supplierid = Cookie::get('st_supplier_id');
+        $did = Common::remove_xss(Arr::get($_POST, 'did'));
+        $dpayed = Common::remove_xss(Arr::get($_POST, 'payed'));
+        $dpaydate = Common::remove_xss(Arr::get($_POST, 'paydate'));
+        if ($did && ($dpaydate=='' || $dpayed=='')) {
+            echo json_encode(array('status'=>false,'msg'=>'没有设置已付款金额或结款时间'));
+            return;
+        }
         $ordersn = Arr::get($_POST, 'ordersn');
         $status = Arr::get($_POST, 'status');
         $close_reason = Arr::get($_POST, 'content') ? Arr::get($_POST, 'content') : 0;
         $order_model = ORM::factory('member_order')->where('ordersn','=',$ordersn)->and_where('supplierlist','=',$supplierid)->find();
         if($order_model->loaded()&& in_array($status,Model_Member_Order::$changeableStatus) && in_array($order_model->status,Model_Member_Order::$changeableStatus))
         {
+            if (Model_Member_Order::close_expire($order_model->id)) {
+                echo json_encode(array('status'=>false,'msg'=>'订单过期已关闭'));
+                return;
+            }
             $order_model->status = $status;
             if ($status == 3) {
                 $order_model->close_reason = $close_reason;
             }
+            $order_model->dpayed=$dpayed;
+            $order_model->dpaydate=$dpaydate;
             $order_model->save();
             if($order_model->saved())
             {

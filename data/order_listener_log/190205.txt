@@ -1,0 +1,8 @@
+=========================
+ordersn:http://www.deccatech.cn/income/order_listener?ordersn=00119020519091464709 20190205190915
+action:call_order_listener
+result:{"status":1,"msg":"\u975e\u5df2\u652f\u4ed8\u72b6\u6001"}
+=========================
+ordersn:http://www.deccatech.cn/financeextend/order_set_count_info?ordersn=00119020519091464709 20190205190915
+action:call_order_listener
+result:{"status":1,"msg":"","data":"orderid: 84;ordersn: 00119020519091464709"}

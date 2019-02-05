@@ -102,7 +102,7 @@
                       <dd>
                           <div class="on-off">
                               <input type="checkbox" name="pay_way[]" value="1" {if $info['pay_way']=='1'||$info['pay_way']=='3'}checked="checked"{/if} />线上支付 &nbsp;
-                              <input type="checkbox" name="pay_way[]" value="2" {if $info['pay_way']=='2'||$info['pay_way']=='3'}checked="checked"{/if} />线下支付 &nbsp;
+<!--                               <input type="checkbox" name="pay_way[]" value="2" {if $info['pay_way']=='2'||$info['pay_way']=='3'}checked="checked"{/if} />线下支付 &nbsp; -->
                           </div>
                       </dd>
                   </dl>
@@ -339,29 +339,58 @@
             var propgroup = data.propgroup.split(',');
             if(propgroup[0])
             {
-                var adultprice = '' ;
-                var childprice = '';
-                var oldprice = '';
-                var number = 0;
-                data.number==-1 ?  number='充足' :  number=data.number;
-                if($.inArray('2',propgroup)!=-1)
-                {
-                    adultprice = back_symbol+data.adultprice;
-                }
-                if($.inArray('1',propgroup)!=-1)
-                {
-                    childprice = back_symbol+data.childprice;
-                }
-                if($.inArray('3',propgroup)!=-1)
-                {
-                    oldprice = back_symbol+data.oldprice;
-                }
-                var html = '<p class="item"><span class="attr">成人</span><span class="num">'+adultprice+'</span></p>' +
-                    '<p class="item"><span class="attr">小孩</span><span class="num">'+childprice+'</span></p>' +
-                    '<p class="item"><span class="attr">老人</span><span class="num">'+oldprice+'</span></p>' +
-                    '<p class="item"><span class="attr">单房差</span><span class="num">'+back_symbol+data.roombalance+'</span></p>' +
-                    '<p class="item"><span class="attr">库存</span><span class="num">'+number+'</span></p>';
-                $('.calendar-table-wrapper td[data-id='+data.date+'] .data-hook').html(html)
+                          var adultprice = '' ;
+            var adultbasicprice='';
+            var childprice = '';
+            var childbasicprice='';
+            var oldprice = '';
+            var oldbasicprice='';
+            var number = 0;
+            data.number==-1 ?  number='充足' :  number=data.number;
+            if($.inArray('2',propgroup)!=-1)
+            {
+                adultprice = back_symbol+data.adultprice;
+                adultbasicprice = back_symbol+data.adultbasicprice;
+            }
+            if($.inArray('1',propgroup)!=-1)
+            {
+                childprice = back_symbol+data.childprice;
+                childbasicprice=back_symbol+data.childbasicprice;
+            }
+            if($.inArray('3',propgroup)!=-1)
+            {
+                oldprice = back_symbol+data.oldprice;
+                oldbasicprice=back_symbol+data.oldbasicprice;
+            }
+            var html = '<p class="item"><span class="attr">成人</span><span class="num">'+adultprice+'<span class="basic">'+adultbasicprice+'</span></span></p>' +
+                '<p class="item"><span class="attr">小孩</span><span class="num">'+childprice+'<span class="basic">'+childbasicprice+'</span></span></p>' +
+                '<p class="item"><span class="attr">老人</span><span class="num">'+oldprice+'<span class="basic">'+oldbasicprice+'</span></span></p>' +
+                '<p class="item"><span class="attr">单房差</span><span class="num">'+back_symbol+data.roombalance+'</span></p>' +
+                '<p class="item"><span class="attr">库存</span><span class="num">'+number+'</span></p>';
+            $('.calendar-table-wrapper td[data-id='+data.date+'] .data-hook').html(html)
+                // var adultprice = '' ;
+                // var childprice = '';
+                // var oldprice = '';
+                // var number = 0;
+                // data.number==-1 ?  number='充足' :  number=data.number;
+                // if($.inArray('2',propgroup)!=-1)
+                // {
+                //     adultprice = back_symbol+data.adultprice;
+                // }
+                // if($.inArray('1',propgroup)!=-1)
+                // {
+                //     childprice = back_symbol+data.childprice;
+                // }
+                // if($.inArray('3',propgroup)!=-1)
+                // {
+                //     oldprice = back_symbol+data.oldprice;
+                // }
+                // var html = '<p class="item"><span class="attr">成人</span><span class="num">'+adultprice+'</span></p>' +
+                //     '<p class="item"><span class="attr">小孩</span><span class="num">'+childprice+'</span></p>' +
+                //     '<p class="item"><span class="attr">老人</span><span class="num">'+oldprice+'</span></p>' +
+                //     '<p class="item"><span class="attr">单房差</span><span class="num">'+back_symbol+data.roombalance+'</span></p>' +
+                //     '<p class="item"><span class="attr">库存</span><span class="num">'+number+'</span></p>';
+                // $('.calendar-table-wrapper td[data-id='+data.date+'] .data-hook').html(html)
             }
             else
             {

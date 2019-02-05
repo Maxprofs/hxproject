@@ -8,6 +8,15 @@
     {php echo Common::getCss('style.css,base.css,base2.css,base_new.css,calendar-price-jquery.min.css'); }
     {php echo Common::getScript("uploadify/jquery.uploadify.min.js,DatePicker/WdatePicker.js,choose.js,product_add.js,imageup.js,jquery.validate.js,calendar-price-jquery.js"); }
     {php echo Common::getCss('uploadify.css','js/uploadify/'); }
+    <style>
+      .capricorncd-calendar-container{
+        width: 1200px;
+      }
+
+      .basic{
+        color: blue;
+      }
+    </style>
 </head>
 
 <body>
@@ -59,6 +68,10 @@
                                   <a class="btn-link" id="more_price"  onclick="showMore()" style="margin-left: 560px;display: none">查看更多报价</a>
                               </div>
                           </li>
+                        <li>
+                          <span class="item-hd">日历价格说明：</span>
+                          <div class="item-bd" style="position: relative;top: 5px;"><span style="color:#ff6600;">橙色：销售价</span>&nbsp;&nbsp;&nbsp;<span style="color:blue;">蓝色：结算价</span></div>
+                        </li>
                           <li>
                               <span class="item-hd"></span>
                               <div class="item-bd">
@@ -94,10 +107,10 @@
                               <div class="item-bd">
                                   <div class="on-off">
                                       <label class="radio-label"><input type="radio" name="paytype" value="1" {if $info['paytype']=='1' OR empty($info['paytype'])}checked="checked"{/if} />全额预定</label>
-                                      <label class="radio-label ml-20"><input type="radio" name="paytype" value="2" {if $info['paytype']=='2'}checked="checked"{/if} />定金预定</label>
+<!--                                       <label class="radio-label ml-20"><input type="radio" name="paytype" value="2" {if $info['paytype']=='2'}checked="checked"{/if} />定金预定</label>
                                       <span id="dingjin" style="{if $info['paytype'] != '2'}display: none{/if}">
                                           &nbsp;&nbsp;&nbsp;每人支付定金
-                                          <input type="text" class="input-text w60 va-t" maxlength="6" name="dingjin" id="dingjintxt" value="{$info['dingjin']}" size="6" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-\.]+/,'');}).call(this)" onblur="this.v();">&nbsp;</span>
+                                          <input type="text" class="input-text w60 va-t" maxlength="6" name="dingjin" id="dingjintxt" value="{$info['dingjin']}" size="6" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-\.]+/,'');}).call(this)" onblur="this.v();">&nbsp;</span> -->
 
                                       <script>
                                           $("input[name='paytype']").click(function(){
@@ -135,16 +148,16 @@
                               <span class="item-hd">会员支付方式：</span>
                               <div class="item-bd">
                                   <label class="radio-label"><input type="checkbox" name="pay_way[]" id="online_pay" value="1" {if $info['pay_way']=='1' || $info['pay_way']==3}checked="checked"{/if} {if $action=='add'}checked="checked"{/if} />线上支付</label>
-                                  <label class="radio-label"><input type="checkbox" name="pay_way[]" id="offline_pay" value="2" {if $info['pay_way']=='2' || $info['pay_way']==3}checked="checked"{/if} {if $action=='add'}checked="checked"{/if} />线下支付</label>
+<!--                                   <label class="radio-label"><input type="checkbox" name="pay_way[]" id="offline_pay" value="2" {if $info['pay_way']=='2' || $info['pay_way']==3}checked="checked"{/if} {if $action=='add'}checked="checked"{/if} />线下支付</label> -->
                               </div>
                           </li>
-                          <li>
+<!--                           <li>
                               <span class="item-hd">待付款时限：</span>
                               <div class="item-bd">
                                   <input type="text" name="auto_close_time_hour" id="auto_close_time_hour" maxlength="2" onkeyup="value=value.replace(/[^\d]/g,'')"  class="input-text w60" {if $action=='add'}value="24"{else}value="{$info['auto_close_time_hour']}"{/if} />&nbsp;小时
                                   <input type="text" name="auto_close_time_minute" id="auto_close_time_minute" maxlength="2" onkeyup="value=value.replace(/[^\d]/g,'')"  class="input-text w60" {if $action=='add'}value="0"{else}value="{$info['auto_close_time_minute']}"{/if} />&nbsp;分钟
                               </div>
-                          </li>
+                          </li> -->
 
                       </ul>
                   </div>
@@ -373,25 +386,31 @@
         if(propgroup[0])
         {
             var adultprice = '' ;
+            var adultbasicprice='';
             var childprice = '';
+            var childbasicprice='';
             var oldprice = '';
+            var oldbasicprice='';
             var number = 0;
             data.number==-1 ?  number='充足' :  number=data.number;
             if($.inArray('2',propgroup)!=-1)
             {
                 adultprice = back_symbol+data.adultprice;
+                adultbasicprice = back_symbol+data.adultbasicprice;
             }
             if($.inArray('1',propgroup)!=-1)
             {
                 childprice = back_symbol+data.childprice;
+                childbasicprice=back_symbol+data.childbasicprice;
             }
             if($.inArray('3',propgroup)!=-1)
             {
                 oldprice = back_symbol+data.oldprice;
+                oldbasicprice=back_symbol+data.oldbasicprice;
             }
-            var html = '<p class="item"><span class="attr">成人</span><span class="num">'+adultprice+'</span></p>' +
-                '<p class="item"><span class="attr">小孩</span><span class="num">'+childprice+'</span></p>' +
-                '<p class="item"><span class="attr">老人</span><span class="num">'+oldprice+'</span></p>' +
+            var html = '<p class="item"><span class="attr">成人</span><span class="num">'+adultprice+'<span class="basic">'+adultbasicprice+'</span></span></p>' +
+                '<p class="item"><span class="attr">小孩</span><span class="num">'+childprice+'<span class="basic">'+childbasicprice+'</span></span></p>' +
+                '<p class="item"><span class="attr">老人</span><span class="num">'+oldprice+'<span class="basic">'+oldbasicprice+'</span></span></p>' +
                 '<p class="item"><span class="attr">单房差</span><span class="num">'+back_symbol+data.roombalance+'</span></p>' +
                 '<p class="item"><span class="attr">库存</span><span class="num">'+number+'</span></p>';
             $('.calendar-table-wrapper td[data-id='+data.date+'] .data-hook').html(html)

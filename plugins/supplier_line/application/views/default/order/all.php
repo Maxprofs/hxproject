@@ -10,8 +10,6 @@
 <body>
 {include "pub"}
 <div class="page-box">
-
-
     <div class="">
         <div class="content-box" >
 
@@ -90,8 +88,6 @@
                                 </tr>
                                 {/loop}
                             </table>
-
-
                             {if empty($data)}
                             <div class="nofound-order">对不起！没有符合条件，请尝试其他搜索条件。</div>
                             <!-- 搜索无结果 -->
@@ -105,16 +101,12 @@
                     </div>
                 </div>
                     <!-- 验单记录 -->
-
-
                 </div>
             </div>
         {include "footer"}
         </div>
     </div>
     <!-- 主体内容 -->
-
-
 <script>
     $(window).resize(function(){
         sizeHeight()
